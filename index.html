@@ -12,20 +12,442 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-main: #07080a;       
+            --bg-card: #0e1117;       
+            --bg-control: #141923;    
+            --accent-volt: #ccff00;   
+            --accent-cyber: #00f0ff;  
+            --accent-boxing: #ff3c00; 
+            --text-primary: #ffffff;  
+            --text-muted: #5e687a;    
+            --laser-border: rgba(0, 240, 255, 0.1);
+            --transition-tech: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-primary);
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .app-header {
+            width: 100%;
+            max-width: 950px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.75rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 1000 !important;
+        }
+
+        .app-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .sport-selection-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            z-index: 1010 !important;
+        }
+
+        .sport-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px; 
+            width: 150px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer !important;
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            pointer-events: auto !important;
+            transition: all var(--transition-tech);
+        }
+
+        .sport-card:hover {
+            border-color: var(--accent-cyber);
+            color: var(--text-primary);
+            background: rgba(0, 240, 255, 0.02);
+        }
+
+        .sport-card.active {
+            border-color: var(--accent-volt) !important;
+            color: var(--accent-volt) !important;
+            background: linear-gradient(180deg, rgba(204, 255, 0, 0.03) 0%, transparent 100%), var(--bg-card);
+            box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
+        }
+
+        .timezone-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timezone-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        .timezone-switch {
+            display: flex;
+            background: #090c10;
+            padding: 3px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+        }
+
+        .zone-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all var(--transition-tech);
+        }
+
+        .zone-btn:hover { color: var(--text-primary); }
+
+        .zone-btn.active {
+            background: var(--bg-control);
+            color: var(--accent-cyber);
+            border: 1px solid var(--laser-border);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+        }
+
+        .schedule-container {
+            width: 100%;
+            max-width: 950px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            z-index: 10 !important;
+        }
+
+        .fight-card {
+            background: var(--bg-card);
+            border-radius: 4px; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            transition: border-color var(--transition-tech);
+        }
+
+        .fight-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            z-index: 5;
+        }
+
+        .fight-card.mma-card::before { background: var(--accent-cyber); }
+        .fight-card.boxing-card::before { background: var(--accent-boxing); }
+
+        .fight-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-main-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.75rem 2rem;
+            width: 100%;
+            cursor: pointer;
+            background: transparent;
+            user-select: none;
+        }
+        
+        .card-main-trigger:hover {
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .card-left-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .dropdown-carat {
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid var(--text-muted);
+            border-bottom: 2px solid var(--text-muted);
+            transform: rotate(45deg);
+            transition: transform var(--transition-tech), border-color var(--transition-tech);
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .fight-card:hover .dropdown-carat {
+            border-color: var(--text-primary);
+        }
+
+        .fight-card.expanded .dropdown-carat {
+            transform: rotate(-135deg) translateY(-2px);
+            border-color: var(--accent-volt);
+        }
+
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .org-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .tag-mma { color: var(--accent-cyber); }
+        .tag-boxing { color: var(--accent-boxing); }
+
+        .fight-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .fight-title .vs {
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin: 0 0.5rem;
+        }
+
+        .fight-meta {
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .fight-venue {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .card-timers {
+            background: #090c10;
+            border-radius: 2px;
+            padding: 1.25rem;
+            min-width: 360px; 
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            /* CRUCIAL FIX: Let the click event pass right through the timer block to the trigger chassis */
+            pointer-events: none; 
+        }
+
+        .timer-header-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 0.4rem;
+        }
+
+        .timer-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+
+        .clock-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pulse-dot {
+            color: var(--accent-volt);
+            font-weight: 900;
+            animation: tech-blink 1.5s infinite steps(1);
+        }
+
+        @keyframes tech-blink { 50% { opacity: 0.3; } }
+
+        .clock-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .clock-display.volt {
+            color: var(--accent-volt);
+            text-shadow: 0 0 15px rgba(204, 255, 0, 0.15);
+        }
+
+        .time-unit {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-right: 0.4rem;
+            margin-left: 0.1rem;
+        }
+
+        .undercard-drawer {
+            display: none; 
+            background: #090c11;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .fight-card.expanded .undercard-drawer {
+            display: block;
+        }
+
+        .undercard-content {
+            padding: 1.5rem 2rem 2rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .undercard-section-title {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-cyber);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .fight-card.boxing-card .undercard-section-title {
+            color: var(--accent-boxing);
+        }
+
+        .undercard-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .undercard-row {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 2px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .undercard-fighters {
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .undercard-fighters .uc-vs {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin: 0 0.4rem;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .undercard-weight {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.02);
+            padding: 0.2rem 0.5rem;
+            border-radius: 2px;
+        }
+
+        .icon-octagon {
+            width: 28px;
+            height: 28px;
+            background: currentColor;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .icon-glove {
+            width: 22px;
+            height: 26px;
+            border: 2px solid currentColor;
+            border-radius: 4px 4px 2px 2px;
+        }
+
+        @media (max-width: 850px) {
+            .card-main-trigger { flex-direction: column; align-items: stretch; gap: 1.5rem; }
+            .card-left-group { align-items: flex-start; }
+            .card-timers { min-width: 100%; }
+            .undercard-list { grid-template-columns: 1fr; }
+            .undercard-content { padding: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
 
     <header class="app-header">
-        
         <h1 class="app-title">WALKOUT WATCH</h1>
-        
         <div class="sport-selection-container">
-            <button id="btn-boxing" class="sport-card" onclick="filterSport('boxing')">
+            <button id="btn-boxing" class="sport-card">
                 <div class="icon-glove"></div>
                 <span>BOXING</span>
             </button>
-            <button id="btn-mma" class="sport-card active" onclick="filterSport('mma')">
+            <button id="btn-mma" class="sport-card active">
                 <div class="icon-octagon"></div>
                 <span>MMA</span>
             </button>
@@ -34,97 +456,385 @@
         <div class="timezone-container">
             <span class="timezone-label">TIMEZONE TELEMETRY</span>
             <div class="timezone-switch">
-                <button class="zone-btn active">PDT (GMT-7)</button>
-                <button class="zone-btn">BST (GMT+1)</button>
-                <button class="zone-btn">EST (GMT-4)</button>
+                <button id="zone-pdt" class="zone-btn active" data-offset="-7">PDT (West)</button>
+                <button id="zone-mdt" class="zone-btn" data-offset="-6">MDT (Mountain)</button>
+                <button id="zone-cdt" class="zone-btn" data-offset="-5">CDT (Central)</button>
+                <button id="zone-est" class="zone-btn" data-offset="-4">EDT (East)</button>
+                <button id="zone-bst" class="zone-btn" data-offset="+1">BST (UK)</button>
             </div>
         </div>
-
     </header>
 
     <main class="schedule-container">
-        
-        <div class="fight-card mma-card" data-target="2026-05-30T19:00:00-04:00">
-            <div class="card-left-group">
-                <div class="fighter-avatar-split"></div>
-                <div class="card-details">
-                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
-                    <h2 class="fight-title">Song <span class="vs">VS</span> Figueiredo</h2>
-                    <p class="fight-meta">Sat, May 30 / 7:00 PM PDT / Main Event</p>
-                    <p class="fight-venue">Galaxy Arena, Macau, China</p>
+        <div class="fight-card mma-card" data-target="2026-05-30T19:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                        <h2 class="fight-title">Song <span class="vs">VS</span> Figueiredo</h2>
+                        <p class="fight-meta" data-base-text="Sat, May 30 / [TIME] / Main Event"></p>
+                        <p class="fight-venue">Galaxy Arena, Macau, China</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                    <div class="timer-row"><span class="clock-label">PRELIM WALKOUT <span class="pulse-dot">LIVE</span></span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">LIVE</span></span><span class="clock-display volt">00d 00h 00m 00s</span></div>
                 </div>
             </div>
-            <div class="card-timers">
-                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
-                <div class="timer-row">
-                    <span class="clock-label">PRELIM WALKOUT <span class="pulse-dot">LIVE</span></span>
-                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
-                </div>
-                <div class="timer-row">
-                    <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">LIVE</span></span>
-                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="fight-card mma-card" data-target="2026-06-06T20:00:00-04:00">
-            <div class="card-left-group">
-                <div class="fighter-avatar-split"></div>
-                <div class="card-details">
-                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
-                    <h2 class="fight-title">Muhammad <span class="vs">VS</span> Bonfim</h2>
-                    <p class="fight-meta">Sat, Jun 6 / 5:00 PM PDT / Main Card</p>
-                    <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
-                </div>
-            </div>
-            <div class="card-timers">
-                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
-                <div class="timer-row">
-                    <span class="clock-label">PRELIM WALKOUT</span>
-                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
-                </div>
-                <div class="timer-row">
-                    <span class="clock-label">MAIN CARD WALKOUT</span>
-                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Nicolau <span class="uc-vs">VS</span> Almabayev</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Hernandez <span class="uc-vs">VS</span> Craig</span><span class="undercard-weight">MIDDLEWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Lucindo <span class="uc-vs">VS</span> Gomes</span><span class="undercard-weight">STRAWWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Zhumagulov <span class="uc-vs">VS</span> Durden</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="fight-card mma-card" data-target="2026-06-14T20:00:00-04:00">
-            <div class="card-left-group">
-                <div class="fighter-avatar-split"></div>
-                <div class="card-details">
-                    <div class="org-tag tag-mma">UFC FREEDOM 250</div>
-                    <h2 class="fight-title">Topuria <span class="vs">VS</span> Gaethje</h2>
-                    <p class="fight-meta">Sun, Jun 14 / 5:00 PM PDT / Lightweight Title</p>
-                    <p class="fight-venue">The White House Grounds, Washington, D.C.</p>
+        <div class="fight-card mma-card" data-target="2026-06-06T17:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                        <h2 class="fight-title">Muhammad <span class="vs">VS</span> Bonfim</h2>
+                        <p class="fight-meta" data-base-text="Sat, Jun 6 / [TIME] / Main Card"></p>
+                        <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                    <div class="timer-row"><span class="clock-label">PRELIM WALKOUT</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN CARD WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
                 </div>
             </div>
-            <div class="card-timers">
-                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
-                <div class="timer-row">
-                    <span class="clock-label">PRELIM WALKOUT</span>
-                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
-                </div>
-                <div class="timer-row">
-                    <span class="clock-label">MAIN EVENT WALKOUT</span>
-                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Miller <span class="uc-vs">VS</span> Solecki</span><span class="undercard-weight">LIGHTWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Almeida <span class="uc-vs">VS</span> Romanov</span><span class="undercard-weight">HEAVYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Walker <span class="uc-vs">VS</span> Menifield</span><span class="undercard-weight">LIGHT HEAVY</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Taira <span class="uc-vs">VS</span> Van</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="fight-card mma-card" data-target="2026-06-20T20:00:00-04:00">
-            <div class="card-left-group">
-                <div class="fighter-avatar-split"></div>
-                <div class="card-details">
-                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
-                    <h2 class="fight-title">Kape <span class="vs">VS</span> Horiguchi</h2>
-                    <p class="fight-meta">Sat, Jun 20 / 5:00 PM PDT / Flyweight Main Card</p>
-                    <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
+        <div class="fight-card mma-card" data-target="2026-06-14T17:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-mma">UFC FREEDOM 250</div>
+                        <h2 class="fight-title">Topuria <span class="vs">VS</span> Gaethje</h2>
+                        <p class="fight-meta" data-base-text="Sun, Jun 14 / [TIME] / Lightweight Title"></p>
+                        <p class="fight-venue">The White House Grounds, Washington, D.C.</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                    <div class="timer-row"><span class="clock-label">PRELIM WALKOUT</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN EVENT WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
                 </div>
             </div>
-            <div class="card-timers">
-                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
-                <div class="timer-row">
-                    <span class="clock-label">PRELIM WALKOUT</span>
-                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Whittaker <span class="uc-vs">VS</span> Costa</span><span class="undercard-weight">MIDDLEWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Evloev <span class="uc-vs">VS</span> Sterling</span><span class="undercard-weight">FEATHERWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Brady <span class="uc-vs">VS</span> Della Maddalena</span><span class="undercard-weight">WELTERWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Rosas Jr. <span class="uc-vs">VS</span> Turman</span><span class="undercard-weight">MIDDLEWEIGHT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card mma-card" data-target="2026-06-20T17:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                        <h2 class="fight-title">Kape <span class="vs">VS</span> Horiguchi</h2>
+                        <p class="fight-meta" data-base-text="Sat, Jun 20 / [TIME] / Flyweight Main Card"></p>
+                        <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                    <div class="timer-row"><span class="clock-label">PRELIM WALKOUT</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN CARD WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
+                </div>
+            </div>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Mokaev <span class="uc-vs">VS</span> Perez</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Dvalishvili <span class="uc-vs">VS</span> Cejudo</span><span class="undercard-weight">BANTAMWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Wood <span class="uc-vs">VS</span> Fili</span><span class="undercard-weight">FEATHERWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Muniz <span class="uc-vs">VS</span> Allen</span><span class="undercard-weight">MIDDLEWEIGHT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card boxing-card" style="display: none;" data-target="2026-05-23T14:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-boxing">RIYADH SEASON SPECIAL</div>
+                        <h2 class="fight-title">Usyk <span class="vs">VS</span> Verhoeven</h2>
+                        <p class="fight-meta" data-base-text="Sat, May 23 / [TIME] / Heavyweight Bout"></p>
+                        <p class="fight-venue">Kingdom Arena, Riyadh, Saudi Arabia</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">WALKOUT ESTIMATES</div>
+                    <div class="timer-row"><span class="clock-label">UNDERCARD START</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN EVENT WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
+                </div>
+            </div>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Opetaia <span class="uc-vs">VS</span> Briedis II</span><span class="undercard-weight">CRUISERWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Cordina <span class="uc-vs">VS</span> Cacace</span><span class="undercard-weight">SUPER FEATHER</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Itauma <span class="uc-vs">VS</span> Mezencev</span><span class="undercard-weight">HEAVYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Kovalev <span class="uc-vs">VS</span> Safar</span><span class="undercard-weight">CRUISERWEIGHT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card boxing-card" style="display: none;" data-target="2026-06-13T11:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-boxing">MATCHROOM BOXING</div>
+                        <h2 class="fight-title">Rodriguez <span class="vs">VS</span> Vargas</h2>
+                        <p class="fight-meta" data-base-text="Sat, Jun 13 / [TIME] / Bantamweight Title"></p>
+                        <p class="fight-venue">Desert Diamond Arena, Glendale, AZ</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">WALKOUT ESTIMATES</div>
+                    <div class="timer-row"><span class="clock-label">MAIN CARD START</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN EVENT WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
+                </div>
+            </div>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Edwards <span class="uc-vs">VS</span> Yafai</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Castro <span class="uc-vs">VS</span> Torres</span><span class="undercard-weight">SUPER BANTAM</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Pacheco <span class="uc-vs">VS</span> Coceres</span><span class="undercard-weight">SUPER MIDDLE</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Davis <span class="uc-vs">VS</span> Albright</span><span class="undercard-weight">LIGHTWEIGHT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card boxing-card" style="display: none;" data-target="2026-06-27T15:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-boxing">WBA WORLD CHAMPIONSHIP</div>
+                        <h2 class="fight-title">Zayas <span class="vs">VS</span> Ennis</h2>
+                        <p class="fight-meta" data-base-text="Sat, Jun 27 / [TIME] / Super Welterweight Title"></p>
+                        <p class="fight-venue">Barclays Center, Brooklyn, NY</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">WALKOUT ESTIMATES</div>
+                    <div class="timer-row"><span class="clock-label">MAIN CARD START</span><span class="clock-display">00d 00h 00m 00s</span></div>
+                    <div class="timer-row"><span class="clock-label">MAIN EVENT WALKOUT</span><span class="clock-display volt">00d 00h 00m 00s</span></div>
+                </div>
+            </div>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Kownacki <span class="uc-vs">VS</span> Cusumano</span><span class="undercard-weight">HEAVYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Berlanga <span class="uc-vs">VS</span> Quigley</span><span class="undercard-weight">SUPER MIDDLE</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Resendiz <span class="uc-vs">VS</span> Herdman</span><span class="undercard-weight">MIDDLEWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Aleem <span class="uc-vs">VS</span> Pasillas</span><span class="undercard-weight">SUPER BANTAM</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card boxing-card" style="display: none;" data-target="2026-07-25T14:00:00" data-base-zone="-7">
+            <div class="card-main-trigger">
+                <div class="card-left-group">
+                    <div class="dropdown-carat"></div>
+                    <div class="card-details">
+                        <div class="org-tag tag-boxing">RIYADH SEASON HEAVYWEIGHT</div>
+                        <h2 class="fight-title">Joshua <span class="vs">VS</span> Prenga</h2>
+                        <p class="fight-meta" data-base-text="Sat, Jul 25 / [TIME] / Heavyweight Main Event"></p>
+                        <p class="fight-venue">Wembley Stadium, London, UK</p>
+                    </div>
+                </div>
+                <div class="card-timers">
+                    <div class="timer-header-label">WALKOUT ESTIMATES</div>
+                    <div class="timer-row">
+                        <span class="clock-label">MAIN CARD START</span>
+                        <span class="clock-display">00d 00h 00m 00s</span>
+                    </div>
+                    <div class="timer-row">
+                        <span class="clock-label">MAIN EVENT WALKOUT</span>
+                        <span class="clock-display volt">00d 00h 00m 00s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="undercard-drawer">
+                <div class="undercard-content">
+                    <div class="undercard-section-title">Telemetry Bout Roster</div>
+                    <ul class="undercard-list">
+                        <li class="undercard-row"><span class="undercard-fighters">Fisher <span class="uc-vs">VS</span> Babic</span><span class="undercard-weight">HEAVYWEIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Catterall <span class="uc-vs">VS</span> Taylor II</span><span class="undercard-weight">SUPER LIGHT</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Chelli <span class="uc-vs">VS</span> Simpson</span><span class="undercard-weight">SUPER MIDDLE</span></li>
+                        <li class="undercard-row"><span class="undercard-fighters">Yafai <span class="uc-vs">VS</span> Frank</span><span class="undercard-weight">FLYWEIGHT</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentSelectedOffset = -7;
+        let currentSelectedZoneName = "PDT";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. SPORT TAB SWITCHER
+            const boxingBtn = document.getElementById('btn-boxing');
+            const mmaBtn = document.getElementById('btn-mma');
+            const mmaCards = document.querySelectorAll('.mma-card');
+            const boxingCards = document.querySelectorAll('.boxing-card');
+
+            boxingBtn.addEventListener('click', () => {
+                mmaBtn.classList.remove('active');
+                boxingBtn.classList.add('active');
+                mmaCards.forEach(c => { c.style.display = 'none'; c.classList.remove('expanded'); });
+                boxingCards.forEach(c => c.style.display = 'flex');
+            });
+
+            mmaBtn.addEventListener('click', () => {
+                boxingBtn.classList.remove('active');
+                mmaBtn.classList.add('active');
+                mmaCards.forEach(c => c.style.display = 'flex');
+                boxingCards.forEach(c => { c.style.display = 'none'; c.classList.remove('expanded'); });
+            });
+
+            // 2. TIMEZONE SELECTION ENGINE
+            const zoneButtons = document.querySelectorAll('.zone-btn');
+            zoneButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    zoneButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    currentSelectedOffset = parseInt(btn.getAttribute('data-offset'));
+                    currentSelectedZoneName = btn.textContent.split(' ')[0];
+                    
+                    updateFightMetaLabels();
+                });
+            });
+
+            // 3. SECURE DRAWER TOGGLE TRIGGER ENGINE
+            document.querySelectorAll('.card-main-trigger').forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const card = trigger.closest('.fight-card');
+                    card.classList.toggle('expanded');
+                });
+            });
+
+            updateFightMetaLabels();
+        });
+
+        function updateFightMetaLabels() {
+            document.querySelectorAll('.fight-card').forEach(card => {
+                const dateString = card.getAttribute('data-target');
+                const baseZoneOffset = parseInt(card.getAttribute('data-base-zone'));
+                const metaElement = card.querySelector('.fight-meta');
+                const baseTemplate = metaElement.getAttribute('data-base-text');
+
+                if (!dateString || !baseTemplate) return;
+
+                const parts = dateString.split('T')[1].split(':');
+                let hours = parseInt(parts[0]);
+                let minutes = parts[1];
+
+                let targetHours = hours + (currentSelectedOffset - baseZoneOffset);
+                
+                if (targetHours >= 24) targetHours -= 24;
+                if (targetHours < 0) targetHours += 24;
+
+                const ampm = targetHours >= 12 ? 'PM' : 'AM';
+                let displayHours = targetHours % 12;
+                displayHours = displayHours ? displayHours : 12;
+
+                const fullyCompiledTimeText = `${displayHours}:${minutes} ${ampm} ${currentSelectedZoneName}`;
+                metaElement.textContent = baseTemplate.replace('[TIME]', fullyCompiledTimeText);
+            });
+        }
+
+        function updateTelemetryClocks() {
+            const now = new Date().getTime();
+            
+            document.querySelectorAll('.fight-card').forEach(card => {
+                const dateString = card.getAttribute('data-target');
+                const baseZoneOffset = parseInt(card.getAttribute('data-base-zone'));
+                if (!dateString) return;
+
+                const normalizedDateStr = dateString.replace(/-/g, "/").replace("T", " ");
+                const baseTargetTime = new Date(normalizedDateStr).getTime();
+
+                const systemTimezoneOffsetMinutes = new Date().getTimezoneOffset();
+                const systemOffsetMs = systemTimezoneOffsetMinutes * 60 * 1000;
+
+                const baseOffsetMs = baseZoneOffset * 60 * 60 * 1000;
+                const absoluteUtcTarget = baseTargetTime - baseOffsetMs + systemOffsetMs;
+
+                const mainDistance = absoluteUtcTarget - now;
+                const prelimDistance = mainDistance - (2.5 * 60 * 60 * 1000); 
+
+                const clockDisplays = card.querySelectorAll('.clock-display');
+                
+                if (clockDisplays[0]) clockDisplays[0].innerHTML = formatTimeData(prelimDistance);
+                if (clockDisplays[1]) clockDisplays[1].innerHTML = formatTimeData(mainDistance);
+            });
+        }
+
+        function formatTimeData(ms) {
+            if (ms <= 0) return `00<span class="time-unit">d</span> 00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span>`;
+            
+            const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+            
+            const padD = days.toString().padStart(2, '0');
+            const padH = hours.toString().padStart(2, '0');
+            const padM = minutes.toString().padStart(2, '0');
+            const padS = seconds.toString().padStart(2, '0');
+            
+            return `${padD}<span class="time-unit">d</span> ${padH}<span class="time-unit">h</span> ${padM}<span class="time-unit">m</span> ${padS}<span class="time-unit">s</span>`;
+        }
+
+        updateTelemetryClocks(); 
+        setInterval(updateTelemetryClocks, 1000);
+    </script>
+</body>
+</html>
