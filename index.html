@@ -54,9 +54,12 @@
             flex-direction: column;
             align-items: center;
             gap: 1.75rem;
-            margin-bottom: 3.5rem;
             position: relative;
             z-index: 1000 !important;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, transparent, rgba(0, 240, 255, 0.2), transparent) 1;
+            padding-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
         }
 
         .app-title {
@@ -65,18 +68,22 @@
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
         }
 
         .app-title .title-walkout {
             font-family: 'Oswald', sans-serif;
             color: var(--accent-volt);
+            text-shadow: 
+                0 0 10px rgba(204, 255, 0, 0.5),
+                0 0 25px rgba(204, 255, 0, 0.2);
         }
 
         .app-title .title-watch {
             font-family: 'Oswald', sans-serif;
             color: var(--accent-cyber); 
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+            text-shadow: 
+                0 0 10px rgba(0, 240, 255, 0.6),
+                0 0 25px rgba(0, 240, 255, 0.3);
         }
 
         .sport-selection-container {
@@ -108,17 +115,36 @@
             transition: all var(--transition-tech);
         }
 
-        .sport-card:hover {
+        /* Boxing Custom Hover State -> Yellow/Volt Glow */
+        #btn-boxing:hover {
+            border-color: var(--accent-volt);
+            color: var(--text-primary);
+            background: rgba(204, 255, 0, 0.02);
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.08);
+        }
+
+        /* MMA Custom Hover State -> Blue/Cyber Glow */
+        #btn-mma:hover {
             border-color: var(--accent-cyber);
             color: var(--text-primary);
             background: rgba(0, 240, 255, 0.02);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.08);
         }
 
-        .sport-card.active {
+        /* FIXED: Boxing Active State - Locked to Neon Volt Yellow */
+        #btn-boxing.active {
             border-color: var(--accent-volt) !important;
             color: var(--accent-volt) !important;
             background: linear-gradient(180deg, rgba(204, 255, 0, 0.03) 0%, transparent 100%), var(--bg-card);
             box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
+        }
+
+        /* FIXED: MMA Active State - Locked to Neon Cyber Blue */
+        #btn-mma.active {
+            border-color: var(--accent-cyber) !important;
+            color: var(--accent-cyber) !important;
+            background: linear-gradient(180deg, rgba(0, 240, 255, 0.03) 0%, transparent 100%), var(--bg-card);
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
         }
 
         .timezone-container {
@@ -181,13 +207,19 @@
         .fight-card {
             background: var(--bg-card);
             border-radius: 4px; 
-            border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            transition: border-color var(--transition-tech);
+            transition: border-color var(--transition-tech), box-shadow var(--transition-tech);
+            
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.12);
+        }
+
+        .fight-card.boxing-card {
+            border: 1px solid rgba(204, 255, 0, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(204, 255, 0, 0.12);
         }
 
         .fight-card::before {
@@ -203,8 +235,13 @@
         .fight-card.mma-card::before { background: var(--accent-cyber); }
         .fight-card.boxing-card::before { background: var(--accent-volt); } 
 
-        .fight-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
+        .fight-card.mma-card:hover {
+            border-color: rgba(0, 240, 255, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 240, 255, 0.22);
+        }
+        .fight-card.boxing-card:hover {
+            border-color: rgba(204, 255, 0, 0.35);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 35px rgba(204, 255, 0, 0.22);
         }
 
         .card-main-trigger {
@@ -544,7 +581,6 @@
                         titleHTML = `${parts[0]} <span class="vs">VS</span> ${parts[1]}`;
                     }
 
-                    // Dynamically parse out the weekday/calendar date text from ISO format
                     const targetDate = new Date(event.datetime);
                     let formattedDateStr = "Date TBD";
                     if(!isNaN(targetDate.getTime())) {
@@ -562,7 +598,6 @@
 
                     const mainTimerColorClass = isMMA ? 'cyber-blue-timer' : 'volt';
 
-                    /* FIXED HERE: Added missing opening bracket '<' right before 'h2' */
                     return `
                         <div class="fight-card ${cardTypeClass}" id="card-${index}">
                             <div class="card-main-trigger">
