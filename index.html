@@ -17,12 +17,12 @@
             --bg-main: #07080a;       
             --bg-card: #0e1117;       
             --bg-control: #141923;    
-            --accent-volt: #ccff00;   
-            --accent-cyber: #00f0ff;  
-            --accent-boxing: #ff3c00; 
+            --accent-volt: #ccff00;   /* Brand Neon Green/Yellow */
+            --accent-cyber: #00f0ff;  /* Brand Neon Cyber Blue */
+            --accent-time: #ff3c00;   /* Brand Red */
             --text-primary: #ffffff;  
             --text-muted: #5e687a;    
-            --laser-border: rgba(0, 240, 255, 0.1);
+            --laser-border: rgba(255, 60, 0, 0.15); 
             --transition-tech: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -63,9 +63,20 @@
             font-family: 'Oswald', sans-serif;
             font-size: 3.8rem;
             font-weight: 700;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        .app-title .title-walkout {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-volt);
+        }
+
+        .app-title .title-watch {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-cyber); 
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
         }
 
         .sport-selection-container {
@@ -152,9 +163,9 @@
 
         .zone-btn.active {
             background: var(--bg-control);
-            color: var(--accent-cyber);
+            color: var(--accent-time); 
             border: 1px solid var(--laser-border);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 60, 0, 0.15); 
         }
 
         .schedule-container {
@@ -190,7 +201,7 @@
         }
 
         .fight-card.mma-card::before { background: var(--accent-cyber); }
-        .fight-card.boxing-card::before { background: var(--accent-boxing); }
+        .fight-card.boxing-card::before { background: var(--accent-volt); } 
 
         .fight-card:hover {
             border-color: rgba(255, 255, 255, 0.15);
@@ -251,7 +262,7 @@
         }
 
         .tag-mma { color: var(--accent-cyber); }
-        .tag-boxing { color: var(--accent-boxing); }
+        .tag-boxing { color: var(--accent-volt); } 
 
         .fight-title {
             font-family: 'Oswald', sans-serif;
@@ -275,7 +286,6 @@
             color: var(--text-primary);
         }
 
-        /* NEW CARD DESIGN LABELS RULES */
         .fight-loc-row {
             display: flex;
             gap: 1rem;
@@ -295,9 +305,9 @@
         }
         
         .fight-card.boxing-card .fight-date-tag {
-            color: var(--accent-boxing);
-            background: rgba(255, 60, 0, 0.05);
-            border-color: rgba(255, 60, 0, 0.1);
+            color: var(--accent-volt); 
+            background: rgba(204, 255, 0, 0.05);
+            border-color: rgba(204, 255, 0, 0.1);
         }
 
         .card-timers {
@@ -340,9 +350,9 @@
         }
 
         .pulse-dot {
-            color: var(--accent-volt);
             font-weight: 900;
             animation: tech-blink 1.5s infinite steps(1);
+            color: var(--accent-time); 
         }
 
         @keyframes tech-blink { 50% { opacity: 0.3; } }
@@ -354,9 +364,9 @@
             letter-spacing: 1px;
         }
 
-        .clock-display.volt {
-            color: var(--accent-volt);
-            text-shadow: 0 0 15px rgba(204, 255, 0, 0.15);
+        .clock-display.cyber-blue-timer {
+            color: var(--accent-cyber);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
         }
 
         .time-unit {
@@ -393,7 +403,7 @@
         }
         
         .fight-card.boxing-card .undercard-section-title {
-            color: var(--accent-boxing);
+            color: var(--accent-volt); 
         }
 
         .undercard-list {
@@ -461,7 +471,9 @@
 <body>
 
     <header class="app-header">
-        <h1 class="app-title">WALKOUT WATCH</h1>
+        <h1 class="app-title">
+            <span class="title-walkout">WALKOUT</span> <span class="title-watch">WATCH</span>
+        </h1>
         <div class="sport-selection-container">
             <button id="btn-boxing" class="sport-card">
                 <div class="icon-glove"></div>
@@ -548,6 +560,9 @@
                         </li>
                     `).join('');
 
+                    const mainTimerColorClass = isMMA ? 'cyber-blue-timer' : 'volt';
+
+                    /* FIXED HERE: Added missing opening bracket '<' right before 'h2' */
                     return `
                         <div class="fight-card ${cardTypeClass}" id="card-${index}">
                             <div class="card-main-trigger">
@@ -571,7 +586,7 @@
                                     </div>
                                     <div class="timer-row">
                                         <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">•</span></span>
-                                        <span class="clock-display volt" id="main-timer-${index}">00d 00h 00m 00s</span>
+                                        <span class="clock-display ${mainTimerColorClass}" id="main-timer-${index}">00d 00h 00m 00s</span>
                                     </div>
                                 </div>
                             </div>
@@ -593,7 +608,7 @@
 
             } catch (error) {
                 console.error('Local File Read Failure:', error);
-                document.getElementById('schedule-container').innerHTML = "<div style='text-align:center;color:var(--accent-boxing);font-family: \"Share Tech Mono\", monospace;'>JSON SYNC ERROR. VERIFY PATH INTEGRITY.</div>";
+                document.getElementById('schedule-container').innerHTML = "<div style='text-align:center;color:var(--accent-volt);font-family: \"Share Tech Mono\", monospace;'>JSON SYNC ERROR. VERIFY PATH INTEGRITY.</div>";
             }
         }
 
@@ -626,7 +641,6 @@
                             mainTimer.style.color = "var(--accent-cyber)";
                         } else {
                             mainTimer.innerHTML = formatTime(mainDiff);
-                            mainTimer.style.color = "var(--accent-volt)";
                         }
                     }
 
