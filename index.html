@@ -53,7 +53,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.75rem;
+            gap: 1.25rem; 
             position: relative;
             z-index: 1000 !important;
             border-bottom: 1px solid;
@@ -62,12 +62,17 @@
             margin-bottom: 3.5rem;
         }
 
+        .app-title-container {
+            text-align: center;
+        }
+
         .app-title {
             font-family: 'Oswald', sans-serif;
             font-size: 3.8rem;
             font-weight: 700;
             letter-spacing: 4px;
             text-transform: uppercase;
+            line-height: 1.1;
         }
 
         .app-title .title-walkout {
@@ -86,6 +91,16 @@
                 0 0 25px rgba(0, 240, 255, 0.3);
         }
 
+        .app-tagline {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
         .sport-selection-container {
             display: flex;
             gap: 1rem;
@@ -93,6 +108,7 @@
             width: 100%;
             position: relative;
             z-index: 1010 !important;
+            margin-top: 0.5rem;
         }
 
         .sport-card {
@@ -115,7 +131,6 @@
             transition: all var(--transition-tech);
         }
 
-        /* Boxing Custom Hover State -> Yellow/Volt Glow */
         #btn-boxing:hover {
             border-color: var(--accent-volt);
             color: var(--text-primary);
@@ -123,7 +138,6 @@
             box-shadow: 0 0 15px rgba(204, 255, 0, 0.08);
         }
 
-        /* MMA Custom Hover State -> Blue/Cyber Glow */
         #btn-mma:hover {
             border-color: var(--accent-cyber);
             color: var(--text-primary);
@@ -131,7 +145,6 @@
             box-shadow: 0 0 15px rgba(0, 240, 255, 0.08);
         }
 
-        /* FIXED: Boxing Active State - Locked to Neon Volt Yellow */
         #btn-boxing.active {
             border-color: var(--accent-volt) !important;
             color: var(--accent-volt) !important;
@@ -139,7 +152,6 @@
             box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
         }
 
-        /* FIXED: MMA Active State - Locked to Neon Cyber Blue */
         #btn-mma.active {
             border-color: var(--accent-cyber) !important;
             color: var(--accent-cyber) !important;
@@ -263,6 +275,7 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            width: 100%; 
         }
 
         .dropdown-carat {
@@ -289,6 +302,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.3rem;
+            width: 100%;
         }
 
         .org-tag {
@@ -301,19 +315,28 @@
         .tag-mma { color: var(--accent-cyber); }
         .tag-boxing { color: var(--accent-volt); } 
 
-        .fight-title {
+        .fight-title-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+            margin: 0.2rem 0;
+        }
+
+        .fight-title-row {
             font-family: 'Oswald', sans-serif;
-            font-size: 2.3rem;
+            font-size: 1.85rem; 
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            line-height: 1.2;
+            color: var(--text-primary);
         }
 
-        .fight-title .vs {
+        .fight-title-row .vs-divider {
             font-family: 'Share Tech Mono', monospace;
             color: var(--text-muted);
-            font-size: 1.2rem;
-            margin: 0 0.5rem;
+            font-size: 1rem;
+            margin-right: 0.5rem;
         }
 
         .fight-meta {
@@ -405,6 +428,11 @@
             color: var(--accent-cyber);
             text-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
         }
+        
+        .clock-display.volt-timer {
+            color: var(--accent-volt);
+            text-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+        }
 
         .time-unit {
             font-size: 1rem;
@@ -465,6 +493,13 @@
             font-size: 0.9rem;
             letter-spacing: 0.5px;
         }
+
+        .fighter-record-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-left: 0.25rem;
+        }
         
         .undercard-fighters .uc-vs {
             color: var(--text-muted);
@@ -508,9 +543,13 @@
 <body>
 
     <header class="app-header">
-        <h1 class="app-title">
-            <span class="title-walkout">WALKOUT</span> <span class="title-watch">WATCH</span>
-        </h1>
+        <div class="app-title-container">
+            <h1 class="app-title">
+                <span class="title-walkout">WALKOUT</span> <span class="title-watch">WATCH</span>
+            </h1>
+            <div class="app-tagline">Live Fight Countdowns & Walkout Times</div>
+        </div>
+        
         <div class="sport-selection-container">
             <button id="btn-boxing" class="sport-card">
                 <div class="icon-glove"></div>
@@ -523,12 +562,12 @@
         </div>
         
         <div class="timezone-container">
-            <span class="timezone-label">TIMEZONE TELEMETRY</span>
+            <span class="timezone-label">LOCAL FIGHT TIMES</span>
             <div class="timezone-switch">
-                <button id="zone-pdt" class="zone-btn active" data-offset="-7">PDT (West)</button>
-                <button id="zone-mdt" class="zone-btn" data-offset="-6">MDT (Mountain)</button>
-                <button id="zone-cdt" class="zone-btn" data-offset="-5">CDT (Central)</button>
-                <button id="zone-est" class="zone-btn" data-offset="-4">EDT (East)</button>
+                <button id="zone-pdt" class="zone-btn active" data-offset="-7">PT (Pacific)</button>
+                <button id="zone-mdt" class="zone-btn" data-offset="-6">MT (Mountain)</button>
+                <button id="zone-cdt" class="zone-btn" data-offset="-5">CT (Central)</button>
+                <button id="zone-est" class="zone-btn" data-offset="-4">ET (East)</button>
                 <button id="zone-bst" class="zone-btn" data-offset="+1">BST (UK)</button>
             </div>
         </div>
@@ -563,88 +602,111 @@
             });
         }
 
+        // REVERTED: Pulls data dynamically from the external JSON matrix file
         async function loadLocalSchedule() {
             try {
                 const response = await fetch('fights.json');
                 localDbData = await response.json();
                 
                 const container = document.getElementById('schedule-container');
+                renderMatrixData(container);
+            } catch (error) {
+                console.error('Local File Read Failure:', error);
+                document.getElementById('schedule-container').innerHTML = 
+                    "<div style='text-align:center;color:var(--accent-time);font-family: \"Share Tech Mono\", monospace;'>JSON SYNC ERROR. RUN A LOCAL SERVER ENVIRONMENT.</div>";
+            }
+        }
 
-                container.innerHTML = localDbData.map((event, index) => {
-                    const isMMA = event.sport === 'MMA';
-                    const cardTypeClass = isMMA ? 'mma-card' : 'boxing-card';
-                    const tagTypeClass = isMMA ? 'tag-mma' : 'tag-boxing';
-                    
-                    let titleHTML = event.main_event;
-                    if (titleHTML.toLowerCase().includes(' vs ')) {
-                        const parts = titleHTML.split(/ vs /i);
-                        titleHTML = `${parts[0]} <span class="vs">VS</span> ${parts[1]}`;
+        function renderMatrixData(container) {
+            container.innerHTML = localDbData.map((event, index) => {
+                const isMMA = event.sport === 'MMA';
+                const cardTypeClass = isMMA ? 'mma-card' : 'boxing-card';
+                const tagTypeClass = isMMA ? 'tag-mma' : 'tag-boxing';
+                
+                let titleHTML = '';
+                let mainRecordsHTML = '';
+                
+                if (event.fight_card && event.fight_card.length > 0) {
+                    const mainBout = event.fight_card[0]; 
+                    if (mainBout && mainBout.fighter_a && mainBout.fighter_b) {
+                        titleHTML = `
+                            <div class="fight-title-container">
+                                <div class="fight-title-row">${mainBout.fighter_a.name}</div>
+                                <div class="fight-title-row"><span class="vs-divider">VS</span>${mainBout.fighter_b.name}</div>
+                            </div>
+                        `;
+                        mainRecordsHTML = `<span class="fighter-record-tag">${mainBout.fighter_a.record}</span> <span class="uc-vs" style="font-size:0.7rem;">vs</span> <span class="fighter-record-tag">${mainBout.fighter_b.record}</span>`;
                     }
+                }
 
-                    const targetDate = new Date(event.datetime);
-                    let formattedDateStr = "Date TBD";
-                    if(!isNaN(targetDate.getTime())) {
-                        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-                        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                        formattedDateStr = `${days[targetDate.getDay()]}, ${months[targetDate.getMonth()]} ${targetDate.getDate()}`;
-                    }
+                const targetDate = new Date(event.datetime);
+                let formattedDateStr = "Date TBD";
+                if(!isNaN(targetDate.getTime())) {
+                    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    formattedDateStr = `${days[targetDate.getDay()]}, ${months[targetDate.getMonth()]} ${targetDate.getDate()}`;
+                }
 
-                    const boutsHTML = event.fight_card.map(bout => `
-                        <li class="undercard-row">
-                            <span class="undercard-fighters">${bout.fighter_a} <span class="uc-vs">VS</span> ${bout.fighter_b}</span>
-                            <span class="undercard-weight">${bout.weight_class.toUpperCase()}</span>
-                        </li>
-                    `).join('');
+                const boutsHTML = event.fight_card.map(bout => `
+                    <li class="undercard-row">
+                        <span class="undercard-fighters">
+                            ${bout.fighter_a.name} <span class="fighter-record-tag">(${bout.fighter_a.record})</span> 
+                            <span class="uc-vs">VS</span> 
+                            ${bout.fighter_b.name} <span class="fighter-record-tag">(${bout.fighter_b.record})</span>
+                        </span>
+                        <span class="undercard-weight">${bout.weight_class.toUpperCase()}</span>
+                    </li>
+                `).join('');
 
-                    const mainTimerColorClass = isMMA ? 'cyber-blue-timer' : 'volt';
+                const mainTimerColorClass = isMMA ? 'cyber-blue-timer' : 'volt-timer';
 
-                    return `
-                        <div class="fight-card ${cardTypeClass}" id="card-${index}">
-                            <div class="card-main-trigger">
-                                <div class="card-left-group">
-                                    <div class="dropdown-carat"></div>
-                                    <div class="card-details">
-                                        <div class="org-tag ${tagTypeClass}">${event.organization}</div>
-                                        <h2 class="fight-title">${titleHTML}</h2>
-                                        <p class="fight-meta" id="meta-${index}">Telemetry Sync Pending</p>
-                                        <div class="fight-loc-row">
-                                            <span class="fight-date-tag">🗓️ ${formattedDateStr}</span>
-                                            <span>📍 ${event.city}</span>
-                                        </div>
+                return `
+                    <div class="fight-card ${cardTypeClass}" id="card-${index}">
+                        <div class="card-main-trigger">
+                            <div class="card-left-group">
+                                <div class="dropdown-carat"></div>
+                                <div class="card-details">
+                                    <div class="org-tag ${tagTypeClass}">${event.organization}</div>
+                                    ${titleHTML}
+                                    
+                                    <div style="margin-top: 2px; margin-bottom: 5px; font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
+                                        ${mainRecordsHTML}
                                     </div>
-                                </div>
-                                <div class="card-timers">
-                                    <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
-                                    <div class="timer-row">
-                                        <span class="clock-label">PRELIM START <span class="pulse-dot">•</span></span>
-                                        <span class="clock-display" id="prelim-timer-${index}">00d 00h 00m 00s</span>
-                                    </div>
-                                    <div class="timer-row">
-                                        <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">•</span></span>
-                                        <span class="clock-display ${mainTimerColorClass}" id="main-timer-${index}">00d 00h 00m 00s</span>
+                                    
+                                    <p class="fight-meta" id="meta-${index}">Telemetry Sync Pending</p>
+                                    <div class="fight-loc-row">
+                                        <span class="fight-date-tag">🗓️ ${formattedDateStr}</span>
+                                        <span>📍 ${event.city}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="undercard-drawer">
-                                <div class="undercard-content">
-                                    <div class="undercard-section-title">Telemetry Bout Roster</div>
-                                    <ul class="undercard-list">
-                                        ${boutsHTML}
-                                    </ul>
+                            <div class="card-timers">
+                                <div class="timer-header-label">FIGHT TIME COUNTDOWNS</div>
+                                <div class="timer-row">
+                                    <span class="clock-label">PRELIM START <span class="pulse-dot">•</span></span>
+                                    <span class="clock-display" id="prelim-timer-${index}">00d 00h 00m 00s</span>
+                                </div>
+                                <div class="timer-row">
+                                    <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">•</span></span>
+                                    <span class="clock-display ${mainTimerColorClass}" id="main-timer-${index}">00d 00h 00m 00s</span>
                                 </div>
                             </div>
                         </div>
-                    `;
-                }).join('');
+                        <div class="undercard-drawer">
+                            <div class="undercard-content">
+                                <div class="undercard-section-title">Telemetry Bout Roster</div>
+                                <ul class="undercard-list">
+                                    ${boutsHTML}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
 
-                setupDrawers();
-                applyFilters();
-                startClocks();
-
-            } catch (error) {
-                console.error('Local File Read Failure:', error);
-                document.getElementById('schedule-container').innerHTML = "<div style='text-align:center;color:var(--accent-volt);font-family: \"Share Tech Mono\", monospace;'>JSON SYNC ERROR. VERIFY PATH INTEGRITY.</div>";
-            }
+            setupDrawers();
+            applyFilters();
+            startClocks();
         }
 
         function startClocks() {
