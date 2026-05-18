@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
+    <meta name="description" content="Never miss a fight walkout. Real-time centered countdown timers for UFC, MMA, and Boxing main events with instant local timezone adjustments.">
+    <link rel="canonical" href="https://walkoutwatch.com/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="app-header">
+        
+        <h1 class="app-title">WALKOUT WATCH</h1>
+        
+        <div class="sport-selection-container">
+            <button id="btn-boxing" class="sport-card" onclick="filterSport('boxing')">
+                <div class="icon-glove"></div>
+                <span>BOXING</span>
+            </button>
+            <button id="btn-mma" class="sport-card active" onclick="filterSport('mma')">
+                <div class="icon-octagon"></div>
+                <span>MMA</span>
+            </button>
+        </div>
+        
+        <div class="timezone-container">
+            <span class="timezone-label">TIMEZONE TELEMETRY</span>
+            <div class="timezone-switch">
+                <button class="zone-btn active">PDT (GMT-7)</button>
+                <button class="zone-btn">BST (GMT+1)</button>
+                <button class="zone-btn">EST (GMT-4)</button>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="schedule-container">
+        
+        <div class="fight-card mma-card" data-target="2026-05-30T19:00:00-04:00">
+            <div class="card-left-group">
+                <div class="fighter-avatar-split"></div>
+                <div class="card-details">
+                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                    <h2 class="fight-title">Song <span class="vs">VS</span> Figueiredo</h2>
+                    <p class="fight-meta">Sat, May 30 / 7:00 PM PDT / Main Event</p>
+                    <p class="fight-venue">Galaxy Arena, Macau, China</p>
+                </div>
+            </div>
+            <div class="card-timers">
+                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                <div class="timer-row">
+                    <span class="clock-label">PRELIM WALKOUT <span class="pulse-dot">LIVE</span></span>
+                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+                <div class="timer-row">
+                    <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">LIVE</span></span>
+                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card mma-card" data-target="2026-06-06T20:00:00-04:00">
+            <div class="card-left-group">
+                <div class="fighter-avatar-split"></div>
+                <div class="card-details">
+                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                    <h2 class="fight-title">Muhammad <span class="vs">VS</span> Bonfim</h2>
+                    <p class="fight-meta">Sat, Jun 6 / 5:00 PM PDT / Main Card</p>
+                    <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
+                </div>
+            </div>
+            <div class="card-timers">
+                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                <div class="timer-row">
+                    <span class="clock-label">PRELIM WALKOUT</span>
+                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+                <div class="timer-row">
+                    <span class="clock-label">MAIN CARD WALKOUT</span>
+                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card mma-card" data-target="2026-06-14T20:00:00-04:00">
+            <div class="card-left-group">
+                <div class="fighter-avatar-split"></div>
+                <div class="card-details">
+                    <div class="org-tag tag-mma">UFC FREEDOM 250</div>
+                    <h2 class="fight-title">Topuria <span class="vs">VS</span> Gaethje</h2>
+                    <p class="fight-meta">Sun, Jun 14 / 5:00 PM PDT / Lightweight Title</p>
+                    <p class="fight-venue">The White House Grounds, Washington, D.C.</p>
+                </div>
+            </div>
+            <div class="card-timers">
+                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                <div class="timer-row">
+                    <span class="clock-label">PRELIM WALKOUT</span>
+                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+                <div class="timer-row">
+                    <span class="clock-label">MAIN EVENT WALKOUT</span>
+                    <span class="clock-display volt">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00<span class="time-unit">s</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="fight-card mma-card" data-target="2026-06-20T20:00:00-04:00">
+            <div class="card-left-group">
+                <div class="fighter-avatar-split"></div>
+                <div class="card-details">
+                    <div class="org-tag tag-mma">UFC FIGHT NIGHT</div>
+                    <h2 class="fight-title">Kape <span class="vs">VS</span> Horiguchi</h2>
+                    <p class="fight-meta">Sat, Jun 20 / 5:00 PM PDT / Flyweight Main Card</p>
+                    <p class="fight-venue">Meta APEX, Las Vegas, NV</p>
+                </div>
+            </div>
+            <div class="card-timers">
+                <div class="timer-header-label">LIVE TELEMETRY CLOCKS</div>
+                <div class="timer-row">
+                    <span class="clock-label">PRELIM WALKOUT</span>
+                    <span class="clock-display">00<span class="time-unit">h</span> 00<span class="time-unit">m</span> 00
