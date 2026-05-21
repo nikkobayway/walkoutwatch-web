@@ -3,789 +3,632 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
-    <meta name="description" content="Never miss a fight walkout. Real-time centered countdown timers for UFC, MMA, and Boxing main events with instant local timezone adjustments.">
+    <meta name="description" content="Never miss a fight walkout. Real-time countdown timers for UFC, MMA, and Boxing main events with instant local timezone adjustments.">
     <link rel="canonical" href="https://walkoutwatch.com/">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #07080a;       
-            --bg-card: #0e1117;       
-            --bg-control: #141923;    
-            --accent-volt: #ccff00;   /* Brand Neon Green/Yellow */
-            --accent-cyber: #00f0ff;  /* Brand Neon Cyber Blue */
-            --accent-time: #ff3c00;   /* Brand Red */
-            --text-primary: #ffffff;  
-            --text-muted: #5e687a;    
-            --laser-border: rgba(255, 60, 0, 0.15); 
-            --transition-tech: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+            --bg-main: #07080a;
+            --bg-card: #0d1017;
+            --bg-meta: #090c10;
+            --bg-control: #141923;
+            --accent-volt: #ccff00;
+            --accent-cyber: #00f0ff;
+            --accent-red: #ff3c00;
+            --text-primary: #ffffff;
+            --text-muted: #5e687a;
+            --border-mma: rgba(0,240,255,0.12);
+            --border-boxing: rgba(204,255,0,0.12);
+            --transition: 0.15s cubic-bezier(0.2,0.8,0.2,1);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             background-color: var(--bg-main);
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+            background-image:
+                linear-gradient(rgba(255,255,255,0.007) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.007) 1px, transparent 1px);
             background-size: 24px 24px;
             color: var(--text-primary);
-            padding: 3rem 1rem;
+            font-family: 'Inter', system-ui, sans-serif;
+            padding: 3rem 1rem 5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
+        /* ── HEADER ── */
         .app-header {
-            width: 100%;
-            max-width: 950px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.25rem; 
-            position: relative;
-            z-index: 1000 !important;
+            width: 100%; max-width: 980px;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 2rem;
+            padding-bottom: 2rem; margin-bottom: 3rem;
             border-bottom: 1px solid;
-            border-image: linear-gradient(to right, transparent, rgba(0, 240, 255, 0.2), transparent) 1;
-            padding-bottom: 2.5rem;
-            margin-bottom: 3.5rem;
+            border-image: linear-gradient(to right, rgba(0,240,255,0.15), transparent) 1;
         }
-
-        .app-title-container {
-            text-align: center;
+        .header-right {
+            display: flex; flex-direction: column; align-items: flex-end; gap: 0.65rem;
         }
-
-        .app-title {
+        .logo-wrap {
+            display: flex; flex-direction: column;
+        }
+        .logo-line {
+            display: flex; align-items: center; gap: 0.65rem; line-height: 1;
+        }
+        .logo-line + .logo-line { margin-top: -0.25rem; }
+        .logo-word {
             font-family: 'Oswald', sans-serif;
-            font-size: 3.8rem;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            line-height: 1.1;
+            font-size: 3.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; line-height: 1;
         }
-
-        .app-title .title-walkout {
-            font-family: 'Oswald', sans-serif;
-            color: var(--accent-volt);
-            text-shadow: 
-                0 0 10px rgba(204, 255, 0, 0.5),
-                0 0 25px rgba(204, 255, 0, 0.2);
+        .title-walkout { color: var(--accent-volt); }
+        .title-watch   { color: var(--accent-cyber); }
+        .logo-oct {
+            width: 26px; height: 26px;
+            background: var(--accent-cyber);
+            clip-path: polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
+            flex-shrink: 0;
         }
-
-        .app-title .title-watch {
-            font-family: 'Oswald', sans-serif;
-            color: var(--accent-cyber); 
-            text-shadow: 
-                0 0 10px rgba(0, 240, 255, 0.6),
-                0 0 25px rgba(0, 240, 255, 0.3);
+        .logo-sq {
+            width: 23px; height: 23px;
+            background: var(--accent-volt);
+            border-radius: 2px; flex-shrink: 0;
         }
-
         .app-tagline {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 0.5rem;
+            font-size: 0.68rem; letter-spacing: 3px; color: var(--text-muted);
+            text-transform: uppercase; margin-top: 0.6rem;
         }
 
-        .sport-selection-container {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            width: 100%;
-            position: relative;
-            z-index: 1010 !important;
-            margin-top: 0.5rem;
+        /* ── CONTROLS ROW ── */
+        .controls-row {
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .sport-btn {
+            display: flex; align-items: center; gap: 0.5rem;
+            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 4px; padding: 0.55rem 1.1rem;
+            cursor: pointer; color: var(--text-muted);
+            font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; letter-spacing: 2px;
+            transition: all var(--transition);
+        }
+        #btn-mma:hover  { border-color: var(--accent-cyber); color: var(--accent-cyber); }
+        #btn-boxing:hover { border-color: var(--accent-volt); color: var(--accent-volt); }
+        #btn-mma.active    { border-color: rgba(0,240,255,0.5); color: var(--accent-cyber); background: rgba(0,240,255,0.05); box-shadow: 0 0 16px rgba(0,240,255,0.1); }
+        #btn-boxing.active { border-color: rgba(204,255,0,0.5); color: var(--accent-volt); background: rgba(204,255,0,0.05); box-shadow: 0 0 16px rgba(204,255,0,0.1); }
+
+        /* Sport icons */
+        .icon-octagon {
+            width: 18px; height: 18px; background: currentColor;
+            clip-path: polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
+            flex-shrink: 0;
+        }
+        .icon-glove {
+            width: 23px; height: 23px;
+            background: currentColor;
+            border-radius: 2px; flex-shrink: 0;
         }
 
-        .sport-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 4px; 
-            width: 150px;
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer !important;
-            color: var(--text-muted);
-            font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            pointer-events: auto !important;
-            transition: all var(--transition-tech);
+        /* ── TIMEZONE SWITCHER ── */
+        .tz-switcher {
+            display: flex; background: #090c10; padding: 3px;
+            border-radius: 4px; border: 1px solid rgba(255,255,255,0.05);
         }
-
-        #btn-boxing:hover {
-            border-color: var(--accent-volt);
-            color: var(--text-primary);
-            background: rgba(204, 255, 0, 0.02);
-            box-shadow: 0 0 15px rgba(204, 255, 0, 0.08);
-        }
-
-        #btn-mma:hover {
-            border-color: var(--accent-cyber);
-            color: var(--text-primary);
-            background: rgba(0, 240, 255, 0.02);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.08);
-        }
-
-        #btn-boxing.active {
-            border-color: var(--accent-volt) !important;
-            color: var(--accent-volt) !important;
-            background: linear-gradient(180deg, rgba(204, 255, 0, 0.03) 0%, transparent 100%), var(--bg-card);
-            box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
-        }
-
-        #btn-mma.active {
-            border-color: var(--accent-cyber) !important;
-            color: var(--accent-cyber) !important;
-            background: linear-gradient(180deg, rgba(0, 240, 255, 0.03) 0%, transparent 100%), var(--bg-card);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
-        }
-
-        .timezone-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .timezone-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-        }
-
-        .timezone-switch {
-            display: flex;
-            background: #090c10;
-            padding: 3px;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 600px;
-        }
-
         .zone-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 0.5rem 1rem;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: all var(--transition-tech);
+            background: transparent; border: none; color: var(--text-muted);
+            padding: 0.45rem 0.9rem; font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem; letter-spacing: 1px; border-radius: 2px;
+            cursor: pointer; transition: all var(--transition);
         }
-
         .zone-btn:hover { color: var(--text-primary); }
+        .zone-btn.active { background: var(--bg-control); color: var(--accent-red); border: 1px solid rgba(255,60,0,0.2); }
 
-        .zone-btn.active {
-            background: var(--bg-control);
-            color: var(--accent-time); 
-            border: 1px solid var(--laser-border);
-            box-shadow: 0 0 15px rgba(255, 60, 0, 0.15); 
-        }
-
+        /* ── SCHEDULE CONTAINER ── */
         .schedule-container {
-            width: 100%;
-            max-width: 950px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            position: relative;
-            z-index: 10 !important;
+            width: 100%; max-width: 980px;
+            display: flex; flex-direction: column; gap: 1.25rem;
         }
 
+        /* ── FIGHT CARD ── */
         .fight-card {
             background: var(--bg-card);
-            border-radius: 4px; 
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            border-radius: 6px;
+            border: 1px solid var(--border-mma);
             overflow: hidden;
-            transition: border-color var(--transition-tech), box-shadow var(--transition-tech);
-            
-            border: 1px solid rgba(0, 240, 255, 0.15);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 240, 255, 0.12);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 30px rgba(0,240,255,0.05);
+            transition: border-color var(--transition), box-shadow var(--transition);
         }
-
         .fight-card.boxing-card {
-            border: 1px solid rgba(204, 255, 0, 0.15);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(204, 255, 0, 0.12);
+            border-color: var(--border-boxing);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 30px rgba(204,255,0,0.05);
         }
+        .fight-card.past-card { opacity: 0.4; filter: grayscale(0.5); }
+        .fight-card.mma-card:hover    { border-color: rgba(0,240,255,0.3);  box-shadow: 0 16px 50px rgba(0,0,0,0.8), 0 0 40px rgba(0,240,255,0.1); }
+        .fight-card.boxing-card:hover { border-color: rgba(204,255,0,0.3);  box-shadow: 0 16px 50px rgba(0,0,0,0.8), 0 0 40px rgba(204,255,0,0.1); }
 
-        .fight-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            z-index: 5;
+        /* Top accent bar */
+        .card-accent-bar { height: 3px; width: 100%; }
+        .mma-card    .card-accent-bar { background: var(--accent-cyber); }
+        .boxing-card .card-accent-bar { background: var(--accent-volt); }
+        .past-card   .card-accent-bar { background: var(--text-muted); }
+
+        /* Card trigger (clickable header) */
+        .card-trigger {
+            padding: 1.75rem 2rem 0;
+            cursor: pointer; user-select: none;
         }
+        .card-trigger:hover { background: rgba(255,255,255,0.005); }
 
-        .fight-card.mma-card::before { background: var(--accent-cyber); }
-        .fight-card.boxing-card::before { background: var(--accent-volt); } 
-
-        .fight-card.mma-card:hover {
-            border-color: rgba(0, 240, 255, 0.35);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 240, 255, 0.22);
-        }
-        .fight-card.boxing-card:hover {
-            border-color: rgba(204, 255, 0, 0.35);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 35px rgba(204, 255, 0, 0.22);
-        }
-
-        .card-main-trigger {
-            display: flex;
+        /* Org + emblem row */
+        .card-org-row {
+            display: flex; align-items: center;
             justify-content: space-between;
-            align-items: center;
-            padding: 1.75rem 2rem;
-            width: 100%;
-            cursor: pointer;
-            background: transparent;
-            user-select: none;
+            margin-bottom: 1.25rem;
         }
-        
-        .card-main-trigger:hover {
-            background: rgba(255, 255, 255, 0.01);
+        .org-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase;
         }
+        .mma-card    .org-tag { color: var(--accent-cyber); }
+        .boxing-card .org-tag { color: var(--accent-volt); }
 
-        .card-left-group {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            width: 100%; 
+        /* Emblem icons — kept from original */
+        .card-emblem { display: flex; align-items: center; gap: 0.5rem; opacity: 0.25; }
+        .emblem-octagon {
+            width: 26px; height: 26px;
+            background: var(--accent-cyber);
+            clip-path: polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
         }
+        .boxing-card .emblem-octagon { display: none; }
+        .emblem-glove {
+            display: none;
+            width: 23px; height: 23px;
+            background: var(--accent-volt);
+            border-radius: 2px;
+        }
+        .boxing-card .emblem-glove { display: block; }
 
-        .dropdown-carat {
-            width: 10px;
-            height: 10px;
+        /* Dropdown carat */
+        .card-carat {
+            width: 9px; height: 9px;
             border-right: 2px solid var(--text-muted);
             border-bottom: 2px solid var(--text-muted);
             transform: rotate(45deg);
-            transition: transform var(--transition-tech), border-color var(--transition-tech);
-            margin-right: 0.5rem;
+            transition: transform var(--transition), border-color var(--transition);
             flex-shrink: 0;
         }
+        .fight-card.expanded .card-carat { transform: rotate(-135deg) translateY(-2px); border-color: var(--accent-volt); }
 
-        .fight-card:hover .dropdown-carat {
-            border-color: var(--text-primary);
+        /* ── FIGHTERS GRID ── */
+        .fighters-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
-
-        .fight-card.expanded .dropdown-carat {
-            transform: rotate(-135deg) translateY(-2px);
-            border-color: var(--accent-volt);
-        }
-
-        .card-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-            width: 100%;
-        }
-
-        .org-tag {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-        }
-
-        .tag-mma { color: var(--accent-cyber); }
-        .tag-boxing { color: var(--accent-volt); } 
-
-        .fight-title-container {
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem;
-            margin: 0.2rem 0;
-        }
-
-        .fight-title-row {
+        .fighter-block { display: flex; flex-direction: column; gap: 0.3rem; }
+        .fighter-block.right { align-items: flex-end; text-align: right; }
+        .fighter-name {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.85rem; 
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            line-height: 1.2;
-            color: var(--text-primary);
+            font-size: 2.3rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            line-height: 1.05; color: var(--text-primary);
         }
-
-        .fight-title-row .vs-divider {
+        .fighter-record {
             font-family: 'Share Tech Mono', monospace;
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-right: 0.5rem;
+            font-size: 0.68rem; color: var(--text-muted); letter-spacing: 1px;
         }
-
-        .fight-meta {
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            color: var(--text-primary);
-        }
-
-        .fight-loc-row {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-        }
-
-        .fight-date-tag {
+        .vs-block { text-align: center; flex-shrink: 0; }
+        .vs-pill {
             font-family: 'Share Tech Mono', monospace;
-            color: var(--accent-cyber);
-            background: rgba(0, 240, 255, 0.05);
-            padding: 0.1rem 0.5rem;
-            border-radius: 2px;
-            border: 1px solid rgba(0, 240, 255, 0.1);
-        }
-        
-        .fight-card.boxing-card .fight-date-tag {
-            color: var(--accent-volt); 
-            background: rgba(204, 255, 0, 0.05);
-            border-color: rgba(204, 255, 0, 0.1);
-        }
-
-        .card-timers {
-            background: #090c10;
-            border-radius: 2px;
-            padding: 1.25rem;
-            min-width: 360px; 
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            pointer-events: none; 
-        }
-
-        .timer-header-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 2px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            padding-bottom: 0.4rem;
-        }
-
-        .timer-row {
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem;
-        }
-
-        .clock-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .pulse-dot {
-            font-weight: 900;
-            animation: tech-blink 1.5s infinite steps(1);
-            color: var(--accent-time); 
-        }
-
-        @keyframes tech-blink { 50% { opacity: 0.3; } }
-
-        .clock-display {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-
-        .clock-display.cyber-blue-timer {
-            color: var(--accent-cyber);
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-        }
-        
-        .clock-display.volt-timer {
-            color: var(--accent-volt);
-            text-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
-        }
-
-        .time-unit {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-right: 0.4rem;
-            margin-left: 0.1rem;
-        }
-
-        .undercard-drawer {
-            display: none; 
-            background: #090c11;
-            width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-        }
-
-        .fight-card.expanded .undercard-drawer {
+            font-size: 0.72rem; letter-spacing: 3px;
+            color: var(--accent-red);
+            background: rgba(255,60,0,0.08);
+            border: 1px solid rgba(255,60,0,0.22);
+            border-radius: 3px; padding: 0.4rem 0.55rem;
             display: block;
         }
 
-        .undercard-content {
-            padding: 1.5rem 2rem 2rem 3.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        /* ── COUNTDOWN ROW ── */
+        .countdown-divider { height: 1px; background: rgba(255,255,255,0.04); margin: 0 2rem; }
+        .countdown-row {
+            display: grid; grid-template-columns: 1fr 1fr;
+            border-top: none;
         }
-
-        .undercard-section-title {
+        .countdown-cell {
+            padding: 1.2rem 2rem;
+            border-right: 1px solid rgba(255,255,255,0.04);
+        }
+        .countdown-cell:last-child { border-right: none; }
+        .clock-label {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent-cyber);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 0.6rem; letter-spacing: 2px; color: var(--text-muted);
+            text-transform: uppercase; margin-bottom: 0.4rem;
+            display: flex; align-items: center; gap: 0.45rem;
         }
-        
-        .fight-card.boxing-card .undercard-section-title {
-            color: var(--accent-volt); 
+        .pulse-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--accent-red); flex-shrink: 0;
+            animation: blink 1.4s infinite steps(1);
+        }
+        @keyframes blink { 50% { opacity: 0.15; } }
+        .clock-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.85rem; letter-spacing: 1px; color: var(--text-primary);
+            line-height: 1;
+        }
+        .clock-display.main-clock.mma-clock    { color: var(--accent-cyber); text-shadow: 0 0 12px rgba(0,240,255,0.2); }
+        .clock-display.main-clock.boxing-clock { color: var(--accent-volt); text-shadow: 0 0 12px rgba(204,255,0,0.2); }
+        .time-unit { font-size: 0.85rem; color: var(--text-muted); margin: 0 3px 0 1px; }
+
+        /* ── META BAR ── */
+        .card-meta {
+            display: flex; align-items: center;
+            gap: 1rem; flex-wrap: wrap;
+            padding: 0.85rem 2rem;
+            background: var(--bg-meta);
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+        .meta-chip {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.62rem; letter-spacing: 1px; color: var(--text-muted);
+            display: flex; align-items: center; gap: 0.35rem;
+        }
+        .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); opacity: 0.4; }
+        .full-card-btn {
+            margin-left: auto; background: none; border: none;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+            letter-spacing: 2px; color: var(--text-muted); cursor: pointer;
+            display: flex; align-items: center; gap: 0.4rem;
+            transition: color var(--transition); padding: 0;
+        }
+        .full-card-btn:hover { color: var(--text-primary); }
+        .completed-badge {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
+            letter-spacing: 1.5px; color: var(--text-muted);
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+            padding: 0.2rem 0.6rem; border-radius: 2px;
         }
 
-        .undercard-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-            list-style: none;
+        /* ── UNDERCARD DRAWER ── */
+        .undercard-drawer { display: none; border-top: 1px solid rgba(255,255,255,0.04); }
+        .fight-card.expanded .undercard-drawer { display: block; }
+        .undercard-content { padding: 1.5rem 2rem 1.75rem; }
+        .undercard-title {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+            letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
         }
-
+        .mma-card    .undercard-title { color: var(--accent-cyber); }
+        .boxing-card .undercard-title { color: var(--accent-volt); }
+        .undercard-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 0.6rem; }
         .undercard-row {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 2px;
-            padding: 0.75rem 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 3px; padding: 0.7rem 1rem;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;
+        }
+        .bout-info { display: flex; flex-direction: column; gap: 0.2rem; }
+        .bout-type-tag {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.55rem;
+            letter-spacing: 1.5px; color: var(--accent-red); text-transform: uppercase;
+        }
+        .bout-fighters { font-size: 0.82rem; font-weight: 500; }
+        .uc-vs { color: var(--text-muted); font-size: 0.7rem; margin: 0 0.3rem; font-family: 'Share Tech Mono', monospace; }
+        .fighter-rec { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
+        .weight-tag {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.62rem;
+            color: var(--text-muted); background: rgba(255,255,255,0.03);
+            padding: 0.2rem 0.5rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0;
         }
 
-        .undercard-fighters {
-            font-weight: 500;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-        }
-
-        .fighter-record-tag {
+        /* ── EMPTY STATE ── */
+        .no-events {
+            text-align: center; padding: 4rem 1rem;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-left: 0.25rem;
-        }
-        
-        .undercard-fighters .uc-vs {
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            margin: 0 0.4rem;
-            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem; letter-spacing: 2px; color: var(--text-muted);
         }
 
-        .undercard-weight {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            background: rgba(255,255,255,0.02);
-            padding: 0.2rem 0.5rem;
-            border-radius: 2px;
-        }
-
-        .icon-octagon {
-            width: 28px;
-            height: 28px;
-            background: currentColor;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        }
-
-        .icon-glove {
-            width: 22px;
-            height: 26px;
-            border: 2px solid currentColor;
-            border-radius: 4px 4px 2px 2px;
-        }
-
-        @media (max-width: 850px) {
-            .card-main-trigger { flex-direction: column; align-items: stretch; gap: 1.5rem; }
-            .card-left-group { align-items: flex-start; }
-            .card-timers { min-width: 100%; }
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .app-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+            .header-right { align-items: flex-start; }
+            .logo-word { font-size: 2.6rem; }
+            .logo-oct { width: 18px; height: 18px; }
+            .logo-sq  { width: 16px; height: 16px; }
+            .fighter-name { font-size: 1.6rem; }
+            .card-trigger { padding: 1.25rem 1.25rem 0; }
+            .countdown-row { grid-template-columns: 1fr; }
+            .countdown-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04); padding: 1rem 1.25rem; }
+            .countdown-cell:last-child { border-bottom: none; }
+            .card-meta { padding: 0.85rem 1.25rem; }
             .undercard-list { grid-template-columns: 1fr; }
-            .undercard-content { padding: 1.5rem; }
+            .undercard-content { padding: 1.25rem; }
+            .tz-switcher { margin-left: 0; }
+            .controls-row { gap: 0.75rem; }
+            .clock-display { font-size: 1.5rem; }
+            .fighters-grid { gap: 0.6rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="app-header">
-        <div class="app-title-container">
-            <h1 class="app-title">
-                <span class="title-walkout">WALKOUT</span> <span class="title-watch">WATCH</span>
+        <div>
+            <h1>
+                <div class="logo-wrap">
+                    <div class="logo-line">
+                        <span class="logo-word title-walkout">WALKOUT</span>
+                        <div class="logo-oct"></div>
+                    </div>
+                    <div class="logo-line">
+                        <span class="logo-word title-watch">WATCH</span>
+                        <div class="logo-sq"></div>
+                    </div>
+                </div>
             </h1>
-            <div class="app-tagline">Live Fight Countdowns & Walkout Times</div>
+            <p class="app-tagline">Live countdowns · Local fight times</p>
         </div>
-        
-        <div class="sport-selection-container">
-            <button id="btn-boxing" class="sport-card">
-                <div class="icon-glove"></div>
-                <span>BOXING</span>
-            </button>
-            <button id="btn-mma" class="sport-card active">
-                <div class="icon-octagon"></div>
-                <span>MMA</span>
-            </button>
-        </div>
-        
-        <div class="timezone-container">
-            <span class="timezone-label">LOCAL FIGHT TIMES</span>
-            <div class="timezone-switch">
-                <button id="zone-pdt" class="zone-btn active" data-offset="-7">PT (Pacific)</button>
-                <button id="zone-mdt" class="zone-btn" data-offset="-6">MT (Mountain)</button>
-                <button id="zone-cdt" class="zone-btn" data-offset="-5">CT (Central)</button>
-                <button id="zone-est" class="zone-btn" data-offset="-4">ET (East)</button>
-                <button id="zone-bst" class="zone-btn" data-offset="+1">BST (UK)</button>
+
+        <div class="header-right">
+            <div class="controls-row">
+                <button id="btn-mma" class="sport-btn active">
+                    <div class="icon-octagon"></div>MMA
+                </button>
+                <button id="btn-boxing" class="sport-btn">
+                    <div class="icon-glove"></div>BOXING
+                </button>
+            </div>
+            <div class="tz-switcher">
+                <button class="zone-btn" data-tz="America/Los_Angeles">PT</button>
+                <button class="zone-btn" data-tz="America/Denver">MT</button>
+                <button class="zone-btn" data-tz="America/Chicago">CT</button>
+                <button class="zone-btn" data-tz="America/New_York">ET</button>
+                <button class="zone-btn" data-tz="Europe/London">BST</button>
             </div>
         </div>
     </header>
 
     <main id="schedule-container" class="schedule-container">
-        <div style="text-align: center; color: var(--text-muted); font-family: 'Share Tech Mono', monospace; padding: 40px 0;">LOAD OUT LOCAL DB MATRICES...</div>
+        <div class="no-events">LOADING FIGHT DATA...</div>
     </main>
 
     <script>
         let currentSport = 'MMA';
-        let currentOffset = -7; 
-        let localDbData = [];
+        let currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        let fightData = [];
 
-        function setupDrawers() {
-            document.querySelectorAll('.card-main-trigger').forEach(trigger => {
-                trigger.onclick = (e) => {
-                    const card = trigger.closest('.fight-card');
-                    if (card) card.classList.toggle('expanded');
-                };
-            });
-        }
-
-        function applyFilters() {
-            document.querySelectorAll('.fight-card').forEach(card => {
-                const isMMA = card.classList.contains('mma-card');
-                if ((currentSport === 'MMA' && isMMA) || (currentSport === 'BOXING' && !isMMA)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
+        /* ── TIMEZONE AUTO-DETECT ── */
+        function initTimezone() {
+            const map = {
+                'America/Los_Angeles': ['America/Los_Angeles','America/Vancouver','US/Pacific'],
+                'America/Denver':      ['America/Denver','America/Phoenix','US/Mountain'],
+                'America/Chicago':     ['America/Chicago','US/Central'],
+                'America/New_York':    ['America/New_York','America/Toronto','US/Eastern'],
+                'Europe/London':       ['Europe/London','Europe/Dublin']
+            };
+            let matched = false;
+            for (const [tz, list] of Object.entries(map)) {
+                if (list.includes(currentTZ)) {
+                    const btn = document.querySelector(`.zone-btn[data-tz="${tz}"]`);
+                    if (btn) { btn.classList.add('active'); currentTZ = tz; matched = true; break; }
                 }
-            });
-        }
-
-        // REVERTED: Pulls data dynamically from the external JSON matrix file
-        async function loadLocalSchedule() {
-            try {
-                const response = await fetch('fights.json');
-                localDbData = await response.json();
-                
-                const container = document.getElementById('schedule-container');
-                renderMatrixData(container);
-            } catch (error) {
-                console.error('Local File Read Failure:', error);
-                document.getElementById('schedule-container').innerHTML = 
-                    "<div style='text-align:center;color:var(--accent-time);font-family: \"Share Tech Mono\", monospace;'>JSON SYNC ERROR. RUN A LOCAL SERVER ENVIRONMENT.</div>";
+            }
+            if (!matched) {
+                const btn = document.querySelector('.zone-btn[data-tz="America/Los_Angeles"]');
+                if (btn) { btn.classList.add('active'); currentTZ = 'America/Los_Angeles'; }
             }
         }
 
-        function renderMatrixData(container) {
-            container.innerHTML = localDbData.map((event, index) => {
-                const isMMA = event.sport === 'MMA';
-                const cardTypeClass = isMMA ? 'mma-card' : 'boxing-card';
-                const tagTypeClass = isMMA ? 'tag-mma' : 'tag-boxing';
-                
-                let titleHTML = '';
-                let mainRecordsHTML = '';
-                
-                if (event.fight_card && event.fight_card.length > 0) {
-                    const mainBout = event.fight_card[0]; 
-                    if (mainBout && mainBout.fighter_a && mainBout.fighter_b) {
-                        titleHTML = `
-                            <div class="fight-title-container">
-                                <div class="fight-title-row">${mainBout.fighter_a.name}</div>
-                                <div class="fight-title-row"><span class="vs-divider">VS</span>${mainBout.fighter_b.name}</div>
-                            </div>
-                        `;
-                        mainRecordsHTML = `<span class="fighter-record-tag">${mainBout.fighter_a.record}</span> <span class="uc-vs" style="font-size:0.7rem;">vs</span> <span class="fighter-record-tag">${mainBout.fighter_b.record}</span>`;
-                    }
-                }
+        function localTime(date, tz) {
+            return date.toLocaleTimeString('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit', hour12: true });
+        }
+        function localDate(date, tz) {
+            return date.toLocaleDateString('en-US', { timeZone: tz, weekday: 'short', month: 'short', day: 'numeric' });
+        }
+        function isPast(event) {
+            return (Date.now() - new Date(event.datetime).getTime()) > 6 * 3600000;
+        }
+        function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
+        function formatCountdown(ms) {
+            if (ms <= 0) return null;
+            const d = Math.floor(ms / 86400000);
+            const h = Math.floor((ms % 86400000) / 3600000);
+            const m = Math.floor((ms % 3600000) / 60000);
+            const s = Math.floor((ms % 60000) / 1000);
+            return `${pad(d)}<span class="time-unit">d</span>${pad(h)}<span class="time-unit">h</span>${pad(m)}<span class="time-unit">m</span>${pad(s)}<span class="time-unit">s</span>`;
+        }
 
-                const targetDate = new Date(event.datetime);
-                let formattedDateStr = "Date TBD";
-                if(!isNaN(targetDate.getTime())) {
-                    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-                    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                    formattedDateStr = `${days[targetDate.getDay()]}, ${months[targetDate.getMonth()]} ${targetDate.getDate()}`;
-                }
+        /* ── RENDER ── */
+        function render(container) {
+            container.innerHTML = fightData.map((ev, i) => {
+                const isMMA   = ev.sport === 'MMA';
+                const past    = isPast(ev);
+                const cardCls = `fight-card ${isMMA ? 'mma-card' : 'boxing-card'}${past ? ' past-card' : ''}`;
+                const mainDate   = new Date(ev.datetime);
+                const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
 
-                const boutsHTML = event.fight_card.map(bout => `
+                const mb = ev.fight_card?.[0];
+                const faN = mb?.fighter_a?.name || 'TBA';
+                const faR = mb?.fighter_a?.record || '';
+                const fbN = mb?.fighter_b?.name || 'TBA';
+                const fbR = mb?.fighter_b?.record || '';
+
+                // Split names at last space for two-line display
+                function splitName(n) {
+                    const parts = n.trim().split(' ');
+                    if (parts.length === 1) return [parts[0], ''];
+                    const last = parts.pop();
+                    return [parts.join(' '), last];
+                }
+                const [faFirst, faLast] = splitName(faN);
+                const [fbFirst, fbLast] = splitName(fbN);
+
+                const bouts = (ev.fight_card || []).map(b => `
                     <li class="undercard-row">
-                        <span class="undercard-fighters">
-                            ${bout.fighter_a.name} <span class="fighter-record-tag">(${bout.fighter_a.record})</span> 
-                            <span class="uc-vs">VS</span> 
-                            ${bout.fighter_b.name} <span class="fighter-record-tag">(${bout.fighter_b.record})</span>
-                        </span>
-                        <span class="undercard-weight">${bout.weight_class.toUpperCase()}</span>
-                    </li>
-                `).join('');
+                        <div class="bout-info">
+                            <span class="bout-type-tag">${b.bout_type || ''}</span>
+                            <span class="bout-fighters">
+                                ${b.fighter_a.name} <span class="fighter-rec">(${b.fighter_a.record})</span>
+                                <span class="uc-vs">VS</span>
+                                ${b.fighter_b.name} <span class="fighter-rec">(${b.fighter_b.record})</span>
+                            </span>
+                        </div>
+                        <span class="weight-tag">${b.weight_class.toUpperCase()}</span>
+                    </li>`).join('');
 
-                const mainTimerColorClass = isMMA ? 'cyber-blue-timer' : 'volt-timer';
+                const timers = past
+                    ? `<div style="padding:1.2rem 2rem;"><span class="completed-badge">EVENT COMPLETED</span></div>`
+                    : `<div class="countdown-row">
+                        <div class="countdown-cell">
+                            <div class="clock-label"><div class="pulse-dot"></div>PRELIM START</div>
+                            <div class="clock-display" id="prelim-${i}">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
+                        </div>
+                        <div class="countdown-cell">
+                            <div class="clock-label"><div class="pulse-dot"></div>MAIN EVENT WALKOUT</div>
+                            <div class="clock-display main-clock ${isMMA ? 'mma-clock' : 'boxing-clock'}" id="main-${i}">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
+                        </div>
+                    </div>`;
 
                 return `
-                    <div class="fight-card ${cardTypeClass}" id="card-${index}">
-                        <div class="card-main-trigger">
-                            <div class="card-left-group">
-                                <div class="dropdown-carat"></div>
-                                <div class="card-details">
-                                    <div class="org-tag ${tagTypeClass}">${event.organization}</div>
-                                    ${titleHTML}
-                                    
-                                    <div style="margin-top: 2px; margin-bottom: 5px; font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">
-                                        ${mainRecordsHTML}
-                                    </div>
-                                    
-                                    <p class="fight-meta" id="meta-${index}">Telemetry Sync Pending</p>
-                                    <div class="fight-loc-row">
-                                        <span class="fight-date-tag">🗓️ ${formattedDateStr}</span>
-                                        <span>📍 ${event.city}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-timers">
-                                <div class="timer-header-label">FIGHT TIME COUNTDOWNS</div>
-                                <div class="timer-row">
-                                    <span class="clock-label">PRELIM START <span class="pulse-dot">•</span></span>
-                                    <span class="clock-display" id="prelim-timer-${index}">00d 00h 00m 00s</span>
-                                </div>
-                                <div class="timer-row">
-                                    <span class="clock-label">MAIN EVENT WALKOUT <span class="pulse-dot">•</span></span>
-                                    <span class="clock-display ${mainTimerColorClass}" id="main-timer-${index}">00d 00h 00m 00s</span>
-                                </div>
+                <div class="${cardCls}" id="card-${i}">
+                    <div class="card-accent-bar"></div>
+                    <div class="card-trigger" id="trigger-${i}">
+                        <div class="card-org-row">
+                            <span class="org-tag">${ev.organization}</span>
+                            <div class="card-emblem">
+                                <div class="emblem-octagon"></div>
+                                <div class="emblem-glove"></div>
+                                <div class="card-carat"></div>
                             </div>
                         </div>
-                        <div class="undercard-drawer">
-                            <div class="undercard-content">
-                                <div class="undercard-section-title">Telemetry Bout Roster</div>
-                                <ul class="undercard-list">
-                                    ${boutsHTML}
-                                </ul>
+                        <div class="fighters-grid">
+                            <div class="fighter-block">
+                                <div class="fighter-name">${faFirst}${faLast ? '<br>' + faLast : ''}</div>
+                                <div class="fighter-record">${faR}</div>
+                            </div>
+                            <div class="vs-block"><span class="vs-pill">VS</span></div>
+                            <div class="fighter-block right">
+                                <div class="fighter-name">${fbFirst}${fbLast ? '<br>' + fbLast : ''}</div>
+                                <div class="fighter-record">${fbR}</div>
                             </div>
                         </div>
                     </div>
-                `;
+                    <div class="countdown-divider"></div>
+                    ${timers}
+                    <div class="card-meta">
+                        <span class="meta-chip">🗓 ${localDate(mainDate, currentTZ)}</span>
+                        <span class="meta-dot"></span>
+                        <span class="meta-chip" id="meta-time-${i}">${localTime(mainDate, currentTZ)}</span>
+                        <span class="meta-dot"></span>
+                        <span class="meta-chip">📍 ${ev.city}</span>
+                        ${past ? '<span class="completed-badge">COMPLETED</span>' : ''}
+                        <button class="full-card-btn" id="drawer-btn-${i}">FULL CARD ▾</button>
+                    </div>
+                    <div class="undercard-drawer">
+                        <div class="undercard-content">
+                            <div class="undercard-title">Full Fight Card</div>
+                            <ul class="undercard-list">${bouts}</ul>
+                        </div>
+                    </div>
+                </div>`;
             }).join('');
 
-            setupDrawers();
-            applyFilters();
+            // Wire up drawers
+            fightData.forEach((_, i) => {
+                const trigger = document.getElementById(`trigger-${i}`);
+                const btn     = document.getElementById(`drawer-btn-${i}`);
+                const card    = document.getElementById(`card-${i}`);
+                if (trigger && card) trigger.onclick = () => card.classList.toggle('expanded');
+                if (btn && card)     btn.onclick = (e) => { e.stopPropagation(); card.classList.toggle('expanded'); };
+            });
+
+            applyFilter();
             startClocks();
         }
 
+        function applyFilter() {
+            fightData.forEach((ev, i) => {
+                const card = document.getElementById(`card-${i}`);
+                if (!card) return;
+                const isMMA = ev.sport === 'MMA';
+                card.style.display = ((currentSport === 'MMA' && isMMA) || (currentSport === 'BOXING' && !isMMA)) ? 'block' : 'none';
+            });
+        }
+
+        function updateMeta() {
+            fightData.forEach((ev, i) => {
+                const el = document.getElementById(`meta-time-${i}`);
+                if (el) el.textContent = localTime(new Date(ev.datetime), currentTZ);
+            });
+        }
+
         function startClocks() {
-            setInterval(() => {
-                const now = new Date();
+            function tick() {
+                const now = Date.now();
+                fightData.forEach((ev, i) => {
+                    if (isPast(ev)) return;
+                    const mainDate   = new Date(ev.datetime);
+                    const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
 
-                localDbData.forEach((event, index) => {
-                    const mainTimer = document.getElementById(`main-timer-${index}`);
-                    const prelimTimer = document.getElementById(`prelim-timer-${index}`);
-                    const metaText = document.getElementById(`meta-${index}`);
-                    
-                    const targetDate = new Date(event.datetime);
-                    if (isNaN(targetDate.getTime())) return;
+                    const mainEl   = document.getElementById(`main-${i}`);
+                    const prelimEl = document.getElementById(`prelim-${i}`);
 
-                    if (metaText) {
-                        const adjustedDate = new Date(targetDate.getTime() + (currentOffset + 7) * 60 * 60 * 1000);
-                        let hoursNum = adjustedDate.getHours();
-                        const ampm = hoursNum >= 12 ? 'PM' : 'AM';
-                        hoursNum = hoursNum % 12;
-                        hoursNum = hoursNum ? hoursNum : 12;
-                        const minsStr = String(adjustedDate.getMinutes()).padStart(2, '0');
-                        metaText.innerHTML = `Main Card Start: approx ${hoursNum}:${minsStr} ${ampm} Local Sync`;
+                    if (mainEl) {
+                        const f = formatCountdown(mainDate - now);
+                        mainEl.innerHTML = f || '<span style="color:var(--accent-red)">LIVE NOW</span>';
                     }
-
-                    if (mainTimer) {
-                        const mainDiff = targetDate - now;
-                        if (mainDiff <= 0) {
-                            mainTimer.innerHTML = "LIVE NOW";
-                            mainTimer.style.color = "var(--accent-cyber)";
-                        } else {
-                            mainTimer.innerHTML = formatTime(mainDiff);
-                        }
-                    }
-
-                    if (prelimTimer) {
-                        const prelimDiff = (targetDate.getTime() - (3 * 60 * 60 * 1000)) - now.getTime();
-                        if (prelimDiff <= 0) {
-                            prelimTimer.innerHTML = "LIVE NOW";
-                            prelimTimer.style.color = "var(--accent-cyber)";
-                        } else {
-                            prelimTimer.innerHTML = formatTime(prelimDiff);
-                            prelimTimer.style.color = "var(--text-primary)";
-                        }
+                    if (prelimEl) {
+                        const f = formatCountdown(prelimDate - now);
+                        prelimEl.innerHTML = f || '<span style="color:var(--accent-red)">LIVE NOW</span>';
                     }
                 });
-            }, 1000);
+            }
+            tick();
+            setInterval(tick, 1000);
         }
 
-        function formatTime(ms) {
-            const days = String(Math.floor(ms / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            const hours = String(Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-            const minutes = String(Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-            const seconds = String(Math.floor((ms % (1000 * 60)) / 1000)).padStart(2, '0');
-            return `${days}<span class="time-unit">d</span> ${hours}<span class="time-unit">h</span> ${minutes}<span class="time-unit">m</span> ${seconds}<span class="time-unit">s</span>`;
+        /* ── LOAD DATA ── */
+        async function loadData() {
+            try {
+                const res = await fetch('fights.json');
+                if (!res.ok) throw new Error();
+                fightData = await res.json();
+                fightData.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+                const container = document.getElementById('schedule-container');
+                render(container);
+            } catch {
+                document.getElementById('schedule-container').innerHTML =
+                    `<div class="no-events" style="color:var(--accent-red);">SYNC ERROR — Open via Live Server, not file://</div>`;
+            }
         }
 
+        /* ── EVENT LISTENERS ── */
         document.getElementById('btn-mma').onclick = () => {
+            currentSport = 'MMA';
             document.getElementById('btn-mma').classList.add('active');
             document.getElementById('btn-boxing').classList.remove('active');
-            currentSport = 'MMA';
-            applyFilters();
+            applyFilter();
         };
-
         document.getElementById('btn-boxing').onclick = () => {
+            currentSport = 'BOXING';
             document.getElementById('btn-boxing').classList.add('active');
             document.getElementById('btn-mma').classList.remove('active');
-            currentSport = 'BOXING';
-            applyFilters();
+            applyFilter();
         };
-
         document.querySelectorAll('.zone-btn').forEach(btn => {
             btn.onclick = () => {
                 document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                currentOffset = parseInt(btn.getAttribute('data-offset'));
+                currentTZ = btn.dataset.tz;
+                updateMeta();
             };
         });
 
-        loadLocalSchedule();
+        initTimezone();
+        loadData();
     </script>
 </body>
 </html>
