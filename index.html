@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
     <meta name="description" content="Never miss a fight walkout. Real-time countdown timers for UFC, MMA, and Boxing main events with instant local timezone adjustments.">
+    <meta name="keywords" content="UFC schedule, boxing schedule, fight countdown, UFC fight night, boxing fight times, MMA schedule, fight timezone converter">
     <link rel="canonical" href="https://walkoutwatch.com/">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://walkoutwatch.com/">
+    <meta property="og:title" content="Walkout Watch | Live MMA & Boxing Countdown Timers">
+    <meta property="og:description" content="Never miss a fight. Real-time countdowns for UFC, MMA, and Boxing main events with local timezone conversion.">
+    <meta property="og:site_name" content="Walkout Watch">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Walkout Watch | Live Fight Countdowns">
+    <meta name="twitter:description" content="Never miss a fight. Real-time UFC and Boxing countdowns in your local timezone.">
+
+    <!-- Site-level Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Walkout Watch",
+        "url": "https://walkoutwatch.com/",
+        "description": "Live countdown timers for upcoming UFC, MMA, and Boxing main events with timezone conversion.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://walkoutwatch.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
@@ -268,21 +297,21 @@
         /* ── META BAR ── */
         .card-meta {
             display: flex; align-items: center;
-            gap: 1rem; flex-wrap: wrap;
-            padding: 0.85rem 2rem;
+            gap: 1.25rem; flex-wrap: wrap;
+            padding: 1rem 2rem;
             background: var(--bg-meta);
-            border-top: 1px solid rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
         .meta-chip {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.62rem; letter-spacing: 1px; color: var(--text-muted);
-            display: flex; align-items: center; gap: 0.35rem;
+            font-size: 0.82rem; letter-spacing: 1px; color: #8a94a6;
+            display: flex; align-items: center; gap: 0.4rem;
         }
-        .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); opacity: 0.4; }
+        .meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
         .full-card-btn {
             margin-left: auto; background: none; border: none;
-            font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
-            letter-spacing: 2px; color: var(--text-muted); cursor: pointer;
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            letter-spacing: 2px; color: #8a94a6; cursor: pointer;
             display: flex; align-items: center; gap: 0.4rem;
             transition: color var(--transition); padding: 0;
         }
@@ -429,7 +458,7 @@
             return date.toLocaleDateString('en-US', { timeZone: tz, weekday: 'short', month: 'short', day: 'numeric' });
         }
         function isPast(event) {
-            return (Date.now() - new Date(event.datetime).getTime()) > 6 * 3600000;
+            return (Date.now() - new Date(event.datetime).getTime()) > 24 * 3600000;
         }
         function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
         function formatCountdown(ms) {
@@ -444,9 +473,10 @@
         /* ── RENDER ── */
         function render(container) {
             container.innerHTML = fightData.map((ev, i) => {
+                if (isPast(ev)) return '';
                 const isMMA   = ev.sport === 'MMA';
-                const past    = isPast(ev);
-                const cardCls = `fight-card ${isMMA ? 'mma-card' : 'boxing-card'}${past ? ' past-card' : ''}`;
+                const past    = false;
+                const cardCls = `fight-card ${isMMA ? 'mma-card' : 'boxing-card'}`;
                 const mainDate   = new Date(ev.datetime);
                 const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
 
@@ -590,6 +620,65 @@
             setInterval(tick, 1000);
         }
 
+        /* ── SEO: GENERATE SCHEMA MARKUP FOR EACH FIGHT ── */
+        function injectSchemaMarkup() {
+            // Remove any existing schema scripts
+            document.querySelectorAll('script[data-schema="event"]').forEach(s => s.remove());
+
+            // Only include upcoming events
+            const upcoming = fightData.filter(ev => !isPast(ev));
+
+            upcoming.forEach(ev => {
+                const mainBout = ev.fight_card?.[0];
+                const performers = [];
+
+                if (mainBout?.fighter_a?.name && mainBout.fighter_a.name !== 'TBA') {
+                    performers.push({
+                        "@type": "Person",
+                        "name": mainBout.fighter_a.name
+                    });
+                }
+                if (mainBout?.fighter_b?.name && mainBout.fighter_b.name !== 'TBA') {
+                    performers.push({
+                        "@type": "Person",
+                        "name": mainBout.fighter_b.name
+                    });
+                }
+
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@type": "SportsEvent",
+                    "name": `${ev.organization}: ${ev.main_event}`,
+                    "description": `${ev.main_event} - ${ev.sport === 'MMA' ? 'UFC/MMA' : 'Boxing'} event on ${new Date(ev.datetime).toDateString()} in ${ev.city}`,
+                    "startDate": ev.datetime,
+                    "endDate": new Date(new Date(ev.datetime).getTime() + 4 * 3600000).toISOString(),
+                    "eventStatus": "https://schema.org/EventScheduled",
+                    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+                    "sport": ev.sport === 'MMA' ? 'Mixed Martial Arts' : 'Boxing',
+                    "location": {
+                        "@type": "Place",
+                        "name": ev.city,
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": ev.city
+                        }
+                    },
+                    "performer": performers,
+                    "organizer": {
+                        "@type": "Organization",
+                        "name": ev.organization
+                    },
+                    "url": `https://walkoutwatch.com/#${ev.main_event.replace(/\s+/g, '-').toLowerCase()}`
+                };
+
+                const script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.setAttribute('data-schema', 'event');
+                script.textContent = JSON.stringify(schema);
+                document.head.appendChild(script);
+            });
+        }
+
         /* ── LOAD DATA ── */
         async function loadData() {
             try {
@@ -599,6 +688,7 @@
                 fightData.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
                 const container = document.getElementById('schedule-container');
                 render(container);
+                injectSchemaMarkup();
             } catch {
                 document.getElementById('schedule-container').innerHTML =
                     `<div class="no-events" style="color:var(--accent-red);">SYNC ERROR — Open via Live Server, not file://</div>`;
