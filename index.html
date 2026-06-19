@@ -679,20 +679,173 @@
             });
         }
 
-        /* ── LOAD DATA ── */
-        async function loadData() {
+        /* ════════════════════════════════════════════════════════════
+           GOOGLE SHEETS LIVE DATA
+           1. In your Google Sheet: File → Share → Publish to web
+           2. Choose the "Fights" tab + "Comma-separated values (.csv)"
+           3. Click Publish, copy the URL, paste it between the quotes below
+           Leave it empty ("") to load only from fights.json.
+           ════════════════════════════════════════════════════════════ */
+        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?gid=0&single=true&output=csv";
+
+        /* Parse CSV text (handles quoted fields with commas) */
+        function parseCSV(text) {
+            const rows = [];
+            let row = [], field = '', inQuotes = false;
+            for (let i = 0; i < text.length; i++) {
+                const c = text[i];
+                if (inQuotes) {
+                    if (c === '"') {
+                        if (text[i + 1] === '"') { field += '"'; i++; }
+                        else inQuotes = false;
+                    } else field += c;
+                } else if (c === '"') inQuotes = true;
+                else if (c === ',') { row.push(field); field = ''; }
+                else if (c === '\n' || c === '\r') {
+                    if (c === '\r' && text[i + 1] === '\n') i++;
+                    row.push(field); field = '';
+                    rows.push(row); row = [];
+                } else field += c;
+            }
+            if (field !== '' || row.length) { row.push(field); rows.push(row); }
+            return rows;
+        }
+
+        /* Normalize "2026-06-09" or "6/9/2026" → "2026-06-09" */
+        function normDate(v) {
+            v = (v || '').trim();
+            if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+            const m = v.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (m) return `${m[3]}-${m[1].padStart(2,'0')}-${m[2].padStart(2,'0')}`;
+            return null;
+        }
+
+        /* Normalize "21:00", "21:00:00", "9:00 PM" → "21:00" */
+        function normTime(v) {
+            v = (v || '').trim();
+            let m = v.match(/^(\d{1,2}):(\d{2})(?::\d{2})?$/);
+            if (m) return `${m[1].padStart(2,'0')}:${m[2]}`;
+            m = v.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+            if (m) {
+                let h = parseInt(m[1], 10);
+                const pm = /pm/i.test(m[3]);
+                if (pm && h !== 12) h += 12;
+                if (!pm && h === 12) h = 0;
+                return `${String(h).padStart(2,'0')}:${m[2]}`;
+            }
+            return null;
+        }
+
+        /* Normalize timezone offset "+02:00" / "-07:00" */
+        function normTZ(v) {
+            v = (v || '').trim().replace(/^'/, '');
+            return /^[+-]\d{2}:\d{2}$/.test(v) ? v : null;
+        }
+
+        /* Convert sheet rows → event objects (groups rows by Event ID) */
+        function sheetToEvents(csvText) {
+            const rows = parseCSV(csvText);
+            if (rows.length < 2) return [];
+            const header = rows[0].map(h => (h || '').toLowerCase());
+            const sportCol = header.findIndex(h => h.includes('sport'));
+
+            const groups = {};
+            const order = [];
+            for (let r = 1; r < rows.length; r++) {
+                const c = rows[r];
+                if (!c || c.length < 15) continue;
+                const id = (c[0] || '').trim();
+                const date = normDate(c[3]);
+                const fa = (c[10] || '').trim();
+                const fb = (c[12] || '').trim();
+                if (!id || !date || (!fa && !fb)) continue; // skip blank/junk rows
+
+                if (!groups[id]) { groups[id] = []; order.push(id); }
+                groups[id].push({
+                    eventName: (c[1] || '').trim(),
+                    org: (c[2] || '').trim(),
+                    date,
+                    mainTime: normTime(c[4]) || '21:00',
+                    prelimTime: normTime(c[5]) || '18:00',
+                    tz: normTZ(c[6]) || '+00:00',
+                    city: (c[7] || '').trim(),
+                    country: (c[8] || '').trim(),
+                    boutType: (c[9] || '').trim() || 'Undercard',
+                    fa: fa || 'TBA',
+                    faRec: (c[11] || '').trim() || 'TBA',
+                    fb: fb || 'TBA',
+                    fbRec: (c[13] || '').trim() || 'TBA',
+                    weight: (c[14] || '').trim() || 'TBA',
+                    sport: sportCol >= 0 ? (c[sportCol] || '').trim().toUpperCase() : ''
+                });
+            }
+
+            return order.map(id => {
+                const fights = groups[id];
+                // Main Event first, Co-Main second, rest in sheet order
+                const rank = b => b.boutType === 'Main Event' ? 0 : b.boutType === 'Co-Main' ? 1 : 2;
+                fights.sort((a, b) => rank(a) - rank(b));
+                const first = fights[0];
+                const sport = first.sport === 'MMA' || /UFC/i.test(first.org) ? 'MMA' : 'BOXING';
+                return {
+                    organization: first.org || 'Independent',
+                    sport,
+                    main_event: `${first.fa} vs ${first.fb}`,
+                    datetime: `${first.date}T${first.mainTime}:00${first.tz}`,
+                    prelim_datetime: `${first.date}T${first.prelimTime}:00${first.tz}`,
+                    city: first.country ? `${first.city}, ${first.country}` : first.city,
+                    fight_card: fights.map(f => ({
+                        fighter_a: { name: f.fa, record: f.faRec },
+                        fighter_b: { name: f.fb, record: f.fbRec },
+                        weight_class: f.weight,
+                        bout_type: f.boutType
+                    }))
+                };
+            });
+        }
+
+        async function fetchSheetEvents() {
+            if (!SHEET_CSV_URL) return [];
+            try {
+                const sep = SHEET_CSV_URL.includes('?') ? '&' : '?';
+                const res = await fetch(SHEET_CSV_URL + sep + 'cb=' + Date.now());
+                if (!res.ok) return [];
+                return sheetToEvents(await res.text());
+            } catch { return []; }
+        }
+
+        async function fetchJsonEvents() {
             try {
                 const res = await fetch('fights.json');
-                if (!res.ok) throw new Error();
-                fightData = await res.json();
-                fightData.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
-                const container = document.getElementById('schedule-container');
-                render(container);
-                injectSchemaMarkup();
-            } catch {
-                document.getElementById('schedule-container').innerHTML =
-                    `<div class="no-events" style="color:var(--accent-red);">SYNC ERROR — Open via Live Server, not file://</div>`;
+                if (!res.ok) return [];
+                return await res.json();
+            } catch { return []; }
+        }
+
+        /* ── LOAD DATA ──
+           Boxing: Google Sheet is the source of truth (when connected).
+           MMA: from the sheet if you add UFC rows there; otherwise fights.json.
+           If the sheet is unreachable, everything falls back to fights.json. */
+        async function loadData() {
+            const [sheetEvents, jsonEvents] = await Promise.all([fetchSheetEvents(), fetchJsonEvents()]);
+
+            if (sheetEvents.length) {
+                const sheetMMA = sheetEvents.filter(e => e.sport === 'MMA');
+                const mma = sheetMMA.length ? sheetMMA : jsonEvents.filter(e => e.sport === 'MMA');
+                fightData = [...sheetEvents.filter(e => e.sport === 'BOXING'), ...mma];
+            } else {
+                fightData = jsonEvents;
             }
+
+            if (!fightData.length) {
+                document.getElementById('schedule-container').innerHTML =
+                    `<div class="no-events" style="color:var(--accent-red);">SYNC ERROR — could not load fight data</div>`;
+                return;
+            }
+
+            fightData.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+            render(document.getElementById('schedule-container'));
+            injectSchemaMarkup();
         }
 
         /* ── EVENT LISTENERS ── */
