@@ -1,135 +1,5 @@
 [
   {
-    "organization": "UFC Fight Night",
-    "sport": "MMA",
-    "main_event": "Belal Muhammad vs Gabriel Bonfim",
-    "datetime": "2026-06-07T00:00:00-04:00",
-    "prelim_datetime": "2026-06-06T21:00:00-04:00",
-    "city": "Las Vegas, NV",
-    "fight_card": [
-      {
-        "fighter_a": {
-          "name": "Belal Muhammad",
-          "record": "24-3-0"
-        },
-        "fighter_b": {
-          "name": "Gabriel Bonfim",
-          "record": "15-1-0"
-        },
-        "weight_class": "Welterweight",
-        "bout_type": "Main Event"
-      },
-      {
-        "fighter_a": {
-          "name": "Brendan Allen",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Edmen Shahbazyan",
-          "record": "TBA"
-        },
-        "weight_class": "Middleweight",
-        "bout_type": "Co-Main"
-      },
-      {
-        "fighter_a": {
-          "name": "Far\u00e8s Ziam",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Tom Nolan",
-          "record": "TBA"
-        },
-        "weight_class": "Lightweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Bryce Mitchell",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Santiago Luna",
-          "record": "TBA"
-        },
-        "weight_class": "Bantamweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Iwo Baraniewski",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Junior Tafa",
-          "record": "TBA"
-        },
-        "weight_class": "Light Heavyweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Matt Schnell",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Alessandro Costa",
-          "record": "TBA"
-        },
-        "weight_class": "Catchweight",
-        "bout_type": "Prelims"
-      },
-      {
-        "fighter_a": {
-          "name": "Marcus McGhee",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "John Yannis",
-          "record": "TBA"
-        },
-        "weight_class": "Bantamweight",
-        "bout_type": "Prelims"
-      },
-      {
-        "fighter_a": {
-          "name": "Bruno Silva",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Edgar Chairez",
-          "record": "TBA"
-        },
-        "weight_class": "Flyweight",
-        "bout_type": "Prelims"
-      },
-      {
-        "fighter_a": {
-          "name": "Priscila Cachoeira",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Chelsea Chandler",
-          "record": "TBA"
-        },
-        "weight_class": "Women's Bantamweight",
-        "bout_type": "Prelims"
-      },
-      {
-        "fighter_a": {
-          "name": "Jordan Leavitt",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Joanderson Brito",
-          "record": "TBA"
-        },
-        "weight_class": "Featherweight",
-        "bout_type": "Prelims"
-      }
-    ]
-  },
-  {
     "organization": "Independent",
     "sport": "BOXING",
     "main_event": "Leonardo Mosquea vs Francisco Rivas Ruiz",
@@ -376,100 +246,6 @@
     ]
   },
   {
-    "organization": "UFC Freedom 250",
-    "sport": "MMA",
-    "main_event": "Ilia Topuria vs Justin Gaethje",
-    "datetime": "2026-06-14T20:00:00-04:00",
-    "prelim_datetime": "2026-06-14T17:00:00-04:00",
-    "city": "Washington, D.C.",
-    "fight_card": [
-      {
-        "fighter_a": {
-          "name": "Ilia Topuria",
-          "record": "15-0-0"
-        },
-        "fighter_b": {
-          "name": "Justin Gaethje",
-          "record": "25-5-0"
-        },
-        "weight_class": "Lightweight",
-        "bout_type": "Main Event"
-      },
-      {
-        "fighter_a": {
-          "name": "Alex Pereira",
-          "record": "12-2-0"
-        },
-        "fighter_b": {
-          "name": "Ciryl Gane",
-          "record": "TBA"
-        },
-        "weight_class": "Heavyweight",
-        "bout_type": "Co-Main"
-      },
-      {
-        "fighter_a": {
-          "name": "Sean O'Malley",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Aiemann Zahabi",
-          "record": "TBA"
-        },
-        "weight_class": "Bantamweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Josh Hokit",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Derrick Lewis",
-          "record": "TBA"
-        },
-        "weight_class": "Heavyweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Mauricio Ruffy",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Michael Chandler",
-          "record": "TBA"
-        },
-        "weight_class": "Lightweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Bo Nickal",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Kyle Daukaus",
-          "record": "TBA"
-        },
-        "weight_class": "Middleweight",
-        "bout_type": "Main Card"
-      },
-      {
-        "fighter_a": {
-          "name": "Diego Lopes",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Steve Garcia",
-          "record": "TBA"
-        },
-        "weight_class": "Featherweight",
-        "bout_type": "Main Card"
-      }
-    ]
-  },
-  {
     "organization": "DAZN",
     "sport": "BOXING",
     "main_event": "Ashton Sylve vs Joseph Diaz",
@@ -555,21 +331,153 @@
     "organization": "UFC Fight Night",
     "sport": "MMA",
     "main_event": "Manel Kape vs Kyoji Horiguchi",
-    "datetime": "2026-06-20T17:00:00-07:00",
-    "prelim_datetime": "2026-06-20T14:00:00-07:00",
+    "datetime": "2026-06-20T20:00:00-04:00",
+    "prelim_datetime": "2026-06-20T17:00:00-04:00",
     "city": "Las Vegas, NV",
     "fight_card": [
       {
         "fighter_a": {
           "name": "Manel Kape",
-          "record": "19-7-0"
+          "record": "TBA"
         },
         "fighter_b": {
           "name": "Kyoji Horiguchi",
-          "record": "33-5-0"
+          "record": "TBA"
         },
         "weight_class": "Flyweight",
         "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Ion Cutelaba",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Navajo Stirling",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Hyder Amil",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Christian Rodriguez",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Melsik Baghdasaryan",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Murtazali Magomedov",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Vinicius Oliveira",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Andre Fili",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Andre Lima",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Kevin Borjas",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Bia Mesquita",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Melissa Mullins",
+          "record": "TBA"
+        },
+        "weight_class": "Women's Bantamweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Allan Nascimento",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Mitch Raposo",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Gaston Bolanos",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Michael Aswell Jr.",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Leon Shahbazyan",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Levan Chokheli",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Karol Rosa",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Luana Santos",
+          "record": "TBA"
+        },
+        "weight_class": "Women's Bantamweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Shane Collins",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Otari Tanzilovi",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Prelims"
       }
     ]
   },
@@ -744,6 +652,138 @@
         },
         "weight_class": "Lightweight",
         "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Shara Magomedov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Michel Pereira",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Nazim Sadykhov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Matheus Camilo",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Asu Almabayev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Charles Johnson",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Ikram Aliskerov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Brunno Ferreira",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Abus Magomedov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Michal Oleksiejczuk",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Farman Hasanov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Eric Nolan",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Abdul Rakhman Yakhyaev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Julius Walker",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Nursulton Ruziboev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Andrey Pulyaev",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Kaan Ofli",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Javier Reyes",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Daniil Donchenko",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Andreas Gustafsson",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Bekzat Almakhan",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jean Matsumoto",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Prelims"
       }
     ]
   },
@@ -932,28 +972,6 @@
     ]
   },
   {
-    "organization": "UFC 329",
-    "sport": "MMA",
-    "main_event": "Conor McGregor vs Max Holloway 2",
-    "datetime": "2026-07-11T17:00:00-07:00",
-    "prelim_datetime": "2026-07-11T14:00:00-07:00",
-    "city": "Las Vegas, NV",
-    "fight_card": [
-      {
-        "fighter_a": {
-          "name": "Conor McGregor",
-          "record": "TBA"
-        },
-        "fighter_b": {
-          "name": "Max Holloway",
-          "record": "TBA"
-        },
-        "weight_class": "TBA",
-        "bout_type": "Main Event"
-      }
-    ]
-  },
-  {
     "organization": "Independent",
     "sport": "BOXING",
     "main_event": "Murat Gassiev vs Tony Yoka",
@@ -972,6 +990,160 @@
         },
         "weight_class": "Heavyweight",
         "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "UFC 329",
+    "sport": "MMA",
+    "main_event": "Conor McGregor vs Max Holloway 2",
+    "datetime": "2026-07-11T21:00:00-04:00",
+    "prelim_datetime": "2026-07-11T19:00:00-04:00",
+    "city": "Las Vegas, NV",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Conor McGregor",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Max Holloway",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Paddy Pimblett",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Benoit Saint Denis",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Cory Sandhagen",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Mario Bautista",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Brandon Royval",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Lone'er Kavanagh",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Gable Steveson",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Elisha Ellison",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Robert Whittaker",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Nikita Krylov",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Cody Garbrandt",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Adrian Yanez",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Tracy Cortez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Wang Cong",
+          "record": "TBA"
+        },
+        "weight_class": "Women's Flyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Damian Pinas",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Cesar Almeida",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Luke Riley",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Kai Kamaka III",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Early Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Ryan Gandra",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Zachary Reese",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Early Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Ode' Osbourne",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Cody Durden",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Early Prelims"
       }
     ]
   },
@@ -1098,6 +1270,114 @@
         },
         "weight_class": "Light Heavyweight",
         "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Umar Nurmagomedov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "David Martinez",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Rizvan Kuniev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Tyrell Fortune",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Valter Walker",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Thomas Petersen",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Gokhan Saricam",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Louie Sutherland",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Magomed Tuchalov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Brendson Ribeiro",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Steve Erceg",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Ramazan Temirov",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Islam Dulatov",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Wellington Turman",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Ismael Bonfim",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Axel Sola",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Uran Satybaldiev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Dustin Jacoby",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Prelims"
       }
     ]
   },
@@ -1148,22 +1428,82 @@
   {
     "organization": "UFC Fight Night",
     "sport": "MMA",
-    "main_event": "Bogdan Medi\u0107 vs Rodriguez",
+    "main_event": "Uros Medic vs Daniel Rodriguez",
     "datetime": "2026-08-01T20:00:00+02:00",
     "prelim_datetime": "2026-08-01T17:00:00+02:00",
     "city": "Belgrade, Serbia",
     "fight_card": [
       {
         "fighter_a": {
-          "name": "Bogdan Medi\u0107",
+          "name": "Uros Medic",
           "record": "TBA"
         },
         "fighter_b": {
-          "name": "Rodriguez",
+          "name": "Daniel Rodriguez",
           "record": "TBA"
         },
-        "weight_class": "TBA",
+        "weight_class": "Welterweight",
         "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Ante Delija",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Johnny Walker",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Aleksandar Rakic",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Marcin Tybura",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Dusko Todorovic",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Robert Valentin",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Vlasto Cepo",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Gilbert Urbina",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Jovan Leka",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Max Gimenis",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Prelims"
       }
     ]
   },
@@ -1214,10 +1554,44 @@
   {
     "organization": "UFC 330",
     "sport": "MMA",
-    "main_event": "TBA vs TBA",
-    "datetime": "2026-08-15T20:00:00-04:00",
-    "prelim_datetime": "2026-08-15T17:00:00-04:00",
+    "main_event": "Islam Makhachev vs Ian Machado Garry",
+    "datetime": "2026-08-15T18:00:00-04:00",
+    "prelim_datetime": "2026-08-15T16:00:00-04:00",
     "city": "Philadelphia, PA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Islam Makhachev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Ian Machado Garry",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Mackenzie Dern",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Gillian Robertson",
+          "record": "TBA"
+        },
+        "weight_class": "Women's Strawweight",
+        "bout_type": "Co-Main"
+      }
+    ]
+  },
+  {
+    "organization": "UFC Fight Night",
+    "sport": "MMA",
+    "main_event": "TBA vs TBA",
+    "datetime": "2026-09-05T18:00:00+02:00",
+    "prelim_datetime": "2026-09-05T16:00:00+02:00",
+    "city": "Paris, France",
     "fight_card": [
       {
         "fighter_a": {
