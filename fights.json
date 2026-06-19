@@ -1,516 +1,1302 @@
 [
   {
-    "organization": "DAZN",
-    "sport": "BOXING",
-    "main_event": "Amari Jones vs Vincenzo Gualtieri",
-    "datetime": "2026-05-22T12:00:00-07:00",
-    "prelim_datetime": "2026-05-22T09:00:00-07:00",
-    "city": "San Jose, CA",
+    "organization": "UFC Fight Night",
+    "sport": "MMA",
+    "main_event": "Belal Muhammad vs Gabriel Bonfim",
+    "datetime": "2026-06-07T00:00:00-04:00",
+    "prelim_datetime": "2026-06-06T21:00:00-04:00",
+    "city": "Las Vegas, NV",
     "fight_card": [
-      { "fighter_a": { "name": "Amari Jones", "record": "TBA" }, "fighter_b": { "name": "Vincenzo Gualtieri", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Robin Sirwan Safar", "record": "TBA" }, "fighter_b": { "name": "Yamil Alberto Peralta", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "John Ramirez", "record": "TBA" }, "fighter_b": { "name": "Lucas Emanuel Fernandez", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jordan Panthen", "record": "TBA" }, "fighter_b": { "name": "Jean Rivera-Pacheco", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Darius Fulghum", "record": "TBA" }, "fighter_b": { "name": "Yoanki Urrutia", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Enkhmandakh Kharkhuu", "record": "TBA" }, "fighter_b": { "name": "Adrian Yair Ibarra Herrera", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jose Medrano Jr.", "record": "TBA" }, "fighter_b": { "name": "Anel Dudo", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Oleksandr Usyk vs Rico Verhoeven",
-    "datetime": "2026-05-23T12:00:00+02:00",
-    "prelim_datetime": "2026-05-23T09:00:00+02:00",
-    "city": "Giza, Egypt",
-    "fight_card": [
-      { "fighter_a": { "name": "Oleksandr Usyk", "record": "22-0-0" }, "fighter_b": { "name": "Rico Verhoeven", "record": "0-0 (Pro Boxing)" }, "weight_class": "Heavyweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Hamzah Sheeraz", "record": "TBA" }, "fighter_b": { "name": "Alem Begic", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jack Catterall", "record": "TBA" }, "fighter_b": { "name": "Shakhram Giyasov", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Frank Sanchez", "record": "TBA" }, "fighter_b": { "name": "Richard Torrez Jr.", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Mizuki Hiruta", "record": "TBA" }, "fighter_b": { "name": "Mai Soliman", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Daniel Lapin", "record": "TBA" }, "fighter_b": { "name": "Benjamin Mendes Tani", "record": "TBA" }, "weight_class": "Light Heavyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Basem Mamdouh", "record": "TBA" }, "fighter_b": { "name": "Jamar Talley", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Luis Reynaldo Nunez vs Kyonosuke Kameda",
-    "datetime": "2026-05-24T12:00:00+06:00",
-    "prelim_datetime": "2026-05-24T09:00:00+06:00",
-    "city": "Bishkek, Kyrgyzstan",
-    "fight_card": [
-      { "fighter_a": { "name": "Luis Reynaldo Nunez", "record": "TBA" }, "fighter_b": { "name": "Kyonosuke Kameda", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "David Jimenez", "record": "TBA" }, "fighter_b": { "name": "Ayumu Sano", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Joel Agustin Contreras", "record": "TBA" }, "fighter_b": { "name": "Hasanboy Dusmatov", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Adrian Maximiliano Robledo", "record": "TBA" }, "fighter_b": { "name": "Mirazizbek Mirzakhalilov", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Nurbek Valizhonov", "record": "TBA" }, "fighter_b": { "name": "Jamshid Karimov", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Omurbek Bekzhigit", "record": "TBA" }, "fighter_b": { "name": "Ari Agustian", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Samat Abdyrakhmanov", "record": "TBA" }, "fighter_b": { "name": "Muzaffar Rasulov", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Charlie Edwards vs Sikho Nqothole",
-    "datetime": "2026-05-29T12:00:00+01:00",
-    "prelim_datetime": "2026-05-29T09:00:00+01:00",
-    "city": "London, England",
-    "fight_card": [
-      { "fighter_a": { "name": "Charlie Edwards", "record": "TBA" }, "fighter_b": { "name": "Sikho Nqothole", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Dan Toward", "record": "TBA" }, "fighter_b": { "name": "Jak Corrie", "record": "TBA" }, "weight_class": "Super Welterweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "James Osborne", "record": "TBA" }, "fighter_b": { "name": "Ollie Cooper", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Tom Welland", "record": "TBA" }, "fighter_b": { "name": "Jack Dillingham", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Lucas Roehrig", "record": "TBA" }, "fighter_b": { "name": "Faton Tolaj", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Sultan Babakhanov", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jonathan Kumuteo", "record": "TBA" }, "fighter_b": { "name": "Jose Aguirre", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Eugene McKeever", "record": "TBA" }, "fighter_b": { "name": "Ryan Frost", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "ESPN",
-    "sport": "BOXING",
-    "main_event": "Stephanie Han vs Holly Holm",
-    "datetime": "2026-05-30T12:00:00-06:00",
-    "prelim_datetime": "2026-05-30T09:00:00-06:00",
-    "city": "El Paso, TX",
-    "fight_card": [
-      { "fighter_a": { "name": "Stephanie Han", "record": "TBA" }, "fighter_b": { "name": "Holly Holm", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Amanda Serrano", "record": "TBA" }, "fighter_b": { "name": "Cheyenne Hanson", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Desley Robinson", "record": "TBA" }, "fighter_b": { "name": "Mary Spencer", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Lourdes Juarez", "record": "TBA" }, "fighter_b": { "name": "Yokasta Valle", "record": "TBA" }, "weight_class": "Light Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Yesica Nery Plata", "record": "TBA" }, "fighter_b": { "name": "Brook Sibrian", "record": "TBA" }, "weight_class": "Light Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Miranda Reyes", "record": "TBA" }, "fighter_b": { "name": "Camilla Panatta", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Alexis Chaparro", "record": "TBA" }, "fighter_b": { "name": "Edward Ulloa Diaz", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Alexander James Gueche", "record": "TBA" }, "fighter_b": { "name": "Joshua Montoya", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jocelyn Camarillo", "record": "TBA" }, "fighter_b": { "name": "Yazmin Martinez Jimenez", "record": "TBA" }, "weight_class": "Light Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Albina Moldazhanova", "record": "TBA" }, "fighter_b": { "name": "Claudia Fernanda Herrera Lopez", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Dmitry Bivol vs Michael Eifert",
-    "datetime": "2026-05-30T12:00:00+05:00",
-    "prelim_datetime": "2026-05-30T09:00:00+05:00",
-    "city": "Ekaterinburg, Russia",
-    "fight_card": [
-      { "fighter_a": { "name": "Dmitry Bivol", "record": "23-1-0" }, "fighter_b": { "name": "Michael Eifert", "record": "13-1-0" }, "weight_class": "Light Heavyweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Mukhammad Shekhov", "record": "TBA" }, "fighter_b": { "name": "Yerny Betancourt", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Vadim Tukov", "record": "TBA" }, "fighter_b": { "name": "Sebastian Horacio Papeschi", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Top Rank / DAZN",
-    "sport": "BOXING",
-    "main_event": "O'Shaquie Foster vs Raymond Ford",
-    "datetime": "2026-05-30T12:00:00-05:00",
-    "prelim_datetime": "2026-05-30T09:00:00-05:00",
-    "city": "Houston, TX",
-    "fight_card": [
-      { "fighter_a": { "name": "O'Shaquie Foster", "record": "24-3-0" }, "fighter_b": { "name": "Raymond Ford", "record": "15-1-1" }, "weight_class": "Super Featherweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Charlie Sheehy", "record": "TBA" }, "fighter_b": { "name": "Jaret Gonzalez Quiroz", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Omari Jones", "record": "TBA" }, "fighter_b": { "name": "Alan Sanchez", "record": "TBA" }, "weight_class": "Super Welterweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Frank Espinoza", "record": "TBA" }, "fighter_b": { "name": "Bryce Blackwell", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Julian Montalvo", "record": "TBA" }, "fighter_b": { "name": "Maximus Moya", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jahyden Franklin Britton", "record": "TBA" }, "fighter_b": { "name": "Najee West", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Miguel Flores", "record": "TBA" }, "fighter_b": { "name": "Javon Woodard Jr.", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Zaquin Moses", "record": "TBA" }, "fighter_b": { "name": "Travis Crawford", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Francisco Rodriguez Jr. vs Angelino Cordova",
-    "datetime": "2026-05-30T12:00:00-07:00",
-    "prelim_datetime": "2026-05-30T09:00:00-07:00",
-    "city": "San Diego, CA",
-    "fight_card": [
-      { "fighter_a": { "name": "Francisco Rodriguez Jr.", "record": "TBA" }, "fighter_b": { "name": "Angelino Cordova", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Adrian Torres Sigala", "record": "TBA" }, "fighter_b": { "name": "Christian Villalba Arriola", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Adrian Vargas", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Brayan Leon Salgado", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Diego Luna", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Johnathan Carlos Torres", "record": "TBA" }, "fighter_b": { "name": "John Alonso Tijerina", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Adam Azim vs Steve Claggett",
-    "datetime": "2026-05-30T12:00:00+01:00",
-    "prelim_datetime": "2026-05-30T09:00:00+01:00",
-    "city": "London, England",
-    "fight_card": [
-      { "fighter_a": { "name": "Adam Azim", "record": "TBA" }, "fighter_b": { "name": "Steve Claggett", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Fran Hennessy", "record": "TBA" }, "fighter_b": { "name": "Aurora De Persio", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Joel Kodua", "record": "TBA" }, "fighter_b": { "name": "Will Harrison", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Albert Ramirez vs Lerrone Richards",
-    "datetime": "2026-06-04T12:00:00-04:00",
-    "prelim_datetime": "2026-06-04T09:00:00-04:00",
-    "city": "Montreal, Canada",
-    "fight_card": [
-      { "fighter_a": { "name": "Albert Ramirez", "record": "TBA" }, "fighter_b": { "name": "Lerrone Richards", "record": "TBA" }, "weight_class": "Light Heavyweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Imam Khataev", "record": "TBA" }, "fighter_b": { "name": "Mickael Diallo", "record": "TBA" }, "weight_class": "Light Heavyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Dzmitry Asanau", "record": "TBA" }, "fighter_b": { "name": "Roger Gutierrez", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Avery Martin Duval", "record": "TBA" }, "fighter_b": { "name": "Jose Rodolfo Macias Enriquez", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jhon Orobio", "record": "TBA" }, "fighter_b": { "name": "Jonathan Montrel", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Wyatt Sanford", "record": "TBA" }, "fighter_b": { "name": "Juan Pablo Ilharregui", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Keven Beausejour", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Nickenson Denis", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Willibaldo Garcia vs Andrew Moloney",
-    "datetime": "2026-06-06T12:00:00+09:00",
-    "prelim_datetime": "2026-06-06T09:00:00+09:00",
-    "city": "Tokoname, Japan",
-    "fight_card": [
-      { "fighter_a": { "name": "Willibaldo Garcia", "record": "TBA" }, "fighter_b": { "name": "Andrew Moloney", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Masamichi Yabuki", "record": "TBA" }, "fighter_b": { "name": "Rene Calixto", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Kenneth Llover", "record": "TBA" }, "fighter_b": { "name": "Michael Angeletti", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Luis Nery", "record": "TBA" }, "fighter_b": { "name": "John Riel Casimero", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Aoi Yokoyama", "record": "TBA" }, "fighter_b": { "name": "Vince Paras", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Seiya Meguro", "record": "TBA" }, "fighter_b": { "name": "Nurzhigit", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Shuri Oka", "record": "TBA" }, "fighter_b": { "name": "Adilet Kachkynbekov", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Josh Padley vs Aqib Fiaz",
-    "datetime": "2026-06-06T12:00:00+01:00",
-    "prelim_datetime": "2026-06-06T09:00:00+01:00",
-    "city": "Sheffield, England",
-    "fight_card": [
-      { "fighter_a": { "name": "Josh Padley", "record": "TBA" }, "fighter_b": { "name": "Aqib Fiaz", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Ibrahim Nadim", "record": "TBA" }, "fighter_b": { "name": "Ibraheem Sulaimaan", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Aaron Bowen", "record": "TBA" }, "fighter_b": { "name": "Troy Coleman", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Adam Maca", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Edward Hardy", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Leo Atang", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Connor Mitchell", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Chris Mulunda", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Paramount+",
-    "sport": "BOXING",
-    "main_event": "Chris Billam-Smith vs Ryan Rozicki",
-    "datetime": "2026-06-06T12:00:00+01:00",
-    "prelim_datetime": "2026-06-06T09:00:00+01:00",
-    "city": "Bournemouth, England",
-    "fight_card": [
-      { "fighter_a": { "name": "Chris Billam-Smith", "record": "TBA" }, "fighter_b": { "name": "Ryan Rozicki", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Jack Massey", "record": "TBA" }, "fighter_b": { "name": "Cheavon Clarke", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Stephen McKenna", "record": "TBA" }, "fighter_b": { "name": "Casey James Streeter", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Shori Umezu vs Keita Kurihara",
-    "datetime": "2026-06-06T12:00:00+09:00",
-    "prelim_datetime": "2026-06-06T09:00:00+09:00",
-    "city": "Tokyo, Japan",
-    "fight_card": [
-      { "fighter_a": { "name": "Shori Umezu", "record": "TBA" }, "fighter_b": { "name": "Keita Kurihara", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Kuntae Lee", "record": "TBA" }, "fighter_b": { "name": "Izuki Tomioka", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Seigo Yuri Akui", "record": "TBA" }, "fighter_b": { "name": "Lourinz Biasong", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Ryu Hayama", "record": "TBA" }, "fighter_b": { "name": "Toi Kuga", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Kenjiro Konishi", "record": "TBA" }, "fighter_b": { "name": "Shunta Kijimoto", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Yuki Endo", "record": "TBA" }, "fighter_b": { "name": "Masato Yokoyama", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" }
+      {
+        "fighter_a": {
+          "name": "Belal Muhammad",
+          "record": "24-3-0"
+        },
+        "fighter_b": {
+          "name": "Gabriel Bonfim",
+          "record": "15-1-0"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Brendan Allen",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Edmen Shahbazyan",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Far\u00e8s Ziam",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Tom Nolan",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Bryce Mitchell",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Santiago Luna",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Iwo Baraniewski",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Junior Tafa",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Matt Schnell",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Alessandro Costa",
+          "record": "TBA"
+        },
+        "weight_class": "Catchweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Marcus McGhee",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "John Yannis",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Bruno Silva",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Edgar Chairez",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Priscila Cachoeira",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Chelsea Chandler",
+          "record": "TBA"
+        },
+        "weight_class": "Women's Bantamweight",
+        "bout_type": "Prelims"
+      },
+      {
+        "fighter_a": {
+          "name": "Jordan Leavitt",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Joanderson Brito",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Prelims"
+      }
     ]
   },
   {
     "organization": "Independent",
     "sport": "BOXING",
     "main_event": "Leonardo Mosquea vs Francisco Rivas Ruiz",
-    "datetime": "2026-06-06T12:00:00-04:00",
-    "prelim_datetime": "2026-06-06T09:00:00-04:00",
+    "datetime": "2026-06-09T21:00:00-03:00",
+    "prelim_datetime": "2026-06-09T18:00:00-03:00",
     "city": "Cayenne, French Guiana",
     "fight_card": [
-      { "fighter_a": { "name": "Leonardo Mosquea", "record": "TBA" }, "fighter_b": { "name": "Francisco Rivas Ruiz", "record": "TBA" }, "weight_class": "Cruiserweight", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "Leonardo Mosquea",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Francisco Rivas Ruiz",
+          "record": "TBA"
+        },
+        "weight_class": "Cruiserweight",
+        "bout_type": "Main Event"
+      }
     ]
   },
   {
     "organization": "ESPN+",
     "sport": "BOXING",
     "main_event": "Oshae Jones vs Elia Carranza",
-    "datetime": "2026-06-13T12:00:00-04:00",
-    "prelim_datetime": "2026-06-13T09:00:00-04:00",
-    "city": "Orlando, FL",
+    "datetime": "2026-06-13T21:00:00-04:00",
+    "prelim_datetime": "2026-06-13T18:00:00-04:00",
+    "city": "Orlando, USA",
     "fight_card": [
-      { "fighter_a": { "name": "Oshae Jones", "record": "TBA" }, "fighter_b": { "name": "Elia Carranza", "record": "TBA" }, "weight_class": "Super Welterweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Tiara Brown", "record": "TBA" }, "fighter_b": { "name": "Hannah Rapp", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Evelyn Bermudez", "record": "TBA" }, "fighter_b": { "name": "Estefany Alegria", "record": "TBA" }, "weight_class": "Light Flyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jasmine Artiga", "record": "TBA" }, "fighter_b": { "name": "Nataly Delgado", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Gabriela Tellez", "record": "TBA" }, "fighter_b": { "name": "Calista Silgado", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Brittany Sims", "record": "TBA" }, "fighter_b": { "name": "Naomy Cardenas", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "LeAnna Cruz", "record": "TBA" }, "fighter_b": { "name": "Rubi Gutierrez", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jully De Oliveria", "record": "TBA" }, "fighter_b": { "name": "Monica Ann Medina", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jordan Orozco Hernandez", "record": "TBA" }, "fighter_b": { "name": "Fernando Diaz", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Undercard" }
+      {
+        "fighter_a": {
+          "name": "Oshae Jones",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Elia Carranza",
+          "record": "TBA"
+        },
+        "weight_class": "Super Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Tiara Brown",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Hannah Rapp",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Evelyn Bermudez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Estefany Alegria",
+          "record": "TBA"
+        },
+        "weight_class": "Light Flyweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Jasmine Artiga",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Nataly Delgado",
+          "record": "TBA"
+        },
+        "weight_class": "Super Bantamweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Gabriela Tellez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Calista Silgado",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Brittany Sims",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Naomy Cardenas",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "LeAnna Cruz",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Rubi Gutierrez",
+          "record": "TBA"
+        },
+        "weight_class": "Super Bantamweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Jully De Oliveria",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Monica Ann Medina",
+          "record": "TBA"
+        },
+        "weight_class": "Super Lightweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Jordan Orozco Hernandez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Fernando Diaz",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Undercard"
+      }
     ]
   },
   {
-    "organization": "Matchroom / DAZN",
+    "organization": "DAZN",
     "sport": "BOXING",
     "main_event": "Antonio Vargas vs Jesse Rodriguez",
-    "datetime": "2026-06-13T12:00:00-07:00",
-    "prelim_datetime": "2026-06-13T09:00:00-07:00",
-    "city": "Glendale, AZ",
+    "datetime": "2026-06-13T21:00:00-07:00",
+    "prelim_datetime": "2026-06-13T18:00:00-07:00",
+    "city": "Glendale, USA",
     "fight_card": [
-      { "fighter_a": { "name": "Antonio Vargas", "record": "TBA" }, "fighter_b": { "name": "Jesse Rodriguez", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Arturo Cardenas", "record": "TBA" }, "fighter_b": { "name": "Jordan Martinez", "record": "TBA" }, "weight_class": "Super Bantamweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Lewis Crocker vs Liam Paro",
-    "datetime": "2026-06-24T12:00:00+10:00",
-    "prelim_datetime": "2026-06-24T09:00:00+10:00",
-    "city": "Tennyson, Australia",
-    "fight_card": [
-      { "fighter_a": { "name": "Lewis Crocker", "record": "TBA" }, "fighter_b": { "name": "Liam Paro", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Xander Zayas vs Jaron Ennis",
-    "datetime": "2026-06-27T12:00:00-04:00",
-    "prelim_datetime": "2026-06-27T09:00:00-04:00",
-    "city": "Brooklyn, NY",
-    "fight_card": [
-      { "fighter_a": { "name": "Xander Zayas", "record": "TBA" }, "fighter_b": { "name": "Jaron Ennis", "record": "TBA" }, "weight_class": "Super Welterweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Emiliano Vargas", "record": "TBA" }, "fighter_b": { "name": "Bryce Mills", "record": "TBA" }, "weight_class": "Super Lightweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Jahi Tucker", "record": "TBA" }, "fighter_b": { "name": "Euri Cedeno", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Ben Whittaker", "record": "TBA" }, "fighter_b": { "name": "Richard Rivera", "record": "TBA" }, "weight_class": "Light Heavyweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Floyd Mayweather vs Mike Zambidis",
-    "datetime": "2026-06-27T12:00:00+02:00",
-    "prelim_datetime": "2026-06-27T09:00:00+02:00",
-    "city": "Athens, Greece",
-    "fight_card": [
-      { "fighter_a": { "name": "Floyd Mayweather", "record": "TBA" }, "fighter_b": { "name": "Mike Zambidis", "record": "TBA" }, "weight_class": "Exhibition", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "Paramount+",
-    "sport": "BOXING",
-    "main_event": "Edwin De Los Santos vs Jose Valenzuela",
-    "datetime": "2026-06-28T12:00:00-07:00",
-    "prelim_datetime": "2026-06-28T09:00:00-07:00",
-    "city": "Las Vegas, NV",
-    "fight_card": [
-      { "fighter_a": { "name": "Edwin De Los Santos", "record": "TBA" }, "fighter_b": { "name": "Jose Valenzuela", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Omar Trinidad", "record": "TBA" }, "fighter_b": { "name": "Jerwin Ancajas", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Cain Sandoval", "record": "TBA" }, "fighter_b": { "name": "Brandun Lee", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "DAZN / TNT",
-    "sport": "BOXING",
-    "main_event": "Abdullah Mason vs Joe Cordina",
-    "datetime": "2026-07-04T12:00:00-04:00",
-    "prelim_datetime": "2026-07-04T09:00:00-04:00",
-    "city": "Cleveland, OH",
-    "fight_card": [
-      { "fighter_a": { "name": "Abdullah Mason", "record": "TBA" }, "fighter_b": { "name": "Joe Cordina", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Bruce Carrington", "record": "TBA" }, "fighter_b": { "name": "Rene Palacios", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Delante Johnson", "record": "TBA" }, "fighter_b": { "name": "Christopher Guerrero", "record": "TBA" }, "weight_class": "Welterweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Deric Davis", "record": "TBA" }, "fighter_b": { "name": "Carlos Ramos", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Independent",
-    "sport": "BOXING",
-    "main_event": "Anthony Olascuaga vs Andy Dominguez Velasquez",
-    "datetime": "2026-07-11T12:00:00-07:00",
-    "prelim_datetime": "2026-07-11T09:00:00-07:00",
-    "city": "San Francisco, CA",
-    "fight_card": [
-      { "fighter_a": { "name": "Anthony Olascuaga", "record": "TBA" }, "fighter_b": { "name": "Andy Dominguez Velasquez", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Charly Suarez", "record": "TBA" }, "fighter_b": { "name": "Manuel Avila", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Vito Mielnicki Jr.", "record": "TBA" }, "fighter_b": { "name": "Gerardo Luis Vergara", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Gurgen Hovhannisyan", "record": "TBA" }, "fighter_b": { "name": "Uila Mau'u", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Oscar Bonifacino", "record": "TBA" }, "fighter_b": { "name": "Raul Escudero", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Undercard" },
-      { "fighter_a": { "name": "Blake Binskin", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "Super Featherweight", "bout_type": "Undercard" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Anthony Joshua vs Kristian Prenga",
-    "datetime": "2026-07-25T12:00:00+03:00",
-    "prelim_datetime": "2026-07-25T09:00:00+03:00",
-    "city": "Riyadh, Saudi Arabia",
-    "fight_card": [
-      { "fighter_a": { "name": "Anthony Joshua", "record": "TBA" }, "fighter_b": { "name": "Kristian Prenga", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "PBC / Prime Video",
-    "sport": "BOXING",
-    "main_event": "Errol Spence Jr. vs Tim Tszyu",
-    "datetime": "2026-07-25T12:00:00+10:00",
-    "prelim_datetime": "2026-07-25T09:00:00+10:00",
-    "city": "TBA, Australia",
-    "fight_card": [
-      { "fighter_a": { "name": "Errol Spence Jr.", "record": "TBA" }, "fighter_b": { "name": "Tim Tszyu", "record": "TBA" }, "weight_class": "Super Welterweight", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "main_event": "Canelo Alvarez vs Christian Mbilli",
-    "datetime": "2026-09-12T12:00:00+03:00",
-    "prelim_datetime": "2026-09-12T09:00:00+03:00",
-    "city": "Riyadh, Saudi Arabia",
-    "fight_card": [
-      { "fighter_a": { "name": "Canelo Alvarez", "record": "TBA" }, "fighter_b": { "name": "Christian Mbilli", "record": "TBA" }, "weight_class": "Super Middleweight", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "Netflix",
-    "sport": "BOXING",
-    "main_event": "Floyd Mayweather vs Manny Pacquiao",
-    "datetime": "2026-09-19T12:00:00-07:00",
-    "prelim_datetime": "2026-09-19T09:00:00-07:00",
-    "city": "Las Vegas, NV",
-    "fight_card": [
-      { "fighter_a": { "name": "Floyd Mayweather", "record": "TBA" }, "fighter_b": { "name": "Manny Pacquiao", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
-    ]
-  },
-  {
-    "organization": "UFC Fight Night 277",
-    "sport": "MMA",
-    "main_event": "Song Yadong vs Deiveson Figueiredo",
-    "datetime": "2026-05-30T19:00:00+08:00",
-    "prelim_datetime": "2026-05-30T16:00:00+08:00",
-    "city": "Macau, China",
-    "fight_card": [
-      { "fighter_a": { "name": "Song Yadong", "record": "21-8-1" }, "fighter_b": { "name": "Deiveson Figueiredo", "record": "26-4-1" }, "weight_class": "Bantamweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Zhang Mingyang", "record": "19-7-0" }, "fighter_b": { "name": "Alonzo Menifield", "record": "17-6-1" }, "weight_class": "Light Heavyweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Sergei Pavlovich", "record": "20-3-0" }, "fighter_b": { "name": "Tallison Teixeira", "record": "9-1-0" }, "weight_class": "Heavyweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Alex Perez", "record": "26-10-0" }, "fighter_b": { "name": "Su Mudaerji", "record": "19-7-0" }, "weight_class": "Flyweight", "bout_type": "Prelims" },
-      { "fighter_a": { "name": "Angela Hill", "record": "18-16-0" }, "fighter_b": { "name": "Xiong Jingnan", "record": "19-2-0" }, "weight_class": "Strawweight", "bout_type": "Prelims" }
-    ]
-  },
-  {
-    "organization": "UFC Fight Night",
-    "sport": "MMA",
-    "main_event": "Belal Muhammad vs Gabriel Bonfim",
-    "datetime": "2026-06-07T00:00:00.000Z",
-    "prelim_datetime": "2026-06-06T21:00:00.000Z",
-    "city": "Las Vegas, NV",
-    "fight_card": [
-      { "fighter_a": { "name": "Belal Muhammad", "record": "24-3-0" }, "fighter_b": { "name": "Gabriel Bonfim", "record": "15-1-0" }, "weight_class": "Welterweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Brendan Allen", "record": "TBA" }, "fighter_b": { "name": "Edmen Shahbazyan", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Co-Main" },
-      { "fighter_a": { "name": "Farès Ziam", "record": "TBA" }, "fighter_b": { "name": "Tom Nolan", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Bryce Mitchell", "record": "TBA" }, "fighter_b": { "name": "Santiago Luna", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Iwo Baraniewski", "record": "TBA" }, "fighter_b": { "name": "Junior Tafa", "record": "TBA" }, "weight_class": "Light Heavyweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Matt Schnell", "record": "TBA" }, "fighter_b": { "name": "Alessandro Costa", "record": "TBA" }, "weight_class": "Catchweight", "bout_type": "Prelims" },
-      { "fighter_a": { "name": "Marcus McGhee", "record": "TBA" }, "fighter_b": { "name": "John Yannis", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Prelims" },
-      { "fighter_a": { "name": "Bruno Silva", "record": "TBA" }, "fighter_b": { "name": "Edgar Chairez", "record": "TBA" }, "weight_class": "Flyweight", "bout_type": "Prelims" },
-      { "fighter_a": { "name": "Priscila Cachoeira", "record": "TBA" }, "fighter_b": { "name": "Chelsea Chandler", "record": "TBA" }, "weight_class": "Women's Bantamweight", "bout_type": "Prelims" },
-      { "fighter_a": { "name": "Jordan Leavitt", "record": "TBA" }, "fighter_b": { "name": "Joanderson Brito", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Prelims" }
+      {
+        "fighter_a": {
+          "name": "Antonio Vargas",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jesse Rodriguez",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Elif Nur Turhan",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Gabriela Tellez",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Arturo Cardenas",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jordan Martinez",
+          "record": "TBA"
+        },
+        "weight_class": "Super Bantamweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Adrian Rodriguez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Elias Montoya Terraza",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Ronny Alvarez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Filip Stankovic",
+          "record": "TBA"
+        },
+        "weight_class": "Super Middleweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Trini Ochoa",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Cristian Perez",
+          "record": "TBA"
+        },
+        "weight_class": "Super Lightweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Hector Beltran",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Shaquile Felicia",
+          "record": "TBA"
+        },
+        "weight_class": "Super Welterweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Xechal Xavier Esquivel",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Rayshawn Taylor",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Undercard"
+      }
     ]
   },
   {
     "organization": "UFC Freedom 250",
     "sport": "MMA",
     "main_event": "Ilia Topuria vs Justin Gaethje",
-    "datetime": "2026-06-15T00:00:00.000Z",
-    "prelim_datetime": "2026-06-14T21:00:00.000Z",
+    "datetime": "2026-06-14T20:00:00-04:00",
+    "prelim_datetime": "2026-06-14T17:00:00-04:00",
     "city": "Washington, D.C.",
     "fight_card": [
-      { "fighter_a": { "name": "Ilia Topuria", "record": "15-0-0" }, "fighter_b": { "name": "Justin Gaethje", "record": "25-5-0" }, "weight_class": "Lightweight", "bout_type": "Main Event" },
-      { "fighter_a": { "name": "Alex Pereira", "record": "12-2-0" }, "fighter_b": { "name": "Ciryl Gane", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Co-Main" },
-      { "fighter_a": { "name": "Sean O'Malley", "record": "TBA" }, "fighter_b": { "name": "Aiemann Zahabi", "record": "TBA" }, "weight_class": "Bantamweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Josh Hokit", "record": "TBA" }, "fighter_b": { "name": "Derrick Lewis", "record": "TBA" }, "weight_class": "Heavyweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Mauricio Ruffy", "record": "TBA" }, "fighter_b": { "name": "Michael Chandler", "record": "TBA" }, "weight_class": "Lightweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Bo Nickal", "record": "TBA" }, "fighter_b": { "name": "Kyle Daukaus", "record": "TBA" }, "weight_class": "Middleweight", "bout_type": "Main Card" },
-      { "fighter_a": { "name": "Diego Lopes", "record": "TBA" }, "fighter_b": { "name": "Steve Garcia", "record": "TBA" }, "weight_class": "Featherweight", "bout_type": "Main Card" }
+      {
+        "fighter_a": {
+          "name": "Ilia Topuria",
+          "record": "15-0-0"
+        },
+        "fighter_b": {
+          "name": "Justin Gaethje",
+          "record": "25-5-0"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Alex Pereira",
+          "record": "12-2-0"
+        },
+        "fighter_b": {
+          "name": "Ciryl Gane",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Sean O'Malley",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Aiemann Zahabi",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Josh Hokit",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Derrick Lewis",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Mauricio Ruffy",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Michael Chandler",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Bo Nickal",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Kyle Daukaus",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Main Card"
+      },
+      {
+        "fighter_a": {
+          "name": "Diego Lopes",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Steve Garcia",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Main Card"
+      }
     ]
   },
   {
-    "organization": "UFC Fight Night 279",
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Ashton Sylve vs Joseph Diaz",
+    "datetime": "2026-06-19T21:00:00-07:00",
+    "prelim_datetime": "2026-06-19T18:00:00-07:00",
+    "city": "Long Beach, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Ashton Sylve",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Joseph Diaz",
+          "record": "TBA"
+        },
+        "weight_class": "Super Lightweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "J'Hon Ingram",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Devin Cushing",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Amir Anderson",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jonas Sylvain",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "David Lopez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Joey Borrero",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Kayla Gomez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "weight_class": "Super Bantamweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Miguel Estrada",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Rondarius Hunter",
+          "record": "TBA"
+        },
+        "weight_class": "Light Flyweight",
+        "bout_type": "Undercard"
+      }
+    ]
+  },
+  {
+    "organization": "UFC Fight Night",
     "sport": "MMA",
     "main_event": "Manel Kape vs Kyoji Horiguchi",
-    "datetime": "2026-06-21T00:00:00-04:00",
-    "prelim_datetime": "2026-06-20T20:00:00-04:00",
+    "datetime": "2026-06-20T17:00:00-07:00",
+    "prelim_datetime": "2026-06-20T14:00:00-07:00",
     "city": "Las Vegas, NV",
     "fight_card": [
-      { "fighter_a": { "name": "Manel Kape", "record": "19-7-0" }, "fighter_b": { "name": "Kyoji Horiguchi", "record": "33-5-0" }, "weight_class": "Flyweight", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "Manel Kape",
+          "record": "19-7-0"
+        },
+        "fighter_b": {
+          "name": "Kyoji Horiguchi",
+          "record": "33-5-0"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Main Event"
+      }
     ]
   },
   {
-    "organization": "UFC Fight Night 280",
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Oscar Collazo vs Joey Canoy",
+    "datetime": "2026-06-20T21:00:00-07:00",
+    "prelim_datetime": "2026-06-20T18:00:00-07:00",
+    "city": "Oceanside, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Oscar Collazo",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Joey Canoy",
+          "record": "TBA"
+        },
+        "weight_class": "Strawweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "Independent",
+    "sport": "BOXING",
+    "main_event": "Lewis Crocker vs Liam Paro",
+    "datetime": "2026-06-24T21:00:00+10:00",
+    "prelim_datetime": "2026-06-24T18:00:00+10:00",
+    "city": "Tennyson, Australia",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Lewis Crocker",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Liam Paro",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Liam Wilson",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Alexandru Marin",
+          "record": "TBA"
+        },
+        "weight_class": "Super Featherweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Demsey McKean",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Liam Talivaa",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Luke Modini",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Peng Qu",
+          "record": "TBA"
+        },
+        "weight_class": "Cruiserweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Calvin Jensen",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Adem Spaull",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Riley Candy",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Nathan Watson",
+          "record": "TBA"
+        },
+        "weight_class": "Super Middleweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Vegas Larfield",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Shamal Ram Anuj",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Nelson Asofa-Solomona",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "George Burgess",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Jack Javed",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Lance McDonald",
+          "record": "TBA"
+        },
+        "weight_class": "Super Welterweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Stevan Ivic",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Caleb Tialu",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Undercard"
+      }
+    ]
+  },
+  {
+    "organization": "UFC Fight Night",
     "sport": "MMA",
-    "main_event": "TBA vs TBA",
-    "datetime": "2026-06-27T22:00:00+04:00",
-    "prelim_datetime": "2026-06-27T18:00:00+04:00",
+    "main_event": "Rafael Fiziev vs Manuel Torres",
+    "datetime": "2026-06-27T20:00:00+04:00",
+    "prelim_datetime": "2026-06-27T17:00:00+04:00",
     "city": "Baku, Azerbaijan",
     "fight_card": [
-      { "fighter_a": { "name": "TBA", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "Rafael Fiziev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Manuel Torres",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "Independent",
+    "sport": "BOXING",
+    "main_event": "Floyd Mayweather vs Mike Zambidis",
+    "datetime": "2026-06-27T21:00:00+03:00",
+    "prelim_datetime": "2026-06-27T18:00:00+03:00",
+    "city": "Athens, Greece",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Floyd Mayweather",
+          "record": "50-0-0"
+        },
+        "fighter_b": {
+          "name": "Mike Zambidis",
+          "record": "TBA"
+        },
+        "weight_class": "Exhibition",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Xander Zayas vs Jaron Ennis",
+    "datetime": "2026-06-27T21:00:00-04:00",
+    "prelim_datetime": "2026-06-27T18:00:00-04:00",
+    "city": "Brooklyn, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Xander Zayas",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jaron Ennis",
+          "record": "TBA"
+        },
+        "weight_class": "Super Welterweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Emiliano Vargas",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Bryce Mills",
+          "record": "TBA"
+        },
+        "weight_class": "Super Lightweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Jahi Tucker",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Euri Cedeno",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Ben Whittaker",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Richard Rivera",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Undercard"
+      }
+    ]
+  },
+  {
+    "organization": "Paramount+",
+    "sport": "BOXING",
+    "main_event": "Edwin De Los Santos vs Jose Valenzuela",
+    "datetime": "2026-06-28T21:00:00-07:00",
+    "prelim_datetime": "2026-06-28T18:00:00-07:00",
+    "city": "Las Vegas, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Edwin De Los Santos",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jose Valenzuela",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Omar Trinidad",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Jerwin Ancajas",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Cain Sandoval",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Brandun Lee",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Undercard"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Abdullah Mason vs Joe Cordina",
+    "datetime": "2026-07-04T21:00:00-04:00",
+    "prelim_datetime": "2026-07-04T18:00:00-04:00",
+    "city": "Cleveland, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Abdullah Mason",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Joe Cordina",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Bruce Carrington",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Rene Palacios",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Delante Johnson",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Christopher Guerrero",
+          "record": "TBA"
+        },
+        "weight_class": "Welterweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Deric Davis",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Carlos Ramos",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Undercard"
+      }
     ]
   },
   {
     "organization": "UFC 329",
     "sport": "MMA",
-    "main_event": "TBA vs TBA",
-    "datetime": "2026-07-12T03:00:00-04:00",
-    "prelim_datetime": "2026-07-11T23:00:00-04:00",
+    "main_event": "Conor McGregor vs Max Holloway 2",
+    "datetime": "2026-07-11T17:00:00-07:00",
+    "prelim_datetime": "2026-07-11T14:00:00-07:00",
     "city": "Las Vegas, NV",
     "fight_card": [
-      { "fighter_a": { "name": "TBA", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "Conor McGregor",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Max Holloway",
+          "record": "TBA"
+        },
+        "weight_class": "TBA",
+        "bout_type": "Main Event"
+      }
     ]
   },
   {
-    "organization": "UFC Fight Night 281",
+    "organization": "Independent",
+    "sport": "BOXING",
+    "main_event": "Murat Gassiev vs Tony Yoka",
+    "datetime": "2026-07-11T21:00:00+03:00",
+    "prelim_datetime": "2026-07-11T18:00:00+03:00",
+    "city": "Moscow, Russia",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Murat Gassiev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Tony Yoka",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "Independent",
+    "sport": "BOXING",
+    "main_event": "Anthony Olascuaga vs Andy Dominguez Velasquez",
+    "datetime": "2026-07-11T21:00:00-07:00",
+    "prelim_datetime": "2026-07-11T18:00:00-07:00",
+    "city": "San Francisco, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Anthony Olascuaga",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Andy Dominguez Velasquez",
+          "record": "TBA"
+        },
+        "weight_class": "Flyweight",
+        "bout_type": "Main Event"
+      },
+      {
+        "fighter_a": {
+          "name": "Charly Suarez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Manuel Avila",
+          "record": "TBA"
+        },
+        "weight_class": "Super Featherweight",
+        "bout_type": "Co-Main"
+      },
+      {
+        "fighter_a": {
+          "name": "Vito Mielnicki Jr.",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Gerardo Luis Vergara",
+          "record": "TBA"
+        },
+        "weight_class": "Middleweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Gurgen Hovhannisyan",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Uila Mau'u",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Oscar Bonifacino",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Raul Escudero",
+          "record": "TBA"
+        },
+        "weight_class": "Featherweight",
+        "bout_type": "Undercard"
+      },
+      {
+        "fighter_a": {
+          "name": "Blake Binskin",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "weight_class": "Super Featherweight",
+        "bout_type": "Undercard"
+      }
+    ]
+  },
+  {
+    "organization": "UFC Fight Night",
     "sport": "MMA",
     "main_event": "TBA vs TBA",
-    "datetime": "2026-07-19T03:00:00-04:00",
-    "prelim_datetime": "2026-07-18T23:00:00-04:00",
+    "datetime": "2026-07-18T20:00:00-05:00",
+    "prelim_datetime": "2026-07-18T17:00:00-05:00",
     "city": "Oklahoma City, OK",
     "fight_card": [
-      { "fighter_a": { "name": "TBA", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "weight_class": "TBA",
+        "bout_type": "Main Event"
+      }
     ]
   },
   {
-    "organization": "UFC Fight Night 282",
+    "organization": "UFC Fight Night",
     "sport": "MMA",
-    "main_event": "TBA vs TBA",
-    "datetime": "2026-08-02T03:00:00-04:00",
-    "prelim_datetime": "2026-08-01T23:00:00-04:00",
+    "main_event": "Magomed Ankalaev vs Khalil Rountree Jr.",
+    "datetime": "2026-07-25T20:00:00+04:00",
+    "prelim_datetime": "2026-07-25T17:00:00+04:00",
+    "city": "Abu Dhabi, UAE",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Magomed Ankalaev",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Khalil Rountree Jr.",
+          "record": "TBA"
+        },
+        "weight_class": "Light Heavyweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Anthony Joshua vs Kristian Prenga",
+    "datetime": "2026-07-25T21:00:00+03:00",
+    "prelim_datetime": "2026-07-25T18:00:00+03:00",
+    "city": "Riyadh, Saudi Arabia",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Anthony Joshua",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Kristian Prenga",
+          "record": "TBA"
+        },
+        "weight_class": "Heavyweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "Prime Video",
+    "sport": "BOXING",
+    "main_event": "Errol Spence Jr. vs Tim Tszyu",
+    "datetime": "2026-07-25T21:00:00+10:00",
+    "prelim_datetime": "2026-07-25T18:00:00+10:00",
+    "city": "TBA, Australia",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Errol Spence Jr.",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Tim Tszyu",
+          "record": "TBA"
+        },
+        "weight_class": "Super Welterweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "UFC Fight Night",
+    "sport": "MMA",
+    "main_event": "Bogdan Medi\u0107 vs Rodriguez",
+    "datetime": "2026-08-01T20:00:00+02:00",
+    "prelim_datetime": "2026-08-01T17:00:00+02:00",
     "city": "Belgrade, Serbia",
     "fight_card": [
-      { "fighter_a": { "name": "TBA", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "Bogdan Medi\u0107",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Rodriguez",
+          "record": "TBA"
+        },
+        "weight_class": "TBA",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Lamont Roach vs William Zepeda",
+    "datetime": "2026-08-01T21:00:00-07:00",
+    "prelim_datetime": "2026-08-01T18:00:00-07:00",
+    "city": "Las Vegas, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Lamont Roach",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "William Zepeda",
+          "record": "TBA"
+        },
+        "weight_class": "Lightweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "ESPN",
+    "sport": "BOXING",
+    "main_event": "Cherneka Johnson vs Dina Thorslund",
+    "datetime": "2026-08-08T21:00:00-04:00",
+    "prelim_datetime": "2026-08-08T18:00:00-04:00",
+    "city": "Orlando, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Cherneka Johnson",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Dina Thorslund",
+          "record": "TBA"
+        },
+        "weight_class": "Bantamweight",
+        "bout_type": "Main Event"
+      }
     ]
   },
   {
     "organization": "UFC 330",
     "sport": "MMA",
     "main_event": "TBA vs TBA",
-    "datetime": "2026-08-16T03:00:00-04:00",
-    "prelim_datetime": "2026-08-15T23:00:00-04:00",
+    "datetime": "2026-08-15T20:00:00-04:00",
+    "prelim_datetime": "2026-08-15T17:00:00-04:00",
     "city": "Philadelphia, PA",
     "fight_card": [
-      { "fighter_a": { "name": "TBA", "record": "TBA" }, "fighter_b": { "name": "TBA", "record": "TBA" }, "weight_class": "TBA", "bout_type": "Main Event" }
+      {
+        "fighter_a": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "TBA",
+          "record": "TBA"
+        },
+        "weight_class": "TBA",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Katie Taylor vs Flora Pili",
+    "datetime": "2026-09-05T21:00:00+01:00",
+    "prelim_datetime": "2026-09-05T18:00:00+01:00",
+    "city": "Dublin, Ireland",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Katie Taylor",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Flora Pili",
+          "record": "TBA"
+        },
+        "weight_class": "Super Lightweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "main_event": "Canelo Alvarez vs Christian Mbilli",
+    "datetime": "2026-09-12T21:00:00+03:00",
+    "prelim_datetime": "2026-09-12T18:00:00+03:00",
+    "city": "Riyadh, Saudi Arabia",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Canelo Alvarez",
+          "record": "TBA"
+        },
+        "fighter_b": {
+          "name": "Christian Mbilli",
+          "record": "TBA"
+        },
+        "weight_class": "Super Middleweight",
+        "bout_type": "Main Event"
+      }
+    ]
+  },
+  {
+    "organization": "Netflix",
+    "sport": "BOXING",
+    "main_event": "Floyd Mayweather vs Manny Pacquiao",
+    "datetime": "2026-09-19T21:00:00-07:00",
+    "prelim_datetime": "2026-09-19T18:00:00-07:00",
+    "city": "Las Vegas, USA",
+    "fight_card": [
+      {
+        "fighter_a": {
+          "name": "Floyd Mayweather",
+          "record": "50-0-0"
+        },
+        "fighter_b": {
+          "name": "Manny Pacquiao",
+          "record": "62-8-2"
+        },
+        "weight_class": "TBA",
+        "bout_type": "Main Event"
+      }
     ]
   }
 ]
