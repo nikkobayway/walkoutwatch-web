@@ -506,16 +506,6 @@
                           stroke="none"/>
                 </svg>
             </div>
-            <p style="
-                color: #aab4c4;
-                margin-top: 2rem;
-                font-size: 0.95rem;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                font-family: 'Oswald', sans-serif;
-            ">
-                Loading fights...
-            </p>
         </div>
         
         <!-- Events will render here -->
@@ -804,8 +794,8 @@
            
            Leave empty ("") to load only from fights.json.
            ════════════════════════════════════════════════════════════ */
-        const BOXING_SHEET_URL = "";
-        const UFC_SHEET_URL = "";
+        const BOXING_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?gid=0&single=true&output=csv";
+        const UFC_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5KHJO9BZh-9tHA_WBOgWc_Z9yNOG7fTf71pIoKVAyTbJ5hcxZFDWLBiGmU2veqdAvI7XvtbmhtIv/pub?gid=0&single=true&output=csv";
 
         /* Parse CSV text (handles quoted fields with commas) */
         function parseCSV(text) {
