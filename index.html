@@ -920,7 +920,7 @@
                                     <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
                                 </div>
                                 <div class="next-meta-label">Fight Time</div>
-                                <div class="fight-time-hero">${fightTimeStr}</div>
+                                <div class="fight-time-hero" id="hero-fight-time">${fightTimeStr}</div>
                                 <div class="next-meta-label" style="margin-top: 0.8rem;">Organization</div>
                                 ${nextFight.organization}
                                 <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
@@ -1439,6 +1439,18 @@
                 currentTZ = btn.dataset.tz;
                 // Update both meta time and fight time displays
                 updateMeta();
+                
+                // Update hero fight time
+                const nextFight = fightData.find(ev => !isPast(ev));
+                if (nextFight) {
+                    const heroTimeEl = document.getElementById('hero-fight-time');
+                    if (heroTimeEl) {
+                        const mainDate = new Date(nextFight.datetime);
+                        const heroTime = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
+                        heroTimeEl.textContent = heroTime;
+                    }
+                }
+                
                 // Refresh fight time display for each event
                 fightData.forEach((ev, i) => {
                     const mainDate = new Date(ev.datetime);
