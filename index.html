@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
@@ -367,8 +366,66 @@
             font-size: 0.75rem; letter-spacing: 2px; color: var(--text-muted);
         }
 
+        /* ── LOADING ANIMATION (ROTATING) ── */
+        .loading-animation {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 120px;
+        }
+        
+        .octagon {
+            animation: rotate-octagon 2s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.7));
+        }
+        
+        @keyframes rotate-octagon {
+            0% {
+                transform: rotate(0deg) scale(0.9);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(360deg) scale(0.9);
+                opacity: 0.6;
+            }
+        }
+        
+        .square {
+            animation: rotate-square 2s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(204, 255, 0, 0.7));
+        }
+        
+        @keyframes rotate-square {
+            0% {
+                transform: rotate(360deg) scale(0.9);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(0deg) scale(0.9);
+                opacity: 0.6;
+            }
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 700px) {
+            .loading-animation {
+                width: 150px;
+                height: 90px;
+            }
+            
+            .octagon, .square {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            
             .app-header { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
             .header-right { align-items: flex-start; }
             .logo-word { font-size: 2.6rem; }
@@ -428,6 +485,41 @@
     </header>
 
     <main id="schedule-container" class="schedule-container">
+        <!-- Loading Animation -->
+        <div id="loading-container" style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            width: 100%;
+        ">
+            <div class="loading-animation">
+                <svg class="octagon" viewBox="0 0 64 64" width="80" height="80">
+                    <polygon points="20,14 30,14 36,20 36,30 30,36 20,36 14,30 14,20" 
+                             fill="#00f0ff" 
+                             stroke="none"/>
+                </svg>
+                <svg class="square" viewBox="0 0 64 64" width="80" height="80" style="margin-left: -20px;">
+                    <rect x="14" y="40" width="22" height="22" 
+                          fill="#ccff00" 
+                          stroke="none"/>
+                </svg>
+            </div>
+            <p style="
+                color: #aab4c4;
+                margin-top: 2rem;
+                font-size: 0.95rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-family: 'Oswald', sans-serif;
+            ">
+                Loading fights...
+            </p>
+        </div>
+        
+        <!-- Events will render here -->
+        <div id="fights-content" style="display: none;"></div>
         <div class="no-events">LOADING FIGHT DATA...</div>
     </main>
 
@@ -707,8 +799,8 @@
            
            Leave empty ("") to load only from fights.json.
            ════════════════════════════════════════════════════════════ */
-        const BOXING_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?gid=0&single=true&output=csv";
-        const UFC_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5KHJO9BZh-9tHA_WBOgWc_Z9yNOG7fTf71pIoKVAyTbJ5hcxZFDWLBiGmU2veqdAvI7XvtbmhtIv/pub?gid=0&single=true&output=csv";
+        const BOXING_SHEET_URL = "";
+        const UFC_SHEET_URL = "";
 
         /* Parse CSV text (handles quoted fields with commas) */
         function parseCSV(text) {
@@ -901,6 +993,10 @@
            Fallback: fights.json (if sheets are unreachable)
            Events are merged and sorted chronologically. */
         async function loadData() {
+            // Show loading animation
+            document.getElementById('loading-container').style.display = 'flex';
+            document.getElementById('fights-content').style.display = 'none';
+            
             const [sheetEvents, jsonEvents] = await Promise.all([fetchSheetEvents(), fetchJsonEvents()]);
 
             if (sheetEvents.length) {
@@ -912,12 +1008,18 @@
             }
 
             if (!fightData.length) {
+                document.getElementById('loading-container').style.display = 'none';
                 document.getElementById('schedule-container').innerHTML =
                     `<div class="no-events" style="color:var(--accent-red);">SYNC ERROR — could not load fight data</div>`;
                 return;
             }
 
             fightData.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+            
+            // Hide loading animation
+            document.getElementById('loading-container').style.display = 'none';
+            document.getElementById('fights-content').style.display = 'block';
+            
             render(document.getElementById('schedule-container'));
             injectSchemaMarkup();
         }
