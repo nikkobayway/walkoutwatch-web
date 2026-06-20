@@ -344,10 +344,15 @@
             font-family: 'Share Tech Mono', monospace; font-size: 0.55rem;
             letter-spacing: 1.5px; color: var(--accent-red); text-transform: uppercase;
         }
-        .bout-fighters { font-size: 0.82rem; font-weight: 500; }
+        .bout-fighters {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+        }
         .uc-vs { color: var(--text-muted); font-size: 0.7rem; margin: 0 0.3rem; font-family: 'Share Tech Mono', monospace; }
         .fighter-rec { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
-        .fighter-stats { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: #ccff00; margin-left: 0.5rem; font-weight: 500; }
+        .fighter-stats { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: #ff4444; margin-left: 0; margin-top: 0.15rem; font-weight: 500; display: block; }
         .weight-tag {
             font-family: 'Share Tech Mono', monospace; font-size: 0.62rem;
             color: var(--text-muted); background: rgba(255,255,255,0.03);
