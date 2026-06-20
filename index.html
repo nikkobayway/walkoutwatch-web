@@ -692,13 +692,22 @@
         }
 
         /* ════════════════════════════════════════════════════════════
-           GOOGLE SHEETS LIVE DATA
-           1. In your Google Sheet: File → Share → Publish to web
-           2. Choose the "Fights" tab + "Comma-separated values (.csv)"
-           3. Click Publish, copy the URL, paste it between the quotes below
-           Leave it empty ("") to load only from fights.json.
+           GOOGLE SHEETS LIVE DATA (TWO SEPARATE SHEETS)
+           
+           BOXING SHEET:
+           1. File → Share → Publish to web
+           2. Select "BOXING" tab + "Comma-separated values (.csv)"
+           3. Copy URL and paste below
+           
+           UFC SHEET:
+           1. File → Share → Publish to web
+           2. Select "UFC" tab + "Comma-separated values (.csv)"
+           3. Copy URL and paste below
+           
+           Leave empty ("") to load only from fights.json.
            ════════════════════════════════════════════════════════════ */
-        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?output=csv";
+        const BOXING_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?gid=0&single=true&output=csv";
+        const UFC_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5KHJO9BZh-9tHA_WBOgWc_Z9yNOG7fTf71pIoKVAyTbJ5hcxZFDWLBiGmU2veqdAvI7XvtbmhtIv/pub?gid=0&single=true&output=csv";
 
         /* Parse CSV text (handles quoted fields with commas) */
         function parseCSV(text) {
@@ -836,28 +845,44 @@
         }
 
         async function fetchSheetEvents() {
-            if (!SHEET_CSV_URL) return [];
-            try {
-                // Fetch both tabs: gid=0 (Fights/Boxing), gid=1 (UFC)
-                const base = SHEET_CSV_URL.replace(/[?&]gid=\d+/, '').replace(/[?&]single=true/, '').replace(/[?&]output=csv.*/, '');
-                const sep = base.includes('?') ? '&' : '?';
-                
-                // Fetch Boxing tab (gid=0 or no gid)
-                const boxingUrl = base + sep + 'gid=0&single=true&output=csv&cb=' + Date.now();
-                const boxingRes = await fetch(boxingUrl);
-                const boxingEvents = boxingRes.ok ? sheetToEvents(await boxingRes.text()) : [];
-                
-                // Fetch UFC tab (gid=1)
-                const ufcUrl = base + sep + 'gid=1&single=true&output=csv&cb=' + Date.now();
-                const ufcRes = await fetch(ufcUrl);
-                const ufcEvents = ufcRes.ok ? sheetToEvents(await ufcRes.text()) : [];
-                
-                // Combine and sort chronologically
-                const combined = [...boxingEvents, ...ufcEvents].sort((a, b) => 
-                    new Date(a.datetime) - new Date(b.datetime)
-                );
-                return combined;
-            } catch { return []; }
+            let allEvents = [];
+            
+            // Fetch Boxing Sheet
+            if (BOXING_SHEET_URL) {
+                try {
+                    const sep = BOXING_SHEET_URL.includes('?') ? '&' : '?';
+                    const res = await fetch(BOXING_SHEET_URL + sep + 'cb=' + Date.now());
+                    if (res.ok) {
+                        const events = sheetToEvents(await res.text());
+                        if (events && events.length > 0) {
+                            allEvents = allEvents.concat(events);
+                        }
+                    }
+                } catch (e) {
+                    console.error('Boxing sheet fetch error:', e);
+                }
+            }
+            
+            // Fetch UFC Sheet
+            if (UFC_SHEET_URL) {
+                try {
+                    const sep = UFC_SHEET_URL.includes('?') ? '&' : '?';
+                    const res = await fetch(UFC_SHEET_URL + sep + 'cb=' + Date.now());
+                    if (res.ok) {
+                        const events = sheetToEvents(await res.text());
+                        if (events && events.length > 0) {
+                            allEvents = allEvents.concat(events);
+                        }
+                    }
+                } catch (e) {
+                    console.error('UFC sheet fetch error:', e);
+                }
+            }
+            
+            // Sort chronologically
+            return allEvents.sort((a, b) => 
+                new Date(a.datetime) - new Date(b.datetime)
+            );
         }
 
         async function fetchJsonEvents() {
@@ -869,10 +894,10 @@
         }
 
         /* ── LOAD DATA ──
-           Source of Truth: Google Sheet (both Boxing and UFC tabs)
-           - Boxing tab (gid=0): All boxing events with records and KOs
-           - UFC tab (gid=1): All UFC events with records and KOs
-           Fallback: fights.json (if sheet is unreachable)
+           Source of Truth: Two separate Google Sheets
+           - BOXING_SHEET_URL: Boxing events with records and KOs
+           - UFC_SHEET_URL: UFC/MMA events with records, KOs, and SUBs
+           Fallback: fights.json (if sheets are unreachable)
            Events are merged and sorted chronologically. */
         async function loadData() {
             const [sheetEvents, jsonEvents] = await Promise.all([fetchSheetEvents(), fetchJsonEvents()]);
