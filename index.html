@@ -498,10 +498,10 @@
 
         <div class="header-right">
             <div class="controls-row">
-                <button id="btn-mma" class="sport-btn active">
+                <button id="btn-mma" class="sport-btn">
                     <div class="icon-octagon"></div>MMA
                 </button>
-                <button id="btn-boxing" class="sport-btn">
+                <button id="btn-boxing" class="sport-btn active">
                     <div class="icon-glove"></div>BOXING
                 </button>
             </div>
@@ -545,7 +545,7 @@
     </main>
 
     <script>
-        let currentSport = 'MMA';
+        let currentSport = 'BOXING';
         let currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
         let fightData = [];
 
