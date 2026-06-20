@@ -754,25 +754,41 @@
             return /^[+-]\d{2}:\d{2}$/.test(v) ? v : null;
         }
 
-        /* Convert sheet rows → event objects (groups rows by Event ID) */
+        /* Convert sheet rows → event objects (groups rows by Event ID)
+           Handles both Boxing (17 cols: no SUB) and UFC (19 cols: with SUB) */
         function sheetToEvents(csvText) {
             const rows = parseCSV(csvText);
             if (rows.length < 2) return [];
             const header = rows[0].map(h => (h || '').toLowerCase());
-            const sportCol = header.findIndex(h => h.includes('sport'));
+            const hasSUB = header.some(h => h.includes('sub'));  // UFC tab has SUB column
+            const minCols = hasSUB ? 19 : 17;
 
             const groups = {};
             const order = [];
             for (let r = 1; r < rows.length; r++) {
                 const c = rows[r];
-                if (!c || c.length < 17) continue;
+                if (!c || c.length < minCols) continue;
                 const id = (c[0] || '').trim();
                 const date = normDate(c[3]);
                 const fa = (c[10] || '').trim();
-                const fb = (c[13] || '').trim();
+                const fb = hasSUB ? (c[14] || '').trim() : (c[13] || '').trim();
                 if (!id || !date || (!fa && !fb)) continue; // skip blank/junk rows
 
                 if (!groups[id]) { groups[id] = []; order.push(id); }
+                
+                let fbRecCol, fbKOCol, fbSUBCol, weightCol;
+                if (hasSUB) {  // UFC format
+                    fbRecCol = 15;
+                    fbKOCol = 16;
+                    fbSUBCol = 17;
+                    weightCol = 18;
+                } else {  // Boxing format
+                    fbRecCol = 14;
+                    fbKOCol = 15;
+                    fbSUBCol = null;
+                    weightCol = 16;
+                }
+                
                 groups[id].push({
                     eventName: (c[1] || '').trim(),
                     org: (c[2] || '').trim(),
@@ -786,11 +802,12 @@
                     fa: fa || 'TBA',
                     faRec: (c[11] || '').trim() || 'TBA',
                     faKO: parseInt(c[12]) || 0,
+                    faSUB: hasSUB ? (parseInt(c[13]) || 0) : 0,
                     fb: fb || 'TBA',
-                    fbRec: (c[14] || '').trim() || 'TBA',
-                    fbKO: parseInt(c[15]) || 0,
-                    weight: (c[16] || '').trim() || 'TBA',
-                    sport: sportCol >= 0 ? (c[sportCol] || '').trim().toUpperCase() : ''
+                    fbRec: (c[fbRecCol] || '').trim() || 'TBA',
+                    fbKO: parseInt(c[fbKOCol]) || 0,
+                    fbSUB: fbSUBCol ? (parseInt(c[fbSUBCol]) || 0) : 0,
+                    weight: (c[weightCol] || '').trim() || 'TBA'
                 });
             }
 
@@ -809,8 +826,8 @@
                     prelim_datetime: `${first.date}T${first.prelimTime}:00${first.tz}`,
                     city: first.country ? `${first.city}, ${first.country}` : first.city,
                     fight_card: fights.map(f => ({
-                        fighter_a: { name: f.fa, record: f.faRec, ko: f.faKO },
-                        fighter_b: { name: f.fb, record: f.fbRec, ko: f.fbKO },
+                        fighter_a: { name: f.fa, record: f.faRec, ko: f.faKO, sub: f.faSUB },
+                        fighter_b: { name: f.fb, record: f.fbRec, ko: f.fbKO, sub: f.fbSUB },
                         weight_class: f.weight,
                         bout_type: f.boutType
                     }))
@@ -821,10 +838,25 @@
         async function fetchSheetEvents() {
             if (!SHEET_CSV_URL) return [];
             try {
-                const sep = SHEET_CSV_URL.includes('?') ? '&' : '?';
-                const res = await fetch(SHEET_CSV_URL + sep + 'cb=' + Date.now());
-                if (!res.ok) return [];
-                return sheetToEvents(await res.text());
+                // Fetch both tabs: gid=0 (Fights/Boxing), gid=1 (UFC)
+                const base = SHEET_CSV_URL.replace(/[?&]gid=\d+/, '').replace(/[?&]single=true/, '').replace(/[?&]output=csv.*/, '');
+                const sep = base.includes('?') ? '&' : '?';
+                
+                // Fetch Boxing tab (gid=0 or no gid)
+                const boxingUrl = base + sep + 'gid=0&single=true&output=csv&cb=' + Date.now();
+                const boxingRes = await fetch(boxingUrl);
+                const boxingEvents = boxingRes.ok ? sheetToEvents(await boxingRes.text()) : [];
+                
+                // Fetch UFC tab (gid=1)
+                const ufcUrl = base + sep + 'gid=1&single=true&output=csv&cb=' + Date.now();
+                const ufcRes = await fetch(ufcUrl);
+                const ufcEvents = ufcRes.ok ? sheetToEvents(await ufcRes.text()) : [];
+                
+                // Combine and sort chronologically
+                const combined = [...boxingEvents, ...ufcEvents].sort((a, b) => 
+                    new Date(a.datetime) - new Date(b.datetime)
+                );
+                return combined;
             } catch { return []; }
         }
 
@@ -837,9 +869,11 @@
         }
 
         /* ── LOAD DATA ──
-           Boxing: Google Sheet is the source of truth (when connected).
-           MMA: from the sheet if you add UFC rows there; otherwise fights.json.
-           If the sheet is unreachable, everything falls back to fights.json. */
+           Source of Truth: Google Sheet (both Boxing and UFC tabs)
+           - Boxing tab (gid=0): All boxing events with records and KOs
+           - UFC tab (gid=1): All UFC events with records and KOs
+           Fallback: fights.json (if sheet is unreachable)
+           Events are merged and sorted chronologically. */
         async function loadData() {
             const [sheetEvents, jsonEvents] = await Promise.all([fetchSheetEvents(), fetchJsonEvents()]);
 
