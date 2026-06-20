@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Walkout Watch Disclaimer - We provide entertainment information only, not professional advice.">
+    <title>Disclaimer - Walkout Watch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #07080a;
+            --bg-card: #0d1017;
+            --text-primary: #ffffff;
+            --text-muted: #aab4c4;
+            --accent-volt: #ccff00;
+            --accent-cyber: #00f0ff;
+            --accent-red: #ff3c00;
+        }
+        
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 60, 0, 0.2);
+            padding-bottom: 2rem;
+        }
+        
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .last-updated {
+            font-size: 0.85rem;
+            color: var(--accent-volt);
+            font-family: 'Courier New', monospace;
+        }
+        
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-red);
+            margin: 2rem 0 1rem;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent-cyber);
+            margin: 1.5rem 0 0.8rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        strong {
+            color: var(--accent-volt);
+        }
+        
+        em {
+            color: var(--accent-cyber);
+        }
+        
+        .warning-box {
+            background: rgba(255, 60, 0, 0.08);
+            border-left: 4px solid var(--accent-red);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .critical-box {
+            background: rgba(255, 60, 0, 0.12);
+            border: 2px solid var(--accent-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        
+        .critical-box h3 {
+            color: var(--accent-red);
+            margin-top: 0;
+        }
+        
+        .contact-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 60, 0, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        a {
+            color: var(--accent-cyber);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-cyber);
+        }
+        
+        a:hover {
+            color: var(--accent-volt);
+            border-bottom-color: var(--accent-volt);
+        }
+        
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 60, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .toc h3 {
+            color: var(--accent-red);
+            margin-top: 0;
+        }
+        
+        .toc ol {
+            margin-left: 1.5rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 60, 0, 0.2);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚠️ DISCLAIMER</h1>
+            <p class="tagline">Important Legal Notice - Please Read Carefully</p>
+            <div class="last-updated">Last Updated: June 2026</div>
+        </header>
+        
+        <div class="critical-box">
+            <h3>Entertainment Purposes Only</h3>
+            <p><strong>Walkout Watch is provided for entertainment and informational purposes only.</strong> We are not liable for any outcomes, losses, or damages resulting from your use of this Site.</p>
+        </div>
+        
+        <div class="toc">
+            <h3>Quick Navigation</h3>
+            <ol>
+                <li><a href="#no-advice">No Professional Advice</a></li>
+                <li><a href="#accuracy">Fight Information Accuracy</a></li>
+                <li><a href="#guarantees">No Guarantees</a></li>
+                <li><a href="#responsibility">User Responsibility</a></li>
+                <li><a href="#assumption">Assumption of Risk</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </div>
+        
+        <h2 id="no-advice">No Professional Advice</h2>
+        
+        <h3>🏥 Not Medical Advice</h3>
+        <div class="warning-box">
+            <p>Fighter health, injuries, or medical conditions mentioned on Walkout Watch are informational only. We are not medical professionals.</p>
+            <p><strong>If you have health concerns, consult a doctor.</strong> Do not rely on Walkout Watch for medical decisions.</p>
+        </div>
+        
+        <h3>⚖️ Not Legal Advice</h3>
+        <div class="warning-box">
+            <p>Nothing on Walkout Watch constitutes legal advice. Laws regarding gambling vary by jurisdiction.</p>
+            <p><strong>If you have legal questions, consult a lawyer.</strong> It is your responsibility to verify local laws.</p>
+        </div>
+        
+        <h3>💰 Not Financial/Investment Advice</h3>
+        <div class="warning-box">
+            <p>Gambling or wagering involves risk of financial loss. Walkout Watch does not provide financial or investment advice.</p>
+            <p><strong>If you gamble, you are responsible for understanding the risks.</strong> Consult a financial advisor before wagering.</p>
+        </div>
+        
+        <h3>🎲 Not Gambling Advice</h3>
+        <div class="warning-box">
+            <p><strong>We do not predict fight outcomes or provide betting guidance.</strong> Any fight predictions or discussions are opinions only, not advice.</p>
+            <p>Gambling is risky. You may lose money. Do not gamble more than you can afford to lose.</p>
+        </div>
+        
+        <h2 id="accuracy">Fight Information Accuracy</h2>
+        <div class="warning-box">
+            <ul>
+                <li><strong>Fight times are subject to change without notice</strong> — Check official sources 24 hours before events</li>
+                <li><strong>Lineups may change</strong> — Due to injuries, promoter decisions, or other factors</li>
+                <li><strong>Countdown timers may have technical errors</strong> — Use official broadcast times to verify</li>
+                <li><strong>Always verify with official sources</strong> — UFC.com, ESPN, broadcast networks</li>
+            </ul>
+        </div>
+        
+        <h2 id="guarantees">No Guarantees</h2>
+        <p>Walkout Watch does not guarantee:</p>
+        <ul>
+            <li>Accuracy of fighter records or statistics</li>
+            <li>Availability of streams or broadcasts</li>
+            <li>Correct timezone conversions</li>
+            <li>Site uptime or functionality</li>
+            <li>Timeliness of fight information updates</li>
+        </ul>
+        
+        <h2 id="responsibility">User Responsibility</h2>
+        <p><strong>You are responsible for:</strong></p>
+        <ul>
+            <li>Verifying fight times with official sources before planning to watch</li>
+            <li>Checking local laws regarding gambling in your jurisdiction</li>
+            <li>Determining your own age eligibility for gambling (18+ minimum, 21+ in some states)</li>
+            <li>Understanding the risks of wagering and gambling addiction</li>
+            <li>Not relying solely on Walkout Watch for any important decisions</li>
+        </ul>
+        
+        <h2 id="assumption">Assumption of Risk</h2>
+        <div class="critical-box">
+            <h3>You Assume All Risk</h3>
+            <p>By using Walkout Watch, you assume all risk related to:</p>
+            <ul>
+                <li>Missed fights due to inaccurate information on this Site</li>
+                <li>Gambling losses or financial outcomes</li>
+                <li>Technical errors or Site downtime</li>
+                <li>Third-party conduct or content</li>
+                <li>Any consequences of relying on information from Walkout Watch</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>Walkout Watch is not responsible for any outcomes, damages, or losses.</strong></p>
+        </div>
+        
+        <h2>Gambling Addiction Resources</h2>
+        <div class="warning-box">
+            <p style="margin-bottom: 1rem;"><strong>If you struggle with gambling addiction, help is available:</strong></p>
+            <p><strong>📞 National Problem Gambling Helpline</strong><br>
+            1-800-522-4700<br>
+            <em>Free, confidential, 24/7 support</em></p>
+            <p style="margin-top: 1rem;"><strong>Online Resources:</strong><br>
+            <a href="https://www.ncpg.org" target="_blank">National Council on Problem Gambling (NCPG)</a><br>
+            <a href="https://www.gamblersanonymous.org" target="_blank">Gamblers Anonymous</a></p>
+        </div>
+        
+        <h2 id="contact">Questions About This Disclaimer?</h2>
+        <div class="contact-section">
+            <p><strong>Email:</strong> contact@walkoutwatch.com</p>
+            <p><strong>Use our <a href="/contact">Contact Page</a> for inquiries</strong></p>
+        </div>
+        
+        <p style="margin-top: 3rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            By using Walkout Watch, you acknowledge that you have read and understand this Disclaimer.
+        </p>
+        
+        <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
