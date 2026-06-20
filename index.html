@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
@@ -305,7 +304,7 @@
         }
         .meta-chip {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.82rem; letter-spacing: 1px; color: #8a94a6;
+            font-size: 1.02rem; letter-spacing: 1px; color: #aab4c4;
             display: flex; align-items: center; gap: 0.4rem;
         }
         .meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
@@ -348,6 +347,7 @@
         .bout-fighters { font-size: 0.82rem; font-weight: 500; }
         .uc-vs { color: var(--text-muted); font-size: 0.7rem; margin: 0 0.3rem; font-family: 'Share Tech Mono', monospace; }
         .fighter-rec { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
+        .fighter-stats { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: #ccff00; margin-left: 0.5rem; font-weight: 500; }
         .weight-tag {
             font-family: 'Share Tech Mono', monospace; font-size: 0.62rem;
             color: var(--text-muted); background: rgba(255,255,255,0.03);
@@ -484,8 +484,12 @@
                 const mb = ev.fight_card?.[0];
                 const faN = mb?.fighter_a?.name || 'TBA';
                 const faR = mb?.fighter_a?.record || '';
+                const faKO = mb?.fighter_a?.ko || 0;
+                const faSUB = mb?.fighter_a?.sub || 0;
                 const fbN = mb?.fighter_b?.name || 'TBA';
                 const fbR = mb?.fighter_b?.record || '';
+                const fbKO = mb?.fighter_b?.ko || 0;
+                const fbSUB = mb?.fighter_b?.sub || 0;
 
                 // Split names at last space for two-line display
                 function splitName(n) {
@@ -502,9 +506,9 @@
                         <div class="bout-info">
                             <span class="bout-type-tag">${b.bout_type || ''}</span>
                             <span class="bout-fighters">
-                                ${b.fighter_a.name} <span class="fighter-rec">(${b.fighter_a.record})</span>
+                                ${b.fighter_a.name} <span class="fighter-rec">(${b.fighter_a.record})</span> <span class="fighter-stats">${b.fighter_a.ko || 0}KO ${b.fighter_a.sub || 0}SUB</span>
                                 <span class="uc-vs">VS</span>
-                                ${b.fighter_b.name} <span class="fighter-rec">(${b.fighter_b.record})</span>
+                                ${b.fighter_b.name} <span class="fighter-rec">(${b.fighter_b.record})</span> <span class="fighter-stats">${b.fighter_b.ko || 0}KO ${b.fighter_b.sub || 0}SUB</span>
                             </span>
                         </div>
                         <span class="weight-tag">${b.weight_class.toUpperCase()}</span>
@@ -539,11 +543,13 @@
                             <div class="fighter-block">
                                 <div class="fighter-name">${faFirst}${faLast ? '<br>' + faLast : ''}</div>
                                 <div class="fighter-record">${faR}</div>
+                                <div class="fighter-stats">${faKO}KO ${faSUB}SUB</div>
                             </div>
                             <div class="vs-block"><span class="vs-pill">VS</span></div>
                             <div class="fighter-block right">
                                 <div class="fighter-name">${fbFirst}${fbLast ? '<br>' + fbLast : ''}</div>
                                 <div class="fighter-record">${fbR}</div>
+                                <div class="fighter-stats">${fbKO}KO ${fbSUB}SUB</div>
                             </div>
                         </div>
                     </div>
@@ -687,7 +693,7 @@
            3. Click Publish, copy the URL, paste it between the quotes below
            Leave it empty ("") to load only from fights.json.
            ════════════════════════════════════════════════════════════ */
-        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?gid=0&single=true&output=csv";
+        const SHEET_CSV_URL = "";
 
         /* Parse CSV text (handles quoted fields with commas) */
         function parseCSV(text) {
