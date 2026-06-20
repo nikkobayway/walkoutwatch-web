@@ -293,6 +293,23 @@
         .clock-display.main-clock.mma-clock    { color: var(--accent-cyber); text-shadow: 0 0 12px rgba(0,240,255,0.2); }
         .clock-display.main-clock.boxing-clock { color: var(--accent-volt); text-shadow: 0 0 12px rgba(204,255,0,0.2); }
         .time-unit { font-size: 0.85rem; color: var(--text-muted); margin: 0 3px 0 1px; }
+        
+        /* Fight Time Display */
+        .fight-time-cell {
+            background: rgba(0,240,255,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1rem 1.25rem;
+        }
+        .fight-time-display {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent-cyber);
+            letter-spacing: 1px;
+            line-height: 1;
+        }
 
         /* ── META BAR ── */
         .card-meta {
@@ -617,6 +634,10 @@
                         <div class="countdown-cell">
                             <div class="clock-label"><div class="pulse-dot"></div>MAIN EVENT WALKOUT</div>
                             <div class="clock-display main-clock ${isMMA ? 'mma-clock' : 'boxing-clock'}" id="main-${i}">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
+                        </div>
+                        <div class="countdown-cell fight-time-cell">
+                            <div class="clock-label">MAIN EVENT TIME</div>
+                            <div class="fight-time-display">${mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: 'UTC'})}</div>
                         </div>
                     </div>`;
 
