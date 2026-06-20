@@ -511,9 +511,9 @@
                         <div class="bout-info">
                             <span class="bout-type-tag">${b.bout_type || ''}</span>
                             <span class="bout-fighters">
-                                ${b.fighter_a.name} <span class="fighter-rec">(${b.fighter_a.record})</span> <span class="fighter-stats">${b.fighter_a.ko || 0}KO ${b.fighter_a.sub || 0}SUB</span>
+                                ${b.fighter_a.name} <span class="fighter-rec">(${b.fighter_a.record})</span> <span class="fighter-stats">${b.fighter_a.ko || 0}KO${isMMA ? ' ' + (b.fighter_a.sub || 0) + 'SUB' : ''}</span>
                                 <span class="uc-vs">VS</span>
-                                ${b.fighter_b.name} <span class="fighter-rec">(${b.fighter_b.record})</span> <span class="fighter-stats">${b.fighter_b.ko || 0}KO ${b.fighter_b.sub || 0}SUB</span>
+                                ${b.fighter_b.name} <span class="fighter-rec">(${b.fighter_b.record})</span> <span class="fighter-stats">${b.fighter_b.ko || 0}KO${isMMA ? ' ' + (b.fighter_b.sub || 0) + 'SUB' : ''}</span>
                             </span>
                         </div>
                         <span class="weight-tag">${b.weight_class.toUpperCase()}</span>
@@ -548,13 +548,13 @@
                             <div class="fighter-block">
                                 <div class="fighter-name">${faFirst}${faLast ? '<br>' + faLast : ''}</div>
                                 <div class="fighter-record">${faR}</div>
-                                <div class="fighter-stats">${faKO}KO ${faSUB}SUB</div>
+                                <div class="fighter-stats">${faKO}KO${isMMA ? ' ' + faSUB + 'SUB' : ''}</div>
                             </div>
                             <div class="vs-block"><span class="vs-pill">VS</span></div>
                             <div class="fighter-block right">
                                 <div class="fighter-name">${fbFirst}${fbLast ? '<br>' + fbLast : ''}</div>
                                 <div class="fighter-record">${fbR}</div>
-                                <div class="fighter-stats">${fbKO}KO ${fbSUB}SUB</div>
+                                <div class="fighter-stats">${fbKO}KO${isMMA ? ' ' + fbSUB + 'SUB' : ''}</div>
                             </div>
                         </div>
                     </div>
@@ -765,11 +765,11 @@
             const order = [];
             for (let r = 1; r < rows.length; r++) {
                 const c = rows[r];
-                if (!c || c.length < 15) continue;
+                if (!c || c.length < 17) continue;
                 const id = (c[0] || '').trim();
                 const date = normDate(c[3]);
                 const fa = (c[10] || '').trim();
-                const fb = (c[12] || '').trim();
+                const fb = (c[13] || '').trim();
                 if (!id || !date || (!fa && !fb)) continue; // skip blank/junk rows
 
                 if (!groups[id]) { groups[id] = []; order.push(id); }
@@ -785,9 +785,11 @@
                     boutType: (c[9] || '').trim() || 'Undercard',
                     fa: fa || 'TBA',
                     faRec: (c[11] || '').trim() || 'TBA',
+                    faKO: parseInt(c[12]) || 0,
                     fb: fb || 'TBA',
-                    fbRec: (c[13] || '').trim() || 'TBA',
-                    weight: (c[14] || '').trim() || 'TBA',
+                    fbRec: (c[14] || '').trim() || 'TBA',
+                    fbKO: parseInt(c[15]) || 0,
+                    weight: (c[16] || '').trim() || 'TBA',
                     sport: sportCol >= 0 ? (c[sportCol] || '').trim().toUpperCase() : ''
                 });
             }
@@ -807,8 +809,8 @@
                     prelim_datetime: `${first.date}T${first.prelimTime}:00${first.tz}`,
                     city: first.country ? `${first.city}, ${first.country}` : first.city,
                     fight_card: fights.map(f => ({
-                        fighter_a: { name: f.fa, record: f.faRec },
-                        fighter_b: { name: f.fb, record: f.fbRec },
+                        fighter_a: { name: f.fa, record: f.faRec, ko: f.faKO },
+                        fighter_b: { name: f.fb, record: f.fbRec, ko: f.fbKO },
                         weight_class: f.weight,
                         bout_type: f.boutType
                     }))
