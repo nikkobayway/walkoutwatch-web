@@ -424,6 +424,14 @@
             text-transform: uppercase;
             font-size: 0.65rem;
         }
+        .fight-time-hero {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-cyber);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
         .next-fight-right {
             padding-left: 2rem;
             text-align: center;
@@ -805,6 +813,15 @@
                 const secs = Math.floor((diff % (1000 * 60)) / 1000);
                 const countdownStr = `${String(days).padStart(2, '0')}<span>d</span> ${String(hours).padStart(2, '0')}<span>h</span> ${String(mins).padStart(2, '0')}<span>m</span> ${String(secs).padStart(2, '0')}<span>s</span>`;
                 
+                // Capitalize fighter names to ALL CAPS
+                const faFirstCap = faFirst.toUpperCase();
+                const faLastCap = faLast.toUpperCase();
+                const fbFirstCap = fbFirst.toUpperCase();
+                const fbLastCap = fbLast.toUpperCase();
+                
+                // Format fight time
+                const fightTimeStr = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
+                
                 heroHTML = `
                 <div class="fights-this-week-hero">
                     <div class="fights-week-title">FIGHTS THIS WEEK</div>
@@ -812,16 +829,18 @@
                         <div class="next-fight-left">
                             <div class="next-label">NEXT FIGHT</div>
                             <div class="next-fighters">
-                                ${faFirst}${faLast ? '<br>' + faLast : ''}
+                                ${faFirstCap}${faLastCap ? '<br>' + faLastCap : ''}
                                 <span class="vs">VS</span>
-                                ${fbFirst}${fbLast ? '<br>' + fbLast : ''}
+                                ${fbFirstCap}${fbLastCap ? '<br>' + fbLastCap : ''}
                             </div>
                             <div class="next-meta">
                                 <div class="sport-indicator ${isMMA ? 'mma-indicator' : 'boxing-indicator'}">
                                     <div class="sport-icon">${isMMA ? '⬠' : '■'}</div>
                                     <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
                                 </div>
-                                <div class="next-meta-label">Organization</div>
+                                <div class="next-meta-label">Fight Time</div>
+                                <div class="fight-time-hero">${fightTimeStr}</div>
+                                <div class="next-meta-label" style="margin-top: 0.8rem;">Organization</div>
                                 ${nextFight.organization}
                                 <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
                                 ${nextFight.city}
