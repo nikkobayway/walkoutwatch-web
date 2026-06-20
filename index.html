@@ -325,6 +325,171 @@
             text-shadow: 0 0 12px rgba(255, 60, 0, 0.3) !important;
         }
 
+        /* ── FIGHTS THIS WEEK HERO ── */
+        .fights-this-week-hero {
+            background: linear-gradient(90deg, 
+                rgba(204, 255, 0, 0.08) 0%,
+                rgba(204, 255, 0, 0.04) 25%,
+                rgba(0, 240, 255, 0.04) 75%,
+                rgba(0, 240, 255, 0.08) 100%
+            );
+            border: 2px solid;
+            border-image: linear-gradient(90deg, rgba(204, 255, 0, 0.3), rgba(0, 240, 255, 0.3)) 1;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .fights-this-week-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-volt), var(--accent-cyber));
+        }
+        .fights-this-week-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyber), var(--accent-volt));
+        }
+        .fights-week-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .fights-week-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--accent-volt), var(--accent-cyber));
+            border-radius: 50%;
+        }
+        .next-fight-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .next-fight-left {
+            border-right: 2px solid rgba(204, 255, 0, 0.2);
+            padding-right: 2rem;
+        }
+        .next-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-volt);
+            margin-bottom: 0.8rem;
+        }
+        .next-fighters {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.9rem;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .next-fighters .vs {
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            display: block;
+            margin: 0.4rem 0;
+            letter-spacing: 2px;
+        }
+        .next-meta {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: #ffffff;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+        .next-meta-label {
+            color: #aab4c4;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+        }
+        .next-fight-right {
+            padding-left: 2rem;
+            text-align: center;
+            border-left: 2px solid rgba(0, 240, 255, 0.2);
+        }
+        .countdown-container {
+            margin-bottom: 1.5rem;
+        }
+        .countdown-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-cyber);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .countdown-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: var(--accent-red);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .countdown-display span {
+            font-size: 0.9rem;
+            color: var(--accent-red);
+            margin: 0 3px;
+        }
+        .fights-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .stat-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            color: #aab4c4;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 0.3rem;
+        }
+        .stat:nth-child(1) .stat-number { color: var(--accent-volt); }
+        .stat:nth-child(2) .stat-number { color: var(--accent-cyber); }
+        @media (max-width: 768px) {
+            .next-fight-container { grid-template-columns: 1fr; gap: 1.5rem; }
+            .next-fight-left { border-right: none; border-bottom: 2px solid rgba(204, 255, 0, 0.2); padding-right: 0; padding-bottom: 1.5rem; }
+            .next-fight-right { padding-left: 0; border-left: none; }
+            .next-fighters { font-size: 1.5rem; }
+            .countdown-display { font-size: 1.8rem; }
+            .fights-stats { flex-direction: column; gap: 1rem; }
+        }
+
         /* ── META BAR ── */
         .card-meta {
             display: flex; align-items: center;
@@ -597,7 +762,83 @@
 
         /* ── RENDER ── */
         function render(container) {
-            container.innerHTML = fightData.map((ev, i) => {
+            // Get next upcoming fight
+            const nextFight = fightData.find(ev => !isPast(ev));
+            
+            // Calculate stats
+            const boxingCount = fightData.filter(ev => ev.sport === 'BOXING' && !isPast(ev)).length;
+            const ufcCount = fightData.filter(ev => ev.sport === 'MMA' && !isPast(ev)).length;
+            
+            // Generate hero HTML
+            let heroHTML = '';
+            if (nextFight) {
+                const isMMA = nextFight.sport === 'MMA';
+                const mainDate = new Date(nextFight.datetime);
+                const prelimDate = nextFight.prelim_datetime ? new Date(nextFight.prelim_datetime) : new Date(mainDate - 3 * 3600000);
+                const mb = nextFight.fight_card?.[0];
+                const faN = mb?.fighter_a?.name || 'TBA';
+                const fbN = mb?.fighter_b?.name || 'TBA';
+                
+                function splitName(n) {
+                    const parts = n.trim().split(' ');
+                    if (parts.length === 1) return [parts[0], ''];
+                    const last = parts.pop();
+                    return [parts.join(' '), last];
+                }
+                const [faFirst, faLast] = splitName(faN);
+                const [fbFirst, fbLast] = splitName(fbN);
+                
+                const now = Date.now();
+                const mainTime = mainDate.getTime();
+                const diff = mainTime - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+                const countdownStr = `${String(days).padStart(2, '0')}<span>d</span> ${String(hours).padStart(2, '0')}<span>h</span> ${String(mins).padStart(2, '0')}<span>m</span> ${String(secs).padStart(2, '0')}<span>s</span>`;
+                
+                heroHTML = `
+                <div class="fights-this-week-hero">
+                    <div class="fights-week-title">FIGHTS THIS WEEK</div>
+                    <div class="next-fight-container">
+                        <div class="next-fight-left">
+                            <div class="next-label">NEXT FIGHT</div>
+                            <div class="next-fighters">
+                                ${faFirst}${faLast ? '<br>' + faLast : ''}
+                                <span class="vs">VS</span>
+                                ${fbFirst}${fbLast ? '<br>' + fbLast : ''}
+                            </div>
+                            <div class="next-meta">
+                                <div class="next-meta-label">Organization</div>
+                                ${nextFight.organization}
+                                <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
+                                ${nextFight.city}
+                            </div>
+                        </div>
+                        <div class="next-fight-right">
+                            <div class="countdown-container">
+                                <span class="countdown-label">WALKOUT IN</span>
+                                <div class="countdown-display" id="hero-countdown">
+                                    ${countdownStr}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fights-stats">
+                        <div class="stat">
+                            <div class="stat-number">${boxingCount}</div>
+                            <div class="stat-label">BOXING</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">${ufcCount}</div>
+                            <div class="stat-label">UFC</div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            
+            const cardsHTML = fightData.map((ev, i) => {
                 if (isPast(ev)) return '';
                 const isMMA   = ev.sport === 'MMA';
                 const past    = false;
@@ -698,6 +939,8 @@
                     </div>
                 </div>`;
             }).join('');
+            
+            container.innerHTML = heroHTML + cardsHTML;
 
             // Wire up drawers
             fightData.forEach((_, i) => {
@@ -731,6 +974,28 @@
         function startClocks() {
             function tick() {
                 const now = Date.now();
+                
+                // Update hero countdown
+                const nextFight = fightData.find(ev => !isPast(ev));
+                if (nextFight) {
+                    const mainDate = new Date(nextFight.datetime);
+                    const mainTime = mainDate.getTime();
+                    const diff = mainTime - now;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+                    
+                    const heroCountdown = document.getElementById('hero-countdown');
+                    if (heroCountdown) {
+                        if (diff > 0) {
+                            heroCountdown.innerHTML = `${String(days).padStart(2, '0')}<span>d</span> ${String(hours).padStart(2, '0')}<span>h</span> ${String(mins).padStart(2, '0')}<span>m</span> ${String(secs).padStart(2, '0')}<span>s</span>`;
+                        } else {
+                            heroCountdown.innerHTML = '<span style="color:var(--accent-red)">LIVE NOW</span>';
+                        }
+                    }
+                }
+                
                 fightData.forEach((ev, i) => {
                     if (isPast(ev)) return;
                     const mainDate   = new Date(ev.datetime);
