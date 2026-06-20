@@ -644,12 +644,12 @@
                         <div class="countdown-cell">
                             <div class="clock-label"><div class="pulse-dot"></div>PRELIM START</div>
                             <div class="clock-display" id="prelim-${i}">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
-                            <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}">${prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true})}</div>
+                            <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="prelim-time-${i}">${prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ})}</div>
                         </div>
                         <div class="countdown-cell">
                             <div class="clock-label"><div class="pulse-dot"></div>MAIN EVENT WALKOUT</div>
                             <div class="clock-display main-clock ${isMMA ? 'mma-clock' : 'boxing-clock'}" id="main-${i}">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
-                            <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}">${mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true})}</div>
+                            <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="main-time-${i}">${mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ})}</div>
                         </div>
                     </div>`;
 
@@ -1078,15 +1078,15 @@
                     const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
                     
                     // Update prelim time
-                    const prelimTimeEl = document.querySelector(`#card-${i} .countdown-cell:first-child .fight-time-display`);
+                    const prelimTimeEl = document.getElementById(`prelim-time-${i}`);
                     if (prelimTimeEl) {
-                        prelimTimeEl.textContent = prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true});
+                        prelimTimeEl.textContent = prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
                     }
                     
                     // Update main event time
-                    const mainTimeEl = document.querySelector(`#card-${i} .countdown-cell:nth-child(2) .fight-time-display`);
+                    const mainTimeEl = document.getElementById(`main-time-${i}`);
                     if (mainTimeEl) {
-                        mainTimeEl.textContent = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true});
+                        mainTimeEl.textContent = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
                     }
                 });
             };
