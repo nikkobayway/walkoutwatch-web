@@ -1070,7 +1070,25 @@
                 document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentTZ = btn.dataset.tz;
+                // Update both meta time and fight time displays
                 updateMeta();
+                // Refresh fight time display for each event
+                fightData.forEach((ev, i) => {
+                    const mainDate = new Date(ev.datetime);
+                    const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
+                    
+                    // Update prelim time
+                    const prelimTimeEl = document.querySelector(`#card-${i} .countdown-cell:first-child .fight-time-display`);
+                    if (prelimTimeEl) {
+                        prelimTimeEl.textContent = prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true});
+                    }
+                    
+                    // Update main event time
+                    const mainTimeEl = document.querySelector(`#card-${i} .countdown-cell:nth-child(2) .fight-time-display`);
+                    if (mainTimeEl) {
+                        mainTimeEl.textContent = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true});
+                    }
+                });
             };
         });
 
