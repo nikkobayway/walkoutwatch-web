@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Walkout Watch — Why we built the cleanest live fight countdown timer. Real-time schedules for boxing and MMA with zero fluff.">
+    <title>About Walkout Watch - The Story Behind Your Fight Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #07080a;
+            --bg-card: #0d1017;
+            --text-primary: #ffffff;
+            --text-muted: #aab4c4;
+            --accent-volt: #ccff00;
+            --accent-cyber: #00f0ff;
+            --accent-red: #ff3c00;
+        }
+        
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: var(--accent-volt);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent-cyber);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtext {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-volt);
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(204, 255, 0, 0.2);
+            padding-bottom: 1rem;
+        }
+        
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyber);
+            margin: 1.5rem 0 0.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+        
+        .problem-box {
+            background: rgba(255, 60, 0, 0.08);
+            border-left: 4px solid var(--accent-red);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        
+        .solution-box {
+            background: rgba(204, 255, 0, 0.08);
+            border-left: 4px solid var(--accent-volt);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .feature-card h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--accent-cyber);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+        
+        .mission {
+            background: linear-gradient(135deg, rgba(204, 255, 0, 0.1), rgba(0, 240, 255, 0.1));
+            border: 1px solid rgba(204, 255, 0, 0.3);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .mission h2 {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .mission p {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        strong {
+            color: var(--accent-volt);
+        }
+        
+        em {
+            color: var(--accent-cyber);
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--accent-volt), rgba(204, 255, 0, 0.8));
+            color: #000;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta:hover {
+            background: linear-gradient(135deg, rgba(204, 255, 0, 1), var(--accent-volt));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(204, 255, 0, 0.2);
+        }
+        
+        .footer-nav {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-nav a {
+            color: var(--accent-cyber);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--accent-volt);
+        }
+        
+        .stat {
+            display: inline-block;
+            margin: 1rem 1.5rem 1rem 0;
+        }
+        
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--accent-volt);
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">⏱️ NEVER MISS A WALKOUT</div>
+            <h1>About Walkout Watch</h1>
+            <p class="subtext">Why we built the cleanest fight countdown timer on the internet.</p>
+        </header>
+        
+        <section>
+            <h2>The Problem We Solve</h2>
+            <div class="problem-box">
+                <p><strong>You find out about a major fight.</strong> You're hyped. You want to make sure you don't miss the walkout.</p>
+                <p>So you Google the fight time. You get a mix of ESPN articles, Reddit threads, social media posts — all with different times because nobody accounts for YOUR timezone.</p>
+                <p>You set a reminder. It goes off at the wrong time. You miss the walkout.</p>
+            </div>
+            <p>This happened to us. Over and over. And it frustrated us enough to build something better.</p>
+        </section>
+        
+        <section>
+            <h2>What We Built</h2>
+            <div class="solution-box">
+                <p><strong>A single source of truth for every fight.</strong></p>
+                <p>Real-time countdown timers for every UFC, MMA, and boxing event. Automatic timezone conversion. Pre-built times for prelims and main events. No fluff. No ads (until you click a link you want to click).</p>
+                <p>Just: <em>Here's the fight. Here's when it starts in YOUR time. Here's how to watch it.</em></p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>⏲️ Live Countdown Timers</h4>
+                    <p>Every second counts when you don't want to miss a walkout. See exactly how long until the prelims start and the main event begins.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌍 Auto-Timezone Conversion</h4>
+                    <p>Switch your timezone once. Every fight time converts instantly — PT, MT, CT, ET, BST, and more. No mental math.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📅 Updated in Real-Time</h4>
+                    <p>When a fight is postponed, cancelled, or moved, we update instantly. You're never guessing.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🥊 Boxing + MMA in One Place</h4>
+                    <p>Toggle between boxing and UFC schedules. Every major promotion, all in one place.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Who We Are</h2>
+            <p>We're fight fans who got tired of being let down by existing tools. No complicated algorithms, no bloat. Just a clean interface that does one thing really well: make sure you never miss a fight.</p>
+            <p>We believe the fight community deserves better. So we built it.</p>
+        </section>
+        
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>
+                To be the most reliable, fastest, and cleanest source for fight schedules and countdowns on the internet. 
+                <br><br>
+                <em>Every fight fan should have a home.</em>
+            </p>
+        </section>
+        
+        <section>
+            <h2>How We Stay Free (& How We Make Money)</h2>
+            <p>Walkout Watch is free to use. We don't charge for timers, schedules, or timezone conversion.</p>
+            <p>We make money through partnerships with streaming services (DAZN, ESPN+, Paramount+) and sportsbooks (DraftKings, FanDuel, BetMGM). When you click a link to watch or place a bet, we earn a small commission — at no cost to you.</p>
+            <p><strong>This means:</strong></p>
+            <ul>
+                <li>We have motivation to stay accurate and reliable (if our times are wrong, nobody clicks our links)</li>
+                <li>We're incentivized to keep the site fast and clean (complicated sites don't convert)</li>
+                <li>We can invest in new features without charging you</li>
+            </ul>
+            <p>We're transparent about this. All affiliate links are clearly marked. <a href="/disclaimer">Read our full disclaimer here</a>.</p>
+        </section>
+        
+        <section>
+            <h2>Why Trust Walkout Watch?</h2>
+            <ul>
+                <li><strong>We care about accuracy.</strong> Our fight times come directly from official UFC.com, boxing promoter websites, and broadcast schedules. We update in real-time.</li>
+                <li><strong>We're built by fight fans.</strong> Not a generic calendar tool. Not a news aggregator. A tool made by people who actually watch fights and understand what you need.</li>
+                <li><strong>We prioritize your privacy.</strong> We don't sell your data. We don't track you across the web. <a href="/privacy">Read our privacy policy</a>.</li>
+                <li><strong>We're always improving.</strong> Got feedback? Want a feature? <a href="/contact">Tell us</a>. We listen.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>What's Next?</h2>
+            <p>We're constantly adding features to make fight night easier:</p>
+            <ul>
+                <li>Fighter record pages (see upcoming fights and recent results)</li>
+                <li>Country-by-country broadcast info (know exactly where to watch in your region)</li>
+                <li>Push notifications for your favorite fighters</li>
+                <li>Community predictions and live polls</li>
+                <li>Integration with your calendar</li>
+            </ul>
+            <p>If there's something you want to see, <a href="/contact">let us know</a>.</p>
+        </section>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="/" class="cta">Back to Fight Schedule</a>
+        </div>
+        
+        <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="/contact">Contact</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/disclaimer">Disclaimer</a>
+        </div>
+    </div>
+</body>
+</html>
