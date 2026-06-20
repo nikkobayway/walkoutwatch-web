@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Walkout Watch - Reach out with questions, feedback, or legal inquiries.">
+    <title>Contact Us - Walkout Watch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-dark: #07080a;
+            --bg-card: #0d1017;
+            --text-primary: #ffffff;
+            --text-muted: #aab4c4;
+            --accent-volt: #ccff00;
+            --accent-cyber: #00f0ff;
+            --accent-red: #ff3c00;
+        }
+        
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(0, 240, 255, 0.2);
+            padding-bottom: 2rem;
+        }
+        
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent-cyber);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            color: var(--accent-volt);
+            margin: 2rem 0 1rem;
+            letter-spacing: 1px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        strong {
+            color: var(--accent-volt);
+        }
+        
+        em {
+            color: var(--accent-cyber);
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        
+        .contact-box {
+            background: var(--bg-card);
+            border: 2px solid rgba(0, 240, 255, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .email-link {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(0, 240, 255, 0.05));
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            color: var(--accent-cyber);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .email-link:hover {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.25), rgba(0, 240, 255, 0.15));
+            border-color: rgba(0, 240, 255, 0.5);
+            color: var(--accent-volt);
+        }
+        
+        .form-section {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-volt);
+            margin-bottom: 0.5rem;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyber);
+            background: rgba(0, 240, 255, 0.05);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-volt), rgba(204, 255, 0, 0.8));
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, rgba(204, 255, 0, 1), var(--accent-volt));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(204, 255, 0, 0.2);
+        }
+        
+        .info-box {
+            background: rgba(0, 240, 255, 0.05);
+            border-left: 4px solid var(--accent-cyber);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+        
+        .info-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--accent-cyber);
+            margin-bottom: 0.8rem;
+        }
+        
+        .response-time {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+        }
+        
+        .footer-nav a {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--accent-cyber);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            border-color: var(--accent-cyber);
+            color: var(--accent-volt);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 CONTACT US</h1>
+            <p class="tagline">Questions, feedback, or legal inquiries? Get in touch.</p>
+        </header>
+        
+        <div class="contact-methods">
+            <div class="contact-box">
+                <h3>📨 Direct Email</h3>
+                <p>Send us an email directly</p>
+                <a href="mailto:contact@walkoutwatch.com" class="email-link">
+                    contact@walkoutwatch.com
+                </a>
+            </div>
+            
+            <div class="contact-box">
+                <h3>🚨 Legal Inquiries</h3>
+                <p>Copyright, DMCA, or legal matters</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-muted);">
+                    Subject: "Legal Inquiry" or "DMCA Notice"
+                </p>
+            </div>
+            
+            <div class="contact-box">
+                <h3>⚖️ Privacy Requests</h3>
+                <p>CCPA, GDPR, or data access</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-muted);">
+                    Subject: "Privacy Request" or "GDPR Request"
+                </p>
+            </div>
+        </div>
+        
+        <h2>Send us a Message</h2>
+        <div class="form-section">
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: none;" id="contact-form-fallback">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <div style="text-align: center; padding: 2rem; background: rgba(0, 240, 255, 0.05); border-radius: 6px;">
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                    <strong>Form currently disabled.</strong> Please email us directly at:
+                </p>
+                <a href="mailto:contact@walkoutwatch.com" class="email-link">
+                    contact@walkoutwatch.com
+                </a>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+                    We'll respond within 24-48 business hours.
+                </p>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>📋 What to Include</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Feedback:</strong> General comments about the site</li>
+                <li><strong>Bug Reports:</strong> Technical issues or errors</li>
+                <li><strong>Legal Inquiries:</strong> Copyright, DMCA, or legal matters</li>
+                <li><strong>Privacy Requests:</strong> CCPA, GDPR, or data access</li>
+                <li><strong>Suggestions:</strong> New features or improvements</li>
+            </ul>
+            <p class="response-time">
+                <strong>Response Time:</strong> We typically respond to all inquiries within 24-48 business hours.
+            </p>
+        </div>
+        
+        <div class="info-box" style="background: rgba(204, 255, 0, 0.05); border-left-color: var(--accent-volt);">
+            <h3 style="color: var(--accent-volt);">⚡ Quick Tips</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>Be as detailed as possible in your message</li>
+                <li>For legal issues, include your full legal name and contact info</li>
+                <li>For DMCA notices, follow our <a href="disclaimer.html" style="color: var(--accent-volt); text-decoration: underline;">Copyright Policy</a></li>
+                <li>Include screenshots for bug reports</li>
+            </ul>
+        </div>
+        
+        <div class="footer-nav">
+            <a href="/">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+    </div>
+    
+    <script>
+        // Optional: Enable form if using Formspree
+        // Uncomment the form and add your Formspree form ID to use it
+        // Get form ID from: https://formspree.io/
+    </script>
+</body>
+</html>
