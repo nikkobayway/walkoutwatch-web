@@ -557,7 +557,12 @@
             return date.toLocaleDateString('en-US', { timeZone: tz, weekday: 'short', month: 'short', day: 'numeric' });
         }
         function isPast(event) {
-            return (Date.now() - new Date(event.datetime).getTime()) > 24 * 3600000;
+            const mainEventTime = new Date(event.datetime).getTime();
+            const now = Date.now();
+            // Remove event if 4+ hours past main event time OR 24+ hours past main event time
+            const fourHoursPast = (now - mainEventTime) > 4 * 3600000;
+            const twentyFourHoursPast = (now - mainEventTime) > 24 * 3600000;
+            return fourHoursPast || twentyFourHoursPast;
         }
         function pad(n) { return String(Math.max(0, n)).padStart(2, '0'); }
         function formatCountdown(ms) {
