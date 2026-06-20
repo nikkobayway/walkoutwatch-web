@@ -660,6 +660,59 @@
             .clock-display { font-size: 1.5rem; }
             .fighters-grid { gap: 0.6rem; }
         }
+        
+        /* ── FOOTER ── */
+        .legal-footer {
+            background: #0a0c0f;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-volt);
+            margin-bottom: 1rem;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-section a:hover {
+            color: var(--accent-cyber);
+        }
+        .footer-section p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
     </style>
 </head>
 <body>
@@ -1381,5 +1434,31 @@
         initTimezone();
         loadData();
     </script>
+    
+    <!-- FOOTER -->
+    <footer class="legal-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Responsible Gambling</h4>
+                <p>If you have a gambling problem, call <strong>1-800-522-4700</strong></p>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>Walkout Watch - Live fight countdowns & schedules</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Walkout Watch. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
