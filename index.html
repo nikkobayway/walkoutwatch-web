@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walkout Watch | Live MMA & Boxing Main Event Countdown Timers</title>
+    <!-- Favicon for browser tab (small) -->
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <!-- Favicon for search results & mobile home screen (large) -->
+    <link rel="icon" type="image/png" href="favicon-512.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon-512.png">
     <meta name="description" content="Never miss a fight walkout. Real-time countdown timers for UFC, MMA, and Boxing main events with instant local timezone adjustments.">
     <meta name="keywords" content="UFC schedule, boxing schedule, fight countdown, UFC fight night, boxing fight times, MMA schedule, fight timezone converter">
     <link rel="canonical" href="https://walkoutwatch.com/">
@@ -157,6 +160,20 @@
         .zone-btn:hover { color: var(--text-primary); }
         .zone-btn.active { background: var(--bg-control); color: var(--accent-red); border: 1px solid rgba(255,60,0,0.2); }
 
+        .window-toggle {
+            display: inline-flex; flex-wrap: wrap; gap: 3px; background: #090c10;
+            padding: 3px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05);
+            margin: 0 0 1.5rem;
+        }
+        .window-btn {
+            background: transparent; border: none; color: var(--text-muted);
+            padding: 0.45rem 0.9rem; font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem; letter-spacing: 1px; border-radius: 2px;
+            cursor: pointer; transition: all var(--transition);
+        }
+        .window-btn:hover { color: var(--text-primary); }
+        .window-btn.active { background: var(--bg-control); color: var(--accent-volt); border: 1px solid rgba(204,255,0,0.25); }
+
         /* ── SCHEDULE CONTAINER ── */
         .schedule-container {
             width: 100%; max-width: 980px;
@@ -171,6 +188,33 @@
             overflow: hidden;
             box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 30px rgba(0,240,255,0.05);
             transition: border-color var(--transition), box-shadow var(--transition);
+            position: relative;
+        }
+        .fight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyber), rgba(0,240,255,0));
+            pointer-events: none;
+        }
+        .fight-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0,240,255,0), var(--accent-cyber));
+            pointer-events: none;
+        }
+        .fight-card.boxing-card::before {
+            background: linear-gradient(90deg, var(--accent-volt), rgba(204,255,0,0));
+        }
+        .fight-card.boxing-card::after {
+            background: linear-gradient(90deg, rgba(204,255,0,0), var(--accent-volt));
         }
         .fight-card.boxing-card {
             border-color: var(--border-boxing);
@@ -385,6 +429,11 @@
             gap: 2rem;
             align-items: center;
             margin-bottom: 1.5rem;
+        }
+        .next-fight-container + .next-fight-container {
+            margin-top: 1.5rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         .next-fight-left {
             border-right: 2px solid rgba(204, 255, 0, 0.2);
@@ -864,83 +913,125 @@
         }
 
         /* ── RENDER ── */
-        function render(container) {
-            // Get next upcoming fight
-            const nextFight = fightData.find(ev => !isPast(ev));
-            
-            // Generate hero HTML
-            let heroHTML = '';
-            if (nextFight) {
-                const isMMA = nextFight.sport === 'MMA';
-                const mainDate = new Date(nextFight.datetime);
-                const prelimDate = nextFight.prelim_datetime ? new Date(nextFight.prelim_datetime) : new Date(mainDate - 3 * 3600000);
-                const mb = nextFight.fight_card?.[0];
-                const faN = mb?.fighter_a?.name || 'TBA';
-                const fbN = mb?.fighter_b?.name || 'TBA';
-                
-                function splitName(n) {
-                    const parts = n.trim().split(' ');
-                    if (parts.length === 1) return [parts[0], ''];
-                    const last = parts.pop();
-                    return [parts.join(' '), last];
-                }
-                const [faFirst, faLast] = splitName(faN);
-                const [fbFirst, fbLast] = splitName(fbN);
-                
-                const now = Date.now();
-                const mainTime = mainDate.getTime();
-                const diff = mainTime - now;
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const secs = Math.floor((diff % (1000 * 60)) / 1000);
-                const countdownStr = `${String(days).padStart(2, '0')}<span>d</span> ${String(hours).padStart(2, '0')}<span>h</span> ${String(mins).padStart(2, '0')}<span>m</span> ${String(secs).padStart(2, '0')}<span>s</span>`;
-                
-                // Capitalize fighter names to ALL CAPS
-                const faFirstCap = faFirst.toUpperCase();
-                const faLastCap = faLast.toUpperCase();
-                const fbFirstCap = fbFirst.toUpperCase();
-                const fbLastCap = fbLast.toUpperCase();
-                
-                // Format fight time
-                const fightTimeStr = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
-                
-                heroHTML = `
-                <div class="fights-this-week-hero">
-                    <div class="fights-week-title">FIGHTS THIS WEEK</div>
-                    <div class="next-fight-container">
-                        <div class="next-fight-left">
-                            <div class="next-label">NEXT FIGHT</div>
-                            <div class="next-fighters">
-                                ${faFirstCap}${faLastCap ? '<br>' + faLastCap : ''}
-                                <span class="vs">VS</span>
-                                ${fbFirstCap}${fbLastCap ? '<br>' + fbLastCap : ''}
-                            </div>
-                            <div class="next-meta">
-                                <div class="sport-indicator ${isMMA ? 'mma-indicator' : 'boxing-indicator'}">
-                                    <div class="sport-icon">${isMMA ? '⬠' : '■'}</div>
-                                    <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
-                                </div>
-                                <div class="next-meta-label">Fight Time</div>
-                                <div class="fight-time-hero" id="hero-fight-time">${fightTimeStr}</div>
-                                <div class="next-meta-label" style="margin-top: 0.8rem;">Organization</div>
-                                ${nextFight.organization}
-                                <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
-                                ${nextFight.city}
-                            </div>
+        /* ── HERO "Fights This Week" — adjustable window ── */
+        let heroWindowDays = 7;   // default window; changed by the selector
+
+        function heroSplitName(n) {
+            const parts = (n || 'TBA').trim().split(' ');
+            if (parts.length === 1) return [parts[0], ''];
+            const last = parts.pop();
+            return [parts.join(' '), last];
+        }
+
+        function heroWindowLabel(days) {
+            if (days === 7)  return 'FIGHTS THIS WEEK';
+            if (days === 14) return 'NEXT 14 DAYS';
+            if (days === 30) return 'NEXT 30 DAYS';
+            return 'ALL UPCOMING FIGHTS';
+        }
+
+        function heroBlock(ev, i, labelMode) {
+            const isMMA = ev.sport === 'MMA';
+            const now = Date.now();
+            const mainDate = new Date(ev.datetime);
+            const mb = ev.fight_card?.[0];
+            const [faFirst, faLast] = heroSplitName(mb?.fighter_a?.name);
+            const [fbFirst, fbLast] = heroSplitName(mb?.fighter_b?.name);
+
+            const diff = mainDate.getTime() - now;
+            const days = Math.floor(diff / 86400000);
+            const hours = Math.floor((diff % 86400000) / 3600000);
+            const mins = Math.floor((diff % 3600000) / 60000);
+            const secs = Math.floor((diff % 60000) / 1000);
+            const countdownStr = diff > 0
+                ? `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`
+                : '<span style="color:var(--accent-red)">LIVE NOW</span>';
+
+            const fightTimeStr = mainDate.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true, timeZone: currentTZ});
+            const dateStr = mainDate.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', timeZone: currentTZ}).toUpperCase();
+            const label = labelMode === 'next' ? 'NEXT FIGHT' : dateStr;
+
+            return `
+                <div class="next-fight-container">
+                    <div class="next-fight-left">
+                        <div class="next-label">${label}</div>
+                        <div class="next-fighters">
+                            ${faFirst.toUpperCase()}${faLast ? '<br>' + faLast.toUpperCase() : ''}
+                            <span class="vs">VS</span>
+                            ${fbFirst.toUpperCase()}${fbLast ? '<br>' + fbLast.toUpperCase() : ''}
                         </div>
-                        <div class="next-fight-right">
-                            <div class="countdown-container">
-                                <span class="countdown-label">WALKOUT IN</span>
-                                <div class="countdown-display" id="hero-countdown">
-                                    ${countdownStr}
-                                </div>
+                        <div class="next-meta">
+                            <div class="sport-indicator ${isMMA ? 'mma-indicator' : 'boxing-indicator'}">
+                                <div class="sport-icon">${isMMA ? '⬠' : '■'}</div>
+                                <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
+                            </div>
+                            <div class="next-meta-label">Fight Time</div>
+                            <div class="fight-time-hero" id="hero-fight-time-${i}">${fightTimeStr}</div>
+                            <div class="next-meta-label" style="margin-top: 0.8rem;">Organization</div>
+                            ${ev.organization}
+                            <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
+                            ${ev.city}
+                        </div>
+                    </div>
+                    <div class="next-fight-right">
+                        <div class="countdown-container">
+                            <span class="countdown-label">WALKOUT IN</span>
+                            <div class="countdown-display" id="hero-countdown-${i}">
+                                ${countdownStr}
                             </div>
                         </div>
                     </div>
-                </div>
-                `;
+                </div>`;
+        }
+
+        function renderHeroFights() {
+            const mount = document.getElementById('hero-fights-mount');
+            if (!mount) return;
+            const titleEl = document.getElementById('hero-title');
+            const now = Date.now();
+            const windowMs = isFinite(heroWindowDays) ? heroWindowDays * 86400000 : Infinity;
+
+            const upcomingIdx = fightData
+                .map((ev, i) => ({ ev, i }))
+                .filter(({ ev }) => !isPast(ev));
+
+            let list = upcomingIdx.filter(({ ev }) =>
+                (new Date(ev.datetime).getTime() - now) <= windowMs);
+
+            let labelMode = 'date';
+            let title = heroWindowLabel(heroWindowDays);
+            if (list.length === 0 && upcomingIdx.length) {
+                list = [upcomingIdx[0]];          // never empty: show the next fight
+                title = 'NEXT FIGHT';
+                labelMode = 'next';
             }
+            if (titleEl) titleEl.textContent = title;
+
+            document.querySelectorAll('.window-btn').forEach(b => {
+                const active = b.dataset.days === 'all'
+                    ? !isFinite(heroWindowDays)
+                    : Number(b.dataset.days) === heroWindowDays;
+                b.classList.toggle('active', active);
+            });
+
+            mount.innerHTML = list.map(({ ev, i }) => heroBlock(ev, i, labelMode)).join('');
+        }
+
+        function render(container) {
+            // ── HERO shell: title + window selector; fights filled by renderHeroFights ──
+            const hasUpcoming = fightData.some(ev => !isPast(ev));
+            const heroHTML = hasUpcoming ? `
+                <div class="fights-this-week-hero">
+                    <div class="fights-week-title" id="hero-title">FIGHTS THIS WEEK</div>
+                    <div class="window-toggle">
+                        <button class="window-btn active" data-days="7">7 DAYS</button>
+                        <button class="window-btn" data-days="14">14 DAYS</button>
+                        <button class="window-btn" data-days="30">30 DAYS</button>
+                        <button class="window-btn" data-days="all">ALL</button>
+                    </div>
+                    <div id="hero-fights-mount"></div>
+                </div>
+            ` : '';
             
             const cardsHTML = fightData.map((ev, i) => {
                 if (isPast(ev)) return '';
@@ -1045,6 +1136,7 @@
             }).join('');
             
             container.innerHTML = heroHTML + cardsHTML;
+            renderHeroFights();
 
             // Wire up drawers
             fightData.forEach((_, i) => {
@@ -1078,28 +1170,7 @@
         function startClocks() {
             function tick() {
                 const now = Date.now();
-                
-                // Update hero countdown
-                const nextFight = fightData.find(ev => !isPast(ev));
-                if (nextFight) {
-                    const mainDate = new Date(nextFight.datetime);
-                    const mainTime = mainDate.getTime();
-                    const diff = mainTime - now;
-                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                    const secs = Math.floor((diff % (1000 * 60)) / 1000);
-                    
-                    const heroCountdown = document.getElementById('hero-countdown');
-                    if (heroCountdown) {
-                        if (diff > 0) {
-                            heroCountdown.innerHTML = `${String(days).padStart(2, '0')}<span>d</span> ${String(hours).padStart(2, '0')}<span>h</span> ${String(mins).padStart(2, '0')}<span>m</span> ${String(secs).padStart(2, '0')}<span>s</span>`;
-                        } else {
-                            heroCountdown.innerHTML = '<span style="color:var(--accent-red)">LIVE NOW</span>';
-                        }
-                    }
-                }
-                
+
                 fightData.forEach((ev, i) => {
                     if (isPast(ev)) return;
                     const mainDate   = new Date(ev.datetime);
@@ -1107,6 +1178,7 @@
 
                     const mainEl   = document.getElementById(`main-${i}`);
                     const prelimEl = document.getElementById(`prelim-${i}`);
+                    const heroEl   = document.getElementById(`hero-countdown-${i}`);
 
                     if (mainEl) {
                         const f = formatCountdown(mainDate - now);
@@ -1115,6 +1187,18 @@
                     if (prelimEl) {
                         const f = formatCountdown(prelimDate - now);
                         prelimEl.innerHTML = f || '<span style="color:var(--accent-red)">LIVE NOW</span>';
+                    }
+                    if (heroEl) {
+                        const diff = mainDate - now;
+                        if (diff > 0) {
+                            const days  = Math.floor(diff / 86400000);
+                            const hours = Math.floor((diff % 86400000) / 3600000);
+                            const mins  = Math.floor((diff % 3600000) / 60000);
+                            const secs  = Math.floor((diff % 60000) / 1000);
+                            heroEl.innerHTML = `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`;
+                        } else {
+                            heroEl.innerHTML = '<span style="color:var(--accent-red)">LIVE NOW</span>';
+                        }
                     }
                 });
             }
@@ -1266,7 +1350,10 @@
             const order = [];
             for (let r = 1; r < rows.length; r++) {
                 const c = rows[r];
-                if (!c || c.length < minCols) continue;
+                // Only need through the Fighter A column (index 10) to be a real row.
+                // Trailing cols (records, KO, SUB, weight) are read defensively below,
+                // and row validity is enforced by the id/date/fighter check.
+                if (!c || c.length < 11) continue;
                 const id = (c[0] || '').trim();
                 const date = normDate(c[3]);
                 const fa = (c[10] || '').trim();
@@ -1289,6 +1376,7 @@
                 }
                 
                 groups[id].push({
+                    sport: hasSUB ? 'MMA' : 'BOXING',
                     eventName: (c[1] || '').trim(),
                     org: (c[2] || '').trim(),
                     date,
@@ -1316,7 +1404,7 @@
                 const rank = b => b.boutType === 'Main Event' ? 0 : b.boutType === 'Co-Main' ? 1 : 2;
                 fights.sort((a, b) => rank(a) - rank(b));
                 const first = fights[0];
-                const sport = first.sport === 'MMA' || /UFC/i.test(first.org) ? 'MMA' : 'BOXING';
+                const sport = first.sport || (/\b(UFC|MMA|PFL|Bellator|Fight\s*Night)\b/i.test(first.org) ? 'MMA' : 'BOXING');
                 return {
                     organization: first.org || 'Independent',
                     sport,
@@ -1441,36 +1529,38 @@
                 currentTZ = btn.dataset.tz;
                 // Update both meta time and fight time displays
                 updateMeta();
+                renderHeroFights();   // re-render hero so its dates + times follow the new zone
                 
-                // Update hero fight time
-                const nextFight = fightData.find(ev => !isPast(ev));
-                if (nextFight) {
-                    const heroTimeEl = document.getElementById('hero-fight-time');
-                    if (heroTimeEl) {
-                        const mainDate = new Date(nextFight.datetime);
-                        const heroTime = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
-                        heroTimeEl.textContent = heroTime;
-                    }
-                }
-                
-                // Refresh fight time display for each event
+                // Refresh fight time display for each event (cards + hero blocks)
                 fightData.forEach((ev, i) => {
                     const mainDate = new Date(ev.datetime);
                     const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
-                    
-                    // Update prelim time
+                    const mainStr = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
+
                     const prelimTimeEl = document.getElementById(`prelim-time-${i}`);
                     if (prelimTimeEl) {
                         prelimTimeEl.textContent = prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
                     }
-                    
-                    // Update main event time
+
                     const mainTimeEl = document.getElementById(`main-time-${i}`);
                     if (mainTimeEl) {
-                        mainTimeEl.textContent = mainDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
+                        mainTimeEl.textContent = mainStr;
+                    }
+
+                    const heroTimeEl = document.getElementById(`hero-fight-time-${i}`);
+                    if (heroTimeEl) {
+                        heroTimeEl.textContent = mainStr;
                     }
                 });
             };
+        });
+
+        // Hero window selector (7 / 14 / 30 / All) — delegated so it survives re-renders
+        document.addEventListener('click', (e) => {
+            const wb = e.target.closest('.window-btn');
+            if (!wb) return;
+            heroWindowDays = wb.dataset.days === 'all' ? Infinity : Number(wb.dataset.days);
+            renderHeroFights();
         });
 
         initTimezone();
