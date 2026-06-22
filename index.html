@@ -411,7 +411,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #ffffff;
-            margin-bottom: 2rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
             gap: 0.8rem;
@@ -427,33 +427,90 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: center;
-            margin-bottom: 1.5rem;
+            align-items: stretch;
+            margin-bottom: 1rem;
         }
         .next-fight-container + .next-fight-container {
-            margin-top: 1.5rem;
-            padding-top: 1.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        /* ── Hero carousel ── */
+        .hero-carousel { position: relative; }
+        .hero-carousel-viewport { overflow: hidden; }
+        .hero-carousel-track {
+            display: flex;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+        .hero-carousel-track > .next-fight-container {
+            flex: 0 0 100%;
+            width: 100%;
+            margin: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .hero-carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .carousel-arrow {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            width: 38px; height: 38px;
+            border-radius: 50%;
+            font-size: 1.4rem; line-height: 1;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all var(--transition);
+            padding: 0;
+        }
+        .carousel-arrow:hover:not(:disabled) {
+            border-color: var(--accent-volt);
+            color: var(--accent-volt);
+            background: rgba(204,255,0,0.08);
+        }
+        .carousel-arrow:disabled { opacity: 0.25; cursor: default; }
+        .carousel-dots { display: flex; gap: 0.5rem; align-items: center; }
+        .carousel-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            border: none; padding: 0; cursor: pointer;
+            transition: all var(--transition);
+        }
+        .carousel-dot.active {
+            background: var(--accent-volt);
+            transform: scale(1.3);
+        }
+        .carousel-counter {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem; letter-spacing: 1px;
+            color: #8b95a5;
+            min-width: 42px; text-align: center;
         }
         .next-fight-left {
             border-right: 2px solid rgba(204, 255, 0, 0.2);
-            padding-right: 2rem;
+            padding-right: 1.5rem;
         }
         .next-label {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 3px;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent-volt);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
         .next-fighters {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.9rem;
+            font-size: 1.65rem;
             font-weight: bold;
             color: #ffffff;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
             letter-spacing: 1px;
         }
         .next-fighters .vs {
@@ -465,10 +522,10 @@
         }
         .next-meta {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #ffffff;
-            line-height: 1.6;
-            letter-spacing: 1px;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
         }
         .next-meta-label {
             color: #aab4c4;
@@ -477,32 +534,35 @@
         }
         .fight-time-hero {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             color: var(--accent-cyber);
             letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
         }
         .next-fight-right {
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             text-align: center;
             border-left: 2px solid rgba(0, 240, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .countdown-container {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
         }
         .countdown-label {
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.65rem;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--accent-cyber);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.4rem;
             display: block;
         }
         .countdown-display {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 2.4rem;
+            font-size: 3rem;
             font-weight: bold;
             color: var(--accent-red);
             letter-spacing: 2px;
@@ -516,9 +576,9 @@
         .sport-indicator {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1rem;
-            padding: 0.6rem 1rem;
+            gap: 0.5rem;
+            margin-bottom: 0.7rem;
+            padding: 0.4rem 0.7rem;
             border-radius: 4px;
             width: fit-content;
         }
@@ -915,6 +975,23 @@
         /* ── RENDER ── */
         /* ── HERO "Fights This Week" — adjustable window ── */
         let heroWindowDays = 7;   // default window; changed by the selector
+        let heroCarouselIndex = 0;
+        let heroSlideCount = 0;
+
+        function heroGoTo(idx) {
+            if (heroSlideCount <= 0) return;
+            heroCarouselIndex = Math.max(0, Math.min(idx, heroSlideCount - 1));
+            const track = document.getElementById('hero-carousel-track');
+            if (track) track.style.transform = `translateX(-${heroCarouselIndex * 100}%)`;
+            document.querySelectorAll('.carousel-dot').forEach((d, k) =>
+                d.classList.toggle('active', k === heroCarouselIndex));
+            const prev = document.querySelector('.carousel-arrow[data-dir="prev"]');
+            const next = document.querySelector('.carousel-arrow[data-dir="next"]');
+            if (prev) prev.disabled = heroCarouselIndex === 0;
+            if (next) next.disabled = heroCarouselIndex === heroSlideCount - 1;
+            const counter = document.getElementById('carousel-counter');
+            if (counter) counter.textContent = `${heroCarouselIndex + 1} / ${heroSlideCount}`;
+        }
 
         function heroSplitName(n) {
             const parts = (n || 'TBA').trim().split(' ');
@@ -965,17 +1042,13 @@
                                 <div class="sport-icon">${isMMA ? '⬠' : '■'}</div>
                                 <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
                             </div>
-                            <div class="next-meta-label">Fight Time</div>
+                            <div class="next-meta-label">Main Event</div>
                             <div class="fight-time-hero" id="hero-fight-time-${i}">${fightTimeStr}</div>
-                            <div class="next-meta-label" style="margin-top: 0.8rem;">Organization</div>
-                            ${ev.organization}
-                            <div class="next-meta-label" style="margin-top: 0.5rem;">Location</div>
-                            ${ev.city}
                         </div>
                     </div>
                     <div class="next-fight-right">
                         <div class="countdown-container">
-                            <span class="countdown-label">WALKOUT IN</span>
+                            <span class="countdown-label">Walkout In</span>
                             <div class="countdown-display" id="hero-countdown-${i}">
                                 ${countdownStr}
                             </div>
@@ -1014,7 +1087,32 @@
                 b.classList.toggle('active', active);
             });
 
-            mount.innerHTML = list.map(({ ev, i }) => heroBlock(ev, i, labelMode)).join('');
+            // Build the carousel: one fight visible at a time, arrows + dots to cycle
+            heroSlideCount = list.length;
+            heroCarouselIndex = 0;
+            const slides = list.map(({ ev, i }) => heroBlock(ev, i, labelMode)).join('');
+            const showControls = list.length > 1;
+            const dots = list.map((_, k) =>
+                `<button class="carousel-dot ${k === 0 ? 'active' : ''}" data-idx="${k}" aria-label="Go to fight ${k + 1}"></button>`
+            ).join('');
+
+            mount.innerHTML = `
+                <div class="hero-carousel">
+                    <div class="hero-carousel-viewport">
+                        <div class="hero-carousel-track" id="hero-carousel-track">
+                            ${slides}
+                        </div>
+                    </div>
+                    ${showControls ? `
+                    <div class="hero-carousel-controls">
+                        <button class="carousel-arrow" data-dir="prev" aria-label="Previous fight">&lsaquo;</button>
+                        <div class="carousel-dots">${dots}</div>
+                        <span id="carousel-counter" class="carousel-counter">1 / ${list.length}</span>
+                        <button class="carousel-arrow" data-dir="next" aria-label="Next fight">&rsaquo;</button>
+                    </div>` : ''}
+                </div>`;
+
+            heroGoTo(0);
         }
 
         function render(container) {
@@ -1555,12 +1653,24 @@
             };
         });
 
-        // Hero window selector (7 / 14 / 30 / All) — delegated so it survives re-renders
+        // Hero window selector + carousel nav — delegated so they survive re-renders
         document.addEventListener('click', (e) => {
             const wb = e.target.closest('.window-btn');
-            if (!wb) return;
-            heroWindowDays = wb.dataset.days === 'all' ? Infinity : Number(wb.dataset.days);
-            renderHeroFights();
+            if (wb) {
+                heroWindowDays = wb.dataset.days === 'all' ? Infinity : Number(wb.dataset.days);
+                renderHeroFights();
+                return;
+            }
+            const arrow = e.target.closest('.carousel-arrow');
+            if (arrow) {
+                heroGoTo(heroCarouselIndex + (arrow.dataset.dir === 'next' ? 1 : -1));
+                return;
+            }
+            const dot = e.target.closest('.carousel-dot');
+            if (dot) {
+                heroGoTo(Number(dot.dataset.idx));
+                return;
+            }
         });
 
         initTimezone();
