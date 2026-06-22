@@ -1011,6 +1011,7 @@
             const isMMA = ev.sport === 'MMA';
             const now = Date.now();
             const mainDate = new Date(ev.datetime);
+            const prelimDate = ev.prelim_datetime ? new Date(ev.prelim_datetime) : new Date(mainDate - 3 * 3600000);
             const mb = ev.fight_card?.[0];
             const [faFirst, faLast] = heroSplitName(mb?.fighter_a?.name);
             const [fbFirst, fbLast] = heroSplitName(mb?.fighter_b?.name);
@@ -1024,6 +1025,7 @@
                 ? `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`
                 : '<span style="color:var(--accent-red)">LIVE NOW</span>';
 
+            const prelimTimeStr = prelimDate.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true, timeZone: currentTZ});
             const fightTimeStr = mainDate.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true, timeZone: currentTZ});
             const dateStr = mainDate.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', timeZone: currentTZ}).toUpperCase();
             const label = labelMode === 'next' ? 'NEXT FIGHT' : dateStr;
@@ -1042,7 +1044,9 @@
                                 <div class="sport-icon">${isMMA ? '⬠' : '■'}</div>
                                 <div class="sport-name">${isMMA ? 'MMA' : 'BOXING'}</div>
                             </div>
-                            <div class="next-meta-label">Main Event</div>
+                            <div class="next-meta-label">Prelims</div>
+                            <div class="fight-time-hero" id="hero-prelim-time-${i}">${prelimTimeStr}</div>
+                            <div class="next-meta-label" style="margin-top: 0.4rem;">Main Event</div>
                             <div class="fight-time-hero" id="hero-fight-time-${i}">${fightTimeStr}</div>
                         </div>
                     </div>
@@ -1648,6 +1652,11 @@
                     const heroTimeEl = document.getElementById(`hero-fight-time-${i}`);
                     if (heroTimeEl) {
                         heroTimeEl.textContent = mainStr;
+                    }
+
+                    const heroPrelimEl = document.getElementById(`hero-prelim-time-${i}`);
+                    if (heroPrelimEl) {
+                        heroPrelimEl.textContent = prelimDate.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12: true, timeZone: currentTZ});
                     }
                 });
             };
