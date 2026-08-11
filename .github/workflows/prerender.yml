@@ -2,33 +2,44 @@ name: Pre-render Fight Data
 
 on:
   schedule:
-    # Run every hour at :00
-    - cron: '0 * * * *'
-  # Also run when you manually push to main
+    - cron: '0 * * * *'      # every hour
   push:
-    branches:
-      - main
+    branches: [main]
+    paths-ignore:            # don't retrigger on its own commits
+      - 'fights.json'
+      - 'schema-fights.json'
+      - 'fights-static.html'
+  workflow_dispatch:          # lets you click "Run workflow" manually
+
+permissions:
+  contents: write             # required to push generated files back
 
 jobs:
   prerender:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install csv-parse
 
-      - name: Run pre-render script
+      - name: Run pre-render
         run: node prerender.js
 
-      - name: Commit and push changes
+      - name: Commit generated files
         run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add fights.json schema-fights.json fights-static.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: pre-render fight data [skip ci]"
+            git push
+          fi
