@@ -1,0 +1,695 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Collazo vs Valdez: Oscar Collazo vs Neider Valdez",
+    "startDate": "2026-06-20T17:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-collazo-vs-valdez",
+    "location": {
+      "@type": "Place",
+      "name": "Oceanside",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Oceanside",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Oscar Collazo"
+      },
+      {
+        "@type": "Person",
+        "name": "Neider Valdez"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Kape vs Horiguchi: Manel Kape vs Kyoji Horiguchi",
+    "startDate": "2026-06-20T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-kape-vs-horiguchi",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas, NV",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas, NV",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Manel Kape"
+      },
+      {
+        "@type": "Person",
+        "name": "Kyoji Horiguchi"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Crocker vs Paro: Lewis Crocker vs Liam Paro",
+    "startDate": "2026-06-24T19:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-crocker-vs-paro",
+    "location": {
+      "@type": "Place",
+      "name": "Tennyson",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tennyson",
+        "addressCountry": "Australia"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Independent"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Lewis Crocker"
+      },
+      {
+        "@type": "Person",
+        "name": "Liam Paro"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Fiziev vs Torres: Rafael Fiziev vs Manuel Torres",
+    "startDate": "2026-06-27T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-fiziev-vs-torres",
+    "location": {
+      "@type": "Place",
+      "name": "Baku, Azerbaijan",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baku, Azerbaijan",
+        "addressCountry": "Azerbaijan"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Rafael Fiziev"
+      },
+      {
+        "@type": "Person",
+        "name": "Manuel Torres"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Zayas vs Ennis: Xander Zayas vs Jaron Ennis",
+    "startDate": "2026-06-27T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-zayas-vs-ennis",
+    "location": {
+      "@type": "Place",
+      "name": "Brooklyn",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brooklyn",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Xander Zayas"
+      },
+      {
+        "@type": "Person",
+        "name": "Jaron Ennis"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "De Los Santos vs Valenzuela: Edwin De Los Santos vs Jose Valenzuela",
+    "startDate": "2026-06-28T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-de-los-santos-vs-valenzuela",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Paramount+"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Edwin De Los Santos"
+      },
+      {
+        "@type": "Person",
+        "name": "Jose Valenzuela"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Mason vs Cordina: Abdullah Mason vs Joe Cordina",
+    "startDate": "2026-07-04T19:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-mason-vs-cordina",
+    "location": {
+      "@type": "Place",
+      "name": "Cleveland",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cleveland",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Abdullah Mason"
+      },
+      {
+        "@type": "Person",
+        "name": "Joe Cordina"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC 329: Conor McGregor vs Max Holloway",
+    "startDate": "2026-07-11T21:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-329",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas, NV",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas, NV",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC 329"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Conor McGregor"
+      },
+      {
+        "@type": "Person",
+        "name": "Max Holloway"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC Fight Night 281: Kamaru Usman vs Dricus du Plessis",
+    "startDate": "2026-07-18T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-281",
+    "location": {
+      "@type": "Place",
+      "name": "Oklahoma City",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Oklahoma City",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Kamaru Usman"
+      },
+      {
+        "@type": "Person",
+        "name": "Dricus du Plessis"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Ankalaev vs Rountree Jr.: Magomed Ankalaev vs Khalil Rountree Jr.",
+    "startDate": "2026-07-25T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ankalaev-vs-rountree-jr",
+    "location": {
+      "@type": "Place",
+      "name": "Abu Dhabi, UAE",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abu Dhabi, UAE",
+        "addressCountry": "UAE"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Magomed Ankalaev"
+      },
+      {
+        "@type": "Person",
+        "name": "Khalil Rountree Jr."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Joshua vs Prenga: Anthony Joshua vs Kristian Prenga",
+    "startDate": "2026-07-25T21:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-joshua-vs-prenga",
+    "location": {
+      "@type": "Place",
+      "name": "Riyadh",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "Saudi Arabia"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Anthony Joshua"
+      },
+      {
+        "@type": "Person",
+        "name": "Kristian Prenga"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Spence vs Tszyu: Errol Spence Jr. vs Tim Tszyu",
+    "startDate": "2026-07-25T21:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-spence-vs-tszyu",
+    "location": {
+      "@type": "Place",
+      "name": "TBA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "TBA",
+        "addressCountry": "Australia"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Prime Video"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Errol Spence Jr."
+      },
+      {
+        "@type": "Person",
+        "name": "Tim Tszyu"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Berlanga vs Butler: Edgar Berlanga vs Steven Butler",
+    "startDate": "2026-07-26T17:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-berlanga-vs-butler",
+    "location": {
+      "@type": "Place",
+      "name": "New York",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Paramount+"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Edgar Berlanga"
+      },
+      {
+        "@type": "Person",
+        "name": "Steven Butler"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Berlanga vs Butler: Richardson Hitchins vs Ricardo Salas",
+    "startDate": "2026-07-26T17:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-berlanga-vs-butler",
+    "location": {
+      "@type": "Place",
+      "name": "New York",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New York",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Paramount+"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Richardson Hitchins"
+      },
+      {
+        "@type": "Person",
+        "name": "Ricardo Salas"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Roach vs Zepeda: Lamont Roach vs William Zepeda",
+    "startDate": "2026-08-01T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-roach-vs-zepeda",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Lamont Roach"
+      },
+      {
+        "@type": "Person",
+        "name": "William Zepeda"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Medic vs Rodriguez: Uros Medic vs Daniel Rodriguez",
+    "startDate": "2026-08-01T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-medic-vs-rodriguez",
+    "location": {
+      "@type": "Place",
+      "name": "Belgrade, Serbia",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belgrade, Serbia",
+        "addressCountry": "Serbia"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Uros Medic"
+      },
+      {
+        "@type": "Person",
+        "name": "Daniel Rodriguez"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC 330: Islam Makhachev vs Ian Machado Garry",
+    "startDate": "2026-08-15T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-330",
+    "location": {
+      "@type": "Place",
+      "name": "Philadelphia, PA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Philadelphia, PA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC 330"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Islam Makhachev"
+      },
+      {
+        "@type": "Person",
+        "name": "Ian Machado Garry"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Taylor vs Pili: Katie Taylor vs Flora Pili",
+    "startDate": "2026-09-05T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-taylor-vs-pili",
+    "location": {
+      "@type": "Place",
+      "name": "Dublin",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dublin",
+        "addressCountry": "Ireland"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Katie Taylor"
+      },
+      {
+        "@type": "Person",
+        "name": "Flora Pili"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC Fight Night: TBA vs TBA",
+    "startDate": "2026-09-05T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night",
+    "location": {
+      "@type": "Place",
+      "name": "Paris, France",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris, France",
+        "addressCountry": "France"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "TBA"
+      },
+      {
+        "@type": "Person",
+        "name": "TBA"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Canelo vs Mbilli: Canelo Alvarez vs Christian Mbilli",
+    "startDate": "2026-09-12T21:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-canelo-vs-mbilli",
+    "location": {
+      "@type": "Place",
+      "name": "Riyadh",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "Saudi Arabia"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Canelo Alvarez"
+      },
+      {
+        "@type": "Person",
+        "name": "Christian Mbilli"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Mayweather vs Pacquiao 2: Floyd Mayweather vs Manny Pacquiao",
+    "startDate": "2026-09-19T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-mayweather-vs-pacquiao-2",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Netflix"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Floyd Mayweather"
+      },
+      {
+        "@type": "Person",
+        "name": "Manny Pacquiao"
+      }
+    ]
+  }
+]
