@@ -35,39 +35,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Kape vs Horiguchi: Manel Kape vs Kyoji Horiguchi",
-    "startDate": "2026-06-20T20:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-kape-vs-horiguchi",
-    "location": {
-      "@type": "Place",
-      "name": "Las Vegas, NV",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas, NV",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Manel Kape"
-      },
-      {
-        "@type": "Person",
-        "name": "Kyoji Horiguchi"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Crocker vs Paro: Lewis Crocker vs Liam Paro",
     "startDate": "2026-06-24T19:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -95,39 +62,6 @@
       {
         "@type": "Person",
         "name": "Liam Paro"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Fiziev vs Torres: Rafael Fiziev vs Manuel Torres",
-    "startDate": "2026-06-27T20:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-fiziev-vs-torres",
-    "location": {
-      "@type": "Place",
-      "name": "Baku, Azerbaijan",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Baku, Azerbaijan",
-        "addressCountry": "Azerbaijan"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Rafael Fiziev"
-      },
-      {
-        "@type": "Person",
-        "name": "Manuel Torres"
       }
     ]
   },
@@ -227,105 +161,6 @@
       {
         "@type": "Person",
         "name": "Joe Cordina"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "UFC 329: Conor McGregor vs Max Holloway",
-    "startDate": "2026-07-11T21:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-329",
-    "location": {
-      "@type": "Place",
-      "name": "Las Vegas, NV",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas, NV",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC 329"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Conor McGregor"
-      },
-      {
-        "@type": "Person",
-        "name": "Max Holloway"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "UFC Fight Night 281: Kamaru Usman vs Dricus du Plessis",
-    "startDate": "2026-07-18T20:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-281",
-    "location": {
-      "@type": "Place",
-      "name": "Oklahoma City",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Oklahoma City",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Kamaru Usman"
-      },
-      {
-        "@type": "Person",
-        "name": "Dricus du Plessis"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Ankalaev vs Rountree Jr.: Magomed Ankalaev vs Khalil Rountree Jr.",
-    "startDate": "2026-07-25T20:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ankalaev-vs-rountree-jr",
-    "location": {
-      "@type": "Place",
-      "name": "Abu Dhabi, UAE",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Abu Dhabi, UAE",
-        "addressCountry": "UAE"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Magomed Ankalaev"
-      },
-      {
-        "@type": "Person",
-        "name": "Khalil Rountree Jr."
       }
     ]
   },
@@ -497,66 +332,66 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Medic vs Rodriguez: Uros Medic vs Daniel Rodriguez",
-    "startDate": "2026-08-01T20:00:00.000Z",
+    "name": "UFC Fight Night 285: Anthony Hernandez vs Gregory Rodrigues",
+    "startDate": "2026-08-22T20:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-medic-vs-rodriguez",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-285",
     "location": {
       "@type": "Place",
-      "name": "Belgrade, Serbia",
+      "name": "Sacramento, CA",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Belgrade, Serbia",
-        "addressCountry": "Serbia"
+        "addressLocality": "Sacramento, CA",
+        "addressCountry": "USA"
       }
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC Fight Night"
+      "name": "UFC Fight Night 285"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "Uros Medic"
+        "name": "Anthony Hernandez"
       },
       {
         "@type": "Person",
-        "name": "Daniel Rodriguez"
+        "name": "Gregory Rodrigues"
       }
     ]
   },
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC 330: Islam Makhachev vs Ian Machado Garry",
-    "startDate": "2026-08-15T18:00:00.000Z",
+    "name": "UFC Fight Night 286: Umar Nurmagomedov vs Song Yadong",
+    "startDate": "2026-08-29T18:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-330",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-286",
     "location": {
       "@type": "Place",
-      "name": "Philadelphia, PA",
+      "name": "Shanghai, China",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Philadelphia, PA",
-        "addressCountry": "USA"
+        "addressLocality": "Shanghai, China",
+        "addressCountry": "China"
       }
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC 330"
+      "name": "UFC Fight Night 286"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "Islam Makhachev"
+        "name": "Umar Nurmagomedov"
       },
       {
         "@type": "Person",
-        "name": "Ian Machado Garry"
+        "name": "Song Yadong"
       }
     ]
   },
@@ -596,12 +431,12 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night: TBA vs TBA",
-    "startDate": "2026-09-05T18:00:00.000Z",
+    "name": "UFC Fight Night 287: Dan Hooker vs Salahdine Parnasse",
+    "startDate": "2026-09-05T21:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-287",
     "location": {
       "@type": "Place",
       "name": "Paris, France",
@@ -613,16 +448,49 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC Fight Night"
+      "name": "UFC Fight Night 287"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Dan Hooker"
       },
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Salahdine Parnasse"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Noche UFC 4: Yair Rodriguez vs Jean Silva",
+    "startDate": "2026-09-12T17:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-noche-ufc-4",
+    "location": {
+      "@type": "Place",
+      "name": "Glendale, AZ",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Glendale, AZ",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Noche UFC 4"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Yair Rodriguez"
+      },
+      {
+        "@type": "Person",
+        "name": "Jean Silva"
       }
     ]
   },
@@ -662,6 +530,39 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "UFC 331: Joshua Van vs Alexandre Pantoja",
+    "startDate": "2026-09-19T17:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-331",
+    "location": {
+      "@type": "Place",
+      "name": "Los Angeles, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles, CA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC 331"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Joshua Van"
+      },
+      {
+        "@type": "Person",
+        "name": "Alexandre Pantoja"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "Mayweather vs Pacquiao 2: Floyd Mayweather vs Manny Pacquiao",
     "startDate": "2026-09-19T18:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -689,6 +590,72 @@
       {
         "@type": "Person",
         "name": "Manny Pacquiao"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC Fight Night: TBA vs TBA",
+    "startDate": "2026-09-26T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas, NV",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas, NV",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "TBA"
+      },
+      {
+        "@type": "Person",
+        "name": "TBA"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC Fight Night: Buckley vs. Malott: Joaquin Buckley vs Mike Malott",
+    "startDate": "2026-10-17T20:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-buckley-vs-malott",
+    "location": {
+      "@type": "Place",
+      "name": "Edmonton, AB",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Edmonton, AB",
+        "addressCountry": "Canada"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night: Buckley vs. Malott"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Joaquin Buckley"
+      },
+      {
+        "@type": "Person",
+        "name": "Mike Malott"
       }
     ]
   }
