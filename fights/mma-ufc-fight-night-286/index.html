@@ -502,7 +502,7 @@
                 const hours = Math.floor((diff % 86400000) / 3600000);
                 const mins  = Math.floor((diff % 3600000) / 60000);
                 const secs  = Math.floor((diff % 60000) / 1000);
-                countdownEl.textContent = `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`;
+                countdownEl.innerHTML = `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`;
             } else {
                 countdownEl.innerHTML = '<span style="color:var(--accent-red)">LIVE NOW</span>';
             }
