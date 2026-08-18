@@ -1449,6 +1449,14 @@
             return /^[+-]\d{2}:\d{2}$/.test(v) ? v : null;
         }
 
+        /* Same slug logic as prerender.js, so links match the generated /fights/[slug]/ pages */
+        function slugify(s) {
+            return String(s || '')
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
         /* Convert sheet rows → event objects (groups rows by Event ID)
            Handles both Boxing (17 cols: no SUB) and UFC (19 cols: with SUB) */
         function sheetToEvents(csvText) {
@@ -1518,6 +1526,7 @@
                 const first = fights[0];
                 const sport = first.sport || (/\b(UFC|MMA|PFL|Bellator|Fight\s*Night)\b/i.test(first.org) ? 'MMA' : 'BOXING');
                 return {
+                    id: `${sport.toLowerCase()}-${slugify(first.eventName || `${first.fa}-vs-${first.fb}`)}`,
                     organization: first.org || 'Independent',
                     sport,
                     main_event: `${first.fa} vs ${first.fb}`,
