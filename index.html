@@ -32,7 +32,7 @@
         "@type": "WebSite",
         "name": "Walkout Watch",
         "url": "https://walkoutwatch.com/",
-        "description": "Live countdown timers for upcoming UFC, MM-A, and Boxing main events with timezone conversion.",
+        "description": "Live countdown timers for upcoming UFC, MMA, and Boxing main events with timezone conversion.",
         "potentialAction": {
             "@type": "SearchAction",
             "target": "https://walkoutwatch.com/?q={search_term_string}",
@@ -643,6 +643,15 @@
             transition: color var(--transition); padding: 0;
         }
         .full-card-btn:hover { color: var(--text-primary); }
+        .view-page-link {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.75rem;
+            letter-spacing: 1.5px; color: #8a94a6; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.9rem 2rem; border-top: 1px solid rgba(255,255,255,0.05);
+            transition: color var(--transition);
+        }
+        .mma-card    .view-page-link:hover { color: var(--accent-cyber); }
+        .boxing-card .view-page-link:hover { color: var(--accent-volt); }
         .completed-badge {
             font-family: 'Share Tech Mono', monospace; font-size: 0.6rem;
             letter-spacing: 1.5px; color: var(--text-muted);
@@ -1233,6 +1242,7 @@
                             <div class="undercard-title">Full Fight Card</div>
                             <ul class="undercard-list">${bouts}</ul>
                         </div>
+                        <a href="/fights/${ev.id}/" class="view-page-link" onclick="event.stopPropagation()">VIEW FULL FIGHT PAGE →</a>
                     </div>
                 </div>`;
             }).join('');
