@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dan Hooker vs Salahdine Parnasse - UFC Fight Night 287 | Walkout Watch</title>
-    <meta name="description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer and start times.">
-    <meta name="keywords" content="Dan Hooker vs Salahdine Parnasse, MMA, fight countdown, Paris, France, UFC Fight Night 287">
+    <title>Dan Hooker vs Salahdine Parnasse — Start Time &amp; Countdown | UFC Fight Night 287 | Walkout Watch</title>
+    <meta name="description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer, start times, and full fight card.">
+    <meta name="keywords" content="Dan Hooker vs Salahdine Parnasse, Dan Hooker vs Salahdine Parnasse start time, MMA, fight countdown, Paris, France, UFC Fight Night 287">
     <link rel="canonical" href="https://walkoutwatch.com/fights/mma-ufc-fight-night-287/">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#07080a">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://walkoutwatch.com/fights/mma-ufc-fight-night-287/">
-    <meta property="og:title" content="Dan Hooker vs Salahdine Parnasse - UFC Fight Night 287">
-    <meta property="og:description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer and start times.">
+    <meta property="og:title" content="Dan Hooker vs Salahdine Parnasse — UFC Fight Night 287">
+    <meta property="og:description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer, start times, and full fight card.">
     <meta property="og:site_name" content="Walkout Watch">
+    <meta property="og:image" content="https://walkoutwatch.com/favicon-512.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Dan Hooker vs Salahdine Parnasse - Walkout Watch">
-    <meta name="twitter:description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer and start times.">
+    <meta name="twitter:title" content="Dan Hooker vs Salahdine Parnasse — Walkout Watch">
+    <meta name="twitter:description" content="Watch Dan Hooker vs Salahdine Parnasse live on Sat Sep 05 2026. MMA event in Paris, France. Live countdown timer, start times, and full fight card.">
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -61,7 +64,7 @@
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
     <style>
         :root {
@@ -75,8 +78,12 @@
             --text-primary: #ffffff;
             --text-muted: #5e687a;
             --transition: 0.15s cubic-bezier(0.2,0.8,0.2,1);
+            /* Sport accent — set per-page below */
+            --accent-sport: var(--accent-cyber);
+            --accent-sport-rgb: 0,240,255;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             background-color: var(--bg-main);
             background-image:
@@ -85,431 +92,755 @@
             background-size: 24px 24px;
             color: var(--text-primary);
             font-family: 'Inter', system-ui, sans-serif;
-            padding: 3rem 1rem;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        .container {
-            max-width: 900px;
+
+        /* ── SITE HEADER (branding, consistent w/ homepage) ── */
+        .site-header {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(7,8,10,0.85);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .site-header-inner {
+            max-width: 980px;
             margin: 0 auto;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
-        .back-link {
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            text-decoration: none;
+        }
+        .brand-mark {
+            width: 20px; height: 20px;
+            background: var(--accent-cyber);
+            clip-path: polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
+            flex-shrink: 0;
+            position: relative;
+        }
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            width: 8px; height: 8px;
+            background: var(--accent-volt);
+            border-radius: 1px;
+            right: -4px; bottom: -4px;
+        }
+        .brand-word {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+        .brand-word .b1 { color: var(--accent-volt); }
+        .brand-word .b2 { color: var(--accent-cyber); }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color var(--transition);
+        }
+        .header-nav a:hover { color: var(--text-primary); }
+        .header-nav a.all-fights {
+            color: var(--accent-sport);
+            border: 1px solid rgba(var(--accent-sport-rgb),0.3);
+            padding: 0.45rem 0.9rem;
+            border-radius: 4px;
+        }
+        .header-nav a.all-fights:hover {
+            background: rgba(var(--accent-sport-rgb),0.08);
+            border-color: rgba(var(--accent-sport-rgb),0.6);
+        }
+
+        /* ── BREADCRUMBS (SEO + orientation) ── */
+        .breadcrumbs {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.25rem 1.25rem 0;
+            width: 100%;
+        }
+        .breadcrumbs ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a { color: var(--text-muted); text-decoration: none; }
+        .breadcrumbs a:hover { color: var(--accent-sport); }
+        .breadcrumbs li:not(:last-child)::after { content: '/'; margin-left: 0.4rem; opacity: 0.4; }
+        .breadcrumbs li[aria-current] { color: var(--text-primary); }
+
+        main { flex: 1; }
+
+        .page-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem;
+        }
+
+        /* ── HERO / FIGHT HEADER ── */
+        .fight-hero {
+            margin-bottom: 1.5rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(var(--accent-sport-rgb),0.18);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .fight-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-sport), rgba(var(--accent-sport-rgb),0));
+        }
+        .hero-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+        .sport-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--accent-cyber);
-            text-decoration: none;
-            margin-bottom: 2rem;
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-        .back-link:hover { text-decoration: underline; }
-
-        .fight-header {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: var(--bg-card);
-            border: 1px solid rgba(0,240,255,0.15);
-            border-radius: 8px;
-        }
-        .sport-badge {
-            display: inline-block;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            padding: 0.4rem 0.8rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 4px;
-            margin-bottom: 1rem;
-            background: rgba(0,240,255,0.1);
-            color: var(--accent-cyber);
-            border: 1px solid rgba(0,240,255,0.2);
+            background: rgba(var(--accent-sport-rgb),0.1);
+            color: var(--accent-sport);
+            border: 1px solid rgba(var(--accent-sport-rgb),0.25);
         }
-        .sport-badge.boxing {
-            background: rgba(204,255,0,0.1);
-            color: var(--accent-volt);
-            border-color: rgba(204,255,0,0.2);
+        .sport-badge .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent-sport);
+            box-shadow: 0 0 8px var(--accent-sport);
         }
-
+        .event-name-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
         .event-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(1.9rem, 5vw, 2.7rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             margin-bottom: 1rem;
-            line-height: 1.2;
+            line-height: 1.15;
         }
-        .event-meta {
+        .event-title .vs-word { color: var(--accent-sport); margin: 0 0.3rem; }
+        .event-meta-row {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             display: flex;
-            gap: 2rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
+            align-items: center;
         }
+        .event-meta-row .sep { opacity: 0.35; }
+        .event-meta-row .loc-pin { color: var(--accent-red); }
 
+        /* ── COUNTDOWN ── */
         .countdown-section {
             background: var(--bg-card);
-            border: 2px solid rgba(255,60,0,0.3);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 3rem;
+            border: 1px solid rgba(255,60,0,0.25);
+            border-radius: 10px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
+            position: relative;
         }
         .countdown-label {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
         }
         .countdown-display {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 3rem;
+            font-size: clamp(1.9rem, 6vw, 3rem);
             font-weight: bold;
             color: var(--accent-red);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             line-height: 1.2;
         }
         .countdown-display span {
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-            color: var(--text-muted);
-        }
-
-        .fight-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .detail-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 6px;
-            padding: 1.5rem;
-        }
-        .detail-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-        .detail-value {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .fighters-section {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-        }
-        .fighters-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            color: var(--accent-cyber);
-        }
-        .fighters-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        .fighter-box {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .fighter-box.right { align-items: flex-end; text-align: right; }
-        .fighter-name {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .fighter-record {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .vs-badge {
-            text-align: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.9rem;
-            color: var(--accent-red);
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .undercard-section {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-        }
-        .undercard-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            color: var(--text-muted);
-        }
-        .undercard-bout {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .undercard-bout:last-child { border-bottom: none; }
-        .bout-fighters {
-            font-size: 1rem;
-            color: var(--text-primary);
-        }
-        .bout-weight {
-            font-family: 'Share Tech Mono', monospace;
             font-size: 0.75rem;
+            margin-left: 0.35rem;
+            margin-right: 0.6rem;
             color: var(--text-muted);
-            letter-spacing: 1px;
+            font-weight: normal;
         }
-
-        .related-section {
-            background: rgba(0,240,255,0.05);
-            border: 1px solid rgba(0,240,255,0.15);
-            border-radius: 8px;
-            padding: 2rem;
-        }
-        .related-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            color: var(--accent-cyber);
-        }
-        .related-fights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        .related-fight {
-            background: var(--bg-card);
-            border: 1px solid rgba(0,240,255,0.2);
-            border-radius: 6px;
-            padding: 1.2rem;
-            transition: all var(--transition);
-        }
-        .related-fight:hover {
-            border-color: rgba(0,240,255,0.5);
-            box-shadow: 0 0 20px rgba(0,240,255,0.1);
-        }
-        .related-fight-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-        .related-fight-meta {
+        .countdown-sub {
+            margin-top: 0.85rem;
             font-family: 'Share Tech Mono', monospace;
             font-size: 0.7rem;
             color: var(--text-muted);
-            margin-bottom: 0.8rem;
             letter-spacing: 0.5px;
         }
-        .related-fight-link {
-            display: inline-block;
-            color: var(--accent-cyber);
-            text-decoration: none;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            transition: all var(--transition);
-        }
-        .related-fight-link:hover { color: var(--accent-volt); }
 
+        .action-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
         .tickets-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-cyber), var(--accent-red));
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-sport), var(--accent-red));
             color: #000;
-            padding: 0.8rem 1.6rem;
+            padding: 0.85rem 1.6rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             cursor: pointer;
             text-decoration: none;
             transition: all var(--transition);
-            margin-bottom: 3rem;
         }
         .tickets-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0,240,255,0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(var(--accent-sport-rgb),0.35);
         }
+        .share-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--text-muted);
+            padding: 0.85rem 1.4rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        .share-button:hover { color: var(--text-primary); border-color: rgba(255,255,255,0.25); }
+
+        /* ── SECTION LABEL PATTERN ── */
+        .section {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.05rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .section-title .bar { width: 3px; height: 14px; background: var(--accent-sport); border-radius: 1px; }
+        .section-title.accent { color: var(--accent-sport); }
+
+        /* ── FIGHT DETAILS GRID ── */
+        .fight-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .detail-box {
+            background: var(--bg-card);
+            padding: 1.25rem 1.5rem;
+        }
+        .detail-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .detail-value {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ── MAIN EVENT FIGHTERS ── */
+        .fighters-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .fighter-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .fighter-box.right { align-items: flex-end; text-align: right; }
+        .fighter-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.2rem, 4vw, 1.7rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.15;
+        }
+        .fighter-record {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .vs-badge {
+            text-align: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-red);
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .vs-badge .ring {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,60,0,0.35);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* ── UNDERCARD ── */
+        .undercard-list { list-style: none; }
+        .undercard-bout {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .undercard-bout:last-child { border-bottom: none; }
+        .bout-index {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+            flex-shrink: 0;
+            width: 1.5rem;
+        }
+        .bout-main { flex: 1; }
+        .bout-fighters {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+        .bout-vs { color: var(--text-muted); font-size: 0.8rem; margin: 0 0.2rem; }
+        .bout-weight {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        }
+
+        /* ── FAQ (SEO: matches common searches, also visually useful) ── */
+        .faq-item { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+        }
+        .faq-a {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ── RELATED FIGHTS ── */
+        .related-fights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.9rem;
+        }
+        .related-fight {
+            display: block;
+            background: var(--bg-meta);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 1.1rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .related-fight.mma:hover { border-color: rgba(0,240,255,0.45); box-shadow: 0 0 20px rgba(0,240,255,0.1); }
+        .related-fight.boxing:hover { border-color: rgba(204,255,0,0.45); box-shadow: 0 0 20px rgba(204,255,0,0.1); }
+        .related-fight-sport {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.62rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .related-fight.mma .related-fight-sport { color: var(--accent-cyber); }
+        .related-fight.boxing .related-fight-sport { color: var(--accent-volt); }
+        .related-fight-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .related-fight-title span { color: var(--text-muted); font-size: 0.75rem; margin: 0 0.15rem; }
+        .related-fight-meta {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+        .related-fight-date {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* ── FOOTER ── */
+        .site-footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 2rem 1.25rem;
+            margin-top: auto;
+        }
+        .site-footer-inner {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 1.25rem;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.68rem;
+        }
+        .footer-links a { color: var(--text-muted); text-decoration: none; letter-spacing: 0.5px; }
+        .footer-links a:hover { color: var(--text-primary); }
 
         @media (max-width: 768px) {
             .fight-details { grid-template-columns: 1fr; }
-            .fighters-grid { grid-template-columns: 1fr; }
-            .event-title { font-size: 1.8rem; }
-            .countdown-display { font-size: 2rem; }
+            .fighters-grid { grid-template-columns: 1fr; text-align: center; }
+            .fighter-box.right { align-items: center; text-align: center; }
+            .site-header-inner { flex-wrap: wrap; }
+            .header-nav { gap: 1rem; }
+            .action-row { flex-direction: column; }
+            .tickets-button, .share-button { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">← Back to Schedule</a>
 
-        <div class="fight-header">
-            <div class="sport-badge mma">
-                🥊 MMA
-            </div>
-            <h1 class="event-title">Dan Hooker vs Salahdine Parnasse</h1>
-            <div class="event-meta">
-                <span>UFC Fight Night 287</span>
-                <span>UFC Fight Night 287</span>
-                <span>Paris, France, France</span>
-            </div>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="/" class="brand-link">
+                <div class="brand-mark"></div>
+                <div class="brand-word"><span class="b1">WALKOUT</span> <span class="b2">WATCH</span></div>
+            </a>
+            <nav class="header-nav">
+                <a href="/about.html">About</a>
+                <a href="/" class="all-fights">All Fights →</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="countdown-section">
-            <div class="countdown-label">Time Until Main Event</div>
-            <div class="countdown-display" id="countdown">-- : -- : -- : --</div>
-        </div>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#mma">MMA</a></li>
+            <li aria-current="page">Dan Hooker vs Salahdine Parnasse</li>
+        </ol>
+    </nav>
 
-        <a href="https://www.google.com/search?q=Dan%20Hooker%20vs%20Salahdine%20Parnasse%20tickets" class="tickets-button" target="_blank">Get Tickets</a>
+    <main>
+        <div class="page-wrap">
 
-        <div class="fight-details">
-            <div class="detail-box">
-                <div class="detail-label">Main Event Time</div>
-                <div class="detail-value" id="main-time">Sat, 05 Sep 2026 21:00:00 GMT</div>
-            </div>
-            <div class="detail-box">
-                <div class="detail-label">Prelim Time</div>
-                <div class="detail-value" id="prelim-time">Sat, 05 Sep 2026 18:00:00 GMT</div>
-            </div>
-            <div class="detail-box">
-                <div class="detail-label">Weight Class</div>
-                <div class="detail-value">Lightweight</div>
-            </div>
-        </div>
-
-        <div class="fighters-section">
-            <h2 class="fighters-title">Main Event Fighters</h2>
-            <div class="fighters-grid">
-                <div class="fighter-box">
-                    <div class="fighter-name">Dan Hooker</div>
-                    <div class="fighter-record">Record: 24-14-0</div>
+            <div class="fight-hero">
+                <div class="hero-top-row">
+                    <div class="sport-badge">
+                        <span class="dot"></span>MMA
+                    </div>
+                    <div class="event-name-tag">UFC Fight Night 287</div>
                 </div>
-                <div class="vs-badge">VS</div>
-                <div class="fighter-box right">
-                    <div class="fighter-name">Salahdine Parnasse</div>
-                    <div class="fighter-record">Record: 23-2-0</div>
+                <h1 class="event-title">Dan Hooker<span class="vs-word">vs</span>Salahdine Parnasse</h1>
+                <div class="event-meta-row">
+                    <span>UFC Fight Night 287</span>
+                    <span class="sep">·</span><span class="loc-pin">📍</span><span>Paris, France, France</span>
+                    <span class="sep">·</span>
+                    <span>11 bouts on the card</span>
                 </div>
             </div>
-        </div>
 
-        
-        <div class="undercard-section">
-            <h2 class="undercard-title">Undercard</h2>
+            <div class="countdown-section">
+                <div class="countdown-label">Time Until Main Event Walkout</div>
+                <div class="countdown-display" id="countdown">-- <span>d</span> -- <span>h</span> -- <span>m</span> -- <span>s</span></div>
+                <div class="countdown-sub" id="countdown-sub">Calculating local start time…</div>
+            </div>
+
+            <div class="action-row">
+                <a href="https://www.google.com/search?q=Dan%20Hooker%20vs%20Salahdine%20Parnasse%20tickets" class="tickets-button" target="_blank" rel="noopener">🎟 Get Tickets</a>
+                <a href="https://www.google.com/search?q=Dan%20Hooker%20vs%20Salahdine%20Parnasse%20live%20stream" class="share-button" target="_blank" rel="noopener">▶ Where to Watch</a>
+            </div>
+
+            <div class="fight-details">
+                <div class="detail-box">
+                    <div class="detail-label">Main Card Time</div>
+                    <div class="detail-value" id="main-time">Sat, 05 Sep 2026 21:00:00 GMT</div>
+                </div>
+                <div class="detail-box">
+                    <div class="detail-label">Prelim Time</div>
+                    <div class="detail-value" id="prelim-time">Sat, 05 Sep 2026 18:00:00 GMT</div>
+                </div>
+                <div class="detail-box">
+                    <div class="detail-label">Weight Class</div>
+                    <div class="detail-value">Lightweight</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title accent"><span class="bar"></span>Main Event</h2>
+                <div class="fighters-grid">
+                    <div class="fighter-box">
+                        <div class="fighter-name">Dan Hooker</div>
+                        <div class="fighter-record">Record: 24-14-0</div>
+                    </div>
+                    <div class="vs-badge"><div class="ring">VS</div></div>
+                    <div class="fighter-box right">
+                        <div class="fighter-name">Salahdine Parnasse</div>
+                        <div class="fighter-record">Record: 23-2-0</div>
+                    </div>
+                </div>
+            </div>
+
             
-    <div class="undercard-bout">
-      <div class="bout-fighters">Michael Page vs Nursulton Ruziboev</div>
-      <div class="bout-weight">Middleweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Kurtis Campbell vs Trevor Peek</div>
-      <div class="bout-weight">Featherweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Mario Pinto vs Ryan Spann</div>
-      <div class="bout-weight">Heavyweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Oumar Sy vs Modestas Bukauskas</div>
-      <div class="bout-weight">Light Heavyweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Losene Keita vs Muhammad Naimov</div>
-      <div class="bout-weight">Featherweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Punahele Soriano vs Daniil Donchenko</div>
-      <div class="bout-weight">Welterweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Luis Felipe Dias vs Matthieu Duclos</div>
-      <div class="bout-weight">Middleweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Nora Cornolle vs Klaudia Sygula</div>
-      <div class="bout-weight">Women's Strawweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Nathaniel Wood vs Mairon Santos</div>
-      <div class="bout-weight">Bantamweight</div>
-    </div>
-    <div class="undercard-bout">
-      <div class="bout-fighters">Morgan Charriere vs Felipe Lima</div>
-      <div class="bout-weight">Featherweight</div>
-    </div>
-        </div>
-        
+            <div class="section">
+                <h2 class="section-title"><span class="bar"></span>Full Fight Card / Undercard</h2>
+                <ul class="undercard-list">
+                    
+        <li class="undercard-bout">
+          <span class="bout-index">02</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Michael Page <span class="bout-vs">vs</span> Nursulton Ruziboev</div>
+            <div class="bout-weight">Middleweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">03</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Kurtis Campbell <span class="bout-vs">vs</span> Trevor Peek</div>
+            <div class="bout-weight">Featherweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">04</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Mario Pinto <span class="bout-vs">vs</span> Ryan Spann</div>
+            <div class="bout-weight">Heavyweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">05</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Oumar Sy <span class="bout-vs">vs</span> Modestas Bukauskas</div>
+            <div class="bout-weight">Light Heavyweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">06</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Losene Keita <span class="bout-vs">vs</span> Muhammad Naimov</div>
+            <div class="bout-weight">Featherweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">07</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Punahele Soriano <span class="bout-vs">vs</span> Daniil Donchenko</div>
+            <div class="bout-weight">Welterweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">08</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Luis Felipe Dias <span class="bout-vs">vs</span> Matthieu Duclos</div>
+            <div class="bout-weight">Middleweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">09</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Nora Cornolle <span class="bout-vs">vs</span> Klaudia Sygula</div>
+            <div class="bout-weight">Women's Strawweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">10</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Nathaniel Wood <span class="bout-vs">vs</span> Mairon Santos</div>
+            <div class="bout-weight">Bantamweight</div>
+          </div>
+        </li>
+        <li class="undercard-bout">
+          <span class="bout-index">11</span>
+          <div class="bout-main">
+            <div class="bout-fighters">Morgan Charriere <span class="bout-vs">vs</span> Felipe Lima</div>
+            <div class="bout-weight">Featherweight</div>
+          </div>
+        </li>
+                </ul>
+            </div>
+            
 
-        
-        <div class="related-section">
-            <h2 class="related-title">Upcoming Fights</h2>
-            <div class="related-fights-grid">
+            <div class="section">
+                <h2 class="section-title"><span class="bar"></span>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-q">What time does Dan Hooker vs Salahdine Parnasse start?</div>
+                    <div class="faq-a">The main card for Dan Hooker vs Salahdine Parnasse starts at <strong>Sat, 05 Sep 2026 21:00:00 GMT</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
+                </div>
                 
-      <div class="related-fight">
-        <div class="related-fight-title">Umar Nurmagomedov vs Song Yadong</div>
-        <div class="related-fight-meta">UFC Fight Night 286 · Shanghai, China</div>
-        <a href="/fights/mma-ufc-fight-night-286/" class="related-fight-link">View Fight →</a>
-      </div>
-      <div class="related-fight">
-        <div class="related-fight-title">Chantelle Cameron vs Mikaela Mayer</div>
-        <div class="related-fight-meta">Cameron vs Mayer · Birmingham, England</div>
-        <a href="/fights/boxing-cameron-vs-mayer/" class="related-fight-link">View Fight →</a>
-      </div>
-      <div class="related-fight">
-        <div class="related-fight-title">Moses Itauma vs Filip Hrgovic</div>
-        <div class="related-fight-meta">Itauma vs Hrgovic · London, England</div>
-        <a href="/fights/boxing-itauma-vs-hrgovic/" class="related-fight-link">View Fight →</a>
-      </div>
+                <div class="faq-item">
+                    <div class="faq-q">When do the prelims start?</div>
+                    <div class="faq-a">Preliminary bouts for UFC Fight Night 287 begin at <strong>Sat, 05 Sep 2026 18:00:00 GMT</strong>, ahead of the main card.</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-q">Where is UFC Fight Night 287 taking place?</div>
+                    <div class="faq-a">This event takes place in Paris, France, France.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Who else is fighting on the card?</div>
+                    <div class="faq-a">UFC Fight Night 287 features 11 total bouts, including the main event and undercard fights listed above.</div>
+                </div>
+            </div>
+
+            
+            <div class="section">
+                <h2 class="section-title accent"><span class="bar"></span>More Upcoming Fights</h2>
+                <div class="related-fights-grid">
+                    
+        <a href="/fights/mma-ufc-fight-night-286/" class="related-fight mma">
+          <div class="related-fight-sport">MMA</div>
+          <div class="related-fight-title">Umar Nurmagomedov <span>vs</span> Song Yadong</div>
+          <div class="related-fight-meta">UFC Fight Night 286 · Shanghai, China</div>
+          <time class="related-fight-date" datetime="2026-08-29T18:00:00.000Z">Aug 29</time>
+        </a>
+        <a href="/fights/mma-noche-ufc-4/" class="related-fight mma">
+          <div class="related-fight-sport">MMA</div>
+          <div class="related-fight-title">Yair Rodriguez <span>vs</span> Jean Silva</div>
+          <div class="related-fight-meta">Noche UFC 4 · Glendale, AZ</div>
+          <time class="related-fight-date" datetime="2026-09-12T17:00:00.000Z">Sep 12</time>
+        </a>
+        <a href="/fights/mma-ufc-331/" class="related-fight mma">
+          <div class="related-fight-sport">MMA</div>
+          <div class="related-fight-title">Joshua Van <span>vs</span> Alexandre Pantoja</div>
+          <div class="related-fight-meta">UFC 331 · Los Angeles, CA</div>
+          <time class="related-fight-date" datetime="2026-09-19T17:00:00.000Z">Sep 19</time>
+        </a>
+        <a href="/fights/mma-ufc-fight-night/" class="related-fight mma">
+          <div class="related-fight-sport">MMA</div>
+          <div class="related-fight-title">TBA <span>vs</span> TBA</div>
+          <div class="related-fight-meta">UFC Fight Night · Las Vegas, NV</div>
+          <time class="related-fight-date" datetime="2026-09-26T20:00:00.000Z">Sep 26</time>
+        </a>
+                </div>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="footer-brand">
+                <div class="brand-mark" style="width:14px;height:14px;"></div>
+                WALKOUT WATCH · Live fight countdowns &amp; schedules
+            </div>
+            <div class="footer-links">
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
             </div>
         </div>
-        
-    </div>
+    </footer>
 
     <script>
-        function formatCountdown(ms) {
-            if (ms <= 0) return null;
-            const total = Math.floor(ms / 1000);
-            const days = Math.floor(total / 86400);
-            const hours = Math.floor((total % 86400) / 3600);
-            const minutes = Math.floor((total % 3600) / 60);
-            const seconds = total % 60;
-            return `${String(days).padStart(2,'0')}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m ${String(seconds).padStart(2,'0')}s`;
-        }
-
         const mainDate = new Date('2026-09-05T21:00:00.000Z');
         const countdownEl = document.getElementById('countdown');
+        const subEl = document.getElementById('countdown-sub');
 
         function updateCountdown() {
             const diff = mainDate - Date.now();
@@ -518,11 +849,23 @@
                 const hours = Math.floor((diff % 86400000) / 3600000);
                 const mins  = Math.floor((diff % 3600000) / 60000);
                 const secs  = Math.floor((diff % 60000) / 1000);
-                countdownEl.innerHTML = `${String(days).padStart(2,'0')}<span>d</span> ${String(hours).padStart(2,'0')}<span>h</span> ${String(mins).padStart(2,'0')}<span>m</span> ${String(secs).padStart(2,'0')}<span>s</span>`;
+                countdownEl.innerHTML = `${String(days).padStart(2,'0')}<span>d</span>${String(hours).padStart(2,'0')}<span>h</span>${String(mins).padStart(2,'0')}<span>m</span>${String(secs).padStart(2,'0')}<span>s</span>`;
             } else {
-                countdownEl.innerHTML = '<span style="color:var(--accent-red)">LIVE NOW</span>';
+                countdownEl.innerHTML = '<span style="color:var(--accent-red);font-size:1.2rem;letter-spacing:2px;">🔴 LIVE NOW</span>';
+                subEl.textContent = 'The main event is underway or about to start.';
+                return;
             }
         }
+
+        try {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            subEl.textContent = 'Local start: ' + mainDate.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+            document.getElementById('main-time').textContent = mainDate.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+            const prelimDate = new Date('2026-09-05T18:00:00.000Z');
+            if (prelimDate) {
+                document.getElementById('prelim-time').textContent = prelimDate.toLocaleString(undefined, { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+            }
+        } catch (e) {}
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
