@@ -256,6 +256,61 @@ function buildStaticHTML(events) {
   ].join('\n');
 }
 
+/* ── robots.txt — points crawlers at the sitemap, allows everything ── */
+function buildRobotsTxt() {
+  return [
+    'User-agent: *',
+    'Allow: /',
+    '',
+    `Sitemap: ${SITE}/sitemap.xml`,
+    '',
+  ].join('\n');
+}
+
+/* ── sitemap.xml — homepage, static pages, and every upcoming fight page.
+   Past events are excluded: they're no longer useful search targets and
+   keeping the sitemap focused on live/upcoming content helps crawl budget. ── */
+function buildSitemap(events) {
+  const now = new Date();
+  const upcoming = events.filter(e => new Date(e.datetime) > now);
+  const today = now.toISOString().slice(0, 10);
+
+  const staticUrls = [
+    { loc: `${SITE}/`, changefreq: 'hourly', priority: '1.0' },
+    { loc: `${SITE}/about.html`, changefreq: 'monthly', priority: '0.5' },
+    { loc: `${SITE}/contact.html`, changefreq: 'monthly', priority: '0.3' },
+    { loc: `${SITE}/privacy.html`, changefreq: 'yearly', priority: '0.2' },
+    { loc: `${SITE}/terms.html`, changefreq: 'yearly', priority: '0.2' },
+    { loc: `${SITE}/disclaimer.html`, changefreq: 'yearly', priority: '0.2' },
+  ];
+
+  const fightUrls = upcoming.map(e => ({
+    loc: `${SITE}/fights/${e.id}/`,
+    lastmod: today,
+    changefreq: 'daily',
+    priority: '0.9',
+  }));
+
+  const entries = [...staticUrls, ...fightUrls]
+    .map(u => [
+      '  <url>',
+      `    <loc>${u.loc}</loc>`,
+      u.lastmod ? `    <lastmod>${u.lastmod}</lastmod>` : '',
+      `    <changefreq>${u.changefreq}</changefreq>`,
+      `    <priority>${u.priority}</priority>`,
+      '  </url>',
+    ].filter(Boolean).join('\n'))
+    .join('\n');
+
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    entries,
+    '</urlset>',
+    '',
+  ].join('\n');
+}
+
 /* ── Build schema for a single fight page ── */
 function buildFightSchema(event, fight) {
   const fighter1 = fight.fighterA.name;
@@ -1304,6 +1359,12 @@ async function main() {
 
   fs.writeFileSync('fights-static.html', buildStaticHTML(events));
   console.log('✓ fights-static.html');
+
+  fs.writeFileSync('robots.txt', buildRobotsTxt());
+  console.log('✓ robots.txt');
+
+  fs.writeFileSync('sitemap.xml', buildSitemap(events));
+  console.log('✓ sitemap.xml');
 
   // Generate per-fight pages
   const fightsDir = path.join(process.cwd(), 'fights');
