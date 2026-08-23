@@ -370,12 +370,18 @@ function buildFightPageHTML(event, allEvents) {
     .map(e => {
       const m = e.bouts[0];
       const eIsMMA = e.sport === 'MMA';
+      const eDate = new Date(e.datetime);
       return `
         <a href="/fights/${e.id}/" class="related-fight ${eIsMMA ? 'mma' : 'boxing'}">
-          <div class="related-fight-sport">${eIsMMA ? 'MMA' : 'Boxing'}</div>
-          <div class="related-fight-title">${m.fighterA.name} <span>vs</span> ${m.fighterB.name}</div>
-          <div class="related-fight-meta">${e.eventName}${e.city ? ' · ' + e.city : ''}</div>
-          <time class="related-fight-date" datetime="${e.datetime}">${new Date(e.datetime).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</time>
+          <time class="related-fight-date" datetime="${e.datetime}">
+            <span class="related-fight-day">${eDate.getDate()}</span>
+            <span class="related-fight-month">${eDate.toLocaleDateString('en-US', { month: 'short' })}</span>
+          </time>
+          <div class="related-fight-body">
+            <div class="related-fight-sport">${eIsMMA ? 'MMA' : 'Boxing'}</div>
+            <div class="related-fight-title">${m.fighterA.name} <span>vs</span> ${m.fighterB.name}</div>
+            <div class="related-fight-meta">${e.eventName}${e.city ? ' · ' + e.city : ''}</div>
+          </div>
         </a>`;
     })
     .join('');
@@ -393,10 +399,14 @@ function buildFightPageHTML(event, allEvents) {
   const mainDate = new Date(event.datetime);
   const prelimDate = event.prelimDatetime ? new Date(event.prelimDatetime) : new Date(mainDate - 3 * 3600000);
 
-  // Full fight card list — mirrors homepage's undercard drawer, always expanded on the dedicated page
+  // Full fight card list — undercard/co-main only. The main event (index 0) already
+  // has its own large display at the top of the card, so it's excluded here to avoid
+  // showing the same bout twice.
   const bouts = event.bouts
-    .map((b, idx) => {
-      const boutLabel = idx === 0 ? 'Main Event' : (b.boutType || (idx === 1 ? 'Co-Main' : 'Undercard'));
+    .slice(1)
+    .map((b, i) => {
+      const idx = i + 1;
+      const boutLabel = b.boutType || (idx === 1 ? 'Co-Main' : 'Undercard');
       return `
                     <li class="undercard-row">
                         <div class="bout-info">
@@ -859,34 +869,70 @@ function buildFightPageHTML(event, allEvents) {
         .section-title .bar { width: 3px; height: 14px; background: var(--accent-sport); border-radius: 1px; }
         .section-title.accent { color: var(--accent-sport); }
 
-        /* ── FAQ (SEO: matches common searches, also visually useful) ── */
-        .faq-item { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-q {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.4rem;
+        /* ── FAQ (SEO: matches common searches — kept subtle, collapsed by default) ── */
+        .faq-section {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 8px;
+            padding: 0.25rem 1.25rem;
+            margin-bottom: 1.5rem;
         }
+        .faq-section .section-title {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            opacity: 0.7;
+            margin: 0.9rem 0 0.4rem;
+        }
+        .faq-section .section-title .bar { background: var(--text-muted); opacity: 0.5; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 0.65rem 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            transition: color var(--transition);
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { color: var(--text-primary); }
+        .faq-item summary::after {
+            content: '+';
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: transform var(--transition);
+        }
+        .faq-item[open] summary::after { transform: rotate(45deg); }
+        .faq-item[open] summary { color: var(--text-primary); }
         .faq-a {
-            font-size: 0.88rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             line-height: 1.6;
+            padding: 0 0 0.85rem;
         }
 
         /* ── RELATED FIGHTS ── */
         .related-fights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 0.9rem;
         }
         .related-fight {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             background: var(--bg-meta);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: 8px;
-            padding: 1.1rem;
+            padding: 0.9rem 1.1rem;
             text-decoration: none;
             color: inherit;
             transition: all var(--transition);
@@ -894,36 +940,61 @@ function buildFightPageHTML(event, allEvents) {
         }
         .related-fight.mma:hover { border-color: rgba(0,240,255,0.45); box-shadow: 0 0 20px rgba(0,240,255,0.1); }
         .related-fight.boxing:hover { border-color: rgba(204,255,0,0.45); box-shadow: 0 0 20px rgba(204,255,0,0.1); }
+        .related-fight-date {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .related-fight.mma .related-fight-date { border-color: rgba(0,240,255,0.3); background: rgba(0,240,255,0.06); }
+        .related-fight.boxing .related-fight-date { border-color: rgba(204,255,0,0.3); background: rgba(204,255,0,0.06); }
+        .related-fight-day {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--text-primary);
+        }
+        .related-fight-month {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+        .related-fight.mma .related-fight-month { color: var(--accent-cyber); }
+        .related-fight.boxing .related-fight-month { color: var(--accent-volt); }
+        .related-fight-body { flex: 1; min-width: 0; }
         .related-fight-sport {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.35rem;
         }
         .related-fight.mma .related-fight-sport { color: var(--accent-cyber); }
         .related-fight.boxing .related-fight-sport { color: var(--accent-volt); }
         .related-fight-title {
             font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
+            margin-bottom: 0.3rem;
+            line-height: 1.25;
         }
-        .related-fight-title span { color: var(--text-muted); font-size: 0.75rem; margin: 0 0.15rem; }
+        .related-fight-title span { color: var(--text-muted); font-size: 0.72rem; margin: 0 0.15rem; }
         .related-fight-meta {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
-            margin-bottom: 0.6rem;
-        }
-        .related-fight-date {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.68rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
         }
 
         /* ── FOOTER ── */
@@ -1058,37 +1129,17 @@ function buildFightPageHTML(event, allEvents) {
                     <span class="meta-dot"></span>
                     <span class="meta-chip">${totalBouts} bout${totalBouts !== 1 ? 's' : ''} on the card</span>
                 </div>
+                ${bouts ? `
                 <div class="undercard-content">
-                    <div class="undercard-title">Full Fight Card</div>
+                    <div class="undercard-title">Undercard</div>
                     <ul class="undercard-list">${bouts}</ul>
                 </div>
+                ` : ''}
             </div>
 
             <div class="action-row">
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' tickets')}" class="tickets-button" target="_blank" rel="noopener">🎟 Get Tickets</a>
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' live stream')}" class="share-button" target="_blank" rel="noopener">▶ Where to Watch</a>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title"><span class="bar"></span>Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <div class="faq-q">What time does ${title} start?</div>
-                    <div class="faq-a">The main card for ${title} starts at <strong>${new Date(event.datetime).toUTCString()}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
-                </div>
-                ${event.prelimDatetime ? `
-                <div class="faq-item">
-                    <div class="faq-q">When do the prelims start?</div>
-                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong>${new Date(event.prelimDatetime).toUTCString()}</strong>, ahead of the main card.</div>
-                </div>
-                ` : ''}
-                <div class="faq-item">
-                    <div class="faq-q">Where is ${event.eventName} taking place?</div>
-                    <div class="faq-a">${event.city ? `This event takes place in ${[event.city, event.country].filter(Boolean).join(', ')}.` : 'Location details for this event will be announced closer to the date.'}</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">Who else is fighting on the card?</div>
-                    <div class="faq-a">${totalBouts > 1 ? `${event.eventName} features ${totalBouts} total bouts, including the main event and undercard fights listed above.` : `${title} is currently the only announced bout for this event.`}</div>
-                </div>
             </div>
 
             ${relatedFightsHTML ? `
@@ -1099,6 +1150,28 @@ function buildFightPageHTML(event, allEvents) {
                 </div>
             </div>
             ` : ''}
+
+            <div class="faq-section">
+                <h2 class="section-title"><span class="bar"></span>Questions</h2>
+                <details class="faq-item">
+                    <summary>What time does ${title} start?</summary>
+                    <div class="faq-a">The main card for ${title} starts at <strong>${new Date(event.datetime).toUTCString()}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
+                </details>
+                ${event.prelimDatetime ? `
+                <details class="faq-item">
+                    <summary>When do the prelims start?</summary>
+                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong>${new Date(event.prelimDatetime).toUTCString()}</strong>, ahead of the main card.</div>
+                </details>
+                ` : ''}
+                <details class="faq-item">
+                    <summary>Where is ${event.eventName} taking place?</summary>
+                    <div class="faq-a">${event.city ? `This event takes place in ${[event.city, event.country].filter(Boolean).join(', ')}.` : 'Location details for this event will be announced closer to the date.'}</div>
+                </details>
+                <details class="faq-item">
+                    <summary>Who else is fighting on the card?</summary>
+                    <div class="faq-a">${totalBouts > 1 ? `${event.eventName} features ${totalBouts} total bouts, including the main event and undercard fights listed above.` : `${title} is currently the only announced bout for this event.`}</div>
+                </details>
+            </div>
 
         </div>
     </main>
