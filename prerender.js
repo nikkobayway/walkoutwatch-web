@@ -1155,12 +1155,12 @@ function buildFightPageHTML(event, allEvents) {
                 <h2 class="section-title"><span class="bar"></span>Questions</h2>
                 <details class="faq-item">
                     <summary>What time does ${title} start?</summary>
-                    <div class="faq-a">The main card for ${title} starts at <strong>${new Date(event.datetime).toUTCString()}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
+                    <div class="faq-a">The main card for ${title} starts at <strong id="faq-main-time">${new Date(event.datetime).toUTCString()}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
                 </details>
                 ${event.prelimDatetime ? `
                 <details class="faq-item">
                     <summary>When do the prelims start?</summary>
-                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong>${new Date(event.prelimDatetime).toUTCString()}</strong>, ahead of the main card.</div>
+                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong id="faq-prelim-time">${new Date(event.prelimDatetime).toUTCString()}</strong>, ahead of the main card.</div>
                 </details>
                 ` : ''}
                 <details class="faq-item">
@@ -1199,6 +1199,8 @@ function buildFightPageHTML(event, allEvents) {
         const mainTimeEl = document.getElementById('main-time');
         const prelimTimeEl = document.getElementById('prelim-time');
         const metaDateEl = document.getElementById('meta-date');
+        const faqMainTimeEl = document.getElementById('faq-main-time');
+        const faqPrelimTimeEl = document.getElementById('faq-prelim-time');
 
         function formatCountdown(ms) {
             if (ms <= 0) return null;
@@ -1228,11 +1230,18 @@ function buildFightPageHTML(event, allEvents) {
             if (tz) opts.timeZone = tz;
             return date.toLocaleDateString('en-US', opts);
         }
+        function fmtFull(date, tz) {
+            const opts = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+            if (tz) opts.timeZone = tz;
+            return date.toLocaleString('en-US', opts);
+        }
 
         function renderTimes(tz) {
             if (mainTimeEl) mainTimeEl.textContent = fmt(mainDate, tz);
             if (prelimTimeEl) prelimTimeEl.textContent = fmt(prelimDate, tz);
             if (metaDateEl) metaDateEl.textContent = fmtDate(mainDate, tz);
+            if (faqMainTimeEl) faqMainTimeEl.textContent = fmtFull(mainDate, tz);
+            if (faqPrelimTimeEl) faqPrelimTimeEl.textContent = fmtFull(prelimDate, tz);
         }
 
         // ── Timezone switcher (mirrors homepage behavior) ──
