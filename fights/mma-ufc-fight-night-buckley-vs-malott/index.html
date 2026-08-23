@@ -21,7 +21,7 @@
     <meta property="og:image" content="https://walkoutwatch.com/favicon-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
-    <meta property="article:published_time" content="2026-08-23T03:08:15.788Z">
+    <meta property="article:published_time" content="2026-08-23T03:13:30.825Z">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
@@ -861,12 +861,12 @@
                 <h2 class="section-title"><span class="bar"></span>Questions</h2>
                 <details class="faq-item">
                     <summary>What time does Joaquin Buckley vs Mike Malott start?</summary>
-                    <div class="faq-a">The main card for Joaquin Buckley vs Mike Malott starts at <strong>Sat, 17 Oct 2026 20:00:00 GMT</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
+                    <div class="faq-a">The main card for Joaquin Buckley vs Mike Malott starts at <strong id="faq-main-time">Sat, 17 Oct 2026 20:00:00 GMT</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
                 </details>
                 
                 <details class="faq-item">
                     <summary>When do the prelims start?</summary>
-                    <div class="faq-a">Preliminary bouts for UFC Fight Night: Buckley vs. Malott begin at <strong>Sat, 17 Oct 2026 17:00:00 GMT</strong>, ahead of the main card.</div>
+                    <div class="faq-a">Preliminary bouts for UFC Fight Night: Buckley vs. Malott begin at <strong id="faq-prelim-time">Sat, 17 Oct 2026 17:00:00 GMT</strong>, ahead of the main card.</div>
                 </details>
                 
                 <details class="faq-item">
@@ -905,6 +905,8 @@
         const mainTimeEl = document.getElementById('main-time');
         const prelimTimeEl = document.getElementById('prelim-time');
         const metaDateEl = document.getElementById('meta-date');
+        const faqMainTimeEl = document.getElementById('faq-main-time');
+        const faqPrelimTimeEl = document.getElementById('faq-prelim-time');
 
         function formatCountdown(ms) {
             if (ms <= 0) return null;
@@ -934,11 +936,18 @@
             if (tz) opts.timeZone = tz;
             return date.toLocaleDateString('en-US', opts);
         }
+        function fmtFull(date, tz) {
+            const opts = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+            if (tz) opts.timeZone = tz;
+            return date.toLocaleString('en-US', opts);
+        }
 
         function renderTimes(tz) {
             if (mainTimeEl) mainTimeEl.textContent = fmt(mainDate, tz);
             if (prelimTimeEl) prelimTimeEl.textContent = fmt(prelimDate, tz);
             if (metaDateEl) metaDateEl.textContent = fmtDate(mainDate, tz);
+            if (faqMainTimeEl) faqMainTimeEl.textContent = fmtFull(mainDate, tz);
+            if (faqPrelimTimeEl) faqPrelimTimeEl.textContent = fmtFull(prelimDate, tz);
         }
 
         // ── Timezone switcher (mirrors homepage behavior) ──
