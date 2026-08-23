@@ -61,67 +61,6 @@
     ]
   },
   {
-    "id": "boxing-romero-vs-lopez",
-    "eventName": "Romero vs Lopez",
-    "organization": "PBC / DAZN PPV",
-    "sport": "BOXING",
-    "datetime": "2026-08-22T00:00:00.000Z",
-    "prelimDatetime": "2026-08-22T21:00:00.000Z",
-    "timezone": "-7:00:00",
-    "city": "Las Vegas, NV",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Rolando Romero",
-          "record": "17-2-0"
-        },
-        "fighterB": {
-          "name": "Teofimo Lopez",
-          "record": "22-2-0"
-        },
-        "weightClass": "Welterweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Victor Santillan",
-          "record": "16-2-0"
-        },
-        "fighterB": {
-          "name": "Gary Antonio Russell",
-          "record": "21-1-0"
-        },
-        "weightClass": "Junior Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Yoenli Hernandez",
-          "record": "10-0-0"
-        },
-        "fighterB": {
-          "name": "Francisco Veron",
-          "record": "17-1-1"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Carlos Utria",
-          "record": "14-0-0"
-        },
-        "fighterB": {
-          "name": "Israel Mercado",
-          "record": "13-1-2"
-        },
-        "weightClass": "Junior Welterweight"
-      }
-    ]
-  },
-  {
     "id": "mma-ufc-fight-night-285",
     "eventName": "UFC Fight Night 285",
     "organization": "UFC Fight Night 285",
@@ -263,6 +202,67 @@
           "record": "7-1-0"
         },
         "weightClass": "Featherweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-romero-vs-lopez",
+    "eventName": "Romero vs Lopez",
+    "organization": "PBC / DAZN PPV",
+    "sport": "BOXING",
+    "datetime": "2026-08-22T20:00:00.000Z",
+    "prelimDatetime": "2026-08-22T17:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Las Vegas, NV",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Rolando Romero",
+          "record": "17-2-0"
+        },
+        "fighterB": {
+          "name": "Teofimo Lopez",
+          "record": "22-2-0"
+        },
+        "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Victor Santillan",
+          "record": "16-2-0"
+        },
+        "fighterB": {
+          "name": "Gary Antonio Russell",
+          "record": "21-1-0"
+        },
+        "weightClass": "Junior Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Yoenli Hernandez",
+          "record": "10-0-0"
+        },
+        "fighterB": {
+          "name": "Francisco Veron",
+          "record": "17-1-1"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Carlos Utria",
+          "record": "14-0-0"
+        },
+        "fighterB": {
+          "name": "Israel Mercado",
+          "record": "13-1-2"
+        },
+        "weightClass": "Junior Welterweight"
       }
     ]
   },
