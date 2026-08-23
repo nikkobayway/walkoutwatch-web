@@ -2,39 +2,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Serrano vs Manzur: Amanda Serrano vs Lucrecia Manzur",
-    "startDate": "2026-08-21T00:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-serrano-vs-manzur",
-    "location": {
-      "@type": "Place",
-      "name": "Temecula, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Temecula, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Most Valuable Promotions"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Amanda Serrano"
-      },
-      {
-        "@type": "Person",
-        "name": "Lucrecia Manzur"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "UFC Fight Night 285: Anthony Hernandez vs Gregory Rodrigues",
     "startDate": "2026-08-22T20:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -62,39 +29,6 @@
       {
         "@type": "Person",
         "name": "Gregory Rodrigues"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Romero vs Lopez: Rolando Romero vs Teofimo Lopez",
-    "startDate": "2026-08-22T20:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-romero-vs-lopez",
-    "location": {
-      "@type": "Place",
-      "name": "Las Vegas, NV",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Vegas, NV",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "PBC / DAZN PPV"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Rolando Romero"
-      },
-      {
-        "@type": "Person",
-        "name": "Teofimo Lopez"
       }
     ]
   },
