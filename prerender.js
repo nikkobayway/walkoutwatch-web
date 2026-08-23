@@ -380,16 +380,36 @@ function buildFightPageHTML(event, allEvents) {
     })
     .join('');
 
-  const undercardsHTML = event.bouts
-    .slice(1)
-    .map((bout, i) => `
-        <li class="undercard-bout">
-          <span class="bout-index">${String(i + 2).padStart(2, '0')}</span>
-          <div class="bout-main">
-            <div class="bout-fighters">${bout.fighterA.name} <span class="bout-vs">vs</span> ${bout.fighterB.name}</div>
-            ${bout.weightClass ? `<div class="bout-weight">${bout.weightClass}</div>` : ''}
-          </div>
-        </li>`)
+  // Split names at last space for two-line display (matches homepage)
+  function splitName(n) {
+    const parts = String(n || '').trim().split(' ');
+    if (parts.length === 1) return [parts[0] || '', ''];
+    const last = parts.pop();
+    return [parts.join(' '), last];
+  }
+  const [faFirst, faLast] = splitName(fighter1);
+  const [fbFirst, fbLast] = splitName(fighter2);
+
+  const mainDate = new Date(event.datetime);
+  const prelimDate = event.prelimDatetime ? new Date(event.prelimDatetime) : new Date(mainDate - 3 * 3600000);
+
+  // Full fight card list — mirrors homepage's undercard drawer, always expanded on the dedicated page
+  const bouts = event.bouts
+    .map((b, idx) => {
+      const boutLabel = idx === 0 ? 'Main Event' : (b.boutType || (idx === 1 ? 'Co-Main' : 'Undercard'));
+      return `
+                    <li class="undercard-row">
+                        <div class="bout-info">
+                            <span class="bout-type-tag">${boutLabel}</span>
+                            <span class="bout-fighters">
+                                ${b.fighterA.name}${b.fighterA.record ? ` <span class="fighter-rec">(${b.fighterA.record})</span>` : ''}
+                                <span class="uc-vs">VS</span>
+                                ${b.fighterB.name}${b.fighterB.record ? ` <span class="fighter-rec">(${b.fighterB.record})</span>` : ''}
+                            </span>
+                        </div>
+                        ${b.weightClass ? `<span class="weight-tag">${b.weightClass.toUpperCase()}</span>` : ''}
+                    </li>`;
+    })
     .join('');
 
   const totalBouts = event.bouts.length;
@@ -453,6 +473,8 @@ function buildFightPageHTML(event, allEvents) {
             --accent-red: #ff3c00;
             --text-primary: #ffffff;
             --text-muted: #5e687a;
+            --border-mma: rgba(0,240,255,0.12);
+            --border-boxing: rgba(204,255,0,0.12);
             --transition: 0.15s cubic-bezier(0.2,0.8,0.2,1);
             /* Sport accent — set per-page below */
             --accent-sport: ${isMMA ? 'var(--accent-cyber)' : 'var(--accent-volt)'};
@@ -460,6 +482,7 @@ function buildFightPageHTML(event, allEvents) {
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
+        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.15; } }
         body {
             background-color: var(--bg-main);
             background-image:
@@ -474,7 +497,7 @@ function buildFightPageHTML(event, allEvents) {
             flex-direction: column;
         }
 
-        /* ── SITE HEADER (branding, consistent w/ homepage) ── */
+        /* ── SITE HEADER (branding, exact match to homepage) ── */
         .site-header {
             border-bottom: 1px solid rgba(255,255,255,0.06);
             background: rgba(7,8,10,0.85);
@@ -616,117 +639,155 @@ function buildFightPageHTML(event, allEvents) {
             padding: 1.5rem 1.25rem 4rem;
         }
 
-        /* ── HERO / FIGHT HEADER ── */
-        .fight-hero {
-            margin-bottom: 1.5rem;
-            padding: 2rem;
+        /* ═══════════════════════════════════════════════════
+           FIGHT CARD — copied 1:1 from homepage's card component
+           ═══════════════════════════════════════════════════ */
+        .fight-card {
             background: var(--bg-card);
-            border: 1px solid rgba(var(--accent-sport-rgb),0.18);
-            border-radius: 10px;
-            position: relative;
+            border-radius: 6px;
+            border: 1px solid var(--border-mma);
             overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 30px rgba(0,240,255,0.05);
+            position: relative;
+            margin-bottom: 1.5rem;
         }
-        .fight-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-sport), rgba(var(--accent-sport-rgb),0));
-        }
-        .hero-top-row {
-            display: flex;
-            align-items: center;
+        .fight-card.boxing-card { border-color: var(--border-boxing); }
+        .card-accent-bar { height: 3px; width: 100%; }
+        .mma-card    .card-accent-bar { background: var(--accent-cyber); }
+        .boxing-card .card-accent-bar { background: var(--accent-volt); }
+
+        .card-trigger { padding: 1.75rem 2rem 0; }
+        .card-org-row {
+            display: flex; align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            flex-wrap: wrap;
             margin-bottom: 1.25rem;
         }
-        .sport-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .org-tag {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.68rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 0.45rem 0.9rem;
-            border-radius: 4px;
-            background: rgba(var(--accent-sport-rgb),0.1);
-            color: var(--accent-sport);
-            border: 1px solid rgba(var(--accent-sport-rgb),0.25);
+            font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--accent-cyber);
         }
-        .sport-badge .dot {
-            width: 6px; height: 6px; border-radius: 50%;
-            background: var(--accent-sport);
-            box-shadow: 0 0 8px var(--accent-sport);
+        .boxing-card .org-tag { color: var(--accent-volt); }
+        .card-emblem { display: flex; align-items: center; gap: 0.5rem; opacity: 0.25; }
+        .emblem-octagon {
+            width: 26px; height: 26px;
+            background: var(--accent-cyber);
+            clip-path: polygon(30% 0%,70% 0%,100% 30%,100% 70%,70% 100%,30% 100%,0% 70%,0% 30%);
         }
-        .event-name-tag {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            color: var(--text-muted);
+        .boxing-card .emblem-octagon { display: none; }
+        .emblem-glove {
+            display: none;
+            width: 23px; height: 23px;
+            background: var(--accent-volt);
+            border-radius: 2px;
         }
-        .event-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(1.9rem, 5vw, 2.7rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-            line-height: 1.15;
-        }
-        .event-title .vs-word { color: var(--accent-sport); margin: 0 0.3rem; }
-        .event-meta-row {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        .event-meta-row .sep { opacity: 0.35; }
-        .event-meta-row .loc-pin { color: var(--accent-red); }
+        .boxing-card .emblem-glove { display: block; }
 
-        /* ── COUNTDOWN ── */
-        .countdown-section {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,60,0,0.25);
-            border-radius: 10px;
-            padding: 1.75rem 2rem;
+        .fighters-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 1.5rem;
-            text-align: center;
-            position: relative;
         }
-        .countdown-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.85rem;
+        .fighter-block { display: flex; flex-direction: column; gap: 0.3rem; }
+        .fighter-block.right { align-items: flex-end; text-align: right; }
+        .fighter-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.3rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            line-height: 1.05; color: var(--text-primary);
         }
-        .countdown-display {
+        .fighter-record {
             font-family: 'Share Tech Mono', monospace;
-            font-size: clamp(1.9rem, 6vw, 3rem);
-            font-weight: bold;
+            font-size: 0.68rem; color: var(--text-muted); letter-spacing: 1px;
+        }
+        .vs-block { text-align: center; flex-shrink: 0; }
+        .vs-pill {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.72rem; letter-spacing: 3px;
             color: var(--accent-red);
-            letter-spacing: 1px;
-            line-height: 1.2;
+            background: rgba(255,60,0,0.08);
+            border: 1px solid rgba(255,60,0,0.22);
+            border-radius: 3px; padding: 0.4rem 0.55rem;
+            display: block;
         }
-        .countdown-display span {
-            font-size: 0.75rem;
-            margin-left: 0.35rem;
-            margin-right: 0.6rem;
-            color: var(--text-muted);
-            font-weight: normal;
-        }
-        .countdown-sub {
-            margin-top: 0.85rem;
+
+        .countdown-divider { height: 1px; background: rgba(255,255,255,0.04); margin: 0 2rem; }
+        .countdown-row { display: grid; grid-template-columns: 1fr 1fr; }
+        .countdown-cell { padding: 1.2rem 2rem; border-right: 1px solid rgba(255,255,255,0.04); }
+        .clock-label {
             font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 0.5px;
+            font-size: 0.75rem; letter-spacing: 2px; color: #ffffff;
+            text-transform: uppercase; margin-bottom: 0.4rem;
+            display: flex; align-items: center; gap: 0.45rem;
+        }
+        .pulse-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--accent-red); flex-shrink: 0;
+            animation: blink 1.4s infinite steps(1);
+        }
+        .clock-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.85rem; letter-spacing: 1px;
+            line-height: 1;
+            color: #ff3c00;
+            text-shadow: 0 0 12px rgba(255,60,0,0.3);
+        }
+        .time-unit { font-size: 0.85rem; color: #ff3c00; margin: 0 3px 0 1px; }
+        .fight-time-display {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            line-height: 1;
+            color: var(--accent-cyber);
+            margin-top: 0.5rem;
+        }
+        .fight-time-display.boxing-time { color: var(--accent-volt); }
+
+        .card-meta {
+            display: flex; align-items: center;
+            gap: 1.25rem; flex-wrap: wrap;
+            padding: 1rem 2rem;
+            background: var(--bg-meta);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .meta-chip {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem; letter-spacing: 1px; color: #aab4c4;
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+        .meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); opacity: 0.5; }
+
+        .undercard-content { padding: 1.5rem 2rem 1.75rem; border-top: 1px solid rgba(255,255,255,0.04); }
+        .undercard-title {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+            letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
+            color: var(--accent-cyber);
+        }
+        .boxing-card .undercard-title { color: var(--accent-volt); }
+        .undercard-list { list-style: none; display: grid; grid-template-columns: repeat(2,1fr); gap: 0.6rem; }
+        .undercard-row {
+            background: rgba(255,255,255,0.015); border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 3px; padding: 0.7rem 1rem;
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;
+        }
+        .bout-info { display: flex; flex-direction: column; gap: 0.2rem; }
+        .bout-type-tag {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.55rem;
+            letter-spacing: 1.5px; color: var(--accent-red); text-transform: uppercase;
+        }
+        .bout-fighters {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+        .uc-vs { color: var(--text-muted); font-size: 0.7rem; margin: 0 0.3rem; font-family: 'Share Tech Mono', monospace; }
+        .fighter-rec { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--text-muted); }
+        .weight-tag {
+            font-family: 'Share Tech Mono', monospace; font-size: 0.62rem;
+            color: var(--text-muted); background: rgba(255,255,255,0.03);
+            padding: 0.2rem 0.5rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0;
         }
 
         .action-row {
@@ -797,112 +858,6 @@ function buildFightPageHTML(event, allEvents) {
         }
         .section-title .bar { width: 3px; height: 14px; background: var(--accent-sport); border-radius: 1px; }
         .section-title.accent { color: var(--accent-sport); }
-
-        /* ── FIGHT DETAILS GRID ── */
-        .fight-details {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: rgba(255,255,255,0.06);
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-        .detail-box {
-            background: var(--bg-card);
-            padding: 1.25rem 1.5rem;
-        }
-        .detail-label {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-        .detail-value {
-            font-size: 1rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        /* ── MAIN EVENT FIGHTERS ── */
-        .fighters-grid {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 1.5rem;
-            align-items: center;
-        }
-        .fighter-box {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-        }
-        .fighter-box.right { align-items: flex-end; text-align: right; }
-        .fighter-name {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(1.2rem, 4vw, 1.7rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.15;
-        }
-        .fighter-record {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-        .vs-badge {
-            text-align: center;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-red);
-            font-weight: bold;
-            letter-spacing: 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .vs-badge .ring {
-            width: 34px; height: 34px;
-            border-radius: 50%;
-            border: 1px solid rgba(255,60,0,0.35);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.7rem;
-        }
-
-        /* ── UNDERCARD ── */
-        .undercard-list { list-style: none; }
-        .undercard-bout {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .undercard-bout:last-child { border-bottom: none; }
-        .bout-index {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            opacity: 0.6;
-            flex-shrink: 0;
-            width: 1.5rem;
-        }
-        .bout-main { flex: 1; }
-        .bout-fighters {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-        .bout-vs { color: var(--text-muted); font-size: 0.8rem; margin: 0 0.2rem; }
-        .bout-weight {
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
-        }
 
         /* ── FAQ (SEO: matches common searches, also visually useful) ── */
         .faq-item { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -1005,13 +960,16 @@ function buildFightPageHTML(event, allEvents) {
         .footer-links a:hover { color: var(--text-primary); }
 
         @media (max-width: 768px) {
-            .fight-details { grid-template-columns: 1fr; }
             .fighters-grid { grid-template-columns: 1fr; text-align: center; }
-            .fighter-box.right { align-items: center; text-align: center; }
+            .fighter-block.right { align-items: center; text-align: center; }
+            .countdown-row { grid-template-columns: 1fr; }
+            .countdown-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04); }
+            .undercard-list { grid-template-columns: 1fr; }
             .site-header-inner { flex-wrap: wrap; }
             .header-nav { gap: 1rem; }
             .action-row { flex-direction: column; }
             .tickets-button, .share-button { justify-content: center; }
+            .fighter-name { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -1056,71 +1014,60 @@ function buildFightPageHTML(event, allEvents) {
     <main>
         <div class="page-wrap">
 
-            <div class="fight-hero">
-                <div class="hero-top-row">
-                    <div class="sport-badge">
-                        <span class="dot"></span>${sportLabel}
-                    </div>
-                    <div class="event-name-tag">${event.eventName}</div>
-                </div>
-                <h1 class="event-title">${fighter1}<span class="vs-word">vs</span>${fighter2}</h1>
-                <div class="event-meta-row">
-                    <span>${event.organization || sportLabel}</span>
-                    ${event.city ? `<span class="sep">·</span><span class="loc-pin">📍</span><span>${[event.city, event.country].filter(Boolean).join(', ')}</span>` : ''}
-                    <span class="sep">·</span>
-                    <span>${totalBouts} bout${totalBouts !== 1 ? 's' : ''} on the card</span>
-                </div>
-            </div>
+            <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">${title} — ${event.eventName}</h1>
 
-            <div class="countdown-section">
-                <div class="countdown-label">Time Until Main Event Walkout</div>
-                <div class="countdown-display" id="countdown">-- <span>d</span> -- <span>h</span> -- <span>m</span> -- <span>s</span></div>
-                <div class="countdown-sub" id="countdown-sub">Calculating local start time…</div>
+            <div class="fight-card ${isMMA ? 'mma-card' : 'boxing-card'}">
+                <div class="card-accent-bar"></div>
+                <div class="card-trigger">
+                    <div class="card-org-row">
+                        <span class="org-tag">${event.organization || sportLabel}</span>
+                        <div class="card-emblem">
+                            <div class="emblem-octagon"></div>
+                            <div class="emblem-glove"></div>
+                        </div>
+                    </div>
+                    <div class="fighters-grid">
+                        <div class="fighter-block">
+                            <div class="fighter-name">${faFirst}${faLast ? '<br>' + faLast : ''}</div>
+                            ${main.fighterA.record ? `<div class="fighter-record">${main.fighterA.record}</div>` : ''}
+                        </div>
+                        <div class="vs-block"><span class="vs-pill">VS</span></div>
+                        <div class="fighter-block right">
+                            <div class="fighter-name">${fbFirst}${fbLast ? '<br>' + fbLast : ''}</div>
+                            ${main.fighterB.record ? `<div class="fighter-record">${main.fighterB.record}</div>` : ''}
+                        </div>
+                    </div>
+                </div>
+                <div class="countdown-divider"></div>
+                <div class="countdown-row">
+                    <div class="countdown-cell">
+                        <div class="clock-label"><div class="pulse-dot"></div>PRELIM START</div>
+                        <div class="clock-display" id="prelim-clock">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
+                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="prelim-time">${prelimDate.toUTCString()}</div>
+                    </div>
+                    <div class="countdown-cell">
+                        <div class="clock-label"><div class="pulse-dot"></div>MAIN EVENT WALKOUT</div>
+                        <div class="clock-display" id="main-clock">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
+                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="main-time">${mainDate.toUTCString()}</div>
+                    </div>
+                </div>
+                <div class="card-meta">
+                    <span class="meta-chip">🗓 <span id="meta-date">${mainDate.toDateString()}</span></span>
+                    <span class="meta-dot"></span>
+                    <span class="meta-chip">📍 ${[event.city, event.country].filter(Boolean).join(', ') || 'TBA'}</span>
+                    <span class="meta-dot"></span>
+                    <span class="meta-chip">${totalBouts} bout${totalBouts !== 1 ? 's' : ''} on the card</span>
+                </div>
+                <div class="undercard-content">
+                    <div class="undercard-title">Full Fight Card</div>
+                    <ul class="undercard-list">${bouts}</ul>
+                </div>
             </div>
 
             <div class="action-row">
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' tickets')}" class="tickets-button" target="_blank" rel="noopener">🎟 Get Tickets</a>
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' live stream')}" class="share-button" target="_blank" rel="noopener">▶ Where to Watch</a>
             </div>
-
-            <div class="fight-details">
-                <div class="detail-box">
-                    <div class="detail-label">Main Card Time</div>
-                    <div class="detail-value" id="main-time">${new Date(event.datetime).toUTCString()}</div>
-                </div>
-                <div class="detail-box">
-                    <div class="detail-label">Prelim Time</div>
-                    <div class="detail-value" id="prelim-time">${event.prelimDatetime ? new Date(event.prelimDatetime).toUTCString() : 'TBA'}</div>
-                </div>
-                <div class="detail-box">
-                    <div class="detail-label">Weight Class</div>
-                    <div class="detail-value">${main.weightClass || 'TBA'}</div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title accent"><span class="bar"></span>Main Event</h2>
-                <div class="fighters-grid">
-                    <div class="fighter-box">
-                        <div class="fighter-name">${main.fighterA.name}</div>
-                        ${main.fighterA.record ? `<div class="fighter-record">Record: ${main.fighterA.record}</div>` : ''}
-                    </div>
-                    <div class="vs-badge"><div class="ring">VS</div></div>
-                    <div class="fighter-box right">
-                        <div class="fighter-name">${main.fighterB.name}</div>
-                        ${main.fighterB.record ? `<div class="fighter-record">Record: ${main.fighterB.record}</div>` : ''}
-                    </div>
-                </div>
-            </div>
-
-            ${undercardsHTML ? `
-            <div class="section">
-                <h2 class="section-title"><span class="bar"></span>Full Fight Card / Undercard</h2>
-                <ul class="undercard-list">
-                    ${undercardsHTML}
-                </ul>
-            </div>
-            ` : ''}
 
             <div class="section">
                 <h2 class="section-title"><span class="bar"></span>Frequently Asked Questions</h2>
@@ -1159,7 +1106,7 @@ function buildFightPageHTML(event, allEvents) {
     <footer class="site-footer">
         <div class="site-footer-inner">
             <div class="footer-brand">
-                <div class="brand-mark" style="width:14px;height:14px;"></div>
+                <div class="brand-oct" style="width:10px;height:10px;"></div>
                 WALKOUT WATCH · Live fight countdowns &amp; schedules
             </div>
             <div class="footer-links">
@@ -1173,38 +1120,46 @@ function buildFightPageHTML(event, allEvents) {
 
     <script>
         const mainDate = new Date('${event.datetime}');
-        const prelimDate = ${event.prelimDatetime ? `new Date('${event.prelimDatetime}')` : 'null'};
-        const countdownEl = document.getElementById('countdown');
-        const subEl = document.getElementById('countdown-sub');
+        const prelimDate = new Date('${prelimDate.toISOString()}');
+        const mainClockEl = document.getElementById('main-clock');
+        const prelimClockEl = document.getElementById('prelim-clock');
         const mainTimeEl = document.getElementById('main-time');
         const prelimTimeEl = document.getElementById('prelim-time');
+        const metaDateEl = document.getElementById('meta-date');
 
-        function updateCountdown() {
-            const diff = mainDate - Date.now();
-            if (diff > 0) {
-                const days  = Math.floor(diff / 86400000);
-                const hours = Math.floor((diff % 86400000) / 3600000);
-                const mins  = Math.floor((diff % 3600000) / 60000);
-                const secs  = Math.floor((diff % 60000) / 1000);
-                countdownEl.innerHTML = \`\${String(days).padStart(2,'0')}<span>d</span>\${String(hours).padStart(2,'0')}<span>h</span>\${String(mins).padStart(2,'0')}<span>m</span>\${String(secs).padStart(2,'0')}<span>s</span>\`;
-            } else {
-                countdownEl.innerHTML = '<span style="color:var(--accent-red);font-size:1.2rem;letter-spacing:2px;">🔴 LIVE NOW</span>';
-                if (subEl) subEl.textContent = 'The main event is underway or about to start.';
-            }
+        function formatCountdown(ms) {
+            if (ms <= 0) return null;
+            const total = Math.floor(ms / 1000);
+            const days = Math.floor(total / 86400);
+            const hours = Math.floor((total % 86400) / 3600);
+            const minutes = Math.floor((total % 3600) / 60);
+            const seconds = total % 60;
+            return \`\${String(days).padStart(2,'0')}<span class="time-unit">d</span>\${String(hours).padStart(2,'0')}<span class="time-unit">h</span>\${String(minutes).padStart(2,'0')}<span class="time-unit">m</span>\${String(seconds).padStart(2,'0')}<span class="time-unit">s</span>\`;
+        }
+
+        function tick() {
+            const now = Date.now();
+            const mainF = formatCountdown(mainDate - now);
+            const prelimF = formatCountdown(prelimDate - now);
+            if (mainClockEl) mainClockEl.innerHTML = mainF || '<span style="color:var(--accent-red)">LIVE NOW</span>';
+            if (prelimClockEl) prelimClockEl.innerHTML = prelimF || '<span style="color:var(--accent-red)">LIVE NOW</span>';
         }
 
         function fmt(date, tz) {
-            const opts = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+            const opts = { hour: 'numeric', minute: '2-digit', hour12: true };
             if (tz) opts.timeZone = tz;
-            return date.toLocaleString(undefined, opts);
+            return date.toLocaleTimeString('en-US', opts);
+        }
+        function fmtDate(date, tz) {
+            const opts = { weekday: 'short', month: 'short', day: 'numeric' };
+            if (tz) opts.timeZone = tz;
+            return date.toLocaleDateString('en-US', opts);
         }
 
         function renderTimes(tz) {
-            if (mainDate - Date.now() > 0 && subEl) {
-                subEl.textContent = 'Local start: ' + fmt(mainDate, tz);
-            }
             if (mainTimeEl) mainTimeEl.textContent = fmt(mainDate, tz);
-            if (prelimDate && prelimTimeEl) prelimTimeEl.textContent = fmt(prelimDate, tz);
+            if (prelimTimeEl) prelimTimeEl.textContent = fmt(prelimDate, tz);
+            if (metaDateEl) metaDateEl.textContent = fmtDate(mainDate, tz);
         }
 
         // ── Timezone switcher (mirrors homepage behavior) ──
@@ -1230,12 +1185,13 @@ function buildFightPageHTML(event, allEvents) {
             renderTimes(null);
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        tick();
+        setInterval(tick, 1000);
     </script>
 </body>
 </html>`;
 }
+
 
 async function main() {
   const results = {};
