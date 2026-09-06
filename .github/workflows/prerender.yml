@@ -1,4 +1,4 @@
-name: Pre-render Fight Data & Per-Fight Pages
+name: Pre-render Fight Data
 
 on:
   schedule:
@@ -37,12 +37,29 @@ jobs:
 
       - name: Commit generated files
         run: |
+          set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add fights.json schema-fights.json fights-static.html fights/ sitemap.xml robots.txt
           if git diff --staged --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "chore: pre-render fight data & per-fight pages [skip ci]"
-            git push
+            exit 0
           fi
+
+          git commit -m "chore: pre-render fight data & per-fight pages [skip ci]"
+
+          attempt=1
+          max_attempts=5
+          until git push; do
+            if [ "${attempt}" -ge "${max_attempts}" ]; then
+              echo "Push failed after ${max_attempts} attempts."
+              exit 1
+            fi
+            echo "Push rejected (attempt ${attempt}/${max_attempts}) — rebasing onto latest main and retrying..."
+            git fetch origin main
+            git reset --hard HEAD
+            git rebase origin/main
+            attempt=$((attempt + 1))
+            sleep 3
+          done
+          echo "Push succeeded."
