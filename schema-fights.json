@@ -2,72 +2,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night 285: Anthony Hernandez vs Gregory Rodrigues",
-    "startDate": "2026-08-23T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-285",
-    "location": {
-      "@type": "Place",
-      "name": "Sacramento, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Sacramento, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 285"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Anthony Hernandez"
-      },
-      {
-        "@type": "Person",
-        "name": "Gregory Rodrigues"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "UFC Fight Night 286: Umar Nurmagomedov vs Song Yadong",
-    "startDate": "2026-08-30T01:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-286",
-    "location": {
-      "@type": "Place",
-      "name": "Shanghai, China",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Shanghai, China",
-        "addressCountry": "China"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 286"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Umar Nurmagomedov"
-      },
-      {
-        "@type": "Person",
-        "name": "Song Yadong"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Cameron vs Mayer: Chantelle Cameron vs Mikaela Mayer",
     "startDate": "2026-08-30T01:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -167,39 +101,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night 287: Dan Hooker vs Salahdine Parnasse",
-    "startDate": "2026-09-06T04:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-287",
-    "location": {
-      "@type": "Place",
-      "name": "Paris, France",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris, France",
-        "addressCountry": "France"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 287"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Dan Hooker"
-      },
-      {
-        "@type": "Person",
-        "name": "Salahdine Parnasse"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Taylor vs Pili: Katie Taylor vs Flora Pili",
     "startDate": "2026-09-06T04:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -233,12 +134,12 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Noche UFC 4: Jose Delgado vs Jean Silva",
-    "startDate": "2026-09-13T00:00:00.000Z",
+    "name": "Noche UFC: Silva vs Delgado: Jean Silva vs Jose Miguel Delgado",
+    "startDate": "2026-09-12T21:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-noche-ufc-4",
+    "url": "https://walkoutwatch.com/#mma-noche-ufc-silva-vs-delgado",
     "location": {
       "@type": "Place",
       "name": "Glendale, AZ",
@@ -250,16 +151,16 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "Noche UFC 4"
+      "name": "Noche UFC: Silva vs Delgado"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "Jose Delgado"
+        "name": "Jean Silva"
       },
       {
         "@type": "Person",
-        "name": "Jean Silva"
+        "name": "Jose Miguel Delgado"
       }
     ]
   },
@@ -299,39 +200,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC 331: Joshua Van vs Alexandre Pantoja",
-    "startDate": "2026-09-20T00:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-331",
-    "location": {
-      "@type": "Place",
-      "name": "Los Angeles, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Los Angeles, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC 331"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Joshua Van"
-      },
-      {
-        "@type": "Person",
-        "name": "Alexandre Pantoja"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Cruz vs Bravo: Isaac Cruz vs Nestor Bravo",
     "startDate": "2026-09-20T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -359,6 +227,39 @@
       {
         "@type": "Person",
         "name": "Nestor Bravo"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Crypto.com UFC 331: Joshua Van vs Alexandre Pantoja",
+    "startDate": "2026-09-20T01:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-crypto-com-ufc-331",
+    "location": {
+      "@type": "Place",
+      "name": "Los Angeles, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles, CA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Crypto.com UFC 331"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Joshua Van"
+      },
+      {
+        "@type": "Person",
+        "name": "Alexandre Pantoja"
       }
     ]
   },
@@ -398,12 +299,12 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night: TBA vs TBA",
-    "startDate": "2026-09-27T03:00:00.000Z",
+    "name": "UFC Fight Night: Rosas Jr. vs. Barcelos: Raul Rosas Jr. vs Raoni Barcelos",
+    "startDate": "2026-09-26T22:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-rosas-jr-vs-barcelos",
     "location": {
       "@type": "Place",
       "name": "Las Vegas, NV",
@@ -415,16 +316,49 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC Fight Night"
+      "name": "UFC Fight Night: Rosas Jr. vs. Barcelos"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Raul Rosas Jr."
       },
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Raoni Barcelos"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC 332: Deiveson Figueiredo vs Payton Talbott",
+    "startDate": "2026-10-04T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-332",
+    "location": {
+      "@type": "Place",
+      "name": "Salt Lake City, UT",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salt Lake City, UT",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC 332"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Deiveson Figueiredo"
+      },
+      {
+        "@type": "Person",
+        "name": "Payton Talbott"
       }
     ]
   },
@@ -464,8 +398,41 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "UFC Fight Night: Allen vs. Duncan: Brendan Allen vs Christian Leroy Duncan",
+    "startDate": "2026-10-11T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-allen-vs-duncan",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas, NV",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas, NV",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night: Allen vs. Duncan"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Brendan Allen"
+      },
+      {
+        "@type": "Person",
+        "name": "Christian Leroy Duncan"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "UFC Fight Night: Buckley vs. Malott: Joaquin Buckley vs Mike Malott",
-    "startDate": "2026-10-18T03:00:00.000Z",
+    "startDate": "2026-10-18T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",

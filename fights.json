@@ -1,247 +1,5 @@
 [
   {
-    "id": "mma-ufc-fight-night-285",
-    "eventName": "UFC Fight Night 285",
-    "organization": "UFC Fight Night 285",
-    "sport": "MMA",
-    "datetime": "2026-08-23T03:00:00.000Z",
-    "prelimDatetime": "2026-08-23T00:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Sacramento, CA",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Anthony Hernandez",
-          "record": "15-3-0"
-        },
-        "fighterB": {
-          "name": "Gregory Rodrigues",
-          "record": "19-6-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Co-Main",
-        "fighterA": {
-          "name": "Serghei Spivac",
-          "record": "18-4-0"
-        },
-        "fighterB": {
-          "name": "Vitor Petrino",
-          "record": "14-2-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Reinier de Ridder",
-          "record": "21-4-0"
-        },
-        "fighterB": {
-          "name": "Roman Dolidze",
-          "record": "13-5-0"
-        },
-        "weightClass": "Light Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Shamil Gaziev",
-          "record": "13-1-0"
-        },
-        "fighterB": {
-          "name": "Kennedy Nzechukwu",
-          "record": "12-7-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Jackson McVey",
-          "record": "9-2-0"
-        },
-        "fighterB": {
-          "name": "Wes Schultz",
-          "record": "12-4-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Carli Judice",
-          "record": "7-1-0"
-        },
-        "fighterB": {
-          "name": "Jeisla Chaves",
-          "record": "8-4-0"
-        },
-        "weightClass": "Women's Strawweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Mason Jones",
-          "record": "14-4-0"
-        },
-        "fighterB": {
-          "name": "MarQuel Mederos",
-          "record": "9-2-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Shanelle Dyer",
-          "record": "6-2-0"
-        },
-        "fighterB": {
-          "name": "Elise Reed",
-          "record": "5-3-0"
-        },
-        "weightClass": "Women's Strawweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Kody Steele",
-          "record": "9-3-0"
-        },
-        "fighterB": {
-          "name": "Gauge Young",
-          "record": "7-2-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Nasrat Haqparast",
-          "record": "18-6-0"
-        },
-        "fighterB": {
-          "name": "Chris Padilla",
-          "record": "10-3-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Jamall Emmers",
-          "record": "18-6-0"
-        },
-        "fighterB": {
-          "name": "Lerryan Douglas",
-          "record": "7-1-0"
-        },
-        "weightClass": "Featherweight"
-      }
-    ]
-  },
-  {
-    "id": "mma-ufc-fight-night-286",
-    "eventName": "UFC Fight Night 286",
-    "organization": "UFC Fight Night 286",
-    "sport": "MMA",
-    "datetime": "2026-08-30T01:00:00.000Z",
-    "prelimDatetime": "2026-08-29T22:00:00.000Z",
-    "timezone": "+08:00",
-    "city": "Shanghai, China",
-    "country": "China",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Umar Nurmagomedov",
-          "record": "20-1-0"
-        },
-        "fighterB": {
-          "name": "Song Yadong",
-          "record": "23-9-1"
-        },
-        "weightClass": "Bantamweight"
-      },
-      {
-        "boutType": "Co-Main",
-        "fighterA": {
-          "name": "Yan Xiaonan",
-          "record": "21-3-0"
-        },
-        "fighterB": {
-          "name": "Denise Gomes",
-          "record": "16-3-0"
-        },
-        "weightClass": "Women's Strawweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Aoriqileng",
-          "record": "19-8-0"
-        },
-        "fighterB": {
-          "name": "Kai Asakura",
-          "record": "22-4-0"
-        },
-        "weightClass": "Bantamweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Alex Perez",
-          "record": "12-5-0"
-        },
-        "fighterB": {
-          "name": "Sumudaerji",
-          "record": "18-4-0"
-        },
-        "weightClass": "Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Rei Tsuruya",
-          "record": "9-2-0"
-        },
-        "fighterB": {
-          "name": "Kevin Borjas",
-          "record": "9-3-0"
-        },
-        "weightClass": "Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Junior Tafa",
-          "record": "10-4-0"
-        },
-        "fighterB": {
-          "name": "Ce Liu",
-          "record": "6-1-0"
-        },
-        "weightClass": "Light Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Andre Lima",
-          "record": "11-3-0"
-        },
-        "fighterB": {
-          "name": "N. Batbayar",
-          "record": "8-3-0"
-        },
-        "weightClass": "Flyweight"
-      }
-    ]
-  },
-  {
     "id": "boxing-cameron-vs-mayer",
     "eventName": "Cameron vs Mayer",
     "organization": "Matchroom / ESPN+",
@@ -401,151 +159,6 @@
     ]
   },
   {
-    "id": "mma-ufc-fight-night-287",
-    "eventName": "UFC Fight Night 287",
-    "organization": "UFC Fight Night 287",
-    "sport": "MMA",
-    "datetime": "2026-09-06T04:00:00.000Z",
-    "prelimDatetime": "2026-09-06T01:00:00.000Z",
-    "timezone": "+02:00",
-    "city": "Paris, France",
-    "country": "France",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Dan Hooker",
-          "record": "24-14-0"
-        },
-        "fighterB": {
-          "name": "Salahdine Parnasse",
-          "record": "23-2-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Co-Main",
-        "fighterA": {
-          "name": "Michael Page",
-          "record": "25-3-0"
-        },
-        "fighterB": {
-          "name": "Nursulton Ruziboev",
-          "record": "15-2-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Kurtis Campbell",
-          "record": "8-1-0"
-        },
-        "fighterB": {
-          "name": "Trevor Peek",
-          "record": "9-3-0"
-        },
-        "weightClass": "Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Mario Pinto",
-          "record": "12-4-0"
-        },
-        "fighterB": {
-          "name": "Ryan Spann",
-          "record": "23-10-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Oumar Sy",
-          "record": "10-2-0"
-        },
-        "fighterB": {
-          "name": "Modestas Bukauskas",
-          "record": "14-6-0"
-        },
-        "weightClass": "Light Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Losene Keita",
-          "record": "11-3-0"
-        },
-        "fighterB": {
-          "name": "Muhammad Naimov",
-          "record": "10-2-0"
-        },
-        "weightClass": "Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Punahele Soriano",
-          "record": "14-5-0"
-        },
-        "fighterB": {
-          "name": "Daniil Donchenko",
-          "record": "13-4-0"
-        },
-        "weightClass": "Welterweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Luis Felipe Dias",
-          "record": "12-3-0"
-        },
-        "fighterB": {
-          "name": "Matthieu Duclos",
-          "record": "11-4-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Nora Cornolle",
-          "record": "11-2-0"
-        },
-        "fighterB": {
-          "name": "Klaudia Sygula",
-          "record": "10-5-0"
-        },
-        "weightClass": "Women's Strawweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Nathaniel Wood",
-          "record": "20-7-0"
-        },
-        "fighterB": {
-          "name": "Mairon Santos",
-          "record": "18-7-0"
-        },
-        "weightClass": "Bantamweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Morgan Charriere",
-          "record": "22-10-0"
-        },
-        "fighterB": {
-          "name": "Felipe Lima",
-          "record": "12-5-0"
-        },
-        "weightClass": "Featherweight"
-      }
-    ]
-  },
-  {
     "id": "boxing-taylor-vs-pili",
     "eventName": "Taylor vs Pili",
     "organization": "Matchroom / DAZN",
@@ -619,12 +232,12 @@
     ]
   },
   {
-    "id": "mma-noche-ufc-4",
-    "eventName": "Noche UFC 4",
-    "organization": "Noche UFC 4",
+    "id": "mma-noche-ufc-silva-vs-delgado",
+    "eventName": "Noche UFC: Silva vs Delgado",
+    "organization": "Noche UFC: Silva vs Delgado",
     "sport": "MMA",
-    "datetime": "2026-09-13T00:00:00.000Z",
-    "prelimDatetime": "2026-09-12T20:00:00.000Z",
+    "datetime": "2026-09-12T21:00:00.000Z",
+    "prelimDatetime": "2026-09-12T18:00:00.000Z",
     "timezone": "-07:00",
     "city": "Glendale, AZ",
     "country": "USA",
@@ -632,122 +245,158 @@
       {
         "boutType": "Main Event",
         "fighterA": {
-          "name": "Jose Delgado",
-          "record": "12-2-0"
-        },
-        "fighterB": {
           "name": "Jean Silva",
           "record": "14-2-0"
+        },
+        "fighterB": {
+          "name": "Jose Miguel Delgado",
+          "record": "12-2-0"
         },
         "weightClass": "Featherweight"
       },
       {
         "boutType": "Co-Main",
         "fighterA": {
-          "name": "Manon Fiorot",
-          "record": "14-1-0"
-        },
-        "fighterB": {
-          "name": "Alexa Grasso",
-          "record": "16-4-0"
-        },
-        "weightClass": "Women's Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
           "name": "Brandon Moreno",
-          "record": "23-7-2"
+          "record": "23-10-2"
         },
         "fighterB": {
           "name": "Joseph Morales",
-          "record": "12-6-0"
+          "record": "14-2-0"
         },
         "weightClass": "Flyweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "Waldo Cortes-Acosta",
+          "name": "Tommy McMillen",
+          "record": "11-0-0"
+        },
+        "fighterB": {
+          "name": "Marwan Rahiki",
+          "record": "9-0-0"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Manon Fiorot",
           "record": "13-2-0"
         },
         "fighterB": {
+          "name": "Alexa Grasso",
+          "record": "17-5-1"
+        },
+        "weightClass": "Women's Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Waldo Cortes-Acosta",
+          "record": "17-3-0"
+        },
+        "fighterB": {
           "name": "Curtis Blaydes",
-          "record": "19-5-0"
+          "record": "19-6-0"
         },
         "weightClass": "Heavyweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
+          "name": "David Martinez",
+          "record": "14-1-0"
+        },
+        "fighterB": {
+          "name": "Dan Ige",
+          "record": "19-11-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
           "name": "Tim Elliott",
-          "record": "19-14-1"
+          "record": "21-14-1"
         },
         "fighterB": {
           "name": "Edgar Chairez",
-          "record": "11-3-0"
+          "record": "14-6-1"
         },
         "weightClass": "Flyweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "David Martinez",
-          "record": "10-2-0"
+          "name": "Ignacio Bahamontes",
+          "record": "17-7-0"
         },
         "fighterB": {
-          "name": "Dan Ige",
-          "record": "18-9-0"
+          "name": "Muslim Salikhov",
+          "record": "22-6-0"
         },
-        "weightClass": "Lightweight"
+        "weightClass": "Welterweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "JJ Aldrich",
-          "record": "14-9-0"
-        },
-        "fighterB": {
-          "name": "Regina Tarin",
-          "record": "7-3-0"
-        },
-        "weightClass": "Women's Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Kelvin Gastelum",
-          "record": "20-9-0"
-        },
-        "fighterB": {
           "name": "Yousri Belgaroui",
-          "record": "12-3-0"
+          "record": "10-3-0"
+        },
+        "fighterB": {
+          "name": "Djorden Santos",
+          "record": "11-3-0"
         },
         "weightClass": "Middleweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "Ignacio Bahamondes",
-          "record": "16-6-0"
+          "name": "Drakkar Klose",
+          "record": "16-3-1"
         },
         "fighterB": {
-          "name": "Muslim Salikhov",
-          "record": "23-5-0"
+          "name": "Tommy Gantt",
+          "record": "12-0-0"
         },
         "weightClass": "Lightweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "Drakkar Klose",
-          "record": "13-4-1"
+          "name": "Rafa Garcia",
+          "record": "19-4-0"
         },
         "fighterB": {
-          "name": "Tommy Gantt",
-          "record": "9-3-0"
+          "name": "Rongzhu",
+          "record": "28-6-0"
         },
         "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Sean King",
+          "record": "7-0-0"
+        },
+        "fighterB": {
+          "name": "Jessie Rosas",
+          "record": "8-1-0"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "JJ Aldrich",
+          "record": "15-7-0"
+        },
+        "fighterB": {
+          "name": "Regina Tarin",
+          "record": "8-0-0"
+        },
+        "weightClass": "Women's Flyweight"
       }
     ]
   },
@@ -801,163 +450,6 @@
     ]
   },
   {
-    "id": "mma-ufc-331",
-    "eventName": "UFC 331",
-    "organization": "UFC 331",
-    "sport": "MMA",
-    "datetime": "2026-09-20T00:00:00.000Z",
-    "prelimDatetime": "2026-09-19T20:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Los Angeles, CA",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Joshua Van",
-          "record": "17-2-0"
-        },
-        "fighterB": {
-          "name": "Alexandre Pantoja",
-          "record": "30-6-0"
-        },
-        "weightClass": "Flyweight"
-      },
-      {
-        "boutType": "Co-Main",
-        "fighterA": {
-          "name": "Arman Tsarukyan",
-          "record": "23-3-0"
-        },
-        "fighterB": {
-          "name": "Mauricio Ruffy",
-          "record": "14-2-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Renato Moicano",
-          "record": "21-5-1"
-        },
-        "fighterB": {
-          "name": "Brian Ortega",
-          "record": "17-4-1"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Patricio Pitbull",
-          "record": "37-9-0"
-        },
-        "fighterB": {
-          "name": "Doo Ho Choi",
-          "record": "14-5-0"
-        },
-        "weightClass": "Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Charles Jourdain",
-          "record": "17-7-1"
-        },
-        "fighterB": {
-          "name": "Marlon Vera",
-          "record": "23-11-0"
-        },
-        "weightClass": "Bantamweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Ryan Gandra",
-          "record": "10-2-0"
-        },
-        "fighterB": {
-          "name": "Ozzy Diaz",
-          "record": "11-3-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Casey O'Neill",
-          "record": "11-2-0"
-        },
-        "fighterB": {
-          "name": "Eduarda Moura",
-          "record": "8-2-0"
-        },
-        "weightClass": "Women's Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Edmen Shahbazyan",
-          "record": "14-5-0"
-        },
-        "fighterB": {
-          "name": "Brunno Ferreira",
-          "record": "13-2-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Tai Tuivasa",
-          "record": "15-7-0"
-        },
-        "fighterB": {
-          "name": "Robelis Despaigne",
-          "record": "14-1-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Gable Steveson",
-          "record": "5-0-0"
-        },
-        "fighterB": {
-          "name": "Sean Sharaf",
-          "record": "7-2-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Iwo Baraniewski",
-          "record": "10-3-0"
-        },
-        "fighterB": {
-          "name": "Alonzo Menifield",
-          "record": "14-5-0"
-        },
-        "weightClass": "Light Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Giga Chikadze",
-          "record": "16-4-0"
-        },
-        "fighterB": {
-          "name": "Joanderson Brito",
-          "record": "18-3-0"
-        },
-        "weightClass": "Featherweight"
-      }
-    ]
-  },
-  {
     "id": "boxing-cruz-vs-bravo",
     "eventName": "Cruz vs Bravo",
     "organization": "Golden Boy / DAZN",
@@ -995,6 +487,175 @@
     ]
   },
   {
+    "id": "mma-crypto-com-ufc-331",
+    "eventName": "Crypto.com UFC 331",
+    "organization": "Crypto.com UFC 331",
+    "sport": "MMA",
+    "datetime": "2026-09-20T01:00:00.000Z",
+    "prelimDatetime": "2026-09-19T23:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Los Angeles, CA",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Joshua Van",
+          "record": "17-2-0"
+        },
+        "fighterB": {
+          "name": "Alexandre Pantoja",
+          "record": "30-6-0"
+        },
+        "weightClass": "Flyweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Arman Tsarukyan",
+          "record": "23-3-0"
+        },
+        "fighterB": {
+          "name": "Mauricio Ruffy",
+          "record": "14-2-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Patricio Pitbull",
+          "record": "37-9-0"
+        },
+        "fighterB": {
+          "name": "Dooho Choi",
+          "record": "17-4-1"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Renato Moicano",
+          "record": "21-7-1"
+        },
+        "fighterB": {
+          "name": "Brian Ortega",
+          "record": "16-5-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Alonzo Menifield",
+          "record": "18-6-1"
+        },
+        "fighterB": {
+          "name": "Iwo Baraniewski",
+          "record": "9-0-0"
+        },
+        "weightClass": "Light Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Gable Steveson",
+          "record": "4-0-0"
+        },
+        "fighterB": {
+          "name": "Sean Sharaf",
+          "record": "4-2-0"
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Marlon Vera",
+          "record": "23-12-1"
+        },
+        "fighterB": {
+          "name": "Charles Jourdain",
+          "record": "18-8-1"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Tai Tuivasa",
+          "record": "14-10-0"
+        },
+        "fighterB": {
+          "name": "Robelis Despaigne",
+          "record": "6-2-0"
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Michael Aswell Jr.",
+          "record": "11-5-0"
+        },
+        "fighterB": {
+          "name": "Joosang Yoo",
+          "record": "9-1-0"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Ryan Gandra",
+          "record": "10-1-0"
+        },
+        "fighterB": {
+          "name": "Ozzy Diaz",
+          "record": "10-4-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Edmen Shahbazyan",
+          "record": "16-6-0"
+        },
+        "fighterB": {
+          "name": "Brunno Ferreira",
+          "record": "15-4-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Casey O'Neill",
+          "record": "11-2-0"
+        },
+        "fighterB": {
+          "name": "Eduarda Moura",
+          "record": "12-2-0"
+        },
+        "weightClass": "Women's Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Giga Chikadze",
+          "record": "15-6-0"
+        },
+        "fighterB": {
+          "name": "Joanderson Brito",
+          "record": "19-5-1"
+        },
+        "weightClass": "Featherweight"
+      }
+    ]
+  },
+  {
     "id": "boxing-simsri-vs-vicelles",
     "eventName": "Simsri vs Vicelles",
     "organization": "IBF",
@@ -1020,12 +681,12 @@
     ]
   },
   {
-    "id": "mma-ufc-fight-night",
-    "eventName": "UFC Fight Night",
-    "organization": "UFC Fight Night",
+    "id": "mma-ufc-fight-night-rosas-jr-vs-barcelos",
+    "eventName": "UFC Fight Night: Rosas Jr. vs. Barcelos",
+    "organization": "UFC Fight Night: Rosas Jr. vs. Barcelos",
     "sport": "MMA",
-    "datetime": "2026-09-27T03:00:00.000Z",
-    "prelimDatetime": "2026-09-27T00:00:00.000Z",
+    "datetime": "2026-09-26T22:00:00.000Z",
+    "prelimDatetime": "2026-09-26T20:00:00.000Z",
     "timezone": "-07:00",
     "city": "Las Vegas, NV",
     "country": "USA",
@@ -1033,14 +694,291 @@
       {
         "boutType": "Main Event",
         "fighterA": {
-          "name": "TBA",
-          "record": "TBA"
+          "name": "Raul Rosas Jr.",
+          "record": "12-1-0"
         },
         "fighterB": {
-          "name": "TBA",
-          "record": "TBA"
+          "name": "Raoni Barcelos",
+          "record": "22-5-0"
         },
-        "weightClass": "TBA"
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Melissa Amaya",
+          "record": "8-0-0"
+        },
+        "fighterB": {
+          "name": "Valesca Machado",
+          "record": "0-0-0"
+        },
+        "weightClass": "Women's Strawweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Mehemmedeli Osmanli",
+          "record": "11-1-0"
+        },
+        "fighterB": {
+          "name": "Ilimbek Akylbek Uulu",
+          "record": "9-3-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Montel Jackson",
+          "record": "15-4-0"
+        },
+        "fighterB": {
+          "name": "Ricky Simon",
+          "record": "22-7-1"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Rodolfo Bellato",
+          "record": "13-3-1"
+        },
+        "fighterB": {
+          "name": "Christian Edwards",
+          "record": "8-5-0"
+        },
+        "weightClass": "Light Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Rodolfo Vieira",
+          "record": "11-5-0"
+        },
+        "fighterB": {
+          "name": "Robert Bryczek",
+          "record": "18-7-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Brady Hiestand",
+          "record": "9-1-0"
+        },
+        "fighterB": {
+          "name": "Rinya Nakamura",
+          "record": "10-1-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "John Castaneda",
+          "record": "21-8-1"
+        },
+        "fighterB": {
+          "name": "Alatengheili",
+          "record": "17-10-2"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Josiah Harrell",
+          "record": "11-1-0"
+        },
+        "fighterB": {
+          "name": "Elves Brener",
+          "record": "16-6-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Norma Dumont",
+          "record": "13-3-0"
+        },
+        "fighterB": {
+          "name": "Ailin Perez",
+          "record": "13-2-0"
+        },
+        "weightClass": "Women's Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Vanessa Demopoulos",
+          "record": "11-8-0"
+        },
+        "fighterB": {
+          "name": "Yazmin Jauregui",
+          "record": "11-2-0"
+        },
+        "weightClass": "Women's Strawweight"
+      }
+    ]
+  },
+  {
+    "id": "mma-ufc-332",
+    "eventName": "UFC 332",
+    "organization": "UFC 332",
+    "sport": "MMA",
+    "datetime": "2026-10-04T00:00:00.000Z",
+    "prelimDatetime": "2026-10-03T22:00:00.000Z",
+    "timezone": "-06:00",
+    "city": "Salt Lake City, UT",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Deiveson Figueiredo",
+          "record": "25-7-1"
+        },
+        "fighterB": {
+          "name": "Payton Talbott",
+          "record": "11-1-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Main Event (Title)",
+        "fighterA": {
+          "name": "Natalia Silva",
+          "record": "20-5-1"
+        },
+        "fighterB": {
+          "name": "Wang Cong",
+          "record": "9-1-0"
+        },
+        "weightClass": "Women's Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Khaos Williams",
+          "record": "16-5-0"
+        },
+        "fighterB": {
+          "name": "Roberto Soldic",
+          "record": "21-4-1"
+        },
+        "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Ateba Gautier",
+          "record": "11-1-0"
+        },
+        "fighterB": {
+          "name": "Roman Kopylov",
+          "record": "15-5-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Imanol Rodriguez",
+          "record": "7-0-0"
+        },
+        "fighterB": {
+          "name": "Alden Coria",
+          "record": "13-3-0"
+        },
+        "weightClass": "Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Damian Pinas",
+          "record": "10-1-0"
+        },
+        "fighterB": {
+          "name": "Andrey Pulyaev",
+          "record": "10-5-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Marcus McGhee",
+          "record": "11-2-0"
+        },
+        "fighterB": {
+          "name": "Benardo Sopaj",
+          "record": "13-3-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "King Green",
+          "record": "36-17-1"
+        },
+        "fighterB": {
+          "name": "Esteban Ribovics",
+          "record": "16-3-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Johnny Walker",
+          "record": "22-10-0"
+        },
+        "fighterB": {
+          "name": "Mick Parkin",
+          "record": "10-1-0"
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Rafael dos Anjos",
+          "record": "35-16-0"
+        },
+        "fighterB": {
+          "name": "Alexander Hernandez",
+          "record": "14-7-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Marvin Vettori",
+          "record": "20-8-1"
+        },
+        "fighterB": {
+          "name": "Ismail Naurdiev",
+          "record": "19-4-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Court McGee",
+          "record": "22-14-0"
+        },
+        "fighterB": {
+          "name": "Eric Nolan",
+          "record": "5-3-0"
+        },
+        "weightClass": "Welterweight"
       }
     ]
   },
@@ -1070,12 +1008,37 @@
     ]
   },
   {
+    "id": "mma-ufc-fight-night-allen-vs-duncan",
+    "eventName": "UFC Fight Night: Allen vs. Duncan",
+    "organization": "UFC Fight Night: Allen vs. Duncan",
+    "sport": "MMA",
+    "datetime": "2026-10-11T00:00:00.000Z",
+    "prelimDatetime": "2026-10-10T21:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Las Vegas, NV",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Brendan Allen",
+          "record": "23-6-0"
+        },
+        "fighterB": {
+          "name": "Christian Leroy Duncan",
+          "record": "12-2-0"
+        },
+        "weightClass": "Middleweight"
+      }
+    ]
+  },
+  {
     "id": "mma-ufc-fight-night-buckley-vs-malott",
     "eventName": "UFC Fight Night: Buckley vs. Malott",
     "organization": "UFC Fight Night: Buckley vs. Malott",
     "sport": "MMA",
-    "datetime": "2026-10-18T03:00:00.000Z",
-    "prelimDatetime": "2026-10-18T00:00:00.000Z",
+    "datetime": "2026-10-18T00:00:00.000Z",
+    "prelimDatetime": "2026-10-17T21:00:00.000Z",
     "timezone": "-06:00",
     "city": "Edmonton, AB",
     "country": "Canada",
@@ -1091,6 +1054,102 @@
           "record": "12-3-0"
         },
         "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Erin Blanchfield",
+          "record": "14-2-0"
+        },
+        "fighterB": {
+          "name": "Jasmine Jasudavicius",
+          "record": "15-4-0"
+        },
+        "weightClass": "Women's Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Marc-Andre Barriault",
+          "record": "17-11-1"
+        },
+        "fighterB": {
+          "name": "Kyle Daukaus",
+          "record": "17-5-0"
+        },
+        "weightClass": "Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Jamey-Lyn Horth",
+          "record": "9-3-0"
+        },
+        "fighterB": {
+          "name": "Katlyn Cerminara",
+          "record": "18-6-0"
+        },
+        "weightClass": "Women's Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Tanner Boser",
+          "record": "22-11-1"
+        },
+        "fighterB": {
+          "name": "Jhonata Diniz",
+          "record": "9-2-0"
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Mandel Nallo",
+          "record": "14-4-0"
+        },
+        "fighterB": {
+          "name": "Nate Landwehr",
+          "record": "18-8-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Melissa Croden",
+          "record": "8-3-0"
+        },
+        "fighterB": {
+          "name": "Chelsea Chandler",
+          "record": "7-4-0"
+        },
+        "weightClass": "Women's Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Louis Jourdain",
+          "record": "9-3-0"
+        },
+        "fighterB": {
+          "name": "Timmy Cuamba",
+          "record": "10-4-0"
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Julien Leblanc",
+          "record": "10-3-0"
+        },
+        "fighterB": {
+          "name": "Gilbert Urbina",
+          "record": "8-4-0"
+        },
+        "weightClass": "Middleweight"
       }
     ]
   },
