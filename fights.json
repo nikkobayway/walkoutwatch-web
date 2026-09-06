@@ -962,8 +962,8 @@
     "eventName": "Cruz vs Bravo",
     "organization": "Golden Boy / DAZN",
     "sport": "BOXING",
-    "datetime": "2026-09-20T03:00:00.000Z",
-    "prelimDatetime": "2026-09-20T00:00:00.000Z",
+    "datetime": "2026-09-20T00:00:00.000Z",
+    "prelimDatetime": "2026-09-19T21:00:00.000Z",
     "timezone": "-07:00",
     "city": "San Diego, CA",
     "country": "USA",
@@ -1041,31 +1041,6 @@
           "record": "TBA"
         },
         "weightClass": "TBA"
-      }
-    ]
-  },
-  {
-    "id": "boxing-haney-vs-davis",
-    "eventName": "Haney vs Davis",
-    "organization": "DAZN",
-    "sport": "BOXING",
-    "datetime": "2026-10-04T03:00:00.000Z",
-    "prelimDatetime": "2026-10-04T00:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "New York, NY",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Devin Haney",
-          "record": "31-0-0"
-        },
-        "fighterB": {
-          "name": "Keyshawn Davis",
-          "record": "15-0-0"
-        },
-        "weightClass": "Lightweight"
       }
     ]
   },
