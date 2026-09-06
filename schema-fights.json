@@ -365,39 +365,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Haney vs Davis: Devin Haney vs Keyshawn Davis",
-    "startDate": "2026-10-04T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-haney-vs-davis",
-    "location": {
-      "@type": "Place",
-      "name": "New York, NY",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New York, NY",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Devin Haney"
-      },
-      {
-        "@type": "Person",
-        "name": "Keyshawn Davis"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Whittaker vs Wallace: Ben Whittaker vs Conor Wallace",
     "startDate": "2026-10-04T03:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -530,39 +497,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Fundora vs Hadribeaj: Sebastian Fundora vs Ermal Hadribeaj",
-    "startDate": "2026-10-17T07:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-fundora-vs-hadribeaj",
-    "location": {
-      "@type": "Place",
-      "name": "Carson, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Carson, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "DAZN / TNT"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Sebastian Fundora"
-      },
-      {
-        "@type": "Person",
-        "name": "Ermal Hadribeaj"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "UFC Fight Night: Buckley vs. Malott: Joaquin Buckley vs Mike Malott",
     "startDate": "2026-10-18T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -590,6 +524,39 @@
       {
         "@type": "Person",
         "name": "Mike Malott"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Fundora vs Hadribeaj: Sebastian Fundora vs Ermal Hadribeaj",
+    "startDate": "2026-10-18T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-fundora-vs-hadribeaj",
+    "location": {
+      "@type": "Place",
+      "name": "Carson, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carson, CA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN / TNT"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Sebastian Fundora"
+      },
+      {
+        "@type": "Person",
+        "name": "Ermal Hadribeaj"
       }
     ]
   },
@@ -663,7 +630,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Navarrete vs Foster: Emanuel Navarrete vs O'Shaquie Foster",
-    "startDate": "2026-10-24T07:00:00.000Z",
+    "startDate": "2026-10-25T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",

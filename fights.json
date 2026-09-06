@@ -1091,31 +1091,6 @@
     ]
   },
   {
-    "id": "boxing-haney-vs-davis",
-    "eventName": "Haney vs Davis",
-    "organization": "DAZN",
-    "sport": "BOXING",
-    "datetime": "2026-10-04T03:00:00.000Z",
-    "prelimDatetime": "2026-10-04T00:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "New York, NY",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Devin Haney",
-          "record": "31-0-0"
-        },
-        "fighterB": {
-          "name": "Keyshawn Davis",
-          "record": "15-0-0"
-        },
-        "weightClass": "Lightweight"
-      }
-    ]
-  },
-  {
     "id": "boxing-whittaker-vs-wallace",
     "eventName": "Whittaker vs Wallace",
     "organization": "Matchroom / DAZN",
@@ -1224,55 +1199,6 @@
           "record": "20-1-1"
         },
         "weightClass": "Heavyweight"
-      }
-    ]
-  },
-  {
-    "id": "boxing-fundora-vs-hadribeaj",
-    "eventName": "Fundora vs Hadribeaj",
-    "organization": "DAZN / TNT",
-    "sport": "BOXING",
-    "datetime": "2026-10-17T07:00:00.000Z",
-    "prelimDatetime": "2026-10-17T07:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Carson, CA",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Sebastian Fundora",
-          "record": "26-1-1"
-        },
-        "fighterB": {
-          "name": "Ermal Hadribeaj",
-          "record": "23-0-1"
-        },
-        "weightClass": "Junior Middleweight"
-      },
-      {
-        "boutType": "Co-Main",
-        "fighterA": {
-          "name": "Brandon Figueroa",
-          "record": "27-2-1"
-        },
-        "fighterB": {
-          "name": "Tomoki Kameda",
-          "record": "42-5-0"
-        },
-        "weightClass": "Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Jermall Charlo",
-          "record": "34-0-0"
-        },
-        "fighterB": {
-          "name": "Koen Mazoudier",
-          "record": ""
-        },
-        "weightClass": "Super Middleweight"
       }
     ]
   },
@@ -1394,6 +1320,55 @@
           "record": "8-4-0"
         },
         "weightClass": "Middleweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-fundora-vs-hadribeaj",
+    "eventName": "Fundora vs Hadribeaj",
+    "organization": "DAZN / TNT",
+    "sport": "BOXING",
+    "datetime": "2026-10-18T00:00:00.000Z",
+    "prelimDatetime": "2026-10-17T21:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Carson, CA",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Sebastian Fundora",
+          "record": "26-1-1"
+        },
+        "fighterB": {
+          "name": "Ermal Hadribeaj",
+          "record": "23-0-1"
+        },
+        "weightClass": "Junior Middleweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Brandon Figueroa",
+          "record": "27-2-1"
+        },
+        "fighterB": {
+          "name": "Tomoki Kameda",
+          "record": "42-5-0"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Jermall Charlo",
+          "record": "34-0-0"
+        },
+        "fighterB": {
+          "name": "Koen Mazoudier",
+          "record": ""
+        },
+        "weightClass": "Super Middleweight"
       }
     ]
   },
@@ -1584,8 +1559,8 @@
     "eventName": "Navarrete vs Foster",
     "organization": "DAZN",
     "sport": "BOXING",
-    "datetime": "2026-10-24T07:00:00.000Z",
-    "prelimDatetime": "2026-10-24T07:00:00.000Z",
+    "datetime": "2026-10-25T00:00:00.000Z",
+    "prelimDatetime": "2026-10-24T21:00:00.000Z",
     "timezone": "-07:00",
     "city": "San Antonio, TX",
     "country": "USA",
