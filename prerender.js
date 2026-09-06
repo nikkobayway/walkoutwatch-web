@@ -51,6 +51,27 @@ function fetchCSV(url, redirectsLeft = 5) {
   });
 }
 
+/* ── Retry wrapper: Google's publish-redirect endpoint occasionally returns
+   a transient HTTP 400/5xx even though the sheet is fine — retry a few
+   times with a short delay before giving up. ── */
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchCSVWithRetry(url, label, attempts = 4) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await fetchCSV(url);
+    } catch (err) {
+      lastErr = err;
+      console.log(`  ${label}: fetch attempt ${i}/${attempts} failed (${err.message})`);
+      if (i < attempts) await sleep(i * 2000); // 2s, 4s, 6s backoff
+    }
+  }
+  throw lastErr;
+}
+
 /* ── Guard: make sure we got CSV, not an HTML error page ── */
 function assertLooksLikeCSV(text, label) {
   const head = text.slice(0, 200).trim().toLowerCase();
@@ -1364,7 +1385,7 @@ async function main() {
 
   for (const sport of Object.keys(SHEETS)) {
     console.log('Fetching ' + sport + '…');
-    const csv = await fetchCSV(SHEETS[sport]);
+    const csv = await fetchCSVWithRetry(SHEETS[sport], sport);
     assertLooksLikeCSV(csv, sport);
     const rows = parse(csv, { skip_empty_lines: true, relax_column_count: true });
     results[sport] = rowsToEvents(rows, sport);
