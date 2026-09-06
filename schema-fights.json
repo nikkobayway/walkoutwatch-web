@@ -233,7 +233,7 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Noche UFC 4: Yair Rodriguez vs Jean Silva",
+    "name": "Noche UFC 4: Jose Delgado vs Jean Silva",
     "startDate": "2026-09-13T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
@@ -255,7 +255,7 @@
     "competitor": [
       {
         "@type": "Person",
-        "name": "Yair Rodriguez"
+        "name": "Jose Delgado"
       },
       {
         "@type": "Person",
