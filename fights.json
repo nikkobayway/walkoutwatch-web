@@ -756,9 +756,9 @@
     "eventName": "Garcia vs Benn",
     "organization": "Zuffa Boxing / Paramount+",
     "sport": "BOXING",
-    "datetime": "2026-09-12T21:00:00.000Z",
-    "prelimDatetime": "2026-09-12T18:00:00.000Z",
-    "timezone": "-7:00:00",
+    "datetime": "2026-09-12T20:00:00.000Z",
+    "prelimDatetime": "2026-09-12T17:00:00.000Z",
+    "timezone": "-07:00",
     "city": "Las Vegas, NV",
     "country": "USA",
     "bouts": [
