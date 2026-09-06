@@ -13,6 +13,12 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('csv-parse/sync');
 
+/* Format a Date in US Eastern Time — the reference zone for fight-card times
+   until client-side JS switches to the visitor's chosen timezone. */
+function formatET(date, opts) {
+  return date.toLocaleString('en-US', { timeZone: 'America/New_York', ...opts });
+}
+
 const SHEETS = {
   MMA: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQO5KHJO9BZh-9tHA_WBOgWc_Z9yNOG7fTf71pIoKVAyTbJ5hcxZFDWLBiGmU2veqdAvI7XvtbmhtIv/pub?output=csv',
   BOXING: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSKhzl-_Cl1B2o7uvLvacojSfJjwJ--v1GjLnWmA9tMPYTGo33-zkn4jEkumRoYPxxRvuLLe6PXO-RX/pub?output=csv',
@@ -229,7 +235,7 @@ function buildStaticHTML(events) {
     .map((ev) => {
       const main = ev.bouts[0];
       const title = main ? `${main.fighterA.name} vs ${main.fighterB.name}` : ev.eventName;
-      const when = new Date(ev.datetime).toUTCString();
+      const when = formatET(new Date(ev.datetime), { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
       const undercard = ev.bouts
         .slice(1)
         .map((b) => `<li>${b.fighterA.name} vs ${b.fighterB.name}${b.weightClass ? ' — ' + b.weightClass : ''}</li>`)
@@ -321,7 +327,7 @@ function buildFightSchema(event, fight) {
     '@context': 'https://schema.org',
     '@type': 'SportsEvent',
     name: `${event.eventName}: ${title}`,
-    description: `Watch ${title} live. ${event.organization} ${event.sport} event on ${new Date(event.datetime).toDateString()} in ${event.city}, ${event.country}. ${fight.weightClass ? 'Weight class: ' + fight.weightClass + '. ' : ''}Countdown timer and fight start times available.`,
+    description: `Watch ${title} live. ${event.organization} ${event.sport} event on ${formatET(new Date(event.datetime), { weekday: 'short', month: 'short', day: 'numeric' })} in ${event.city}, ${event.country}. ${fight.weightClass ? 'Weight class: ' + fight.weightClass + '. ' : ''}Countdown timer and fight start times available.`,
     startDate: event.datetime,
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
@@ -366,13 +372,13 @@ function buildFAQSchema(event, main, title) {
   const faqs = [
     {
       q: `What time does ${title} start?`,
-      a: `The main card for ${title} starts at ${new Date(event.datetime).toUTCString()}. A live countdown on this page shows the exact time remaining in your local timezone.`,
+      a: `The main card for ${title} starts at ${formatET(new Date(event.datetime), { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })}. A live countdown on this page shows the exact time remaining in your local timezone.`,
     },
   ];
   if (event.prelimDatetime) {
     faqs.push({
       q: 'When do the prelims start?',
-      a: `Preliminary bouts for ${event.eventName} begin at ${new Date(event.prelimDatetime).toUTCString()}, ahead of the main card.`,
+      a: `Preliminary bouts for ${event.eventName} begin at ${formatET(new Date(event.prelimDatetime), { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })}, ahead of the main card.`,
     });
   }
   faqs.push({
@@ -407,7 +413,7 @@ function buildFightPageHTML(event, allEvents) {
   const title = `${fighter1} vs ${fighter2}`;
   const isMMA = event.sport === 'MMA';
   const sportLabel = isMMA ? 'MMA' : 'Boxing';
-  const metaDesc = `Watch ${title} live on ${new Date(event.datetime).toDateString()}. ${sportLabel} event in ${event.city || 'TBA'}. Live countdown timer, start times, and full fight card.`;
+  const metaDesc = `Watch ${title} live on ${formatET(new Date(event.datetime), { weekday: 'short', month: 'short', day: 'numeric' })}. ${sportLabel} event in ${event.city || 'TBA'}. Live countdown timer, start times, and full fight card.`;
   const schema = buildFightSchema(event, main);
   const breadcrumbSchema = buildBreadcrumbSchema(event, title);
   const faqSchema = buildFAQSchema(event, main, title);
@@ -1169,16 +1175,16 @@ function buildFightPageHTML(event, allEvents) {
                     <div class="countdown-cell">
                         <div class="clock-label"><div class="pulse-dot"></div>PRELIM START</div>
                         <div class="clock-display" id="prelim-clock">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
-                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="prelim-time">${prelimDate.toUTCString()}</div>
+                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="prelim-time">${prelimDate.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' })}</div>
                     </div>
                     <div class="countdown-cell">
                         <div class="clock-label"><div class="pulse-dot"></div>MAIN EVENT WALKOUT</div>
                         <div class="clock-display" id="main-clock">--<span class="time-unit">d</span>--<span class="time-unit">h</span>--<span class="time-unit">m</span>--<span class="time-unit">s</span></div>
-                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="main-time">${mainDate.toUTCString()}</div>
+                        <div class="fight-time-display ${isMMA ? '' : 'boxing-time'}" id="main-time">${mainDate.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York', timeZoneName: 'short' })}</div>
                     </div>
                 </div>
                 <div class="card-meta">
-                    <span class="meta-chip">🗓 <span id="meta-date">${mainDate.toDateString()}</span></span>
+                    <span class="meta-chip">🗓 <span id="meta-date">${mainDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'America/New_York' })}</span></span>
                     <span class="meta-dot"></span>
                     <span class="meta-chip">📍 ${[event.city, event.country].filter(Boolean).join(', ') || 'TBA'}</span>
                     <span class="meta-dot"></span>
@@ -1210,12 +1216,12 @@ function buildFightPageHTML(event, allEvents) {
                 <h2 class="section-title"><span class="bar"></span>Questions</h2>
                 <details class="faq-item">
                     <summary>What time does ${title} start?</summary>
-                    <div class="faq-a">The main card for ${title} starts at <strong id="faq-main-time">${new Date(event.datetime).toUTCString()}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
+                    <div class="faq-a">The main card for ${title} starts at <strong id="faq-main-time">${formatET(new Date(event.datetime), { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })}</strong>. Use the live countdown above to see the exact time remaining in your local timezone.</div>
                 </details>
                 ${event.prelimDatetime ? `
                 <details class="faq-item">
                     <summary>When do the prelims start?</summary>
-                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong id="faq-prelim-time">${new Date(event.prelimDatetime).toUTCString()}</strong>, ahead of the main card.</div>
+                    <div class="faq-a">Preliminary bouts for ${event.eventName} begin at <strong id="faq-prelim-time">${formatET(new Date(event.prelimDatetime), { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' })}</strong>, ahead of the main card.</div>
                 </details>
                 ` : ''}
                 <details class="faq-item">
