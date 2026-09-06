@@ -1,4 +1,4 @@
-name: Pre-render Fight Data & Per-Fight Pages
+name: Pre-render Fight Data
 
 on:
   schedule:
@@ -44,5 +44,18 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "chore: pre-render fight data & per-fight pages [skip ci]"
-            git push
+            # Retry push with rebase in case main moved since checkout (e.g. a
+            # manual push landed while this run was building). Up to 5 tries
+            # with a short backoff before giving up.
+            for i in 1 2 3 4 5; do
+              if git push; then
+                echo "Push succeeded."
+                exit 0
+              fi
+              echo "Push rejected (attempt ドル{i}/5) — pulling and retrying..."
+              git pull --rebase origin main
+              sleep 3
+            done
+            echo "Push failed after 5 attempts."
+            exit 1
           fi
