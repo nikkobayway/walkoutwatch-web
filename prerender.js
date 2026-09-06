@@ -106,9 +106,10 @@ function parseDateTime(dateStr, timeStr) {
     if (mer === 'AM' && hour === 12) hour = 0;
   }
 
-  // Sheet times are entered in US Eastern Time (the standard reference zone
-  // for fight cards) — convert to UTC accounting for EDT/EST correctly.
-  const iso = zonedTimeToUtc(+y, +m, +day, hour, min, 'America/New_York');
+  // Sheet times are always entered in US Pacific Time — convert to UTC
+  // accounting for PDT/PST daylight saving correctly. (The sheet's
+  // Timezone column is not used here; it's inconsistent/unreliable.)
+  const iso = zonedTimeToUtc(+y, +m, +day, hour, min, 'America/Los_Angeles');
   return isNaN(iso) ? null : iso.toISOString();
 }
 
