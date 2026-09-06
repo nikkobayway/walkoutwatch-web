@@ -267,7 +267,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Garcia vs Benn: Ryan Garcia vs Conor Benn",
-    "startDate": "2026-09-12T20:00:00.000Z",
+    "startDate": "2026-09-12T17:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
