@@ -248,7 +248,7 @@
     "sport": "BOXING",
     "datetime": "2026-08-30T01:00:00.000Z",
     "prelimDatetime": "2026-08-29T22:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Birmingham, England",
     "country": "UK",
     "bouts": [
@@ -297,7 +297,7 @@
     "sport": "BOXING",
     "datetime": "2026-08-30T01:00:00.000Z",
     "prelimDatetime": "2026-08-29T22:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "London, England",
     "country": "UK",
     "bouts": [
@@ -358,7 +358,7 @@
     "sport": "BOXING",
     "datetime": "2026-09-04T08:00:00.000Z",
     "prelimDatetime": "2026-09-05T05:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Newark, NJ",
     "country": "USA",
     "bouts": [
@@ -552,7 +552,7 @@
     "sport": "BOXING",
     "datetime": "2026-09-06T04:00:00.000Z",
     "prelimDatetime": "2026-09-06T01:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Dublin, Ireland",
     "country": "Ireland",
     "bouts": [
@@ -964,7 +964,7 @@
     "sport": "BOXING",
     "datetime": "2026-09-20T03:00:00.000Z",
     "prelimDatetime": "2026-09-20T00:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "San Diego, CA",
     "country": "USA",
     "bouts": [
@@ -1001,7 +1001,7 @@
     "sport": "BOXING",
     "datetime": "2026-09-26T19:00:00.000Z",
     "prelimDatetime": "2026-09-26T17:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Fuji, Japan",
     "country": "Japan",
     "bouts": [
@@ -1051,7 +1051,7 @@
     "sport": "BOXING",
     "datetime": "2026-10-04T03:00:00.000Z",
     "prelimDatetime": "2026-10-04T00:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "New York, NY",
     "country": "USA",
     "bouts": [
@@ -1076,7 +1076,7 @@
     "sport": "BOXING",
     "datetime": "2026-10-04T03:00:00.000Z",
     "prelimDatetime": "2026-10-04T00:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Birmingham, England",
     "country": "UK",
     "bouts": [
@@ -1126,7 +1126,7 @@
     "sport": "BOXING",
     "datetime": "2026-11-01T04:00:00.000Z",
     "prelimDatetime": "2026-11-01T01:00:00.000Z",
-    "timezone": "-7:00:00",
+    "timezone": "-07:00",
     "city": "Riyadh, Saudi Arabia",
     "country": "Saudi Arabia",
     "bouts": [
