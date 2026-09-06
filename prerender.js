@@ -63,6 +63,18 @@ function assertLooksLikeCSV(text, label) {
   if (!text.trim()) throw new Error(`${label}: empty response`);
 }
 
+/* Convert a wall-clock date/time in a given IANA timezone to a UTC Date,
+   correctly handling daylight saving (e.g. EDT vs EST). Sheet times are
+   entered as "what the clock reads in that zone" — this does the real
+   timezone math instead of treating the typed time as literal UTC. */
+function zonedTimeToUtc(y, m, day, hour, min, timeZone) {
+  const asIfUTC = new Date(Date.UTC(y, m - 1, day, hour, min));
+  const tzString = asIfUTC.toLocaleString('en-US', { timeZone });
+  const utcString = asIfUTC.toLocaleString('en-US', { timeZone: 'UTC' });
+  const offset = new Date(utcString).getTime() - new Date(tzString).getTime();
+  return new Date(asIfUTC.getTime() + offset);
+}
+
 /* ── Date parsing ── */
 function parseDateTime(dateStr, timeStr) {
   if (!dateStr) return null;
@@ -94,7 +106,9 @@ function parseDateTime(dateStr, timeStr) {
     if (mer === 'AM' && hour === 12) hour = 0;
   }
 
-  const iso = new Date(Date.UTC(+y, +m - 1, +day, hour, min));
+  // Sheet times are entered in US Eastern Time (the standard reference zone
+  // for fight cards) — convert to UTC accounting for EDT/EST correctly.
+  const iso = zonedTimeToUtc(+y, +m, +day, hour, min, 'America/New_York');
   return isNaN(iso) ? null : iso.toISOString();
 }
 
