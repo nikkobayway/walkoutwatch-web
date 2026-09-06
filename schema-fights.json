@@ -333,7 +333,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Cruz vs Bravo: Isaac Cruz vs Nestor Bravo",
-    "startDate": "2026-09-20T03:00:00.000Z",
+    "startDate": "2026-09-20T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -425,39 +425,6 @@
       {
         "@type": "Person",
         "name": "TBA"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Haney vs Davis: Devin Haney vs Keyshawn Davis",
-    "startDate": "2026-10-04T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-haney-vs-davis",
-    "location": {
-      "@type": "Place",
-      "name": "New York, NY",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "New York, NY",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Devin Haney"
-      },
-      {
-        "@type": "Person",
-        "name": "Keyshawn Davis"
       }
     ]
   },
