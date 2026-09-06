@@ -506,6 +506,14 @@ function buildFightPageHTML(event, allEvents) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} — Start Time &amp; Countdown | ${event.eventName} | Walkout Watch</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SNVQ3ZXF6F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SNVQ3ZXF6F');
+    </script>
     <meta name="description" content="${metaDesc}">
     <meta name="keywords" content="${title}, ${title} start time, ${sportLabel}, fight countdown, ${event.city || ''}, ${event.organization || ''}">
     <link rel="canonical" href="${SITE}/fights/${event.id}/">
