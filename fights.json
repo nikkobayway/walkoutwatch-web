@@ -1,233 +1,74 @@
 [
   {
-    "id": "boxing-cameron-vs-mayer",
-    "eventName": "Cameron vs Mayer",
-    "organization": "Matchroom / ESPN+",
+    "id": "boxing-buenos-aires-fight-night",
+    "eventName": "Buenos Aires Fight Night",
+    "organization": "Argentina Boxing Promotions",
     "sport": "BOXING",
-    "datetime": "2026-08-30T01:00:00.000Z",
-    "prelimDatetime": "2026-08-29T22:00:00.000Z",
+    "datetime": "2026-09-12T07:00:00.000Z",
+    "prelimDatetime": "2026-09-12T07:00:00.000Z",
     "timezone": "-07:00",
-    "city": "Birmingham, England",
-    "country": "UK",
+    "city": "Buenos Aires",
+    "country": "Argentina",
     "bouts": [
       {
         "boutType": "Main Event",
         "fighterA": {
-          "name": "Chantelle Cameron",
-          "record": "17-2-0"
+          "name": "Tobias Jeremias Reyes",
+          "record": "18-1-1"
         },
         "fighterB": {
-          "name": "Mikaela Mayer",
-          "record": "18-2-0"
+          "name": "TBA",
+          "record": ""
         },
-        "weightClass": "Women's Junior Middleweight"
+        "weightClass": "Flyweight"
       },
       {
-        "boutType": "Co-Main",
+        "boutType": "Undercard",
         "fighterA": {
-          "name": "Caroline Dubois",
-          "record": "11-0-0"
+          "name": "Maria Ines Ferreyra",
+          "record": "11-0-1"
         },
         "fighterB": {
-          "name": "Amelia Moore",
-          "record": "8-1-2000"
+          "name": "TBA",
+          "record": ""
         },
         "weightClass": "Women's Lightweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "Terri Harper",
-          "record": "16-1-1"
-        },
-        "fighterB": {
-          "name": "Miranda Reyes",
-          "record": "14-3-0"
-        },
-        "weightClass": "Women's Junior Welterweight"
-      }
-    ]
-  },
-  {
-    "id": "boxing-itauma-vs-hrgovic",
-    "eventName": "Itauma vs Hrgovic",
-    "organization": "Matchroom / DAZN PPV",
-    "sport": "BOXING",
-    "datetime": "2026-08-30T01:00:00.000Z",
-    "prelimDatetime": "2026-08-29T22:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "London, England",
-    "country": "UK",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Moses Itauma",
-          "record": "15-0-0"
-        },
-        "fighterB": {
-          "name": "Filip Hrgovic",
-          "record": "18-1-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Sam Noakes",
-          "record": "18-0-0"
-        },
-        "fighterB": {
-          "name": "Denys Berinchyk",
-          "record": "18-2-0"
-        },
-        "weightClass": "Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Constantin Ursu",
-          "record": "16-1-0"
-        },
-        "fighterB": {
-          "name": "Ben Vaughan",
-          "record": "14-2-0"
-        },
-        "weightClass": "Welterweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Aloys Youmbi",
-          "record": "22-3-0"
-        },
-        "fighterB": {
-          "name": "Mike Perez",
-          "record": "21-4-2"
-        },
-        "weightClass": "Cruiserweight"
-      }
-    ]
-  },
-  {
-    "id": "boxing-andy-ruiz-vs-knyba",
-    "eventName": "Andy Ruiz vs Knyba",
-    "organization": "TGB / DAZN",
-    "sport": "BOXING",
-    "datetime": "2026-09-04T08:00:00.000Z",
-    "prelimDatetime": "2026-09-05T05:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Newark, NJ",
-    "country": "USA",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Andy Ruiz Jr",
-          "record": "36-3-0"
-        },
-        "fighterB": {
-          "name": "Damian Knyba",
-          "record": "18-2-0"
-        },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Vito Mielnicki Jr",
-          "record": "18-1-0"
-        },
-        "fighterB": {
-          "name": "Austin Williams",
-          "record": "16-3-0"
-        },
-        "weightClass": "Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Alan Chaves",
-          "record": "12-2-2000"
+          "name": "Sol Cudos",
+          "record": "10-1-2"
         },
         "fighterB": {
           "name": "TBA",
           "record": ""
         },
-        "weightClass": "Lightweight"
-      }
-    ]
-  },
-  {
-    "id": "boxing-taylor-vs-pili",
-    "eventName": "Taylor vs Pili",
-    "organization": "Matchroom / DAZN",
-    "sport": "BOXING",
-    "datetime": "2026-09-06T04:00:00.000Z",
-    "prelimDatetime": "2026-09-06T01:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Dublin, Ireland",
-    "country": "Ireland",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Katie Taylor",
-          "record": "25-1-0"
-        },
-        "fighterB": {
-          "name": "Flora Pili",
-          "record": "12-0-0"
-        },
-        "weightClass": "Women's Super Lightweight"
+        "weightClass": "Women's Atomweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "Paddy Donovan",
-          "record": "13-0-0"
+          "name": "Rodrigo Fabian Ruiz",
+          "record": "22-1-0"
         },
         "fighterB": {
-          "name": "Tyrone McKenna",
-          "record": "25-5-1"
+          "name": "TBA",
+          "record": ""
         },
-        "weightClass": "Welterweight"
+        "weightClass": "Featherweight"
       },
       {
         "boutType": "Undercard",
         "fighterA": {
-          "name": "David Allen",
-          "record": "22-7-2"
+          "name": "Luciano Matias Amaya",
+          "record": ""
         },
         "fighterB": {
-          "name": "Thomas Carty",
-          "record": "12-3-2000"
+          "name": "TBA",
+          "record": ""
         },
-        "weightClass": "Heavyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Taylor Bevan",
-          "record": "10-1-2000"
-        },
-        "fighterB": {
-          "name": "Emmet Brennan",
-          "record": "14-4-0"
-        },
-        "weightClass": "Super Middleweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Molly McCann",
-          "record": "15-5-0"
-        },
-        "fighterB": {
-          "name": "Sylwia Doligala",
-          "record": "10-3-2000"
-        },
-        "weightClass": "Women's Junior Featherweight"
+        "weightClass": "Junior Welterweight"
       }
     ]
   },
@@ -446,43 +287,163 @@
           "record": "23-2-0"
         },
         "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Da'Mazion Vanhouter",
+          "record": "12-0-0"
+        },
+        "fighterB": {
+          "name": "Raphael Akpejiori",
+          "record": "15-1-0"
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Oswaldo Molina",
+          "record": "9-0-0"
+        },
+        "fighterB": {
+          "name": "Pablo Rubio",
+          "record": "13-0-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Abel Gonzalez",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Raul Salomon",
+          "record": "10-1-0"
+        },
+        "weightClass": "Super Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Vlad Panin",
+          "record": "23-2-0"
+        },
+        "fighterB": {
+          "name": "Dakota Linger",
+          "record": "14-6-3"
+        },
+        "weightClass": "Junior Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Jose Ramirez",
+          "record": "29-3-0"
+        },
+        "fighterB": {
+          "name": "Alexis Rocha",
+          "record": "24-2-0"
+        },
+        "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Sean Garcia",
+          "record": "0-0-0"
+        },
+        "fighterB": {
+          "name": "Abraham Morales",
+          "record": "4-1-0"
+        },
+        "weightClass": "Lightweight"
       }
     ]
   },
   {
-    "id": "boxing-cruz-vs-bravo",
-    "eventName": "Cruz vs Bravo",
-    "organization": "Golden Boy / DAZN",
+    "id": "boxing-brampton-fight-night",
+    "eventName": "Brampton Fight Night",
+    "organization": "Canada Boxing Promotions",
     "sport": "BOXING",
-    "datetime": "2026-09-20T00:00:00.000Z",
-    "prelimDatetime": "2026-09-19T21:00:00.000Z",
+    "datetime": "2026-09-19T07:00:00.000Z",
+    "prelimDatetime": "2026-09-19T07:00:00.000Z",
     "timezone": "-07:00",
-    "city": "San Diego, CA",
-    "country": "USA",
+    "city": "Brampton",
+    "country": "Canada",
     "bouts": [
       {
         "boutType": "Main Event",
         "fighterA": {
-          "name": "Isaac Cruz",
-          "record": "27-3-1"
+          "name": "Cody Kelly",
+          "record": ""
         },
         "fighterB": {
-          "name": "Nestor Bravo",
-          "record": "24-1-0"
+          "name": "Helmand Meran Alekozai",
+          "record": ""
         },
-        "weightClass": "Junior Welterweight"
+        "weightClass": "Welterweight"
       },
       {
-        "boutType": "Co-Main",
+        "boutType": "Undercard",
         "fighterA": {
-          "name": "Jesus Ramos Jr",
-          "record": "19-1-0"
+          "name": "Sukhdeep Singh Bhatti",
+          "record": ""
         },
         "fighterB": {
-          "name": "Meiirim Nursultanov",
-          "record": "17-2-0"
+          "name": "TBA",
+          "record": ""
         },
-        "weightClass": "Middleweight"
+        "weightClass": "Junior Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Melinda Watpool",
+          "record": "7-1-0"
+        },
+        "fighterB": {
+          "name": "Maria Dolores Hernandez Garcia",
+          "record": ""
+        },
+        "weightClass": "Women's Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Deaquan Rumbolt",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Javier Ponce",
+          "record": ""
+        },
+        "weightClass": "Junior Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Doni Foreman",
+          "record": "16-7-0"
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Ryan Wagner",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Gregory Miller",
+          "record": ""
+        },
+        "weightClass": "Super Middleweight"
       }
     ]
   },
@@ -656,6 +617,43 @@
     ]
   },
   {
+    "id": "boxing-cruz-vs-bravo",
+    "eventName": "Cruz vs Bravo",
+    "organization": "Golden Boy / DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-09-20T03:00:00.000Z",
+    "prelimDatetime": "2026-09-20T00:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "San Diego, CA",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Isaac Cruz",
+          "record": "26-2-1"
+        },
+        "fighterB": {
+          "name": "Nestor Bravo",
+          "record": "24-1-0"
+        },
+        "weightClass": "Junior Welterweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Jesus Ramos Jr",
+          "record": "24-1-0"
+        },
+        "fighterB": {
+          "name": "Meiirim Nursultanov",
+          "record": "17-2-0"
+        },
+        "weightClass": "Middleweight"
+      }
+    ]
+  },
+  {
     "id": "boxing-simsri-vs-vicelles",
     "eventName": "Simsri vs Vicelles",
     "organization": "IBF",
@@ -677,6 +675,18 @@
           "record": "18-3-0"
         },
         "weightClass": "Junior Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Shunpei Ohata",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Pete Apolinar",
+          "record": ""
+        },
+        "weightClass": "Junior Lightweight"
       }
     ]
   },
@@ -822,6 +832,104 @@
           "record": "11-2-0"
         },
         "weightClass": "Women's Strawweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-nishida-vs-goodman",
+    "eventName": "Nishida vs Goodman",
+    "organization": "Ohashi Promotions",
+    "sport": "BOXING",
+    "datetime": "2026-09-27T07:00:00.000Z",
+    "prelimDatetime": "2026-09-27T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Tokyo",
+    "country": "Japan",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Ryosuke Nishida",
+          "record": "11-1-0"
+        },
+        "fighterB": {
+          "name": "Sam Goodman",
+          "record": "22-1-0"
+        },
+        "weightClass": "Junior Featherweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Takuma Inoue",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Tenshin Nasukawa",
+          "record": ""
+        },
+        "weightClass": "Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Tomoya Tsuboi",
+          "record": "3-0-1"
+        },
+        "fighterB": {
+          "name": "Ricardo Malajika",
+          "record": "17-2-0"
+        },
+        "weightClass": "Junior Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Hayato Aiko",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Natsuki Kuramochi",
+          "record": ""
+        },
+        "weightClass": "Featherweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-motu-vs-turner",
+    "eventName": "Motu vs Turner",
+    "organization": "NZ Boxing Promotions",
+    "sport": "BOXING",
+    "datetime": "2026-10-03T07:00:00.000Z",
+    "prelimDatetime": "2026-10-03T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Auckland",
+    "country": "New Zealand",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Mea Motu",
+          "record": "23-1-0"
+        },
+        "fighterB": {
+          "name": "Mariah Turner",
+          "record": ""
+        },
+        "weightClass": "Women's Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "John Ume",
+          "record": "1-0-0"
+        },
+        "fighterB": {
+          "name": "Riley Allen",
+          "record": "3-0-0"
+        },
+        "weightClass": "Welterweight"
       }
     ]
   },
@@ -983,6 +1091,31 @@
     ]
   },
   {
+    "id": "boxing-haney-vs-davis",
+    "eventName": "Haney vs Davis",
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-10-04T03:00:00.000Z",
+    "prelimDatetime": "2026-10-04T00:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "New York, NY",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Devin Haney",
+          "record": "31-0-0"
+        },
+        "fighterB": {
+          "name": "Keyshawn Davis",
+          "record": "15-0-0"
+        },
+        "weightClass": "Lightweight"
+      }
+    ]
+  },
+  {
     "id": "boxing-whittaker-vs-wallace",
     "eventName": "Whittaker vs Wallace",
     "organization": "Matchroom / DAZN",
@@ -1008,6 +1141,43 @@
     ]
   },
   {
+    "id": "boxing-schofield-vs-bahdi",
+    "eventName": "Schofield vs Bahdi",
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-10-10T07:00:00.000Z",
+    "prelimDatetime": "2026-10-10T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Chicago, IL",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Floyd Schofield",
+          "record": "19-0-0"
+        },
+        "fighterB": {
+          "name": "Lucas Bahdi",
+          "record": "20-0-0"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Oscar Collazo",
+          "record": "15-0-0"
+        },
+        "fighterB": {
+          "name": "Ricardo Sandoval",
+          "record": "27-2-0"
+        },
+        "weightClass": "Flyweight"
+      }
+    ]
+  },
+  {
     "id": "mma-ufc-fight-night-allen-vs-duncan",
     "eventName": "UFC Fight Night: Allen vs. Duncan",
     "organization": "UFC Fight Night: Allen vs. Duncan",
@@ -1029,6 +1199,80 @@
           "record": "12-2-0"
         },
         "weightClass": "Middleweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-dubois-vs-wardley",
+    "eventName": "Dubois vs Wardley",
+    "organization": "Queensberry / DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-10-17T07:00:00.000Z",
+    "prelimDatetime": "2026-10-17T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "London",
+    "country": "UK",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Daniel Dubois",
+          "record": "22-3-0"
+        },
+        "fighterB": {
+          "name": "Fabio Wardley",
+          "record": "20-1-1"
+        },
+        "weightClass": "Heavyweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-fundora-vs-hadribeaj",
+    "eventName": "Fundora vs Hadribeaj",
+    "organization": "DAZN / TNT",
+    "sport": "BOXING",
+    "datetime": "2026-10-17T07:00:00.000Z",
+    "prelimDatetime": "2026-10-17T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Carson, CA",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Sebastian Fundora",
+          "record": "26-1-1"
+        },
+        "fighterB": {
+          "name": "Ermal Hadribeaj",
+          "record": "23-0-1"
+        },
+        "weightClass": "Junior Middleweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Brandon Figueroa",
+          "record": "27-2-1"
+        },
+        "fighterB": {
+          "name": "Tomoki Kameda",
+          "record": "42-5-0"
+        },
+        "weightClass": "Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Jermall Charlo",
+          "record": "34-0-0"
+        },
+        "fighterB": {
+          "name": "Koen Mazoudier",
+          "record": ""
+        },
+        "weightClass": "Super Middleweight"
       }
     ]
   },
@@ -1154,8 +1398,227 @@
     ]
   },
   {
-    "id": "boxing-canelo-vs-mbili",
-    "eventName": "Canelo vs Mbili",
+    "id": "boxing-montreal-fight-night",
+    "eventName": "Montreal Fight Night",
+    "organization": "Eye of the Tiger Management",
+    "sport": "BOXING",
+    "datetime": "2026-10-21T07:00:00.000Z",
+    "prelimDatetime": "2026-10-21T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Montreal",
+    "country": "Canada",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Mazlum Akdeniz",
+          "record": "22-0-0"
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Marie Pier Houle",
+          "record": "11-1-2"
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Women's Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Kirill Bazhenov",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Junior Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Cedrick Belony Duliepre",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Super Middleweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Alessia Mansueto",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Women's Junior Lightweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-smith-vs-puello",
+    "eventName": "Smith vs Puello",
+    "organization": "Matchroom / DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-10-24T07:00:00.000Z",
+    "prelimDatetime": "2026-10-24T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Sheffield, England",
+    "country": "UK",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Dalton Smith",
+          "record": "19-0-0"
+        },
+        "fighterB": {
+          "name": "Alberto Puello",
+          "record": "25-1-0"
+        },
+        "weightClass": "Junior Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Giorgio Visioli",
+          "record": "11-0-0"
+        },
+        "fighterB": {
+          "name": "Maxi Hughes",
+          "record": "29-9-2"
+        },
+        "weightClass": "Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Shannon Ryan",
+          "record": "11-1-0"
+        },
+        "fighterB": {
+          "name": "Emma Dolan",
+          "record": "8-1-0"
+        },
+        "weightClass": "Women's Junior Bantamweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Edward Hardy",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Ibrahim Nadim",
+          "record": ""
+        },
+        "weightClass": "Junior Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Aqib Fiaz",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Jordan Flynn",
+          "record": ""
+        },
+        "weightClass": "Junior Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Joe Hayden",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Will Harrison",
+          "record": ""
+        },
+        "weightClass": "Welterweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Leo Atang",
+          "record": "2-0-0"
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Heavyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Chris Mulunda",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "TBA",
+          "record": ""
+        },
+        "weightClass": "Middleweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-navarrete-vs-foster",
+    "eventName": "Navarrete vs Foster",
+    "organization": "DAZN",
+    "sport": "BOXING",
+    "datetime": "2026-10-24T07:00:00.000Z",
+    "prelimDatetime": "2026-10-24T07:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "San Antonio, TX",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Emanuel Navarrete",
+          "record": "40-2-1"
+        },
+        "fighterB": {
+          "name": "O'Shaquie Foster",
+          "record": "22-2-0"
+        },
+        "weightClass": "Junior Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Albert Gonzalez",
+          "record": ""
+        },
+        "fighterB": {
+          "name": "Edward Vazquez",
+          "record": "20-3-1"
+        },
+        "weightClass": "Featherweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-canelo-vs-mbilli",
+    "eventName": "Canelo vs Mbilli",
     "organization": "DAZN PPV",
     "sport": "BOXING",
     "datetime": "2026-11-01T04:00:00.000Z",
@@ -1168,13 +1631,74 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Canelo Alvarez",
-          "record": "62-2-2"
+          "record": "63-3-2"
         },
         "fighterB": {
-          "name": "Christian Mbili",
-          "record": "29-0-0"
+          "name": "Christian Mbilli",
+          "record": "30-0-1"
         },
         "weightClass": "Super Middleweight"
+      }
+    ]
+  },
+  {
+    "id": "boxing-baumgardner-vs-turhan",
+    "eventName": "Baumgardner vs Turhan",
+    "organization": "ESPN",
+    "sport": "BOXING",
+    "datetime": "2026-11-08T08:00:00.000Z",
+    "prelimDatetime": "2026-11-08T08:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Arlington, TX",
+    "country": "USA",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Alycia Baumgardner",
+          "record": "18-1-0"
+        },
+        "fighterB": {
+          "name": "Elif Nur Turhan",
+          "record": "14-0-0"
+        },
+        "weightClass": "Women's Lightweight"
+      },
+      {
+        "boutType": "Co-Main",
+        "fighterA": {
+          "name": "Tiara Brown",
+          "record": "21-0-0"
+        },
+        "fighterB": {
+          "name": "Ellie Scotney",
+          "record": "12-0-0"
+        },
+        "weightClass": "Women's Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Skye Nicolson",
+          "record": "16-1-0"
+        },
+        "fighterB": {
+          "name": "Miyo Yoshida",
+          "record": "19-5-0"
+        },
+        "weightClass": "Women's Junior Featherweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Ramla Ali",
+          "record": "11-2-0"
+        },
+        "fighterB": {
+          "name": "Mikiah Kreps",
+          "record": "9-0-0"
+        },
+        "weightClass": "Women's Junior Featherweight"
       }
     ]
   }

@@ -31,6 +31,12 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://walkoutwatch.com/fights/boxing-buenos-aires-fight-night/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://walkoutwatch.com/fights/mma-noche-ufc-silva-vs-delgado/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -43,13 +49,19 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://walkoutwatch.com/fights/boxing-cruz-vs-bravo/</loc>
+    <loc>https://walkoutwatch.com/fights/boxing-brampton-fight-night/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://walkoutwatch.com/fights/mma-crypto-com-ufc-331/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-cruz-vs-bravo/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -67,7 +79,25 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://walkoutwatch.com/fights/boxing-nishida-vs-goodman/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-motu-vs-turner/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://walkoutwatch.com/fights/mma-ufc-332/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-haney-vs-davis/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -79,7 +109,25 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://walkoutwatch.com/fights/boxing-schofield-vs-bahdi/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://walkoutwatch.com/fights/mma-ufc-fight-night-allen-vs-duncan/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-dubois-vs-wardley/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-fundora-vs-hadribeaj/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -91,7 +139,31 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://walkoutwatch.com/fights/boxing-canelo-vs-mbili/</loc>
+    <loc>https://walkoutwatch.com/fights/boxing-montreal-fight-night/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-smith-vs-puello/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-navarrete-vs-foster/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-canelo-vs-mbilli/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://walkoutwatch.com/fights/boxing-baumgardner-vs-turhan/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
