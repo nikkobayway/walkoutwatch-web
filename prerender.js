@@ -389,6 +389,66 @@ function buildFightSchema(event, fight) {
   };
 }
 
+/* ── Generate a short, factual "About this fight" paragraph from the sheet
+   data we already have (records, KO/SUB counts, weight class, bout count).
+   Written to vary naturally per fight rather than reading as a template —
+   this is real page content, not filler, so it also helps SEO on pages
+   that otherwise have very little unique text. ── */
+function buildFightPreview(event, main, title) {
+  const isMMA = event.sport === 'MMA';
+  const sportLabel = isMMA ? 'MMA' : 'boxing';
+  const a = main.fighterA;
+  const b = main.fighterB;
+  const totalBouts = event.bouts.length;
+  const isTitleFight = /title|championship/i.test(main.boutType || '') ||
+    /title|championship/i.test(event.eventName || '');
+
+  const sentences = [];
+
+  // Opening line: what the fight is and where/when.
+  const dateStr = formatET(new Date(event.datetime), { weekday: 'long', month: 'long', day: 'numeric' });
+  const placeStr = [event.city, event.country].filter(Boolean).join(', ');
+  sentences.push(
+    `${title} headlines ${event.eventName}${placeStr ? ` in ${placeStr}` : ''} on ${dateStr}` +
+    `${isTitleFight ? ', with a title on the line' : ''}.`
+  );
+
+  // Record/finish-rate line, only when we actually have both records.
+  function parseRecord(r) {
+    const m = String(r || '').match(/^(\d+)-(\d+)-(\d+)$/);
+    if (!m) return null;
+    return { w: +m[1], l: +m[2], d: +m[3] };
+  }
+  const recA = parseRecord(a.record);
+  const recB = parseRecord(b.record);
+  if (recA && recB) {
+    const finishesA = (a.ko || 0) + (isMMA ? (a.sub || 0) : 0);
+    const finishesB = (b.ko || 0) + (isMMA ? (b.sub || 0) : 0);
+    const finishNoteA = recA.w > 0 ? `${Math.round((finishesA / recA.w) * 100)}% of ${a.name.split(' ').pop()}'s wins` : null;
+    const finishNoteB = recB.w > 0 ? `${Math.round((finishesB / recB.w) * 100)}% of ${b.name.split(' ').pop()}'s wins` : null;
+    sentences.push(
+      `${a.name} enters at ${a.record}, ${b.name} at ${b.record}` +
+      `${finishNoteA && finishNoteB ? ` — ${finishNoteA} have come by finish, compared to ${finishNoteB}.` : '.'}`
+    );
+  }
+
+  // Weight class / stakes line.
+  if (main.weightClass) {
+    sentences.push(
+      `The bout is contested at ${main.weightClass.toLowerCase()}${totalBouts > 1 ? `, and headlines a ${totalBouts}-bout card` : ''}.`
+    );
+  } else if (totalBouts > 1) {
+    sentences.push(`It headlines a ${totalBouts}-bout card.`);
+  }
+
+  // Closing CTA-ish line, ties back to the site's actual function.
+  sentences.push(
+    `Use the countdown above to track ${isMMA ? 'walkout' : 'ring walk'} time in your own timezone as fight night approaches.`
+  );
+
+  return sentences.join(' ');
+}
+
 /* ── Breadcrumb schema for a single fight page ── */
 function buildBreadcrumbSchema(event, title) {
   const isMMA = event.sport === 'MMA';
@@ -453,6 +513,7 @@ function buildFightPageHTML(event, allEvents) {
   const schema = buildFightSchema(event, main);
   const breadcrumbSchema = buildBreadcrumbSchema(event, title);
   const faqSchema = buildFAQSchema(event, main, title);
+  const previewText = buildFightPreview(event, main, title);
 
   // Related fights: next 4 upcoming fights (excluding this one), prefer same sport first
   const now = new Date();
@@ -973,6 +1034,13 @@ function buildFightPageHTML(event, allEvents) {
         }
         .section-title .bar { width: 3px; height: 14px; background: var(--accent-sport); border-radius: 1px; }
         .section-title.accent { color: var(--accent-sport); }
+        .fight-preview-text {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--text-primary);
+            opacity: 0.85;
+            margin: 0;
+        }
 
         /* ── FAQ (SEO: matches common searches — kept subtle, collapsed by default) ── */
         .faq-section {
@@ -1245,6 +1313,11 @@ function buildFightPageHTML(event, allEvents) {
             <div class="action-row">
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' tickets')}" class="tickets-button" target="_blank" rel="noopener">🎟 Get Tickets</a>
                 <a href="https://www.google.com/search?q=${encodeURIComponent(title + ' live stream')}" class="share-button" target="_blank" rel="noopener">▶ Where to Watch</a>
+            </div>
+
+            <div class="section fight-preview-section">
+                <h2 class="section-title"><span class="bar"></span>About This Fight</h2>
+                <p class="fight-preview-text">${previewText}</p>
             </div>
 
             ${relatedFightsHTML ? `
