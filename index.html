@@ -98,6 +98,13 @@
         .logo-wrap {
             display: flex; flex-direction: column;
         }
+        /* Visually hidden but readable by screen readers & search engines —
+           used to give the decorative logo H1 real, meaningful text content. */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden;
+            clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
         .logo-line {
             display: flex; align-items: center; gap: 0.65rem; line-height: 1;
         }
@@ -417,10 +424,11 @@
         .fights-week-title {
             font-family: 'Oswald', sans-serif;
             font-size: 0.9rem;
+            font-weight: 400;
+            margin: 0 0 1.2rem 0;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #ffffff;
-            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
             gap: 0.8rem;
@@ -877,7 +885,8 @@
     <header class="app-header">
         <div>
             <h1>
-                <div class="logo-wrap">
+                <span class="sr-only">Walkout Watch | Live MMA &amp; Boxing Countdown Timers</span>
+                <div class="logo-wrap" aria-hidden="true">
                     <div class="logo-line">
                         <span class="logo-word title-walkout">WALKOUT</span>
                         <div class="logo-oct"></div>
@@ -1142,7 +1151,7 @@
             const hasUpcoming = fightData.some(ev => !isPast(ev));
             const heroHTML = hasUpcoming ? `
                 <div class="fights-this-week-hero">
-                    <div class="fights-week-title" id="hero-title">FIGHTS THIS WEEK</div>
+                    <h2 class="fights-week-title" id="hero-title">FIGHTS THIS WEEK</h2>
                     <div class="window-toggle">
                         <button class="window-btn active" data-days="7">7 DAYS</button>
                         <button class="window-btn" data-days="14">14 DAYS</button>
@@ -1152,7 +1161,9 @@
                     <div id="hero-fights-mount"></div>
                 </div>
             ` : '';
-            
+
+            const scheduleHeadingHTML = `<h2 class="sr-only">Full Upcoming ${currentSport === 'MMA' ? 'MMA' : 'Boxing'} Fight Schedule</h2>`;
+
             const cardsHTML = fightData.map((ev, i) => {
                 if (isPast(ev)) return '';
                 const isMMA   = ev.sport === 'MMA';
@@ -1256,7 +1267,7 @@
                 </div>`;
             }).join('');
             
-            container.innerHTML = heroHTML + cardsHTML;
+            container.innerHTML = heroHTML + scheduleHeadingHTML + cardsHTML;
             renderHeroFights();
 
             // Wire up drawers
