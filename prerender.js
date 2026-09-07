@@ -165,8 +165,12 @@ function buildColumnMap(header) {
     boutType:   find('bout type'),
     aName:      find('fighter a name'),
     aRecord:    find('fighter a record'),
+    aKO:        find('fighter a ko'),
+    aSUB:       find('fighter a sub'),
     bName:      find('fighter b name'),
     bRecord:    find('fighter b record'),
+    bKO:        find('fighter b ko'),
+    bSUB:       find('fighter b sub'),
     weight:     find('weight class'),
   };
 }
@@ -184,6 +188,11 @@ function rowsToEvents(rows, sport) {
 
   for (const row of body) {
     const get = (i) => (i >= 0 && row[i] != null ? String(row[i]).trim() : '');
+    const getNum = (i) => {
+      const v = get(i);
+      const n = parseInt(v, 10);
+      return Number.isFinite(n) ? n : 0;
+    };
     const eventId = get(map.eventId);
     const aName = get(map.aName);
     if (!eventId || !aName) continue;
@@ -208,8 +217,8 @@ function rowsToEvents(rows, sport) {
 
     grouped.get(eventId).bouts.push({
       boutType: get(map.boutType) || 'Undercard',
-      fighterA: { name: aName, record: get(map.aRecord) },
-      fighterB: { name: get(map.bName) || 'TBA', record: get(map.bRecord) },
+      fighterA: { name: aName, record: get(map.aRecord), ko: getNum(map.aKO), sub: getNum(map.aSUB) },
+      fighterB: { name: get(map.bName) || 'TBA', record: get(map.bRecord), ko: getNum(map.bKO), sub: getNum(map.bSUB) },
       weightClass: get(map.weight),
     });
   }
@@ -413,7 +422,7 @@ function buildFightPreview(event, main, title) {
     `${isTitleFight ? ', with a title on the line' : ''}.`
   );
 
-  // Record/finish-rate line, only when we actually have both records.
+  // Record line, only when we actually have both records.
   function parseRecord(r) {
     const m = String(r || '').match(/^(\d+)-(\d+)-(\d+)$/);
     if (!m) return null;
@@ -424,11 +433,18 @@ function buildFightPreview(event, main, title) {
   if (recA && recB) {
     const finishesA = (a.ko || 0) + (isMMA ? (a.sub || 0) : 0);
     const finishesB = (b.ko || 0) + (isMMA ? (b.sub || 0) : 0);
-    const finishNoteA = recA.w > 0 ? `${Math.round((finishesA / recA.w) * 100)}% of ${a.name.split(' ').pop()}'s wins` : null;
-    const finishNoteB = recB.w > 0 ? `${Math.round((finishesB / recB.w) * 100)}% of ${b.name.split(' ').pop()}'s wins` : null;
+    // Only mention finish rate when there's real, meaningful data behind it —
+    // both fighters need wins on the books and at least one finish between them,
+    // otherwise "0% vs 0%" reads as broken rather than informative.
+    const pctA = recA.w > 0 ? Math.round((finishesA / recA.w) * 100) : null;
+    const pctB = recB.w > 0 ? Math.round((finishesB / recB.w) * 100) : null;
+    const hasFinishData = pctA !== null && pctB !== null && (finishesA > 0 || finishesB > 0);
+
     sentences.push(
-      `${a.name} enters at ${a.record}, ${b.name} at ${b.record}` +
-      `${finishNoteA && finishNoteB ? ` — ${finishNoteA} have come by finish, compared to ${finishNoteB}.` : '.'}`
+      `${a.name} enters at ${a.record}, ${b.name} at ${b.record}.` +
+      (hasFinishData
+        ? ` ${a.name.split(' ').pop()} has finished ${pctA}% of career wins, ${b.name.split(' ').pop()} ${pctB}%.`
+        : '')
     );
   }
 
