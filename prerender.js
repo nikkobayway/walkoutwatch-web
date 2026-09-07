@@ -26,6 +26,15 @@ const SHEETS = {
 
 const SITE = 'https://walkoutwatch.com';
 
+/* ── Custom fight-card graphics ──
+   Maps an event's id (matches the slug in its /fights/<id>/ URL) to a
+   custom social/preview image checked into images/fights/. Falls back to
+   the site favicon when a fight has no custom graphic yet. Add one line
+   per fight as graphics are made — no other code needs to change. */
+const FIGHT_IMAGES = {
+  'boxing-garcia-vs-benn': { file: 'boxing-garcia-vs-benn.jpg', width: 1080, height: 1350 },
+};
+
 /* ── Fetch with redirect following ── */
 function fetchCSV(url, redirectsLeft = 5) {
   return new Promise((resolve, reject) => {
@@ -531,6 +540,14 @@ function buildFightPageHTML(event, allEvents) {
   const faqSchema = buildFAQSchema(event, main, title);
   const previewText = buildFightPreview(event, main, title);
 
+  // Use a custom fight graphic when one exists for this event, else the site favicon.
+  const customImage = FIGHT_IMAGES[event.id];
+  const shareImage = {
+    url: customImage ? `${SITE}/images/fights/${customImage.file}` : `${SITE}/favicon-512.png`,
+    width: customImage ? customImage.width : 512,
+    height: customImage ? customImage.height : 512,
+  };
+
   // Related fights: next 4 upcoming fights (excluding this one), prefer same sport first
   const now = new Date();
   const upcomingAll = allEvents
@@ -626,17 +643,17 @@ function buildFightPageHTML(event, allEvents) {
     <meta property="og:title" content="${title} — ${event.eventName}">
     <meta property="og:description" content="${metaDesc}">
     <meta property="og:site_name" content="Walkout Watch">
-    <meta property="og:image" content="${SITE}/favicon-512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image" content="${shareImage.url}">
+    <meta property="og:image:width" content="${shareImage.width}">
+    <meta property="og:image:height" content="${shareImage.height}">
     <meta property="article:published_time" content="${new Date().toISOString()}">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="${customImage ? 'summary_large_image' : 'summary'}">
     <meta name="twitter:title" content="${title} — Walkout Watch">
     <meta name="twitter:description" content="${metaDesc}">
-    <meta name="twitter:image" content="${SITE}/favicon-512.png">
+    <meta name="twitter:image" content="${shareImage.url}">
 
     <!-- Schema.org markup -->
     <script type="application/ld+json">
