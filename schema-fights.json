@@ -134,6 +134,39 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "Cruz vs Bravo: Isaac Cruz vs Nestor Bravo",
+    "startDate": "2026-09-20T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-cruz-vs-bravo",
+    "location": {
+      "@type": "Place",
+      "name": "San Diego, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego, CA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Golden Boy / DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Isaac Cruz"
+      },
+      {
+        "@type": "Person",
+        "name": "Nestor Bravo"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "Crypto.com UFC 331: Joshua Van vs Alexandre Pantoja",
     "startDate": "2026-09-20T01:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -161,39 +194,6 @@
       {
         "@type": "Person",
         "name": "Alexandre Pantoja"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Cruz vs Bravo: Isaac Cruz vs Nestor Bravo",
-    "startDate": "2026-09-20T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-cruz-vs-bravo",
-    "location": {
-      "@type": "Place",
-      "name": "San Diego, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "San Diego, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Golden Boy / DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Isaac Cruz"
-      },
-      {
-        "@type": "Person",
-        "name": "Nestor Bravo"
       }
     ]
   },
@@ -234,7 +234,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "UFC Fight Night: Rosas Jr. vs. Barcelos: Raul Rosas Jr. vs Raoni Barcelos",
-    "startDate": "2026-09-26T22:00:00.000Z",
+    "startDate": "2026-09-27T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
@@ -299,8 +299,41 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "Whittaker vs Wallace: Ben Whittaker vs Conor Wallace",
+    "startDate": "2026-10-03T18:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-whittaker-vs-wallace",
+    "location": {
+      "@type": "Place",
+      "name": "Birmingham, England",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Birmingham, England",
+        "addressCountry": "UK"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Matchroom / DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Ben Whittaker"
+      },
+      {
+        "@type": "Person",
+        "name": "Conor Wallace"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "Motu vs Turner: Mea Motu vs Mariah Turner",
-    "startDate": "2026-10-03T07:00:00.000Z",
+    "startDate": "2026-10-03T18:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -365,72 +398,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Whittaker vs Wallace: Ben Whittaker vs Conor Wallace",
-    "startDate": "2026-10-04T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-whittaker-vs-wallace",
-    "location": {
-      "@type": "Place",
-      "name": "Birmingham, England",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Birmingham, England",
-        "addressCountry": "UK"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Matchroom / DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Ben Whittaker"
-      },
-      {
-        "@type": "Person",
-        "name": "Conor Wallace"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Schofield vs Bahdi: Floyd Schofield vs Lucas Bahdi",
-    "startDate": "2026-10-10T07:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-schofield-vs-bahdi",
-    "location": {
-      "@type": "Place",
-      "name": "Chicago, IL",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Chicago, IL",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Floyd Schofield"
-      },
-      {
-        "@type": "Person",
-        "name": "Lucas Bahdi"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "UFC Fight Night: Allen vs. Duncan: Brendan Allen vs Christian Leroy Duncan",
     "startDate": "2026-10-11T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -464,8 +431,41 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "Schofield vs Bahdi: Floyd Schofield vs Lucas Bahdi",
+    "startDate": "2026-10-11T01:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-schofield-vs-bahdi",
+    "location": {
+      "@type": "Place",
+      "name": "Chicago, IL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chicago, IL",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Floyd Schofield"
+      },
+      {
+        "@type": "Person",
+        "name": "Lucas Bahdi"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "Dubois vs Wardley: Daniel Dubois vs Fabio Wardley",
-    "startDate": "2026-10-17T07:00:00.000Z",
+    "startDate": "2026-10-17T18:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -597,7 +597,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Smith vs Puello: Dalton Smith vs Alberto Puello",
-    "startDate": "2026-10-24T07:00:00.000Z",
+    "startDate": "2026-10-24T18:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -696,7 +696,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Baumgardner vs Turhan: Alycia Baumgardner vs Elif Nur Turhan",
-    "startDate": "2026-11-08T08:00:00.000Z",
+    "startDate": "2026-11-09T02:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
