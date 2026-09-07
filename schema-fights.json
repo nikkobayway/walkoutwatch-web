@@ -2,243 +2,45 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night 285: Anthony Hernandez vs Gregory Rodrigues",
-    "startDate": "2026-08-23T03:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-285",
-    "location": {
-      "@type": "Place",
-      "name": "Sacramento, CA",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Sacramento, CA",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 285"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Anthony Hernandez"
-      },
-      {
-        "@type": "Person",
-        "name": "Gregory Rodrigues"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "UFC Fight Night 286: Umar Nurmagomedov vs Song Yadong",
-    "startDate": "2026-08-30T01:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-286",
-    "location": {
-      "@type": "Place",
-      "name": "Shanghai, China",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Shanghai, China",
-        "addressCountry": "China"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 286"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Umar Nurmagomedov"
-      },
-      {
-        "@type": "Person",
-        "name": "Song Yadong"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Cameron vs Mayer: Chantelle Cameron vs Mikaela Mayer",
-    "startDate": "2026-08-30T01:00:00.000Z",
+    "name": "Buenos Aires Fight Night: Tobias Jeremias Reyes vs TBA",
+    "startDate": "2026-09-12T07:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-cameron-vs-mayer",
+    "url": "https://walkoutwatch.com/#boxing-buenos-aires-fight-night",
     "location": {
       "@type": "Place",
-      "name": "Birmingham, England",
+      "name": "Buenos Aires",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Birmingham, England",
-        "addressCountry": "UK"
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "Argentina"
       }
     },
     "organizer": {
       "@type": "Organization",
-      "name": "Matchroom / ESPN+"
+      "name": "Argentina Boxing Promotions"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "Chantelle Cameron"
+        "name": "Tobias Jeremias Reyes"
       },
       {
         "@type": "Person",
-        "name": "Mikaela Mayer"
+        "name": "TBA"
       }
     ]
   },
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Itauma vs Hrgovic: Moses Itauma vs Filip Hrgovic",
-    "startDate": "2026-08-30T01:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-itauma-vs-hrgovic",
-    "location": {
-      "@type": "Place",
-      "name": "London, England",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "London, England",
-        "addressCountry": "UK"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Matchroom / DAZN PPV"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Moses Itauma"
-      },
-      {
-        "@type": "Person",
-        "name": "Filip Hrgovic"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Andy Ruiz vs Knyba: Andy Ruiz Jr vs Damian Knyba",
-    "startDate": "2026-09-04T08:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-andy-ruiz-vs-knyba",
-    "location": {
-      "@type": "Place",
-      "name": "Newark, NJ",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Newark, NJ",
-        "addressCountry": "USA"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "TGB / DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Andy Ruiz Jr"
-      },
-      {
-        "@type": "Person",
-        "name": "Damian Knyba"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "UFC Fight Night 287: Dan Hooker vs Salahdine Parnasse",
-    "startDate": "2026-09-06T04:00:00.000Z",
+    "name": "Noche UFC: Silva vs Delgado: Jean Silva vs Jose Miguel Delgado",
+    "startDate": "2026-09-12T21:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-287",
-    "location": {
-      "@type": "Place",
-      "name": "Paris, France",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris, France",
-        "addressCountry": "France"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "UFC Fight Night 287"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Dan Hooker"
-      },
-      {
-        "@type": "Person",
-        "name": "Salahdine Parnasse"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Taylor vs Pili: Katie Taylor vs Flora Pili",
-    "startDate": "2026-09-06T04:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-taylor-vs-pili",
-    "location": {
-      "@type": "Place",
-      "name": "Dublin, Ireland",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Dublin, Ireland",
-        "addressCountry": "Ireland"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Matchroom / DAZN"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Katie Taylor"
-      },
-      {
-        "@type": "Person",
-        "name": "Flora Pili"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    "name": "Noche UFC 4: Jose Delgado vs Jean Silva",
-    "startDate": "2026-09-13T00:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-noche-ufc-4",
+    "url": "https://walkoutwatch.com/#mma-noche-ufc-silva-vs-delgado",
     "location": {
       "@type": "Place",
       "name": "Glendale, AZ",
@@ -250,16 +52,16 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "Noche UFC 4"
+      "name": "Noche UFC: Silva vs Delgado"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "Jose Delgado"
+        "name": "Jean Silva"
       },
       {
         "@type": "Person",
-        "name": "Jean Silva"
+        "name": "Jose Miguel Delgado"
       }
     ]
   },
@@ -299,12 +101,45 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC 331: Joshua Van vs Alexandre Pantoja",
-    "startDate": "2026-09-20T00:00:00.000Z",
+    "name": "Brampton Fight Night: Cody Kelly vs Helmand Meran Alekozai",
+    "startDate": "2026-09-19T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-brampton-fight-night",
+    "location": {
+      "@type": "Place",
+      "name": "Brampton",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brampton",
+        "addressCountry": "Canada"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Canada Boxing Promotions"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Cody Kelly"
+      },
+      {
+        "@type": "Person",
+        "name": "Helmand Meran Alekozai"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Crypto.com UFC 331: Joshua Van vs Alexandre Pantoja",
+    "startDate": "2026-09-20T01:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-331",
+    "url": "https://walkoutwatch.com/#mma-crypto-com-ufc-331",
     "location": {
       "@type": "Place",
       "name": "Los Angeles, CA",
@@ -316,7 +151,7 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC 331"
+      "name": "Crypto.com UFC 331"
     },
     "competitor": [
       {
@@ -333,7 +168,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Cruz vs Bravo: Isaac Cruz vs Nestor Bravo",
-    "startDate": "2026-09-20T00:00:00.000Z",
+    "startDate": "2026-09-20T03:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -398,12 +233,12 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "UFC Fight Night: TBA vs TBA",
-    "startDate": "2026-09-27T03:00:00.000Z",
+    "name": "UFC Fight Night: Rosas Jr. vs. Barcelos: Raul Rosas Jr. vs Raoni Barcelos",
+    "startDate": "2026-09-26T22:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
-    "url": "https://walkoutwatch.com/#mma-ufc-fight-night",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-rosas-jr-vs-barcelos",
     "location": {
       "@type": "Place",
       "name": "Las Vegas, NV",
@@ -415,16 +250,115 @@
     },
     "organizer": {
       "@type": "Organization",
-      "name": "UFC Fight Night"
+      "name": "UFC Fight Night: Rosas Jr. vs. Barcelos"
     },
     "competitor": [
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Raul Rosas Jr."
       },
       {
         "@type": "Person",
-        "name": "TBA"
+        "name": "Raoni Barcelos"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Nishida vs Goodman: Ryosuke Nishida vs Sam Goodman",
+    "startDate": "2026-09-27T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-nishida-vs-goodman",
+    "location": {
+      "@type": "Place",
+      "name": "Tokyo",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tokyo",
+        "addressCountry": "Japan"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Ohashi Promotions"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Ryosuke Nishida"
+      },
+      {
+        "@type": "Person",
+        "name": "Sam Goodman"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Motu vs Turner: Mea Motu vs Mariah Turner",
+    "startDate": "2026-10-03T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-motu-vs-turner",
+    "location": {
+      "@type": "Place",
+      "name": "Auckland",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressCountry": "New Zealand"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "NZ Boxing Promotions"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Mea Motu"
+      },
+      {
+        "@type": "Person",
+        "name": "Mariah Turner"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC 332: Deiveson Figueiredo vs Payton Talbott",
+    "startDate": "2026-10-04T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-332",
+    "location": {
+      "@type": "Place",
+      "name": "Salt Lake City, UT",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salt Lake City, UT",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC 332"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Deiveson Figueiredo"
+      },
+      {
+        "@type": "Person",
+        "name": "Payton Talbott"
       }
     ]
   },
@@ -464,8 +398,107 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "Schofield vs Bahdi: Floyd Schofield vs Lucas Bahdi",
+    "startDate": "2026-10-10T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-schofield-vs-bahdi",
+    "location": {
+      "@type": "Place",
+      "name": "Chicago, IL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chicago, IL",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Floyd Schofield"
+      },
+      {
+        "@type": "Person",
+        "name": "Lucas Bahdi"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "UFC Fight Night: Allen vs. Duncan: Brendan Allen vs Christian Leroy Duncan",
+    "startDate": "2026-10-11T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Mixed Martial Arts",
+    "url": "https://walkoutwatch.com/#mma-ufc-fight-night-allen-vs-duncan",
+    "location": {
+      "@type": "Place",
+      "name": "Las Vegas, NV",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Vegas, NV",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "UFC Fight Night: Allen vs. Duncan"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Brendan Allen"
+      },
+      {
+        "@type": "Person",
+        "name": "Christian Leroy Duncan"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Dubois vs Wardley: Daniel Dubois vs Fabio Wardley",
+    "startDate": "2026-10-17T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-dubois-vs-wardley",
+    "location": {
+      "@type": "Place",
+      "name": "London",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "UK"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Queensberry / DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Daniel Dubois"
+      },
+      {
+        "@type": "Person",
+        "name": "Fabio Wardley"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "UFC Fight Night: Buckley vs. Malott: Joaquin Buckley vs Mike Malott",
-    "startDate": "2026-10-18T03:00:00.000Z",
+    "startDate": "2026-10-18T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Mixed Martial Arts",
@@ -497,12 +530,144 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Canelo vs Mbili: Canelo Alvarez vs Christian Mbili",
+    "name": "Fundora vs Hadribeaj: Sebastian Fundora vs Ermal Hadribeaj",
+    "startDate": "2026-10-18T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-fundora-vs-hadribeaj",
+    "location": {
+      "@type": "Place",
+      "name": "Carson, CA",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carson, CA",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN / TNT"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Sebastian Fundora"
+      },
+      {
+        "@type": "Person",
+        "name": "Ermal Hadribeaj"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Montreal Fight Night: Mazlum Akdeniz vs TBA",
+    "startDate": "2026-10-21T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-montreal-fight-night",
+    "location": {
+      "@type": "Place",
+      "name": "Montreal",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Montreal",
+        "addressCountry": "Canada"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Eye of the Tiger Management"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Mazlum Akdeniz"
+      },
+      {
+        "@type": "Person",
+        "name": "TBA"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Smith vs Puello: Dalton Smith vs Alberto Puello",
+    "startDate": "2026-10-24T07:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-smith-vs-puello",
+    "location": {
+      "@type": "Place",
+      "name": "Sheffield, England",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sheffield, England",
+        "addressCountry": "UK"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Matchroom / DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Dalton Smith"
+      },
+      {
+        "@type": "Person",
+        "name": "Alberto Puello"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Navarrete vs Foster: Emanuel Navarrete vs O'Shaquie Foster",
+    "startDate": "2026-10-25T00:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-navarrete-vs-foster",
+    "location": {
+      "@type": "Place",
+      "name": "San Antonio, TX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Antonio, TX",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "DAZN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Emanuel Navarrete"
+      },
+      {
+        "@type": "Person",
+        "name": "O'Shaquie Foster"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Canelo vs Mbilli: Canelo Alvarez vs Christian Mbilli",
     "startDate": "2026-11-01T04:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-canelo-vs-mbili",
+    "url": "https://walkoutwatch.com/#boxing-canelo-vs-mbilli",
     "location": {
       "@type": "Place",
       "name": "Riyadh, Saudi Arabia",
@@ -523,7 +688,40 @@
       },
       {
         "@type": "Person",
-        "name": "Christian Mbili"
+        "name": "Christian Mbilli"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "Baumgardner vs Turhan: Alycia Baumgardner vs Elif Nur Turhan",
+    "startDate": "2026-11-08T08:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-baumgardner-vs-turhan",
+    "location": {
+      "@type": "Place",
+      "name": "Arlington, TX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Arlington, TX",
+        "addressCountry": "USA"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "ESPN"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Alycia Baumgardner"
+      },
+      {
+        "@type": "Person",
+        "name": "Elif Nur Turhan"
       }
     ]
   }
