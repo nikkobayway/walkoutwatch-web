@@ -14,11 +14,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Tobias Jeremias Reyes",
-          "record": "18-1-1"
+          "record": "18-1-1",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Flyweight"
       },
@@ -26,11 +30,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Maria Ines Ferreyra",
-          "record": "11-0-1"
+          "record": "11-0-1",
+          "ko": 6,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Lightweight"
       },
@@ -38,11 +46,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Sol Cudos",
-          "record": "10-1-2"
+          "record": "10-1-2",
+          "ko": 3,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Atomweight"
       },
@@ -50,11 +62,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Rodrigo Fabian Ruiz",
-          "record": "22-1-0"
+          "record": "22-1-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Featherweight"
       },
@@ -62,11 +78,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Luciano Matias Amaya",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Welterweight"
       }
@@ -87,11 +107,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Jean Silva",
-          "record": "14-2-0"
+          "record": "14-2-0",
+          "ko": 9,
+          "sub": 1
         },
         "fighterB": {
           "name": "Jose Miguel Delgado",
-          "record": "12-2-0"
+          "record": "12-2-0",
+          "ko": 6,
+          "sub": 4
         },
         "weightClass": "Featherweight"
       },
@@ -99,11 +123,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Brandon Moreno",
-          "record": "23-10-2"
+          "record": "23-10-2",
+          "ko": 5,
+          "sub": 11
         },
         "fighterB": {
           "name": "Joseph Morales",
-          "record": "14-2-0"
+          "record": "14-2-0",
+          "ko": 2,
+          "sub": 8
         },
         "weightClass": "Flyweight"
       },
@@ -111,11 +139,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Tommy McMillen",
-          "record": "11-0-0"
+          "record": "11-0-0",
+          "ko": 5,
+          "sub": 5
         },
         "fighterB": {
           "name": "Marwan Rahiki",
-          "record": "9-0-0"
+          "record": "9-0-0",
+          "ko": 8,
+          "sub": 1
         },
         "weightClass": "Featherweight"
       },
@@ -123,11 +155,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Manon Fiorot",
-          "record": "13-2-0"
+          "record": "13-2-0",
+          "ko": 7,
+          "sub": 0
         },
         "fighterB": {
           "name": "Alexa Grasso",
-          "record": "17-5-1"
+          "record": "17-5-1",
+          "ko": 5,
+          "sub": 2
         },
         "weightClass": "Women's Flyweight"
       },
@@ -135,11 +171,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Waldo Cortes-Acosta",
-          "record": "17-3-0"
+          "record": "17-3-0",
+          "ko": 9,
+          "sub": 1
         },
         "fighterB": {
           "name": "Curtis Blaydes",
-          "record": "19-6-0"
+          "record": "19-6-0",
+          "ko": 13,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -147,11 +187,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "David Martinez",
-          "record": "14-1-0"
+          "record": "14-1-0",
+          "ko": 10,
+          "sub": 0
         },
         "fighterB": {
           "name": "Dan Ige",
-          "record": "19-11-0"
+          "record": "19-11-0",
+          "ko": 7,
+          "sub": 5
         },
         "weightClass": "Bantamweight"
       },
@@ -159,11 +203,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Tim Elliott",
-          "record": "21-14-1"
+          "record": "21-14-1",
+          "ko": 3,
+          "sub": 8
         },
         "fighterB": {
           "name": "Edgar Chairez",
-          "record": "14-6-1"
+          "record": "14-6-1",
+          "ko": 4,
+          "sub": 9
         },
         "weightClass": "Flyweight"
       },
@@ -171,11 +219,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Ignacio Bahamontes",
-          "record": "17-7-0"
+          "record": "17-7-0",
+          "ko": 11,
+          "sub": 2
         },
         "fighterB": {
           "name": "Muslim Salikhov",
-          "record": "22-6-0"
+          "record": "22-6-0",
+          "ko": 15,
+          "sub": 2
         },
         "weightClass": "Welterweight"
       },
@@ -183,11 +235,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Yousri Belgaroui",
-          "record": "10-3-0"
+          "record": "10-3-0",
+          "ko": 8,
+          "sub": 0
         },
         "fighterB": {
           "name": "Djorden Santos",
-          "record": "11-3-0"
+          "record": "11-3-0",
+          "ko": 3,
+          "sub": 4
         },
         "weightClass": "Middleweight"
       },
@@ -195,11 +251,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Drakkar Klose",
-          "record": "16-3-1"
+          "record": "16-3-1",
+          "ko": 6,
+          "sub": 0
         },
         "fighterB": {
           "name": "Tommy Gantt",
-          "record": "12-0-0"
+          "record": "12-0-0",
+          "ko": 6,
+          "sub": 5
         },
         "weightClass": "Lightweight"
       },
@@ -207,11 +267,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Rafa Garcia",
-          "record": "19-4-0"
+          "record": "19-4-0",
+          "ko": 2,
+          "sub": 8
         },
         "fighterB": {
           "name": "Rongzhu",
-          "record": "28-6-0"
+          "record": "28-6-0",
+          "ko": 16,
+          "sub": 6
         },
         "weightClass": "Lightweight"
       },
@@ -219,11 +283,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Sean King",
-          "record": "7-0-0"
+          "record": "7-0-0",
+          "ko": 3,
+          "sub": 1
         },
         "fighterB": {
           "name": "Jessie Rosas",
-          "record": "8-1-0"
+          "record": "8-1-0",
+          "ko": 2,
+          "sub": 4
         },
         "weightClass": "Featherweight"
       },
@@ -231,11 +299,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "JJ Aldrich",
-          "record": "15-7-0"
+          "record": "15-7-0",
+          "ko": 3,
+          "sub": 0
         },
         "fighterB": {
           "name": "Regina Tarin",
-          "record": "8-0-0"
+          "record": "8-0-0",
+          "ko": 4,
+          "sub": 2
         },
         "weightClass": "Women's Flyweight"
       }
@@ -256,11 +328,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Ryan Garcia",
-          "record": "25-2-0"
+          "record": "25-2-0",
+          "ko": 20,
+          "sub": 0
         },
         "fighterB": {
           "name": "Conor Benn",
-          "record": "25-1-0"
+          "record": "25-1-0",
+          "ko": 14,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       },
@@ -268,11 +344,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Jai Opetaia",
-          "record": "30-0-0"
+          "record": "30-0-0",
+          "ko": 23,
+          "sub": 0
         },
         "fighterB": {
           "name": "Noel Mikaelian",
-          "record": "28-3-0"
+          "record": "28-3-0",
+          "ko": 19,
+          "sub": 0
         },
         "weightClass": "Cruiserweight"
       },
@@ -280,11 +360,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Mark Magsayo",
-          "record": "27-2-0"
+          "record": "27-2-0",
+          "ko": 18,
+          "sub": 0
         },
         "fighterB": {
           "name": "Andres Cortes",
-          "record": "23-2-0"
+          "record": "23-2-0",
+          "ko": 12,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       },
@@ -292,11 +376,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Da'Mazion Vanhouter",
-          "record": "12-0-0"
+          "record": "12-0-0",
+          "ko": 9,
+          "sub": 0
         },
         "fighterB": {
           "name": "Raphael Akpejiori",
-          "record": "15-1-0"
+          "record": "15-1-0",
+          "ko": 14,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -304,11 +392,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Oswaldo Molina",
-          "record": "9-0-0"
+          "record": "9-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Pablo Rubio",
-          "record": "13-0-0"
+          "record": "13-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       },
@@ -316,11 +408,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Abel Gonzalez",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Raul Salomon",
-          "record": "10-1-0"
+          "record": "10-1-0",
+          "ko": 8,
+          "sub": 0
         },
         "weightClass": "Super Middleweight"
       },
@@ -328,11 +424,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Vlad Panin",
-          "record": "23-2-0"
+          "record": "23-2-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Dakota Linger",
-          "record": "14-6-3"
+          "record": "14-6-3",
+          "ko": 10,
+          "sub": 0
         },
         "weightClass": "Junior Middleweight"
       },
@@ -340,11 +440,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Jose Ramirez",
-          "record": "29-3-0"
+          "record": "29-3-0",
+          "ko": 18,
+          "sub": 0
         },
         "fighterB": {
           "name": "Alexis Rocha",
-          "record": "24-2-0"
+          "record": "24-2-0",
+          "ko": 16,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       },
@@ -352,11 +456,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Sean Garcia",
-          "record": "0-0-0"
+          "record": "0-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Abraham Morales",
-          "record": "4-1-0"
+          "record": "4-1-0",
+          "ko": 2,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       }
@@ -377,11 +485,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Cody Kelly",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Helmand Meran Alekozai",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       },
@@ -389,11 +501,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Sukhdeep Singh Bhatti",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Middleweight"
       },
@@ -401,11 +517,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Melinda Watpool",
-          "record": "7-1-0"
+          "record": "7-1-0",
+          "ko": 2,
+          "sub": 0
         },
         "fighterB": {
           "name": "Maria Dolores Hernandez Garcia",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Middleweight"
       },
@@ -413,11 +533,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Deaquan Rumbolt",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Javier Ponce",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Bantamweight"
       },
@@ -425,11 +549,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Doni Foreman",
-          "record": "16-7-0"
+          "record": "16-7-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -437,11 +565,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Ryan Wagner",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Gregory Miller",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Super Middleweight"
       }
@@ -462,11 +594,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Isaac Cruz",
-          "record": "26-2-1"
+          "record": "26-2-1",
+          "ko": 18,
+          "sub": 0
         },
         "fighterB": {
           "name": "Nestor Bravo",
-          "record": "24-1-0"
+          "record": "24-1-0",
+          "ko": 16,
+          "sub": 0
         },
         "weightClass": "Junior Welterweight"
       },
@@ -474,11 +610,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Jesus Ramos Jr",
-          "record": "24-1-0"
+          "record": "24-1-0",
+          "ko": 19,
+          "sub": 0
         },
         "fighterB": {
           "name": "Meiirim Nursultanov",
-          "record": "17-2-0"
+          "record": "17-2-0",
+          "ko": 8,
+          "sub": 0
         },
         "weightClass": "Middleweight"
       }
@@ -499,11 +639,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Joshua Van",
-          "record": "17-2-0"
+          "record": "17-2-0",
+          "ko": 5,
+          "sub": 5
         },
         "fighterB": {
           "name": "Alexandre Pantoja",
-          "record": "30-6-0"
+          "record": "30-6-0",
+          "ko": 9,
+          "sub": 8
         },
         "weightClass": "Flyweight"
       },
@@ -511,11 +655,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Arman Tsarukyan",
-          "record": "23-3-0"
+          "record": "23-3-0",
+          "ko": 9,
+          "sub": 6
         },
         "fighterB": {
           "name": "Mauricio Ruffy",
-          "record": "14-2-0"
+          "record": "14-2-0",
+          "ko": 13,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       },
@@ -523,11 +671,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Patricio Pitbull",
-          "record": "37-9-0"
+          "record": "37-9-0",
+          "ko": 12,
+          "sub": 12
         },
         "fighterB": {
           "name": "Dooho Choi",
-          "record": "17-4-1"
+          "record": "17-4-1",
+          "ko": 14,
+          "sub": 1
         },
         "weightClass": "Featherweight"
       },
@@ -535,11 +687,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Renato Moicano",
-          "record": "21-7-1"
+          "record": "21-7-1",
+          "ko": 2,
+          "sub": 11
         },
         "fighterB": {
           "name": "Brian Ortega",
-          "record": "16-5-0"
+          "record": "16-5-0",
+          "ko": 3,
+          "sub": 8
         },
         "weightClass": "Lightweight"
       },
@@ -547,11 +703,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Alonzo Menifield",
-          "record": "18-6-1"
+          "record": "18-6-1",
+          "ko": 11,
+          "sub": 3
         },
         "fighterB": {
           "name": "Iwo Baraniewski",
-          "record": "9-0-0"
+          "record": "9-0-0",
+          "ko": 7,
+          "sub": 2
         },
         "weightClass": "Light Heavyweight"
       },
@@ -559,11 +719,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Gable Steveson",
-          "record": "4-0-0"
+          "record": "4-0-0",
+          "ko": 4,
+          "sub": 0
         },
         "fighterB": {
           "name": "Sean Sharaf",
-          "record": "4-2-0"
+          "record": "4-2-0",
+          "ko": 4,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -571,11 +735,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Marlon Vera",
-          "record": "23-12-1"
+          "record": "23-12-1",
+          "ko": 8,
+          "sub": 10
         },
         "fighterB": {
           "name": "Charles Jourdain",
-          "record": "18-8-1"
+          "record": "18-8-1",
+          "ko": 8,
+          "sub": 7
         },
         "weightClass": "Bantamweight"
       },
@@ -583,11 +751,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Tai Tuivasa",
-          "record": "14-10-0"
+          "record": "14-10-0",
+          "ko": 13,
+          "sub": 0
         },
         "fighterB": {
           "name": "Robelis Despaigne",
-          "record": "6-2-0"
+          "record": "6-2-0",
+          "ko": 6,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -595,11 +767,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Michael Aswell Jr.",
-          "record": "11-5-0"
+          "record": "11-5-0",
+          "ko": 6,
+          "sub": 0
         },
         "fighterB": {
           "name": "Joosang Yoo",
-          "record": "9-1-0"
+          "record": "9-1-0",
+          "ko": 4,
+          "sub": 1
         },
         "weightClass": "Featherweight"
       },
@@ -607,11 +783,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Ryan Gandra",
-          "record": "10-1-0"
+          "record": "10-1-0",
+          "ko": 7,
+          "sub": 1
         },
         "fighterB": {
           "name": "Ozzy Diaz",
-          "record": "10-4-0"
+          "record": "10-4-0",
+          "ko": 7,
+          "sub": 2
         },
         "weightClass": "Middleweight"
       },
@@ -619,11 +799,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Edmen Shahbazyan",
-          "record": "16-6-0"
+          "record": "16-6-0",
+          "ko": 13,
+          "sub": 1
         },
         "fighterB": {
           "name": "Brunno Ferreira",
-          "record": "15-4-0"
+          "record": "15-4-0",
+          "ko": 9,
+          "sub": 5
         },
         "weightClass": "Middleweight"
       },
@@ -631,11 +815,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Casey O'Neill",
-          "record": "11-2-0"
+          "record": "11-2-0",
+          "ko": 4,
+          "sub": 2
         },
         "fighterB": {
           "name": "Eduarda Moura",
-          "record": "12-2-0"
+          "record": "12-2-0",
+          "ko": 4,
+          "sub": 5
         },
         "weightClass": "Women's Flyweight"
       },
@@ -643,11 +831,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Giga Chikadze",
-          "record": "15-6-0"
+          "record": "15-6-0",
+          "ko": 9,
+          "sub": 1
         },
         "fighterB": {
           "name": "Joanderson Brito",
-          "record": "19-5-1"
+          "record": "19-5-1",
+          "ko": 8,
+          "sub": 8
         },
         "weightClass": "Featherweight"
       }
@@ -668,11 +860,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Thanongsak Simsri",
-          "record": "22-2-1"
+          "record": "22-2-1",
+          "ko": 11,
+          "sub": 0
         },
         "fighterB": {
           "name": "Mark Vicelles",
-          "record": "18-3-0"
+          "record": "18-3-0",
+          "ko": 9,
+          "sub": 0
         },
         "weightClass": "Junior Flyweight"
       },
@@ -680,11 +876,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Shunpei Ohata",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Pete Apolinar",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Lightweight"
       }
@@ -705,11 +905,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Raul Rosas Jr.",
-          "record": "12-1-0"
+          "record": "12-1-0",
+          "ko": 5,
+          "sub": 4
         },
         "fighterB": {
           "name": "Raoni Barcelos",
-          "record": "22-5-0"
+          "record": "22-5-0",
+          "ko": 7,
+          "sub": 2
         },
         "weightClass": "Bantamweight"
       },
@@ -717,11 +921,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Melissa Amaya",
-          "record": "8-0-0"
+          "record": "8-0-0",
+          "ko": 3,
+          "sub": 2
         },
         "fighterB": {
           "name": "Valesca Machado",
-          "record": "0-0-0"
+          "record": "0-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Strawweight"
       },
@@ -729,11 +937,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Mehemmedeli Osmanli",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 3,
+          "sub": 6
         },
         "fighterB": {
           "name": "Ilimbek Akylbek Uulu",
-          "record": "9-3-0"
+          "record": "9-3-0",
+          "ko": 1,
+          "sub": 5
         },
         "weightClass": "Bantamweight"
       },
@@ -741,11 +953,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Montel Jackson",
-          "record": "15-4-0"
+          "record": "15-4-0",
+          "ko": 8,
+          "sub": 1
         },
         "fighterB": {
           "name": "Ricky Simon",
-          "record": "22-7-1"
+          "record": "22-7-1",
+          "ko": 7,
+          "sub": 4
         },
         "weightClass": "Bantamweight"
       },
@@ -753,11 +969,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Rodolfo Bellato",
-          "record": "13-3-1"
+          "record": "13-3-1",
+          "ko": 8,
+          "sub": 4
         },
         "fighterB": {
           "name": "Christian Edwards",
-          "record": "8-5-0"
+          "record": "8-5-0",
+          "ko": 5,
+          "sub": 1
         },
         "weightClass": "Light Heavyweight"
       },
@@ -765,11 +985,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Rodolfo Vieira",
-          "record": "11-5-0"
+          "record": "11-5-0",
+          "ko": 1,
+          "sub": 9
         },
         "fighterB": {
           "name": "Robert Bryczek",
-          "record": "18-7-0"
+          "record": "18-7-0",
+          "ko": 12,
+          "sub": 1
         },
         "weightClass": "Middleweight"
       },
@@ -777,11 +1001,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Brady Hiestand",
-          "record": "9-1-0"
+          "record": "9-1-0",
+          "ko": 3,
+          "sub": 3
         },
         "fighterB": {
           "name": "Rinya Nakamura",
-          "record": "10-1-0"
+          "record": "10-1-0",
+          "ko": 4,
+          "sub": 4
         },
         "weightClass": "Bantamweight"
       },
@@ -789,11 +1017,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "John Castaneda",
-          "record": "21-8-1"
+          "record": "21-8-1",
+          "ko": 8,
+          "sub": 6
         },
         "fighterB": {
           "name": "Alatengheili",
-          "record": "17-10-2"
+          "record": "17-10-2",
+          "ko": 5,
+          "sub": 3
         },
         "weightClass": "Bantamweight"
       },
@@ -801,11 +1033,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Josiah Harrell",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 6,
+          "sub": 4
         },
         "fighterB": {
           "name": "Elves Brener",
-          "record": "16-6-0"
+          "record": "16-6-0",
+          "ko": 3,
+          "sub": 11
         },
         "weightClass": "Lightweight"
       },
@@ -813,11 +1049,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Norma Dumont",
-          "record": "13-3-0"
+          "record": "13-3-0",
+          "ko": 0,
+          "sub": 2
         },
         "fighterB": {
           "name": "Ailin Perez",
-          "record": "13-2-0"
+          "record": "13-2-0",
+          "ko": 4,
+          "sub": 2
         },
         "weightClass": "Women's Bantamweight"
       },
@@ -825,11 +1065,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Vanessa Demopoulos",
-          "record": "11-8-0"
+          "record": "11-8-0",
+          "ko": 1,
+          "sub": 4
         },
         "fighterB": {
           "name": "Yazmin Jauregui",
-          "record": "11-2-0"
+          "record": "11-2-0",
+          "ko": 7,
+          "sub": 0
         },
         "weightClass": "Women's Strawweight"
       }
@@ -850,11 +1094,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Ryosuke Nishida",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 2,
+          "sub": 0
         },
         "fighterB": {
           "name": "Sam Goodman",
-          "record": "22-1-0"
+          "record": "22-1-0",
+          "ko": 8,
+          "sub": 0
         },
         "weightClass": "Junior Featherweight"
       },
@@ -862,11 +1110,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Takuma Inoue",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Tenshin Nasukawa",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Bantamweight"
       },
@@ -874,11 +1126,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Tomoya Tsuboi",
-          "record": "3-0-1"
+          "record": "3-0-1",
+          "ko": 2,
+          "sub": 0
         },
         "fighterB": {
           "name": "Ricardo Malajika",
-          "record": "17-2-0"
+          "record": "17-2-0",
+          "ko": 12,
+          "sub": 0
         },
         "weightClass": "Junior Bantamweight"
       },
@@ -886,11 +1142,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Hayato Aiko",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Natsuki Kuramochi",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Featherweight"
       }
@@ -911,11 +1171,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Ben Whittaker",
-          "record": "14-0-0"
+          "record": "14-0-0",
+          "ko": 9,
+          "sub": 0
         },
         "fighterB": {
           "name": "Conor Wallace",
-          "record": "18-2-0"
+          "record": "18-2-0",
+          "ko": 7,
+          "sub": 0
         },
         "weightClass": "Light Heavyweight"
       }
@@ -936,11 +1200,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Mea Motu",
-          "record": "23-1-0"
+          "record": "23-1-0",
+          "ko": 10,
+          "sub": 0
         },
         "fighterB": {
           "name": "Mariah Turner",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Featherweight"
       },
@@ -948,11 +1216,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "John Ume",
-          "record": "1-0-0"
+          "record": "1-0-0",
+          "ko": 1,
+          "sub": 0
         },
         "fighterB": {
           "name": "Riley Allen",
-          "record": "3-0-0"
+          "record": "3-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       }
@@ -973,11 +1245,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Deiveson Figueiredo",
-          "record": "25-7-1"
+          "record": "25-7-1",
+          "ko": 9,
+          "sub": 9
         },
         "fighterB": {
           "name": "Payton Talbott",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 7,
+          "sub": 1
         },
         "weightClass": "Bantamweight"
       },
@@ -985,11 +1261,15 @@
         "boutType": "Main Event (Title)",
         "fighterA": {
           "name": "Natalia Silva",
-          "record": "20-5-1"
+          "record": "20-5-1",
+          "ko": 5,
+          "sub": 7
         },
         "fighterB": {
           "name": "Wang Cong",
-          "record": "9-1-0"
+          "record": "9-1-0",
+          "ko": 2,
+          "sub": 2
         },
         "weightClass": "Women's Flyweight"
       },
@@ -997,11 +1277,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Khaos Williams",
-          "record": "16-5-0"
+          "record": "16-5-0",
+          "ko": 9,
+          "sub": 1
         },
         "fighterB": {
           "name": "Roberto Soldic",
-          "record": "21-4-1"
+          "record": "21-4-1",
+          "ko": 18,
+          "sub": 1
         },
         "weightClass": "Welterweight"
       },
@@ -1009,11 +1293,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Ateba Gautier",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 9,
+          "sub": 0
         },
         "fighterB": {
           "name": "Roman Kopylov",
-          "record": "15-5-0"
+          "record": "15-5-0",
+          "ko": 12,
+          "sub": 0
         },
         "weightClass": "Middleweight"
       },
@@ -1021,11 +1309,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Imanol Rodriguez",
-          "record": "7-0-0"
+          "record": "7-0-0",
+          "ko": 6,
+          "sub": 1
         },
         "fighterB": {
           "name": "Alden Coria",
-          "record": "13-3-0"
+          "record": "13-3-0",
+          "ko": 5,
+          "sub": 4
         },
         "weightClass": "Flyweight"
       },
@@ -1033,11 +1325,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Damian Pinas",
-          "record": "10-1-0"
+          "record": "10-1-0",
+          "ko": 9,
+          "sub": 1
         },
         "fighterB": {
           "name": "Andrey Pulyaev",
-          "record": "10-5-0"
+          "record": "10-5-0",
+          "ko": 6,
+          "sub": 2
         },
         "weightClass": "Middleweight"
       },
@@ -1045,11 +1341,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Marcus McGhee",
-          "record": "11-2-0"
+          "record": "11-2-0",
+          "ko": 8,
+          "sub": 1
         },
         "fighterB": {
           "name": "Benardo Sopaj",
-          "record": "13-3-0"
+          "record": "13-3-0",
+          "ko": 7,
+          "sub": 4
         },
         "weightClass": "Bantamweight"
       },
@@ -1057,11 +1357,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "King Green",
-          "record": "36-17-1"
+          "record": "36-17-1",
+          "ko": 13,
+          "sub": 10
         },
         "fighterB": {
           "name": "Esteban Ribovics",
-          "record": "16-3-0"
+          "record": "16-3-0",
+          "ko": 8,
+          "sub": 5
         },
         "weightClass": "Lightweight"
       },
@@ -1069,11 +1373,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Johnny Walker",
-          "record": "22-10-0"
+          "record": "22-10-0",
+          "ko": 17,
+          "sub": 3
         },
         "fighterB": {
           "name": "Mick Parkin",
-          "record": "10-1-0"
+          "record": "10-1-0",
+          "ko": 6,
+          "sub": 1
         },
         "weightClass": "Heavyweight"
       },
@@ -1081,11 +1389,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Rafael dos Anjos",
-          "record": "35-16-0"
+          "record": "35-16-0",
+          "ko": 9,
+          "sub": 10
         },
         "fighterB": {
           "name": "Alexander Hernandez",
-          "record": "14-7-0"
+          "record": "14-7-0",
+          "ko": 8,
+          "sub": 1
         },
         "weightClass": "Lightweight"
       },
@@ -1093,11 +1405,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Marvin Vettori",
-          "record": "20-8-1"
+          "record": "20-8-1",
+          "ko": 6,
+          "sub": 4
         },
         "fighterB": {
           "name": "Ismail Naurdiev",
-          "record": "19-4-0"
+          "record": "19-4-0",
+          "ko": 8,
+          "sub": 5
         },
         "weightClass": "Middleweight"
       },
@@ -1105,11 +1421,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Court McGee",
-          "record": "22-14-0"
+          "record": "22-14-0",
+          "ko": 5,
+          "sub": 6
         },
         "fighterB": {
           "name": "Eric Nolan",
-          "record": "5-3-0"
+          "record": "5-3-0",
+          "ko": 1,
+          "sub": 2
         },
         "weightClass": "Welterweight"
       }
@@ -1130,11 +1450,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Brendan Allen",
-          "record": "23-6-0"
+          "record": "23-6-0",
+          "ko": 7,
+          "sub": 10
         },
         "fighterB": {
           "name": "Christian Leroy Duncan",
-          "record": "12-2-0"
+          "record": "12-2-0",
+          "ko": 6,
+          "sub": 1
         },
         "weightClass": "Middleweight"
       }
@@ -1155,11 +1479,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Floyd Schofield",
-          "record": "19-0-0"
+          "record": "19-0-0",
+          "ko": 13,
+          "sub": 0
         },
         "fighterB": {
           "name": "Lucas Bahdi",
-          "record": "20-0-0"
+          "record": "20-0-0",
+          "ko": 15,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       },
@@ -1167,11 +1495,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Oscar Collazo",
-          "record": "15-0-0"
+          "record": "15-0-0",
+          "ko": 12,
+          "sub": 0
         },
         "fighterB": {
           "name": "Ricardo Sandoval",
-          "record": "27-2-0"
+          "record": "27-2-0",
+          "ko": 18,
+          "sub": 0
         },
         "weightClass": "Flyweight"
       }
@@ -1192,11 +1524,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Daniel Dubois",
-          "record": "22-3-0"
+          "record": "22-3-0",
+          "ko": 21,
+          "sub": 0
         },
         "fighterB": {
           "name": "Fabio Wardley",
-          "record": "20-1-1"
+          "record": "20-1-1",
+          "ko": 19,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       }
@@ -1217,11 +1553,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Joaquin Buckley",
-          "record": "24-7-0"
+          "record": "24-7-0",
+          "ko": 10,
+          "sub": 3
         },
         "fighterB": {
           "name": "Mike Malott",
-          "record": "12-3-0"
+          "record": "12-3-0",
+          "ko": 7,
+          "sub": 4
         },
         "weightClass": "Welterweight"
       },
@@ -1229,11 +1569,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Erin Blanchfield",
-          "record": "14-2-0"
+          "record": "14-2-0",
+          "ko": 2,
+          "sub": 5
         },
         "fighterB": {
           "name": "Jasmine Jasudavicius",
-          "record": "15-4-0"
+          "record": "15-4-0",
+          "ko": 2,
+          "sub": 4
         },
         "weightClass": "Women's Flyweight"
       },
@@ -1241,11 +1585,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Marc-Andre Barriault",
-          "record": "17-11-1"
+          "record": "17-11-1",
+          "ko": 11,
+          "sub": 1
         },
         "fighterB": {
           "name": "Kyle Daukaus",
-          "record": "17-5-0"
+          "record": "17-5-0",
+          "ko": 2,
+          "sub": 12
         },
         "weightClass": "Middleweight"
       },
@@ -1253,11 +1601,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Jamey-Lyn Horth",
-          "record": "9-3-0"
+          "record": "9-3-0",
+          "ko": 4,
+          "sub": 2
         },
         "fighterB": {
           "name": "Katlyn Cerminara",
-          "record": "18-6-0"
+          "record": "18-6-0",
+          "ko": 2,
+          "sub": 1
         },
         "weightClass": "Women's Flyweight"
       },
@@ -1265,11 +1617,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Tanner Boser",
-          "record": "22-11-1"
+          "record": "22-11-1",
+          "ko": 12,
+          "sub": 2
         },
         "fighterB": {
           "name": "Jhonata Diniz",
-          "record": "9-2-0"
+          "record": "9-2-0",
+          "ko": 7,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -1277,11 +1633,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Mandel Nallo",
-          "record": "14-4-0"
+          "record": "14-4-0",
+          "ko": 8,
+          "sub": 6
         },
         "fighterB": {
           "name": "Nate Landwehr",
-          "record": "18-8-0"
+          "record": "18-8-0",
+          "ko": 9,
+          "sub": 2
         },
         "weightClass": "Lightweight"
       },
@@ -1289,11 +1649,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Melissa Croden",
-          "record": "8-3-0"
+          "record": "8-3-0",
+          "ko": 6,
+          "sub": 1
         },
         "fighterB": {
           "name": "Chelsea Chandler",
-          "record": "7-4-0"
+          "record": "7-4-0",
+          "ko": 2,
+          "sub": 2
         },
         "weightClass": "Women's Bantamweight"
       },
@@ -1301,11 +1665,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Louis Jourdain",
-          "record": "9-3-0"
+          "record": "9-3-0",
+          "ko": 4,
+          "sub": 2
         },
         "fighterB": {
           "name": "Timmy Cuamba",
-          "record": "10-4-0"
+          "record": "10-4-0",
+          "ko": 5,
+          "sub": 0
         },
         "weightClass": "Bantamweight"
       },
@@ -1313,11 +1681,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Julien Leblanc",
-          "record": "10-3-0"
+          "record": "10-3-0",
+          "ko": 4,
+          "sub": 4
         },
         "fighterB": {
           "name": "Gilbert Urbina",
-          "record": "8-4-0"
+          "record": "8-4-0",
+          "ko": 3,
+          "sub": 2
         },
         "weightClass": "Middleweight"
       }
@@ -1338,11 +1710,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Sebastian Fundora",
-          "record": "26-1-1"
+          "record": "26-1-1",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Ermal Hadribeaj",
-          "record": "23-0-1"
+          "record": "23-0-1",
+          "ko": 8,
+          "sub": 0
         },
         "weightClass": "Junior Middleweight"
       },
@@ -1350,11 +1726,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Brandon Figueroa",
-          "record": "27-2-1"
+          "record": "27-2-1",
+          "ko": 20,
+          "sub": 0
         },
         "fighterB": {
           "name": "Tomoki Kameda",
-          "record": "42-5-0"
+          "record": "42-5-0",
+          "ko": 23,
+          "sub": 0
         },
         "weightClass": "Featherweight"
       },
@@ -1362,11 +1742,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Jermall Charlo",
-          "record": "34-0-0"
+          "record": "34-0-0",
+          "ko": 23,
+          "sub": 0
         },
         "fighterB": {
           "name": "Koen Mazoudier",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Super Middleweight"
       }
@@ -1387,11 +1771,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Mazlum Akdeniz",
-          "record": "22-0-0"
+          "record": "22-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       },
@@ -1399,11 +1787,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Marie Pier Houle",
-          "record": "11-1-2"
+          "record": "11-1-2",
+          "ko": 3,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Welterweight"
       },
@@ -1411,11 +1803,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Kirill Bazhenov",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Lightweight"
       },
@@ -1423,11 +1819,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Cedrick Belony Duliepre",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Super Middleweight"
       },
@@ -1435,11 +1835,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Alessia Mansueto",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Junior Lightweight"
       }
@@ -1460,11 +1864,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Dalton Smith",
-          "record": "19-0-0"
+          "record": "19-0-0",
+          "ko": 14,
+          "sub": 0
         },
         "fighterB": {
           "name": "Alberto Puello",
-          "record": "25-1-0"
+          "record": "25-1-0",
+          "ko": 11,
+          "sub": 0
         },
         "weightClass": "Junior Welterweight"
       },
@@ -1472,11 +1880,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Giorgio Visioli",
-          "record": "11-0-0"
+          "record": "11-0-0",
+          "ko": 6,
+          "sub": 0
         },
         "fighterB": {
           "name": "Maxi Hughes",
-          "record": "29-9-2"
+          "record": "29-9-2",
+          "ko": 6,
+          "sub": 0
         },
         "weightClass": "Lightweight"
       },
@@ -1484,11 +1896,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Shannon Ryan",
-          "record": "11-1-0"
+          "record": "11-1-0",
+          "ko": 2,
+          "sub": 0
         },
         "fighterB": {
           "name": "Emma Dolan",
-          "record": "8-1-0"
+          "record": "8-1-0",
+          "ko": 1,
+          "sub": 0
         },
         "weightClass": "Women's Junior Bantamweight"
       },
@@ -1496,11 +1912,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Edward Hardy",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Ibrahim Nadim",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Lightweight"
       },
@@ -1508,11 +1928,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Aqib Fiaz",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Jordan Flynn",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Junior Lightweight"
       },
@@ -1520,11 +1944,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Joe Hayden",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Will Harrison",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Welterweight"
       },
@@ -1532,11 +1960,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Leo Atang",
-          "record": "2-0-0"
+          "record": "2-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Heavyweight"
       },
@@ -1544,11 +1976,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Chris Mulunda",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "TBA",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Middleweight"
       }
@@ -1569,11 +2005,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Emanuel Navarrete",
-          "record": "40-2-1"
+          "record": "40-2-1",
+          "ko": 33,
+          "sub": 0
         },
         "fighterB": {
           "name": "O'Shaquie Foster",
-          "record": "22-2-0"
+          "record": "22-2-0",
+          "ko": 12,
+          "sub": 0
         },
         "weightClass": "Junior Lightweight"
       },
@@ -1581,11 +2021,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Albert Gonzalez",
-          "record": ""
+          "record": "",
+          "ko": 0,
+          "sub": 0
         },
         "fighterB": {
           "name": "Edward Vazquez",
-          "record": "20-3-1"
+          "record": "20-3-1",
+          "ko": 6,
+          "sub": 0
         },
         "weightClass": "Featherweight"
       }
@@ -1606,11 +2050,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Canelo Alvarez",
-          "record": "63-3-2"
+          "record": "63-3-2",
+          "ko": 39,
+          "sub": 0
         },
         "fighterB": {
           "name": "Christian Mbilli",
-          "record": "30-0-1"
+          "record": "30-0-1",
+          "ko": 24,
+          "sub": 0
         },
         "weightClass": "Super Middleweight"
       }
@@ -1631,11 +2079,15 @@
         "boutType": "Main Event",
         "fighterA": {
           "name": "Alycia Baumgardner",
-          "record": "18-1-0"
+          "record": "18-1-0",
+          "ko": 7,
+          "sub": 0
         },
         "fighterB": {
           "name": "Elif Nur Turhan",
-          "record": "14-0-0"
+          "record": "14-0-0",
+          "ko": 8,
+          "sub": 0
         },
         "weightClass": "Women's Lightweight"
       },
@@ -1643,11 +2095,15 @@
         "boutType": "Co-Main",
         "fighterA": {
           "name": "Tiara Brown",
-          "record": "21-0-0"
+          "record": "21-0-0",
+          "ko": 11,
+          "sub": 0
         },
         "fighterB": {
           "name": "Ellie Scotney",
-          "record": "12-0-0"
+          "record": "12-0-0",
+          "ko": 0,
+          "sub": 0
         },
         "weightClass": "Women's Featherweight"
       },
@@ -1655,11 +2111,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Skye Nicolson",
-          "record": "16-1-0"
+          "record": "16-1-0",
+          "ko": 3,
+          "sub": 0
         },
         "fighterB": {
           "name": "Miyo Yoshida",
-          "record": "19-5-0"
+          "record": "19-5-0",
+          "ko": 1,
+          "sub": 0
         },
         "weightClass": "Women's Junior Featherweight"
       },
@@ -1667,11 +2127,15 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Ramla Ali",
-          "record": "11-2-0"
+          "record": "11-2-0",
+          "ko": 4,
+          "sub": 0
         },
         "fighterB": {
           "name": "Mikiah Kreps",
-          "record": "9-0-0"
+          "record": "9-0-0",
+          "ko": 3,
+          "sub": 0
         },
         "weightClass": "Women's Junior Featherweight"
       }
