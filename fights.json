@@ -1,98 +1,5 @@
 [
   {
-    "id": "boxing-buenos-aires-fight-night",
-    "eventName": "Buenos Aires Fight Night",
-    "organization": "Argentina Boxing Promotions",
-    "sport": "BOXING",
-    "datetime": "2026-09-12T07:00:00.000Z",
-    "prelimDatetime": "2026-09-12T07:00:00.000Z",
-    "timezone": "-07:00",
-    "city": "Buenos Aires",
-    "country": "Argentina",
-    "bouts": [
-      {
-        "boutType": "Main Event",
-        "fighterA": {
-          "name": "Tobias Jeremias Reyes",
-          "record": "18-1-1",
-          "ko": 0,
-          "sub": 0
-        },
-        "fighterB": {
-          "name": "TBA",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "weightClass": "Flyweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Maria Ines Ferreyra",
-          "record": "11-0-1",
-          "ko": 6,
-          "sub": 0
-        },
-        "fighterB": {
-          "name": "TBA",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "weightClass": "Women's Lightweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Sol Cudos",
-          "record": "10-1-2",
-          "ko": 3,
-          "sub": 0
-        },
-        "fighterB": {
-          "name": "TBA",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "weightClass": "Women's Atomweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Rodrigo Fabian Ruiz",
-          "record": "22-1-0",
-          "ko": 0,
-          "sub": 0
-        },
-        "fighterB": {
-          "name": "TBA",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "weightClass": "Featherweight"
-      },
-      {
-        "boutType": "Undercard",
-        "fighterA": {
-          "name": "Luciano Matias Amaya",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "fighterB": {
-          "name": "TBA",
-          "record": "",
-          "ko": 0,
-          "sub": 0
-        },
-        "weightClass": "Junior Welterweight"
-      }
-    ]
-  },
-  {
     "id": "mma-noche-ufc-silva-vs-delgado",
     "eventName": "Noche UFC: Silva vs Delgado",
     "organization": "Noche UFC: Silva vs Delgado",
@@ -456,7 +363,7 @@
         "boutType": "Undercard",
         "fighterA": {
           "name": "Sean Garcia",
-          "record": "0-0-0",
+          "record": "7-1-1",
           "ko": 0,
           "sub": 0
         },
@@ -471,12 +378,89 @@
     ]
   },
   {
+    "id": "boxing-buenos-aires-fight-night",
+    "eventName": "Buenos Aires Fight Night",
+    "organization": "Argentina Boxing Promotions",
+    "sport": "BOXING",
+    "datetime": "2026-09-13T01:00:00.000Z",
+    "prelimDatetime": "2026-09-12T22:00:00.000Z",
+    "timezone": "-07:00",
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "bouts": [
+      {
+        "boutType": "Main Event",
+        "fighterA": {
+          "name": "Tobias Jeremias Reyes",
+          "record": "18-1-1",
+          "ko": 0,
+          "sub": 0
+        },
+        "fighterB": {
+          "name": "Efrain Rodriguez",
+          "record": "",
+          "ko": 0,
+          "sub": 0
+        },
+        "weightClass": "Flyweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Maria Ines Ferreyra",
+          "record": "11-0-1",
+          "ko": 6,
+          "sub": 0
+        },
+        "fighterB": {
+          "name": "Anahi Ester Sanchez",
+          "record": "",
+          "ko": 0,
+          "sub": 0
+        },
+        "weightClass": "Women's Lightweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Sol Cudos",
+          "record": "10-1-2",
+          "ko": 3,
+          "sub": 0
+        },
+        "fighterB": {
+          "name": "Mercedes Reyna",
+          "record": "",
+          "ko": 0,
+          "sub": 0
+        },
+        "weightClass": "Women's Atomweight"
+      },
+      {
+        "boutType": "Undercard",
+        "fighterA": {
+          "name": "Rodrigo Fabian Ruiz",
+          "record": "22-1-0",
+          "ko": 0,
+          "sub": 0
+        },
+        "fighterB": {
+          "name": "Hafit Talavera",
+          "record": "",
+          "ko": 0,
+          "sub": 0
+        },
+        "weightClass": "Featherweight"
+      }
+    ]
+  },
+  {
     "id": "boxing-brampton-fight-night",
     "eventName": "Brampton Fight Night",
     "organization": "Canada Boxing Promotions",
     "sport": "BOXING",
-    "datetime": "2026-09-19T07:00:00.000Z",
-    "prelimDatetime": "2026-09-19T07:00:00.000Z",
+    "datetime": "2026-09-19T20:00:00.000Z",
+    "prelimDatetime": "2026-09-19T17:00:00.000Z",
     "timezone": "-07:00",
     "city": "Brampton",
     "country": "Canada",
@@ -486,12 +470,12 @@
         "fighterA": {
           "name": "Cody Kelly",
           "record": "",
-          "ko": 0,
+          "ko": 1,
           "sub": 0
         },
         "fighterB": {
           "name": "Helmand Meran Alekozai",
-          "record": "",
+          "record": "7",
           "ko": 0,
           "sub": 0
         },
@@ -850,8 +834,8 @@
     "eventName": "Simsri vs Vicelles",
     "organization": "IBF",
     "sport": "BOXING",
-    "datetime": "2026-09-26T19:00:00.000Z",
-    "prelimDatetime": "2026-09-26T17:00:00.000Z",
+    "datetime": "2026-09-26T08:00:00.000Z",
+    "prelimDatetime": "2026-09-27T05:00:00.000Z",
     "timezone": "-07:00",
     "city": "Fuji, Japan",
     "country": "Japan",
@@ -1084,8 +1068,8 @@
     "eventName": "Nishida vs Goodman",
     "organization": "Ohashi Promotions",
     "sport": "BOXING",
-    "datetime": "2026-09-27T07:00:00.000Z",
-    "prelimDatetime": "2026-09-27T07:00:00.000Z",
+    "datetime": "2026-09-27T08:00:00.000Z",
+    "prelimDatetime": "2026-09-28T05:00:00.000Z",
     "timezone": "-07:00",
     "city": "Tokyo",
     "country": "Japan",
@@ -1711,7 +1695,7 @@
         "fighterA": {
           "name": "Sebastian Fundora",
           "record": "26-1-1",
-          "ko": 0,
+          "ko": 16,
           "sub": 0
         },
         "fighterB": {
@@ -1761,8 +1745,8 @@
     "eventName": "Montreal Fight Night",
     "organization": "Eye of the Tiger Management",
     "sport": "BOXING",
-    "datetime": "2026-10-21T07:00:00.000Z",
-    "prelimDatetime": "2026-10-21T07:00:00.000Z",
+    "datetime": "2026-10-21T20:00:00.000Z",
+    "prelimDatetime": "2026-10-21T17:00:00.000Z",
     "timezone": "-07:00",
     "city": "Montreal",
     "country": "Canada",
@@ -2040,8 +2024,8 @@
     "eventName": "Canelo vs Mbilli",
     "organization": "DAZN PPV",
     "sport": "BOXING",
-    "datetime": "2026-11-01T04:00:00.000Z",
-    "prelimDatetime": "2026-11-01T01:00:00.000Z",
+    "datetime": "2026-11-01T00:00:00.000Z",
+    "prelimDatetime": "2026-10-31T21:00:00.000Z",
     "timezone": "-07:00",
     "city": "Riyadh, Saudi Arabia",
     "country": "Saudi Arabia",

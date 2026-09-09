@@ -2,39 +2,6 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    "name": "Buenos Aires Fight Night: Tobias Jeremias Reyes vs TBA",
-    "startDate": "2026-09-12T07:00:00.000Z",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "sport": "Boxing",
-    "url": "https://walkoutwatch.com/#boxing-buenos-aires-fight-night",
-    "location": {
-      "@type": "Place",
-      "name": "Buenos Aires",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Buenos Aires",
-        "addressCountry": "Argentina"
-      }
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Argentina Boxing Promotions"
-    },
-    "competitor": [
-      {
-        "@type": "Person",
-        "name": "Tobias Jeremias Reyes"
-      },
-      {
-        "@type": "Person",
-        "name": "TBA"
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
     "name": "Noche UFC: Silva vs Delgado: Jean Silva vs Jose Miguel Delgado",
     "startDate": "2026-09-12T21:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
@@ -101,8 +68,41 @@
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
+    "name": "Buenos Aires Fight Night: Tobias Jeremias Reyes vs Efrain Rodriguez",
+    "startDate": "2026-09-13T01:00:00.000Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+    "sport": "Boxing",
+    "url": "https://walkoutwatch.com/#boxing-buenos-aires-fight-night",
+    "location": {
+      "@type": "Place",
+      "name": "Buenos Aires",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "Argentina"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Argentina Boxing Promotions"
+    },
+    "competitor": [
+      {
+        "@type": "Person",
+        "name": "Tobias Jeremias Reyes"
+      },
+      {
+        "@type": "Person",
+        "name": "Efrain Rodriguez"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
     "name": "Brampton Fight Night: Cody Kelly vs Helmand Meran Alekozai",
-    "startDate": "2026-09-19T07:00:00.000Z",
+    "startDate": "2026-09-19T20:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -201,7 +201,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Simsri vs Vicelles: Thanongsak Simsri vs Mark Vicelles",
-    "startDate": "2026-09-26T19:00:00.000Z",
+    "startDate": "2026-09-26T08:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -267,7 +267,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Nishida vs Goodman: Ryosuke Nishida vs Sam Goodman",
-    "startDate": "2026-09-27T07:00:00.000Z",
+    "startDate": "2026-09-27T08:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -564,7 +564,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Montreal Fight Night: Mazlum Akdeniz vs TBA",
-    "startDate": "2026-10-21T07:00:00.000Z",
+    "startDate": "2026-10-21T20:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
@@ -663,7 +663,7 @@
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": "Canelo vs Mbilli: Canelo Alvarez vs Christian Mbilli",
-    "startDate": "2026-11-01T04:00:00.000Z",
+    "startDate": "2026-11-01T00:00:00.000Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
     "sport": "Boxing",
